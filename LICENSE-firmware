@@ -1,0 +1,11 @@
+Firmware in this repository is a fork of joojoooo/OpenChess and inherits
+its upstream license. See `firmware/LICENSE` (once the fork is added) for
+the actual terms.
+
+Upstream: https://github.com/joojoooo/OpenChess
+
+Any net-new firmware authored in this repository (i.e. code not derived
+from upstream) is also released under the same upstream license to avoid
+mixed-licensing confusion.
+
+Copyright (c) 2026 Paolo Nessim and the upstream OpenChess authors.

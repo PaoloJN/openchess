@@ -1,0 +1,36 @@
+# KiCad
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups/
+*.lck
+~*.lck
+*.kicad_prl
+fp-info-cache
+sym-lib-table.bak
+fp-lib-table.bak
+
+# Local-only safety net (timestamped pre-restructure backups)
+.backups/
+
+# Cloned reference projects (each has its own upstream git remote)
+references/*/
+!references/README.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Generated archives (gerbers zip is re-exportable)
+hardware/fab/gerbers/*.zip

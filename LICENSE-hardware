@@ -1,0 +1,20 @@
+Hardware design files in this repository are licensed under the
+CERN Open Hardware Licence Version 2 - Strongly Reciprocal
+(CERN-OHL-S v2).
+
+SPDX-License-Identifier: CERN-OHL-S-2.0
+
+Scope: everything in `hardware/` and `mechanical/`.
+
+Canonical license text:
+https://ohwr.org/cern_ohl_s_v2.txt
+
+Copyright (c) 2026 Paolo Nessim.
+
+You may redistribute and modify this documentation and make products
+using it under the terms of the CERN-OHL-S v2. This documentation is
+distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF
+MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR
+PURPOSE. Please see the CERN-OHL-S v2 for applicable conditions.
+
+Source location of these designs: <repository URL once published>
