@@ -73,7 +73,7 @@
 		(stroke (width 0) (type default))
 		(uuid "7e57012e-0000-4000-8000-00000000012e")
 	)
-	(label "GND"
+	(label "+3V3"
 		(at 91.44 243.84 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
 		(uuid "7e570192-0000-4000-8000-000000000192")
@@ -113,7 +113,7 @@
 		(stroke (width 0) (type default))
 		(uuid "7e57012f-0000-4000-8000-00000000012f")
 	)
-	(label "+3V3"
+	(label "GND"
 		(at 109.22 243.84 0)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
 		(uuid "7e570193-0000-4000-8000-000000000193")

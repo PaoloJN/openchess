@@ -1,84 +1,116 @@
 # CLAUDE.md
 
-Durable project context. For current status see `STATUS.md`; for the active
-hardware split see `hardware/DESIGN_NOTES.md`.
+Durable project context. For current status see `STATUS.md`; for the
+authoritative hardware design see `hardware/DESIGN_NOTES.md`.
 
 ## What This Project Is
 
-OpenChess is a physical chess board that plays online via Lichess and offline
-via Stockfish. It uses magnetic piece detection, corner LEDs, ESP32 firmware,
-and a phone web UI.
+OpenChess is a **one-off personal hobby project**. The goal is to learn
+through hands-on PCB design and build **one** physical chess board that
+works cleanly the first time. It is **not** a product, not commercial,
+not intended for sale or distribution. Design decisions optimize for:
+
+1. **First-build reliability** — every part should work first try
+2. **Learning value** — understand each subsystem, even if a module
+   would be slightly simpler
+3. **Solo assembly** — one person hand-soldering modules + getting JLC
+   to assemble the SMD components
+4. **Done, not shipped** — when it works on Paolo's desk, the project
+   is finished; no v2, no scaling, no support burden
+
+This shapes choices like: preferring well-tested daughterboard modules
+(Seeed Lipo Rider Plus for power) over discrete switching regulators
+we'd have to debug; preferring panel-mount components on flying leads
+over a separate panel PCB; accepting slightly higher unit cost in
+exchange for lower risk.
+
+## What it does
+
+A physical chess board that plays online via Lichess and offline via
+Stockfish. Magnetic piece detection via Hall sensors, corner LEDs for
+move indication, ESP32 firmware, OLED display + buttons for local UI,
+LiPo battery powered with USB-C charging.
 
 ## Current Hardware Architecture
 
-The active hardware is split into three KiCad projects under `hardware/`:
+Two KiCad PCBs and one cable-mounted component group:
 
-- `hardware-board`: passive matrix board with 64 A3144 Hall sensors and 81 WS2812B corner LEDs.
-- `hardware-controller`: ESP32, power, row pullups, column drivers, LED data level shift, matrix/panel connectors.
-- `hardware-control-panel`: cable-mounted side panel with buttons and normal status LEDs.
+- **`hardware-board/`** — passive matrix board: 64× A3144 Hall sensors,
+  81× WS2812B corner LEDs. Big PCB, all passive.
+- **`hardware-controller/`** — ESP32 socket, level shifter, column
+  driver IC, Lipo Rider Plus power daughterboard, connectors. Brain
+  of the board.
+- **Panel components (no PCB)** — SSD1306 OLED module + 3 panel-mount
+  pushbuttons, mounted in the enclosure on flying leads. Connected to
+  the controller via the `J_PANEL` connector (JST XH 10-pin).
 
-The old integrated board was archived to `delete/old-hardware-2026-06-04/`.
-Do not use old `openchess.kicad_sch`, `led_chain.kicad_sch`, or old rev0.1
-walkthrough docs as active design guidance.
+The old `hardware-control-panel/` PCB design was dropped on 2026-06-05
+and archived to `delete/hardware-control-panel-2026-06-05/`.
+
+The older monolithic single-PCB design was archived to
+`delete/old-hardware-2026-06-04/`. Do not use old `openchess.kicad_sch`,
+`led_chain.kicad_sch`, or old rev0.1 walkthrough docs as active design
+guidance.
 
 ## Current Connector Contracts
 
-Matrix connector:
-
-- Matrix side: `J_CTRL`
-- Controller side: `J_MAIN`
-- Contract: `docs/inter-board-connector.md` and `hardware/DESIGN_NOTES.md`
+**Matrix connector** (board-to-board stacking, no ribbon):
+- Matrix side: `J_CTRL` (2×13 female socket on the matrix back face)
+- Controller side: `J_MAIN` (2×13 male pin header on the controller top face)
+- Assembly: controller PCB stacks directly under matrix PCB; 4× M3
+  standoffs (~11 mm) hold the stack at the right spacing
+- Contract: `docs/inter-board-connector.md`
 - Nets: `+5V_LED`, `GND`, `LED_DATA_5V`, `S0..S7`, `CA_PWR..CH_PWR`
 
-Control panel connector:
+**Panel connector** (flying leads from controller to discrete panel
+components):
+- Controller side: `J3` on the controller (JST XH 10-pin recommended)
+- Panel side: bare wires to OLED module + panel-mount buttons
+- Contract: `docs/inter-board-connector.md`
+- Nets: `+3V3`, `GND`, `I2C_SDA`, `I2C_SCL`, `BTN_SELECT`,
+  `BTN_POWER`, `BTN_MODE`, `PANEL_SPARE`, `PANEL_SPARE2`
 
-- Panel side: `J_PANEL`
-- Controller side: pending chunk
-- Nets: `+3V3`, `GND`, `LED_PWR_N`, `LED_CONN_N`, `LED_BATT_N`, `BTN_POWER`, `BTN_MODE`, `BTN_RESET`, `PANEL_SPARE`
+## Maintenance Approach
 
-## Generated Schematic Pattern
-
-Each hardware board follows the same script structure:
-
-```text
-scripts/sch/config.py
-scripts/sch/geometry.py
-scripts/sch/parts.py
-scripts/sch/01_*.py ...
-scripts/sch/99_assemble.py
-```
-
-Run chunk scripts from `hardware/`, with KiCad closed. Use KiCad ERC before
-claiming a schematic is clean.
+- **Matrix board**: schematic is script-generated under
+  `hardware-board/scripts/sch/`. 236 components are too many to
+  hand-draw practically. Keep using the scripts.
+- **Controller board**: hand-drawn in KiCad GUI. Scripts archived.
+  Single source of truth for the build is
+  `hardware-controller/SCHEMATIC_GUIDE.md`.
 
 ## Reference Mapping
 
-Matrix board current references:
-
+**Matrix board**:
 - Hall sensors: `U1..U64`, file-major order, `U1 = A1`, `U64 = H8`
 - Matrix LEDs: `D1..D81`, row-major, `D1 = top-left`, `D81 = bottom-right`
 - Per-LED caps: `C10..C90`
 - Row bulk caps: `C1..C9`
 - LED entry cap: `C91`
 
-Control panel current references:
-
-- Status LEDs: `D1..D3`
-- LED resistors: `R1..R3`
-- Buttons: `SW1..SW3`
+**Controller board** (see `DESIGN_NOTES.md` §5.1 for the full table):
+- `M1` = Seeed Lipo Rider Plus power module
+- `U2` = ESP32-DevKitC, `U3` = 74AHCT125, `U6` = TBD62783A
+- `D2` = SS14 Schottky (between +5V_LED and DevKit pin 19)
+- `J1` = J_MAIN (to matrix), `J3` = J_PANEL (to panel wiring)
+- `R1..R8` = row pullups, `R11` = LED series, `R36, R37` = button pullups
+- `C1, C2, C5, C11` = various decoupling
+- _No LDO_ — Lipo Rider Plus's 3V3 output drives +3V3 directly
 
 ## Hardware Gotchas
 
 - A3144 outputs are open-collector; pullups belong on the controller at `+3V3`.
-- WS2812B data should be level-shifted to 5V before entering the matrix board.
-- Matrix `+5V_LED` is intentionally separate from controller logic rails.
-- Control-panel LEDs are active-low; the controller sinks `LED_*_N` nets.
-- Control-panel buttons short signal nets to GND; pullups live on the controller.
+- WS2812B data is level-shifted to 5V via 74AHCT125 before entering the matrix board cable.
+- Matrix `+5V_LED` is the only 5V rail; comes from the PowerBoost module.
+- Panel buttons short signal nets to GND; pullups on the controller for input-only ESP32 pins (BTN_POWER, BTN_MODE).
+- DevKitC's onboard EN button is the only reset (no panel reset).
+- UART0 (GPIO1/3) is repurposed as the I²C bus to the OLED — no serial debug.
 
 ## When In Doubt
 
-- `STATUS.md` for current work
-- `hardware/DESIGN_NOTES.md` for hardware decisions
-- `docs/README.md` for docs index
-- `docs/inter-board-connector.md` for pinouts
-- `docs/gpio-map.md` for provisional controller GPIO planning
+- `STATUS.md` — current progress + next actions
+- `hardware/DESIGN_NOTES.md` — **source of truth for the design**
+- `hardware/hardware-controller/SCHEMATIC_GUIDE.md` — controller build sheet
+- `hardware/hardware-board/SCHEMATIC_GUIDE.md` — matrix board reference
+- `docs/inter-board-connector.md` — cable contracts
+- `docs/gpio-map.md` — ESP32 pin assignments

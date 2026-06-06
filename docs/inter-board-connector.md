@@ -9,7 +9,17 @@ Current hardware has three boards:
 ## Matrix Connector: `J_CTRL` / `J_MAIN`
 
 The matrix board connector is `J_CTRL`; the controller-side mate is `J_MAIN`.
-Both use the same 2x13, 2.54 mm pinout.
+Both share the same 2×13 pinout below, but use different **footprints**
+because the boards stack directly (no ribbon cable):
+
+- **Matrix `J_CTRL`**: 2×13 **female socket**, vertical, on the matrix
+  PCB's back side (`Connector_PinSocket_2.54mm:PinSocket_2x13_P2.54mm_Vertical`)
+- **Controller `J_MAIN`**: 2×13 **male pin header**, vertical, on the
+  controller PCB's top side (`Connector_PinHeader_2.54mm:PinHeader_2x13_P2.54mm_Vertical`)
+
+The two boards mate via the pin-header-into-socket connection. M3
+brass standoffs (~11 mm) at the controller's corners provide
+mechanical support.
 
 | Pin | Net | Direction |
 |----:|-----|-----------|
@@ -48,21 +58,43 @@ Row pullups live on the controller board.
 
 ## Control Panel Connector: `J_PANEL`
 
-`J_PANEL` is currently scripted on the control panel as a 1x10 connector.
-The controller needs a matching connector chunk.
+`J_PANEL` is the 10-pin connector on the controller (`J3`) that
+terminates at a **flying-lead harness** going to discrete panel
+components in the enclosure — there is no panel PCB. Wires from the
+harness land at:
+
+- An SSD1306 0.96" I²C OLED module (4 wires: VCC, GND, SDA, SCL)
+- 3× panel-mount momentary pushbuttons (each: signal + GND lead)
+
+**Recommended controller-side connector**: JST XH 10-pin (polarized,
+latching). Crimp pins on the harness end.
+
+The 10-pin net contract has been stable since the panel was redesigned
+to OLED + 3 buttons on 2026-06-05. The earlier "3 status LEDs +
+BTN_RESET" version is archived under `delete/`.
 
 | Pin | Net | Direction |
 |----:|-----|-----------|
-| 1 | `+3V3` | controller -> panel |
+| 1 | `+3V3` | controller -> panel (OLED + button pullup supply) |
 | 2 | `GND` | both |
-| 3 | `LED_PWR_N` | controller sinks |
-| 4 | `LED_CONN_N` | controller sinks |
-| 5 | `LED_BATT_N` | controller sinks |
-| 6 | `BTN_POWER` | panel -> controller |
-| 7 | `BTN_MODE` | panel -> controller |
-| 8 | `BTN_RESET` | panel -> controller |
-| 9 | `PANEL_SPARE` | spare GPIO |
+| 3 | `I2C_SDA` | bidirectional (ESP32 GPIO1 ↔ OLED SDA) |
+| 4 | `I2C_SCL` | controller -> panel (ESP32 GPIO3 → OLED SCL) |
+| 5 | `BTN_SELECT` | panel -> controller (GPIO2) |
+| 6 | `BTN_POWER` | panel -> controller (GPIO36) |
+| 7 | `BTN_MODE` | panel -> controller (GPIO39) |
+| 8 | `PANEL_SPARE` | reserved (was BTN_RESET) |
+| 9 | `PANEL_SPARE2` | reserved (was PANEL_SPARE) |
 | 10 | `GND` | both |
 
-Panel LEDs are active-low. Buttons short their signal net to `GND`; pullups
-belong on the controller.
+Buttons short their signal net to `GND`. BTN_POWER and BTN_MODE use
+external 10kΩ pullups on the controller (R36, R37) because their ESP32
+pins (GPIO36, GPIO39) are input-only with no internal pullups.
+BTN_SELECT uses the ESP32's internal pullup on GPIO2.
+
+I²C pullups (4.7kΩ × 2) typically live on the OLED module itself.
+Verify with a multimeter — if absent, add inline pullups on the
+harness (SDA→+3V3, SCL→+3V3).
+
+The two `PANEL_SPARE*` wires can be omitted from the harness entirely
+if you want fewer wires; they're reserved for future expansion (e.g.
+adding a rotary encoder, buzzer, or extra button).

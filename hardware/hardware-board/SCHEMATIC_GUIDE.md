@@ -415,15 +415,33 @@ Place near J1 (J_CTRL).
 
 ## Section F — J_CTRL Connector
 
-The 26-pin connector to the controller board. This is the contract
-side — pins must match the controller's J_MAIN exactly (see
+The 26-pin board-to-board connector to the controller PCB. This is the
+contract side — pins must match the controller's J_MAIN exactly (see
 `docs/inter-board-connector.md`).
+
+> **Revised 2026-06-05.** Switched from shrouded-IDC + ribbon cable to
+> a **board-to-board stacking female socket**. The controller PCB
+> mounts directly underneath the matrix PCB; J_CTRL's female socket on
+> the matrix's BACK face mates with J_MAIN's male pin header on the
+> controller's top face. No ribbon cable; ~11 mm M3 standoffs hold the
+> stack rigid.
 
 ### F.1 Component
 
 | Ref | Symbol | Value | Footprint |
 |---|---|---|---|
-| J1 | `Connector_Generic:Conn_02x13_Odd_Even` | J_CTRL 2x13 | `Connector_PinHeader_2.54mm:PinHeader_2x13_P2.54mm_Vertical` |
+| J1 | `Connector_Generic:Conn_02x13_Odd_Even` | J_CTRL 2x13 | `Connector_PinSocket_2.54mm:PinSocket_2x13_P2.54mm_Vertical` (female socket, on the **back side** of the matrix PCB) |
+
+**Footprint placement**: J_CTRL must sit on the matrix PCB's **back
+face** (the face away from the chess pieces / LEDs), at a position
+that matches where the controller PCB will sit. From the user's
+layout mockup, this is offset to one edge of the matrix board (the
+same edge as the side panel), not centered. Coordinate this with the
+controller PCB layout.
+
+Mark **pin 1 with a silkscreen dot** for assembly. Add 4 M3 mounting
+holes near the connector position so M3 standoffs can thread from the
+matrix's back to the controller's top.
 
 ### F.2 Pin-by-pin
 

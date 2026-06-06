@@ -57,7 +57,8 @@ echo "Scripts archived 2026-06-05 — controller maintained by hand in KiCad GUI
   and tells the reader "this is a rail."
 - **Net label** (KiCad shortcut `L`) → used for everything else
   (`+5V_LED`, `LED_DATA_5V`, `S0..S7`, `CA_PWR..CH_PWR`, `BTN_*`,
-  `LED_*_N`, `COL_DRV_*`, `PANEL_SPARE`, `LED_DATA`, `BTN_RESET`).
+  `I2C_SDA`, `I2C_SCL`, `BTN_*`, `COL_DRV_*`, `PANEL_SPARE`,
+  `PANEL_SPARE2`, `LED_DATA`, `VBAT_MON`).
 - **No-Connection flag** (shortcut `Q`) → on any IC pin you do not
   intend to use. ERC complains about unflagged unused pins.
 
@@ -92,42 +93,34 @@ symbols you'll use:
 
 Reserved across sections so refs don't collide:
 
-| Range     | Section                                                     |
-| --------- | ----------------------------------------------------------- |
-| J1        | J_MAIN (matrix connector)                                   |
-| J2        | USB-C receptacle (charging + power)                         |
-| J3        | J_PANEL (control panel connector)                           |
-| J4        | LiPo battery connector (JST PH 2-pin)                       |
-| BT1       | LiPo battery symbol (off-board, documentation only)         |
-| U1        | AP2112K-3.3 LDO (+3V3 rail)                                 |
-| U2        | ESP32-DevKitC module                                        |
-| U3        | 74AHCT125 LED data level shifter                            |
-| U4        | BQ24074RGT — USB power-path + LiPo charger                  |
-| U5        | MT3608 boost converter (battery → 5V)                       |
-| U6        | TBD62783A — 8-channel high-side column driver IC            |
-| L1        | Boost converter inductor (4.7–10µH)                         |
-| R1–R8     | Matrix row pullups (10k)                                    |
-| R9, R10   | USB-C CC1/CC2 pulldowns (5.1k)                              |
-| R11       | LED data series resistor (33Ω)                              |
-| R12, R13  | MT3608 feedback divider (75k top, 10k bottom → ~5.1V)       |
-| R14, R15  | Battery monitor divider (220k top, 100k bottom)             |
-| R16       | BQ24074 ISET — fast-charge current set (1.2k → 500mA)       |
-| R17       | BQ24074 TS resistor (10k for "no thermistor" mode)          |
-| R36, R37  | Panel button pullups (10k)                                  |
-| C1, C2    | Bulk caps on +5V_LED (10µF)                                 |
-| C3        | LDO input cap (1µF)                                         |
-| C4        | LDO output cap (1µF)                                        |
-| C5        | 74AHCT125 decoupling (100nF)                                |
-| C6        | BQ24074 IN cap (10µF)                                       |
-| C7        | BQ24074 BAT cap (10µF)                                      |
-| C8        | BQ24074 OUT/SYS cap (10µF)                                  |
-| C9        | MT3608 input cap (10µF)                                     |
-| C10       | MT3608 output cap (22µF)                                    |
-| C11       | TBD62783A bypass cap (100nF)                                |
-| C12       | Battery-monitor ADC filter cap (100nF)                      |
-| TP1, TP2… | Test points (section H)                                     |
-| MH1–MH4   | Mounting holes                                              |
-| FID1–FID3 | Fiducials                                                   |
+| Range     | Section                                                                                                                                                                                                                                                                                           |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| J1        | J_MAIN (matrix connector — **shrouded/keyed IDC footprint**)                                                                                                                                                                                                                                      |
+| J3        | J_PANEL (control panel connector)                                                                                                                                                                                                                                                                 |
+| **M1**    | **Seeed Lipo Rider Plus** (product 106990290) — USB-C in, 5V/2.4A boost + 3V3/250mA out, $4 on DigiKey. Schematic uses `Connector_Generic:Conn_01x08` (generic — see §A.7 for why we don't use SnapEDA's symbol). Footprint: `LipoRiderPlus:MODULE_106990290` (SnapEDA model, installed locally). |
+| **D2**    | **Schottky diode (SS14 or BAT60A)** — between `+5V_LED` and DevKit pin 19. Lets the battery power the ESP32 via DevKit's onboard AMS1117. Anode on `+5V_LED`, cathode on DevKit pin 19.                                                                                                           |
+| BT1       | LiPo battery symbol (off-board, documentation only; battery plugs into M1's onboard JST 2.0)                                                                                                                                                                                                      |
+| U2        | ESP32-DevKitC module                                                                                                                                                                                                                                                                              |
+| U3        | 74AHCT125 LED data level shifter                                                                                                                                                                                                                                                                  |
+| U6        | TBD62783A — 8-channel high-side column driver IC                                                                                                                                                                                                                                                  |
+| R1–R8     | Matrix row pullups (10k)                                                                                                                                                                                                                                                                          |
+| R11       | LED data series resistor (33Ω)                                                                                                                                                                                                                                                                    |
+| R36, R37  | Panel button pullups (10k)                                                                                                                                                                                                                                                                        |
+| R14, R15  | Battery monitor divider (220 k top, 100 k bottom) on M1 pin 6 → VBAT_MON                                                                                                                                                                                                                          |
+| C1, C2    | Bulk caps on +5V_LED (10µF) — at the entry to our rail from M1                                                                                                                                                                                                                                    |
+| C5        | 74AHCT125 decoupling (100nF)                                                                                                                                                                                                                                                                      |
+| C11       | TBD62783A bypass cap (100nF)                                                                                                                                                                                                                                                                      |
+| C12       | Battery-monitor ADC filter cap (100nF)                                                                                                                                                                                                                                                            |
+| TP1, TP2… | Test points (section H)                                                                                                                                                                                                                                                                           |
+| MH1–MH4   | Mounting holes                                                                                                                                                                                                                                                                                    |
+| FID1–FID3 | Fiducials                                                                                                                                                                                                                                                                                         |
+
+**Refdes ranges no longer used** (parts dropped when switching to the
+Lipo Rider Plus + dropping the LDO): `J2` (USB-C), `J4` (LiPo connector), `F1`, `D1`,
+`U1` (AP2112K LDO — Lipo Rider's 3V3 output replaces it), `C3`, `C4` (LDO caps),
+`Q1`, `U4`, `U5`, `L1`, `R9, R10`, `R12, R13, R16, R17`,
+`C6–C10`, `C13`. (R14, R15, C12 are _back_ in use — repurposed as the
+battery monitor divider on the Lipo Rider Plus's raw BAT pad.)
 
 ### Page layout zones (matches the chunk-01 boxes)
 
@@ -144,8 +137,8 @@ A2 page (594×420 mm), top-left origin
            ┌───────────────────────┐ ┌─────────────────┐ ┌──────────────────────┐
        170 │ Sec F                 │ │ Sec E           │ │ Sec G                │
            │ COLUMN DRIVERS        │ │ LED LEVEL SHIFT │ │ USER UI CONNECTOR    │
-           │ Q1..Q8, Q9..Q16,      │ │ U3 74AHCT125    │ │ J5 (J_PANEL 1x10)    │
-           │ R12..R35  (8 channels)│ │                 │ │ R36, R37 pullups     │
+           │ U6 TBD62783A          │ │ U3 74AHCT125    │ │ J3 J_PANEL (JST XH)  │
+           │ + C11 bypass          │ │ + C5            │ │ R36, R37 pullups     │
        285 │                       │ │                 │ │                      │
            └───────────────────────┘ └─────────────────┘ └──────────────────────┘
            ┌──────────────────────────────────────────────────────────────────┐
@@ -163,237 +156,241 @@ scripts/sch.archived**.
 
 ---
 
-## Section A — Power (USB-C charger + LiPo battery + boost + LDO)
+## Section A — Power (Seeed Lipo Rider Plus + ESP32 power path)
 
-> **Revised 2026-06-05.** The original "USB-C → LDO" power section has
-> been replaced with a battery-backed architecture. USB-C charges a
-> single LiPo cell through a BQ24074 power-path charger; an MT3608
-> boost steps the battery up to a regulated 5V rail; the AP2112K LDO
-> produces +3V3 from that 5V. Result: board runs from USB or battery
-> seamlessly. See "Migration from previous Section A" at the bottom.
+> **Revised 2026-06-05 (really final).** Section A is now ~5
+> components: a 1×8 header for the Lipo Rider Plus daughterboard, two
+> bulk caps on `+5V_LED`, and one Schottky diode (D2) routing
+> `+5V_LED` to the DevKit's 5V input pin so the ESP32 can run from
+> battery. The Lipo Rider Plus produces both `+5V_LED` (5V/2.4A) and
+> `+3V3` (250 mA) directly — no LDO needed on our PCB.
 
-Inside the POWER box (440..566, 50..150 world mm). Suggested layout:
-
-```
-USB-C (J2)  ──→  BQ24074 (U4)  ──→  SYS  ──→  MT3608 (U5) + L1  ──→  +5V_LED
-                     │   │                                              │
-                     │   ↓                                               ├─→ +5V_LED bulk caps (C1, C2)
-                     │   BAT ←→ LiPo (J4) ──→ R14/R15 divider ──→ VBAT_MON
-                     │                                               (to GPIO34 ADC)
-                     │
-                     R16 (ISET), R17 (TS), CHG/PGOOD options
-                                                                        │
-                                                                        ├─→ to TBD62783A VBB
-                                                                        ├─→ to 74AHCT125 VCC + C5
-                                                                        └─→ AP2112K (U1) ──→ +3V3
-                                                                                                │
-                                                                                                └─→ C3, C4
-```
+Inside the POWER box (440..566, 50..150 world mm).
 
 ### A.1 Components
 
-| Ref     | Symbol                                  | Value           | Footprint                                            | Notes                                       |
-| ------- | --------------------------------------- | --------------- | ---------------------------------------------------- | ------------------------------------------- |
-| J2      | `Connector:USB_C_Receptacle_USB2.0_16P` | USB-C 5V        | `Connector_USB:USB_C_Receptacle_GCT_USB4085`         | Power-only USB-C input                       |
-| R9      | `Device:R`                              | 5.1k            | `Resistor_SMD:R_0603_1608Metric`                     | CC1 pulldown (USB-C sink config)            |
-| R10     | `Device:R`                              | 5.1k            | `Resistor_SMD:R_0603_1608Metric`                     | CC2 pulldown                                |
-| U4      | `Battery_Management:BQ24074RGT`         | BQ24074         | `Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm` | Power-path charger, QFN-16                  |
-| R16     | `Device:R`                              | 1.2k            | `Resistor_SMD:R_0603_1608Metric`                     | ISET — sets fast-charge current to ~500 mA  |
-| R17     | `Device:R`                              | 10k             | `Resistor_SMD:R_0603_1608Metric`                     | TS — fake thermistor (no-temp-sense mode)   |
-| C6      | `Device:C`                              | 10µF            | `Capacitor_SMD:C_0805_2012Metric`                    | BQ24074 IN cap                              |
-| C7      | `Device:C`                              | 10µF            | `Capacitor_SMD:C_0805_2012Metric`                    | BQ24074 BAT cap                             |
-| C8      | `Device:C`                              | 10µF            | `Capacitor_SMD:C_0805_2012Metric`                    | BQ24074 OUT (SYS) cap                       |
-| J4      | `Connector_Generic:Conn_01x02`          | LiPo            | `Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal` | LiPo battery, 2-pin JST PH                 |
-| BT1     | `Device:Battery_Cell`                   | LiPo 1S 3.7V    | _(no footprint — off-board)_                         | Documentation symbol; mark `(in_bom no)`    |
-| R14     | `Device:R`                              | 220k            | `Resistor_SMD:R_0603_1608Metric`                     | Battery monitor top resistor                |
-| R15     | `Device:R`                              | 100k            | `Resistor_SMD:R_0603_1608Metric`                     | Battery monitor bottom resistor             |
-| C12     | `Device:C`                              | 100nF           | `Capacitor_SMD:C_0603_1608Metric`                    | ADC filter on VBAT_MON                      |
-| U5      | `Regulator_Switching:MT3608`            | MT3608          | `Package_TO_SOT_SMD:SOT-23-6`                        | Boost converter                             |
-| L1      | `Device:L`                              | 4.7µH           | `Inductor_SMD:L_Sunlord_MWSA0602S-4R7MT`             | Boost inductor (≥1.5A Isat, any 4.7-10µH OK)|
-| R12     | `Device:R`                              | 75k             | `Resistor_SMD:R_0603_1608Metric`                     | MT3608 FB top                               |
-| R13     | `Device:R`                              | 10k             | `Resistor_SMD:R_0603_1608Metric`                     | MT3608 FB bottom (V_out ≈ 5.1V)             |
-| C9      | `Device:C`                              | 10µF            | `Capacitor_SMD:C_0805_2012Metric`                    | MT3608 input cap                            |
-| C10     | `Device:C`                              | 22µF            | `Capacitor_SMD:C_0805_2012Metric`                    | MT3608 output cap                           |
-| C1, C2  | `Device:C`                              | 10µF            | `Capacitor_SMD:C_0805_2012Metric`                    | +5V_LED bulk (existing)                     |
-| U1      | `Regulator_Linear:AP2112K-3.3`          | AP2112K-3.3     | `Package_TO_SOT_SMD:SOT-23-5`                        | LDO +3V3                                    |
-| C3      | `Device:C`                              | 1µF             | `Capacitor_SMD:C_0603_1608Metric`                    | LDO input cap                               |
-| C4      | `Device:C`                              | 1µF             | `Capacitor_SMD:C_0603_1608Metric`                    | LDO output cap                              |
+| Ref | Symbol                         | Value                    | Footprint                         | Notes                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --- | ------------------------------ | ------------------------ | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| M1  | `Connector_Generic:Conn_01x08` | Lipo Rider Plus          | `LipoRiderPlus:MODULE_106990290`  | 8 through-holes at 2.54 mm pitch + 4 corner M2 mounting holes (3 mm drill) + silkscreen outline. SnapEDA model, installed locally at `lib/LipoRiderPlus.pretty/`. **Symbol intentionally uses generic `Conn_01x08` instead of SnapEDA's `106990290.kicad_sym`** — SnapEDA's symbol has reversed pin-number-to-name mapping vs. the board silkscreen; using the generic connector with manual pin labels keeps everything consistent. |
+| BT1 | `Device:Battery_Cell`          | LiPo 1S 3.7V (protected) | _(no footprint — off-board)_      | Documentation symbol; mark `(in_bom no)`. Battery plugs into M1's onboard JST 2.0 connector, not into our PCB.                                                                                                                                                                                                                                                                                                                       |
+| D2  | `Device:D_Schottky`            | SS14 (or BAT60A)         | `Diode_SMD:D_SMA`                 | Anode on `+5V_LED`, cathode on DevKit pin 19. Lets the battery power the ESP32 via the DevKit's onboard AMS1117. Backfeed protection.                                                                                                                                                                                                                                                                                                |
+| C1  | `Device:C`                     | 10µF                     | `Capacitor_SMD:C_0805_2012Metric` | Bulk cap on +5V_LED at M1's 5V output                                                                                                                                                                                                                                                                                                                                                                                                |
+| C2  | `Device:C`                     | 10µF                     | `Capacitor_SMD:C_0805_2012Metric` | Bulk cap on +5V_LED                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| R14 | `Device:R`                     | 220k                     | `Resistor_SMD:R_0603_1608Metric`  | Battery monitor divider — top resistor                                                                                                                                                                                                                                                                                                                                                                                               |
+| R15 | `Device:R`                     | 100k                     | `Resistor_SMD:R_0603_1608Metric`  | Battery monitor divider — bottom resistor                                                                                                                                                                                                                                                                                                                                                                                            |
+| C12 | `Device:C`                     | 100nF                    | `Capacitor_SMD:C_0603_1608Metric` | ADC filter on VBAT_MON                                                                                                                                                                                                                                                                                                                                                                                                               |
 
-### A.2 J2 (USB-C) pin-by-pin
+That's it. **Five items.** Compare to the original discrete power
+design (~30 components) or the brief PowerBoost+LDO plan (7 items).
 
-| J2 pin             | What to attach                           | Notes                                                  |
-| ------------------ | ---------------------------------------- | ------------------------------------------------------ |
-| A4 (VBUS, visible) | Net label `USB_VBUS`                     | **No longer ties to +5V_LED.** Goes to BQ24074 IN.     |
-| A1 (GND, visible)  | `GND` power port                         |                                                        |
-| A5 (CC1)           | Wire to **R9 pin 1** (label this `CC1`)  | Sink config                                            |
-| B5 (CC2)           | Wire to **R10 pin 1** (label this `CC2`) |                                                        |
-| A6, A7, B6, B7     | No-Connection flag (`Q`)                 | D+/D- — power-only USB                                 |
-| A8, B8             | No-Connection flag                       | SBU1/SBU2                                              |
-| SH (SHIELD)        | `GND` power port                         |                                                        |
+### A.2 M1 (Lipo Rider Plus) pin-by-pin
 
-**R9, R10**: pin 1 ← USB-C CC; pin 2 → `GND` power port. (Unchanged.)
+The Lipo Rider Plus has 8 labeled solder pads in a single row along
+one edge. Pin numbers below match the order in the datasheet (from
+the side closest to the JST connector).
 
-### A.3 U4 (BQ24074RGT) pin-by-pin
+| M1 pin | Module pad label | Connect to            | Notes                                                                                                     |
+| -----: | ---------------- | --------------------- | --------------------------------------------------------------------------------------------------------- |
+|      1 | `3V3`            | Net label `+3V3`      | Always-on 250 mA. **This is our +3V3 source** — no LDO needed.                                            |
+|      2 | `EN`             | No-Connection flag    | Enables the 5V output. We use the module's onboard slide switch instead (set to "ON"). Leave EN floating. |
+|      3 | `GND`            | `GND` power port      |                                                                                                           |
+|      4 | `5V`             | Net label `+5V_LED`   | The regulated 5V/2.4A boost output. Powers WS2812s, Halls (via TBD62783A), TBD62783A VCC, 74AHCT125 VCC.  |
+|      5 | `GND`            | `GND` power port      |                                                                                                           |
+|      6 | `BAT`            | Wire to **R14 pin 1** | Raw battery + (3.0–4.2 V depending on SOC). Goes to the battery monitor voltage divider — see §A.4 below. |
+|      7 | `GND`            | `GND` power port      |                                                                                                           |
+|      8 | `USB`            | No-Connection flag    | Raw USB-C VBUS access. Test-pad only.                                                                     |
 
-| U4 pin | Name      | What to attach                                                    |
-| -----: | --------- | ----------------------------------------------------------------- |
-|      1 | TS        | Wire to **R17 pin 1**; R17 pin 2 → `GND` (fakes a 10k thermistor) |
-|      2 | BAT       | Net label `BAT` (battery + node)                                  |
-|      3 | BAT       | Same — also `BAT` (KiCad merges them)                             |
-|      4 | ~CE       | `GND` power port (chip always enabled)                            |
-|      5 | EN2       | `GND` power port (EN1=H, EN2=L → 500 mA USB current limit)        |
-|      6 | EN1       | Net label `USB_VBUS` (tied high through R-less direct wire OK)    |
-|      7 | ~PGOOD    | No-Connection flag (or wire to a spare GPIO if you want USB-present detection in firmware) |
-|      8 | VSS       | `GND` power port                                                  |
-|      9 | ~CHG      | No-Connection flag (or wire to a spare GPIO for "charging" status)|
-|     10 | OUT       | Net label `SYS` (system-load output)                              |
-|     11 | OUT       | Same — `SYS`                                                      |
-|     12 | ILIM      | No-Connection flag (no ISYS limit set)                            |
-|     13 | IN        | Net label `USB_VBUS`                                              |
-|     14 | TMR       | `GND` power port (disables safety timer; OK for prototype)        |
-|     15 | ITERM     | Wire to **R16 pin 2** (shares the ISET resistor — see datasheet — actually attach to GND via 10k for default termination); simpler: tie to GND with a 10k resistor (call it R18 if you want to track it) — but datasheet recommends ITERM via its own resistor. **Simplest**: tie ITERM to GND directly through R16's path. **Cleanest**: drop a separate 10k from ITERM to GND. |
-|     16 | ISET      | Wire to **R16 pin 1**; R16 pin 2 → `GND` (sets 500 mA fast-charge)|
-|     17 | VSS (EPAD)| `GND` power port — this is the thermal pad on the QFN              |
+**6 of the 8 pins are electrically wired** on the controller PCB:
+3V3, GND (×3), 5V, and BAT (for the battery monitor). The remaining
+2 pads (EN, USB) get no_connect flags — they're test pads on the
+daughterboard but aren't routed anywhere on our PCB.
 
-> **Note on pins 12, 15**: BQ24074 datasheet — ILIM (pin 12) sets system
-> current limit (leave floating = no limit, that's fine for our use).
-> ITERM (pin 15) sets the end-of-charge termination current; KISET / R
-> = I_term. For a 100 mA termination at K_TERM ≈ 100, R = 1k. Easiest
-> path: tie ITERM to GND through a 1k resistor (call it R18 if you want
-> a refdes). If unsure, leave ITERM = NC and the chip uses an internal
-> default — works fine for the prototype.
+> **Important: set M1's onboard slide switch to "ON"** when you
+> assemble the board. The slide switch controls whether the 5V output
+> is enabled. If left in "OFF" or "5V" position with floating EN, the
+> 5V rail won't come up.
 
-**Decoupling caps** (place close to U4):
-- C6 → between U4 pin 13 (IN, net `USB_VBUS`) and `GND`
-- C7 → between U4 pin 2 (BAT, net `BAT`) and `GND`
-- C8 → between U4 pin 10 (OUT, net `SYS`) and `GND`
+### A.3 D2 — Schottky for ESP32 power
 
-### A.4 J4 (LiPo battery connector) + BT1 (battery symbol)
+Note: Don't know if i did this step correctly — might need to double check
 
-**J4** (2-pin JST PH for the battery cable):
-- Pin 1 → Net label `BAT`
+The DevKit's ESP32 needs power. The DevKit's onboard AMS1117 LDO
+generates 3V3 for the ESP32 internally, but only if its input pin
+(DevKit pin 19, labeled `5V`) sees a voltage source. We route
+`+5V_LED` to DevKit pin 19 through a Schottky diode for backfeed
+protection.
+
+**D2** (SS14 Schottky in SMA, or BAT60A in SOD-123):
+
+- Anode → Net label `+5V_LED`
+- Cathode → Wire to DevKit module pin 19 (the "5V" pin on the J4 right strip, labeled "5V" on the DevKitC silkscreen)
+
+The diode allows current to flow `+5V_LED → DevKit pin 19` (forward
+direction, ~0.3 V drop → DevKit sees ~4.8 V → AMS1117 produces clean
+3V3 → ESP32 runs). It blocks current in the reverse direction, so
+if you have both the DevKit's USB micro-B and the controller's USB-C
+plugged in simultaneously, neither USB source backfeeds the other.
+
+### A.4 Battery state-of-charge monitor (VBAT_MON)
+
+A simple voltage divider taps the raw battery voltage from M1's pin 6
+(`BAT`) and feeds a scaled-down version into the ESP32 ADC. Firmware
+reads this and shows battery percentage on the OLED.
+
+**Why tap M1 pin 6 (raw battery), not DevKit pin 19 (post-boost)?**
+M1's boost regulates `+5V_LED` to a constant ~5.0 V regardless of
+battery state. Monitoring downstream of the boost would tell you "the
+boost is working" but not the battery charge level. The raw battery
+voltage swings from 4.2 V (full) to 3.0 V (empty), which is what we
+actually want to measure.
+
+**R14** (220 kΩ, top resistor):
+
+- Pin 1 ← wire from M1 pin 6 (`BAT`)
+- Pin 2 → wire to R15 pin 1 / C12 pin 1 / Net label `VBAT_MON` (3-way junction)
+
+**R15** (100 kΩ, bottom resistor):
+
+- Pin 1 → junction with R14 pin 2 / C12 pin 1 / `VBAT_MON` label
 - Pin 2 → `GND` power port
 
-**BT1** (`Device:Battery_Cell`, marked `(in_bom no)` so it doesn't end
-up on the BOM — it's documentation):
-- `+` terminal → Net label `BAT`
-- `–` terminal → `GND` power port
+**C12** (100 nF, filter cap):
 
-### A.5 Battery monitor
-
-A simple voltage divider on `BAT` brings the 0–4.2V battery voltage
-into the ESP32 ADC range. We'll route the divider output to GPIO34
-(DevKit pin 5).
-
-- **R14** (220k): pin 1 → Net label `BAT`; pin 2 → wire to R15 pin 1
-- **R15** (100k): pin 1 ← wire from R14; pin 2 → `GND` power port
-- **C12** (100nF, filter): pin 1 → same node as R14↔R15 junction; pin 2 → `GND`
-- **Net label `VBAT_MON`** → at the R14↔R15 junction (same node as C12 pin 1)
-
-At 4.2V battery, VBAT_MON ≈ 4.2 × 100/(220+100) = 1.31V. At 3.0V, ≈ 0.94V.
-Both within ESP32 ADC range (0–3.3V). Firmware multiplies by 3.2 to get
-battery voltage.
-
-### A.6 U5 (MT3608 boost) — battery → +5V_LED
-
-| U5 pin | Name | What to attach                                              |
-| -----: | ---- | ----------------------------------------------------------- |
-|      1 | SW   | Wire to **L1 pin 1**; L1 pin 2 → Net label `SYS`            |
-|      2 | GND  | `GND` power port                                            |
-|      3 | FB   | Wire to junction between **R12 pin 2** and **R13 pin 1**     |
-|      4 | EN   | Wire to Net label `SYS` (always-on whenever SYS is alive)   |
-|      5 | IN   | Net label `SYS`                                             |
-|      6 | NC   | No-Connection flag                                          |
-
-**Inductor L1** (4.7µH, ≥1.5A Isat):
-- Pin 1 ← wire from U5 pin 1 (SW)
-- Pin 2 → Net label `SYS` (the "before-switch" side connects directly to SYS) — wait, **re-check**: typical MT3608 topology has L between SYS and SW, so L1 pin 1 = SYS side and L1 pin 2 = SW side. Either pin labels work for an inductor (symmetric). Use:
-  - L1 pin 1 → `SYS` net label
-  - L1 pin 2 → wire to U5 pin 1 (SW)
-
-**Feedback divider R12, R13** (sets boost output voltage):
-- R12 (75k): pin 1 → Net label `+5V_LED`; pin 2 → wire to U5 pin 3 (FB)
-- R13 (10k): pin 1 → wire to U5 pin 3 (FB, same node as R12 pin 2); pin 2 → `GND` power port
-
-**Caps**:
-- C9 (10µF) — between `SYS` and `GND` close to U5 pin 5
-- C10 (22µF) — between `+5V_LED` and `GND` at the boost output (this is the boost output cap; C1/C2 are the additional bulk caps further down the rail)
-
-**Output node**: the cathode of MT3608's internal Schottky (not on the
-symbol — it's internal) emerges from the same node as L1 pin 2 / U5
-pin 1. Wait — actually MT3608's SW is just the switch node. The
-external diode (or internal — depends on the part variant) puts the
-inductor's other side at the output. Re-check: MT3608 has internal
-Schottky and integrated MOSFET. Standard topology:
-
-```
-  SYS ─── L1 ──── SW (pin 1)
-                    │
-                    └─── internal diode anode
-                          internal diode cathode ──── +5V_LED (output)
-```
-
-So:
-- L1 pin 1 = `SYS` net label
-- L1 pin 2 → wire to U5 pin 1 (SW) — **and that node is also where +5V_LED comes from** through the internal diode. So you must also wire that node to net label `+5V_LED` via an extra wire, OR — easier — wire L1 pin 2 to the SW pin, and separately wire C10 + R12 + downstream loads to a labeled `+5V_LED` net. The internal diode handles the rectification.
-
-If you find this confusing in the GUI, the rule of thumb is:
-1. Draw `SYS` → L1 → SW (one continuous chain)
-2. Draw `+5V_LED` → C10, R12, all downstream loads (separate chain)
-3. The MT3608's internal diode bridges SW to +5V_LED inside the chip
-
-The datasheet's reference schematic shows it clearly. The KiCad symbol
-may also have an output pin labeled — verify with the symbol once
-placed.
-
-### A.7 +5V_LED bulk caps + AP2112K LDO
-
-This part is mostly unchanged from your existing schematic — the
-sources upstream just changed.
-
-**C1, C2** (10µF bulk on `+5V_LED`):
-- Pin 1 → Net label `+5V_LED`
+- Pin 1 → same junction (`VBAT_MON`)
 - Pin 2 → `GND` power port
 
-**U1** (AP2112K-3.3):
-- Pin 1 (VIN) → Net label `+5V_LED`
-- Pin 2 (GND) → `GND` power port
-- Pin 3 (EN) → Net label `+5V_LED`
-- Pin 4 (NC) → No-Connection flag
-- Pin 5 (VOUT) → `+3V3` power port
+**Net label `VBAT_MON`** at the junction → wire to ESP32 module pin 5
+(DevKit pin 5 = GPIO34, ADC1_CH6).
 
-**C3, C4**: unchanged. C3 (1µF) between `+5V_LED` and `GND` at LDO
-input; C4 (1µF) between `+3V3` and `GND` at LDO output.
+**Divider math**:
 
-### A.8 Migration from previous Section A
+- VBAT_MON = BAT × 100k / (220k + 100k) = BAT × 0.3125
+- At full charge (BAT = 4.2 V): VBAT_MON ≈ 1.31 V
+- At empty (BAT = 3.0 V): VBAT_MON ≈ 0.94 V
+- Both within ESP32 ADC range (0–3.3 V); use `esp_adc_cal_*` APIs for
+  accurate readings. Firmware multiplies the calibrated mV reading by
+  3.2 to recover the battery voltage.
 
-If you already have the old "USB-C → +5V_LED → LDO" version drawn:
+### A.5 +5V_LED bulk caps
 
-1. **Delete** the net label `+5V_LED` currently on USB-C pin A4. Replace with `USB_VBUS`.
-2. **Add** U4 (BQ24074) and its 5 resistors/caps (R16, R17, C6, C7, C8) plus ITERM resistor if you want it.
-3. **Add** J4 (battery connector) and BT1 (battery symbol, in_bom=no).
-4. **Add** R14, R15, C12 (battery monitor divider) — output net `VBAT_MON`.
-5. **Add** U5 (MT3608) + L1 + R12 + R13 + C9 + C10.
-6. **Re-wire** the existing C1, C2, C3, U1, C4 to draw `+5V_LED` from the boost output (you may not need to change anything — the label network handles it automatically once the boost is wired).
+**C1, C2** (10 µF each) — between `+5V_LED` and `GND`, placed close
+to where `+5V_LED` enters the rest of the board (near the TBD62783A
+column driver and the 74AHCT125 level shifter):
+
+- Pin 1 (top) → Net label `+5V_LED`
+- Pin 2 (bottom) → `GND` power port
+
+These smooth out current transients from the LED chain when many
+WS2812Bs change brightness simultaneously.
+
+### A.6 BT1 documentation symbol
+
+**BT1** (`Device:Battery_Cell`, `(in_bom no)`):
+
+- `+` terminal → no electrical connection on our PCB (battery plugs into M1's onboard JST)
+- `–` terminal → no electrical connection on our PCB
+
+BT1 is a documentation symbol only. It tells the reader where the
+battery lives in the system. Mark its `in_bom` property to "no" so
+it doesn't show up on the PCB BOM (the battery is bought separately,
+not assembled).
+
+### A.7 Footprint + symbol notes for M1
+
+**Footprint** (`LipoRiderPlus:MODULE_106990290`, installed at
+`lib/LipoRiderPlus.pretty/`): SnapEDA model. Provides 8 through-hole
+pads at 2.54 mm pitch (matching the Lipo Rider Plus's pin header) +
+4 corner non-plated mounting holes (3.0 mm drill, for M2 screws with
+some clearance) + silkscreen outline (~38 × 23 mm body) + pin-1
+indicator dot near the leftmost pad.
+
+**Symbol**: use stock `Connector_Generic:Conn_01x08`. **Do not use
+SnapEDA's `106990290.kicad_sym`** — it has a bug. SnapEDA's symbol
+labels its pins `VBUS`/`GND`/`BAT`/`GND`/`5V`/`GND`/`EN`/`3V3` with
+pin numbers 1–8 in that order, but the **actual Lipo Rider Plus
+silkscreen numbers its pads** `1=3V3, 2=EN, 3=GND, 4=5V, 5=GND, 6=BAT,
+7=GND, 8=USB` (left to right, JST side first). KiCad maps symbol pin N
+→ footprint pad N → physical silkscreen pad N, so using SnapEDA's
+symbol would connect the wrong nets to the wrong pads — for example,
+routing our `+3V3` net to the module's USB-VBUS output (≈5 V) and
+frying the ESP32.
+
+Using a generic 8-pin connector with **silkscreen-matched pin
+labels** (pin 1 = `+3V3`, pin 8 = USB no-connect, etc., per §A.2)
+keeps the schematic and PCB layout consistent with what's printed
+on the daughterboard.
+
+**Mechanical**: place the SnapEDA footprint on the controller PCB,
+orient so the pin-1 silkscreen dot is on the JST side of the module's
+intended position. The 4 mounting holes in the footprint will appear
+on the controller PCB and let you bolt the module down with M2 + 5 mm
+standoffs.
+
+### A.8 Migration from the previous PowerBoost-based design
+
+If your schematic has the brief PowerBoost 1000C + AP2112K LDO version:
+
+1. **Delete** M1 (PowerBoost) and replace with a fresh `Conn_01x08` symbol labeled "Lipo Rider Plus". Re-wire pins per §A.2 above.
+2. **Delete** U1 (AP2112K LDO) + C3 + C4 (LDO caps).
+3. **Wire** Lipo Rider's pin 1 (`3V3`) → existing `+3V3` net.
+4. **Wire** Lipo Rider's pin 4 (`5V`) → existing `+5V_LED` net.
+5. **Add** D2 (Schottky) between `+5V_LED` and DevKit module's pin 19
+   (the "5V" pin on the right header strip).
+6. **Drop the `BATT_LOW` net** — the Lipo Rider Plus has no LBO-style signal.
+7. **Add R14 + R15 + C12** (battery monitor voltage divider) from M1 pin 6 (`BAT`) to GND, with the junction labeled `VBAT_MON`. Wire `VBAT_MON` to DevKit pin 5 (GPIO34). See §A.4 for details.
+
+If your schematic still has the older discrete power design (BQ24074,
+TPS63060, etc.), see DESIGN_NOTES §15 for the full history. Easiest
+path: delete the whole Section A area and rebuild from §A.1 above.
 
 ### A.9 Visual tips
 
-- POWER box order left → right: USB-C, BQ24074 (with its 3 caps + 2 resistors), J4 + battery symbol, battery monitor, MT3608 (with L1 + C9 + C10 + R12 + R13), AP2112K (with C3 + C4), C1 + C2 bulk.
-- It's tight. If POWER box runs out of room, extend slightly into the J_MAIN row or move C1/C2 closer to where they're consumed (next to the TBD62783A).
-- Battery connector J4 can sit in any corner of POWER — it's an off-board cable, not part of the chip topology.
+- POWER box layout (left → right): M1 header (~25 × 41 mm area for the
+  module to sit), D2 Schottky next to where the wire crosses over to
+  the ESP32 socket pin 19, C1 + C2 bulk caps near where `+5V_LED`
+  enters the rest of the rails.
+- Orient M1's USB-C connector and slide switch toward the enclosure
+  edge so they're accessible without disassembly.
+- Battery is off-board; route the battery wire externally, not through
+  the PCB.
 
 ---
 
-## Section B — J_MAIN (Matrix Connector)
+## Section B — J_MAIN (Board-to-Board to Matrix)
 
-Inside the J_MAIN box (28..135, 50..150). If you kept the scripted J1,
-you can skip placement and just verify the labels match. Otherwise:
+Inside the J_MAIN box (28..135, 50..150). The 2×13 stacking connector
+between the controller and the matrix board.
+
+> **Revised 2026-06-05.** Switched from a shrouded IDC ribbon to a
+> **board-to-board stacking pin header**. The controller PCB now mounts
+> directly underneath the matrix PCB; J_MAIN's male pins on the
+> controller's top face mate with J_CTRL's female socket on the matrix's
+> back face. No ribbon cable. ~11 mm M3 standoffs at the controller's
+> corners hold the stack mechanically.
 
 ### B.1 Components
 
-| Ref | Symbol                                  | Value       | Footprint                                                    |
-| --- | --------------------------------------- | ----------- | ------------------------------------------------------------ |
-| J1  | `Connector_Generic:Conn_02x13_Odd_Even` | J_MAIN 2x13 | `Connector_PinHeader_2.54mm:PinHeader_2x13_P2.54mm_Vertical` |
+| Ref | Symbol                                  | Value       | Footprint                                                           |
+| --- | --------------------------------------- | ----------- | ------------------------------------------------------------------- |
+| J1  | `Connector_Generic:Conn_02x13_Odd_Even` | J_MAIN 2x13 | `Connector_PinHeader_2.54mm:PinHeader_2x13_P2.54mm_Vertical` (male) |
+
+**Footprint pick**: standard 2×13 vertical pin header, 2.54 mm pitch.
+The male pins point UP (out of the controller PCB's top face) to mate
+with the matrix board's female socket pointing down. No keying needed
+— mating a male pin header with a female socket only fits one way at
+the connector level (you can't physically push pins through closed
+socket housing in the wrong orientation). Still mark **pin 1 with a
+silkscreen dot** on both boards for assembly clarity.
+
+The corresponding matrix-side J_CTRL footprint must be a 2×13 female
+socket (`PinSocket_2x13_P2.54mm_Vertical`) on the matrix PCB's back
+side. Both connector footprints share the same `Conn_02x13_Odd_Even`
+symbol — only the PCB footprint differs.
+
+**Mechanical**: place 4 M3 mounting holes at the controller PCB's
+corners. M3 brass standoffs (~11 mm tall — matching the mating depth
+of the pin+socket combo) thread between the matrix's back-side
+mounting holes and the controller's mounting holes.
 
 ### B.2 Pin-by-pin wiring
 
@@ -474,9 +471,9 @@ Place J3 on the left (pins 1–19 correspond to DevKit physical pins
 ### D.2 Pin map — J3 (left strip, DevKit pins 1–19)
 
 | J3 pin | DevKit pin | GPIO / function                                 | Attach                  |
-| -----: | ---------: | ----------------------------------------------- | ----------------------- | ------------------------- |
+| -----: | ---------: | ----------------------------------------------- | ----------------------- | -------------------------------------------------------------------- |
 |      1 |          1 | 3V3 (DevKit's onboard LDO output)               | No-Connection flag      |
-|      2 |          2 | EN (reset)                                      | Net label `BTN_RESET`   | Note used the CHIP_PU pin |
+|      2 |          2 | EN (CHIP_PU)                                    | No-Connection flag      | Reset comes from DevKit's onboard EN button; panel reset was removed |
 |      3 |          3 | GPIO36 / SVP (input-only)                       | Net label `BTN_POWER`   |
 |      4 |          4 | GPIO39 / SVN (input-only)                       | Net label `BTN_MODE`    |
 |      5 |          5 | GPIO34 / ADC1_CH6 (input-only)                  | Net label `VBAT_MON`    |
@@ -497,27 +494,27 @@ Place J3 on the left (pins 1–19 correspond to DevKit physical pins
 
 ### D.3 Pin map — J4 (right strip, DevKit pins 20–38)
 
-| J4 pin | DevKit pin | GPIO / function                                   | Attach                 |
-| -----: | ---------: | ------------------------------------------------- | ---------------------- |
-|      1 |         20 | GPIO6 / CLK (flash)                               | No-Connection flag     |
-|      2 |         21 | GPIO7 / SD0 (flash)                               | No-Connection flag     |
-|      3 |         22 | GPIO8 / SD1 (flash)                               | No-Connection flag     |
-|      4 |         23 | GPIO15 (boot strap HIGH)                          | Net label `COL_DRV_H`  |
-|      5 |         24 | GPIO2 (boot strap LOW)                            | Net label `LED_BATT_N` |
-|      6 |         25 | GPIO0 (boot strap HIGH)                           | No-Connection flag     |
-|      7 |         26 | GPIO4                                             | Net label `S0`         |
-|      8 |         27 | GPIO16                                            | Net label `S1`         |
-|      9 |         28 | GPIO17                                            | Net label `S2`         |
-|     10 |         29 | GPIO5 (boot strap HIGH)                           | Net label `COL_DRV_G`  |
-|     11 |         30 | GPIO18                                            | Net label `S3`         |
-|     12 |         31 | GPIO19                                            | Net label `S4`         |
-|     13 |         32 | GND                                               | `GND` power port       |
-|     14 |         33 | GPIO21                                            | Net label `S5`         |
-|     15 |         34 | GPIO3 / RXD0 (reused as LED sink — no UART debug) | Net label `LED_CONN_N` |
-|     16 |         35 | GPIO1 / TXD0 (reused as LED sink — no UART debug) | Net label `LED_PWR_N`  |
-|     17 |         36 | GPIO22                                            | Net label `S6`         |
-|     18 |         37 | GPIO23                                            | Net label `S7`         |
-|     19 |         38 | GND                                               | `GND` power port       |
+| J4 pin | DevKit pin | GPIO / function                                      | Attach                 |
+| -----: | ---------: | ---------------------------------------------------- | ---------------------- |
+|      1 |         20 | GPIO6 / CLK (flash)                                  | No-Connection flag     |
+|      2 |         21 | GPIO7 / SD0 (flash)                                  | No-Connection flag     |
+|      3 |         22 | GPIO8 / SD1 (flash)                                  | No-Connection flag     |
+|      4 |         23 | GPIO15 (boot strap HIGH)                             | Net label `COL_DRV_H`  |
+|      5 |         24 | GPIO2 (boot strap LOW)                               | Net label `BTN_SELECT` |
+|      6 |         25 | GPIO0 (boot strap HIGH)                              | No-Connection flag     |
+|      7 |         26 | GPIO4                                                | Net label `S0`         |
+|      8 |         27 | GPIO16                                               | Net label `S1`         |
+|      9 |         28 | GPIO17                                               | Net label `S2`         |
+|     10 |         29 | GPIO5 (boot strap HIGH)                              | Net label `COL_DRV_G`  |
+|     11 |         30 | GPIO18                                               | Net label `S3`         |
+|     12 |         31 | GPIO19                                               | Net label `S4`         |
+|     13 |         32 | GND                                                  | `GND` power port       |
+|     14 |         33 | GPIO21                                               | Net label `S5`         |
+|     15 |         34 | GPIO3 / RXD0 (repurposed as I²C SCL — no UART debug) | Net label `I2C_SCL`    |
+|     16 |         35 | GPIO1 / TXD0 (repurposed as I²C SDA — no UART debug) | Net label `I2C_SDA`    |
+|     17 |         36 | GPIO22                                               | Net label `S6`         |
+|     18 |         37 | GPIO23                                               | Net label `S7`         |
+|     19 |         38 | GND                                                  | `GND` power port       |
 
 > **Heads-up:** GPIO1/3 (UART0) are being used as LED sinks. This means
 > the DevKitC's USB-UART will not give you serial debug during normal
@@ -641,7 +638,7 @@ COL_DRV_G → I7     │
 COL_DRV_H → I8 ────┤
                    │
               GND (pin 10) = GND
-                   
+
               O1..O8 (pins 18..11)
                    │
                    ├─→ CA_PWR (O1, pin 18)
@@ -660,12 +657,13 @@ LOW or floating, the output is pulled high-Z (column off).
 
 ### F.2 Components
 
-| Ref | Symbol                       | Value     | Footprint                         | Notes                          |
-| --- | ---------------------------- | --------- | --------------------------------- | ------------------------------ |
-| U6  | `Transistor_Array:TBD62783A` | TBD62783A | `Package_DIP:DIP-18_W7.62mm` *or* `Package_SO:SOIC-18W_7.5x11.55mm_P1.27mm` | 18-pin; pick DIP or HSOP/SOIC variant |
-| C11 | `Device:C`                   | 100nF     | `Capacitor_SMD:C_0603_1608Metric` | VCC decoupling                 |
+| Ref | Symbol                       | Value     | Footprint                                                                   | Notes                                 |
+| --- | ---------------------------- | --------- | --------------------------------------------------------------------------- | ------------------------------------- |
+| U6  | `Transistor_Array:TBD62783A` | TBD62783A | `Package_DIP:DIP-18_W7.62mm` _or_ `Package_SO:SOIC-18W_7.5x11.55mm_P1.27mm` | 18-pin; pick DIP or HSOP/SOIC variant |
+| C11 | `Device:C`                   | 100nF     | `Capacitor_SMD:C_0603_1608Metric`                                           | VCC decoupling                        |
 
 > **Footprint variants**:
+>
 > - **DIP-18** — hand-soldering friendly, breadboard-compatible, ~$1
 >   per chip. Choose if you're hand-stuffing the board.
 > - **SOIC-18W / HSOP-18** — smaller, JLCPCB-assembly friendly. Choose
@@ -676,26 +674,26 @@ LOW or floating, the output is pulled high-Z (column off).
 
 ### F.3 Pin-by-pin wiring
 
-| U6 pin | Name | What to attach            |
-| -----: | ---- | ------------------------- |
-|      1 | I1   | Net label `COL_DRV_A`     |
-|      2 | I2   | Net label `COL_DRV_B`     |
-|      3 | I3   | Net label `COL_DRV_C`     |
-|      4 | I4   | Net label `COL_DRV_D`     |
-|      5 | I5   | Net label `COL_DRV_E`     |
-|      6 | I6   | Net label `COL_DRV_F`     |
-|      7 | I7   | Net label `COL_DRV_G`     |
-|      8 | I8   | Net label `COL_DRV_H`     |
-|      9 | VCC  | Net label `+5V_LED`       |
-|     10 | GND  | `GND` power port          |
-|     11 | O8   | Net label `CH_PWR`        |
-|     12 | O7   | Net label `CG_PWR`        |
-|     13 | O6   | Net label `CF_PWR`        |
-|     14 | O5   | Net label `CE_PWR`        |
-|     15 | O4   | Net label `CD_PWR`        |
-|     16 | O3   | Net label `CC_PWR`        |
-|     17 | O2   | Net label `CB_PWR`        |
-|     18 | O1   | Net label `CA_PWR`        |
+| U6 pin | Name | What to attach        |
+| -----: | ---- | --------------------- |
+|      1 | I1   | Net label `COL_DRV_A` |
+|      2 | I2   | Net label `COL_DRV_B` |
+|      3 | I3   | Net label `COL_DRV_C` |
+|      4 | I4   | Net label `COL_DRV_D` |
+|      5 | I5   | Net label `COL_DRV_E` |
+|      6 | I6   | Net label `COL_DRV_F` |
+|      7 | I7   | Net label `COL_DRV_G` |
+|      8 | I8   | Net label `COL_DRV_H` |
+|      9 | VCC  | Net label `+5V_LED`   |
+|     10 | GND  | `GND` power port      |
+|     11 | O8   | Net label `CH_PWR`    |
+|     12 | O7   | Net label `CG_PWR`    |
+|     13 | O6   | Net label `CF_PWR`    |
+|     14 | O5   | Net label `CE_PWR`    |
+|     15 | O4   | Net label `CD_PWR`    |
+|     16 | O3   | Net label `CC_PWR`    |
+|     17 | O2   | Net label `CB_PWR`    |
+|     18 | O1   | Net label `CA_PWR`    |
 
 **C11** (100nF decoupling): pin 1 → Net label `+5V_LED`; pin 2 → `GND`
 power port. Place close to U6 pin 9.
@@ -710,14 +708,14 @@ power port. Place close to U6 pin 9.
 
 ### F.5 Why this is better than the discrete version
 
-| | Discrete (PMOS+NPN+3R per channel) | TBD62783A IC |
-|---|---|---|
-| Components | 40 (8 PMOS + 8 NPN + 24 R) | 2 (1 IC + 1 cap) |
-| Board area | ~6 cm² | ~1 cm² (SOIC) or ~2 cm² (DIP) |
-| Schematic clarity | 40 symbols × 8 columns of repetition | 1 chip, one glance |
-| Output voltage drop | ~50 mV at 50 mA (PMOS Rds_on) | ~250 mV at 50 mA (datasheet typ) |
-| Cost (qty 10) | ~$2 | ~$1 |
-| Failure modes | One bad PMOS → 1 dead column (repairable) | One bad IC → 8 dead columns (replace IC) |
+|                     | Discrete (PMOS+NPN+3R per channel)        | TBD62783A IC                             |
+| ------------------- | ----------------------------------------- | ---------------------------------------- |
+| Components          | 40 (8 PMOS + 8 NPN + 24 R)                | 2 (1 IC + 1 cap)                         |
+| Board area          | ~6 cm²                                    | ~1 cm² (SOIC) or ~2 cm² (DIP)            |
+| Schematic clarity   | 40 symbols × 8 columns of repetition      | 1 chip, one glance                       |
+| Output voltage drop | ~50 mV at 50 mA (PMOS Rds_on)             | ~250 mV at 50 mA (datasheet typ)         |
+| Cost (qty 10)       | ~$2                                       | ~$1                                      |
+| Failure modes       | One bad PMOS → 1 dead column (repairable) | One bad IC → 8 dead columns (replace IC) |
 
 The voltage drop is the only real tradeoff. At 50 mA per column, ~250 mV
 drop means the Hall sensors see ~4.75 V instead of 5.0 V. Datasheet
@@ -727,53 +725,84 @@ minimum for A3144 is 4.5 V — still within spec.
 
 ## Section G — J_PANEL Connector + Button Pullups
 
+> **Revised 2026-06-05 (twice).** First revision moved the panel from
+> 3 LEDs to an OLED + 3 buttons (pin contract reassigned: pins 3/4 =
+> I²C SDA/SCL, pin 5 = BTN_SELECT). Second revision **dropped the
+> panel PCB entirely** — the panel is now discrete OLED module + 3
+> panel-mount buttons on a flying-lead harness, plugging into J3 on
+> the controller. The 10-pin J3 contract is unchanged, but the
+> connector type changed from a plain 1×10 pin header to a **JST XH
+> 10-pin** (polarized + latching) for a cleaner harness-to-board
+> interface.
+
 Inside the USER UI CONNECTOR box (380..566, 170..285).
 
 ### G.1 Components
 
-| Ref | Symbol                         | Value        | Footprint                                                    |
-| --- | ------------------------------ | ------------ | ------------------------------------------------------------ | --------------------------------------------------------------- |
-| J5  | `Connector_Generic:Conn_01x10` | J_PANEL 1x10 | `Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical` | Note: this is now J3 Because J3/J4 are not used for the esp32.. |
-| R36 | `Device:R`                     | 10k          | `Resistor_SMD:R_0603_1608Metric`                             |
-| R37 | `Device:R`                     | 10k          | `Resistor_SMD:R_0603_1608Metric`                             |
+| Ref | Symbol                         | Value         | Footprint                                              | Notes                                                                                                        |
+| --- | ------------------------------ | ------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| J3  | `Connector_Generic:Conn_01x10` | J_PANEL XH-10 | `Connector_JST:JST_XH_B10B-XH-A_1x10_P2.50mm_Vertical` | **JST XH 10-pin**, polarized + latching. Plugs into the flying-lead harness — there is no panel PCB anymore. |
+| R36 | `Device:R`                     | 10k           | `Resistor_SMD:R_0603_1608Metric`                       | BTN_POWER pullup (GPIO36 input-only, no internal pullup)                                                     |
+| R37 | `Device:R`                     | 10k           | `Resistor_SMD:R_0603_1608Metric`                       | BTN_MODE pullup (GPIO39 input-only)                                                                          |
 
-### G.2 J5 pin-by-pin
+### G.2 J3 pin-by-pin
 
-| Pin | Net           | How        |
-| --: | ------------- | ---------- |
-|   1 | `+3V3`        | Power port |
-|   2 | GND           | Power port |
-|   3 | `LED_PWR_N`   | Net label  |
-|   4 | `LED_CONN_N`  | Net label  |
-|   5 | `LED_BATT_N`  | Net label  |
-|   6 | `BTN_POWER`   | Net label  |
-|   7 | `BTN_MODE`    | Net label  |
-|   8 | `BTN_RESET`   | Net label  |
-|   9 | `PANEL_SPARE` | Net label  |
-|  10 | GND           | Power port |
+| Pin | Net            | How        | ESP32 pin                |
+| --: | -------------- | ---------- | ------------------------ |
+|   1 | `+3V3`         | Power port | (powers OLED + pullups)  |
+|   2 | `GND`          | Power port | —                        |
+|   3 | `I2C_SDA`      | Net label  | GPIO1 (was TX0)          |
+|   4 | `I2C_SCL`      | Net label  | GPIO3 (was RX0)          |
+|   5 | `BTN_SELECT`   | Net label  | GPIO2                    |
+|   6 | `BTN_POWER`    | Net label  | GPIO36 (input-only)      |
+|   7 | `BTN_MODE`     | Net label  | GPIO39 (input-only)      |
+|   8 | `PANEL_SPARE`  | Net label  | reserved (was BTN_RESET) |
+|   9 | `PANEL_SPARE2` | Net label  | reserved                 |
+|  10 | `GND`          | Power port | —                        |
 
-### G.3 Button pullups
+> The two `PANEL_SPARE*` nets terminate at a single pin on this side.
+> ERC will flag them as "single-pin net." That's intentional — they're
+> reserved for future expansion (e.g. a rotary encoder, a buzzer
+> driver, more buttons). Don't no-connect-flag them; just live with
+> the ERC warnings.
 
-GPIO36 (BTN_POWER) and GPIO39 (BTN_MODE) are input-only and have **no
-internal pullup**. They need external pullups so the inputs aren't
-floating when the buttons are released.
+### G.3 Button pullups + BTN_SELECT note
 
-- BTN_RESET goes to EN — DevKitC already has a pullup on EN; no
-  additional pullup needed.
-- PANEL_SPARE is reserved; leave it as just a label for now.
+**GPIO36 (BTN_POWER) and GPIO39 (BTN_MODE)** are input-only and have
+**no internal pullup**. They need external pullups on the controller:
 
-**R36 (pullup for BTN_POWER, 10k)**:
+**R36** (pullup for BTN_POWER, 10kΩ):
 
 - Pin 1 → `+3V3` power port
 - Pin 2 → Net label `BTN_POWER`
 
-**R37 (pullup for BTN_MODE, 10k)**:
+**R37** (pullup for BTN_MODE, 10kΩ):
 
 - Pin 1 → `+3V3` power port
 - Pin 2 → Net label `BTN_MODE`
 
-Place R36 and R37 immediately next to the J5 connector pins 6 and 7 to
-keep the pullup intent visually obvious.
+**GPIO2 (BTN_SELECT)** is bidirectional and HAS an internal pullup that
+firmware can enable (`gpio_pullup_en(GPIO_NUM_2)`). No external pullup
+required on the controller. If you want belt-and-suspenders, add one
+on the panel board instead.
+
+### G.4 ESP32 module pin connections — what to re-wire on your schematic
+
+Your current schematic has these connections to U2 (ESP32-DevKitC) that
+need to be **changed**:
+
+| Module pin (GPIO) | Old net label | New net label                                                                                        |
+| ----------------- | ------------- | ---------------------------------------------------------------------------------------------------- |
+| GPIO1 (TX0)       | `LED_PWR_N`   | `I2C_SDA`                                                                                            |
+| GPIO3 (RX0)       | `LED_CONN_N`  | `I2C_SCL`                                                                                            |
+| GPIO2             | `LED_BATT_N`  | `BTN_SELECT`                                                                                         |
+| EN (CHIP_PU)      | `BTN_RESET`   | No-Connection flag (the DevKit's onboard reset network drives EN itself; we removed the panel reset) |
+
+Find each label in your schematic and double-click to rename. The
+ESP32 pin itself doesn't change — only the net it carries.
+
+Place R36 and R37 immediately next to J3 pins 6 and 7 to keep the
+pullup intent visually obvious.
 
 ---
 
@@ -788,40 +817,41 @@ any missing nets below.
 One TP per net listed below. Each TP uses
 `Connector:TestPoint` / footprint `TestPoint:TestPoint_Pad_D1.5mm`.
 
-| TP   | Net to attach (net label)                    |
-| ---- | -------------------------------------------- |
-| TP1  | `+5V_LED`                                    |
-| TP2  | `+3V3` (use power port pin connection)       |
-| TP3  | `GND` (power port)                           |
-| TP4  | `LED_DATA`                                   |
-| TP5  | `LED_DATA_5V`                                |
-| TP6  | `S0`                                         |
-| TP7  | `S1`                                         |
-| TP8  | `S2`                                         |
-| TP9  | `S3`                                         |
-| TP10 | `S4`                                         |
-| TP11 | `S5`                                         |
-| TP12 | `S6`                                         |
-| TP13 | `S7`                                         |
-| TP14 | `CA_PWR`                                     |
-| TP15 | `CB_PWR`                                     |
-| TP16 | `CC_PWR`                                     |
-| TP17 | `CD_PWR`                                     |
-| TP18 | `CE_PWR`                                     |
-| TP19 | `CF_PWR`                                     |
-| TP20 | `CG_PWR`                                     |
-| TP21 | `CH_PWR`                                     |
-| TP22 | `USB_VBUS` (USB-C input, for charge debugging) |
-| TP23 | `BAT` (LiPo + terminal)                      |
-| TP24 | `SYS` (BQ24074 output / boost input)         |
-| TP25 | `VBAT_MON` (ADC monitor net)                 |
-| TP26 | `COL_DRV_A` (optional — handy for debugging) |
-| TP27 | `BTN_POWER` (optional)                       |
-| TP28 | `BTN_MODE` (optional)                        |
-| TP29 | `LED_PWR_N` (optional)                       |
+| TP   | Net to attach (net label)                      |
+| ---- | ---------------------------------------------- |
+| TP1  | `+5V_LED`                                      |
+| TP2  | `+3V3` (use power port pin connection)         |
+| TP3  | `GND` (power port)                             |
+| TP4  | `LED_DATA`                                     |
+| TP5  | `LED_DATA_5V`                                  |
+| TP6  | `S0`                                           |
+| TP7  | `S1`                                           |
+| TP8  | `S2`                                           |
+| TP9  | `S3`                                           |
+| TP10 | `S4`                                           |
+| TP11 | `S5`                                           |
+| TP12 | `S6`                                           |
+| TP13 | `S7`                                           |
+| TP14 | `CA_PWR`                                       |
+| TP15 | `CB_PWR`                                       |
+| TP16 | `CC_PWR`                                       |
+| TP17 | `CD_PWR`                                       |
+| TP18 | `CE_PWR`                                       |
+| TP19 | `CF_PWR`                                       |
+| TP20 | `CG_PWR`                                       |
+| TP21 | `CH_PWR`                                       |
+| TP22 | `COL_DRV_A` (optional — handy for debugging)   |
+| TP23 | `BTN_POWER` (optional)                         |
+| TP24 | `BTN_MODE` (optional)                          |
+| TP25 | `I2C_SDA` (optional, useful for OLED bring-up) |
+| TP26 | `I2C_SCL` (optional)                           |
 
-TPs 22–25 are battery-system debug points — strongly recommended.
-TPs 26–29 are nice-to-haves; skip if board space is tight.
+> The Lipo Rider Plus module already exposes 3V3, 5V, GND, BAT, USB,
+> EN as labeled solder pads on the daughterboard itself. Probe them
+> directly on the module — no need to duplicate as TPs on the
+> controller PCB.
+
+TPs 22–26 are nice-to-haves; skip if board space is tight.
 
 For each TP:
 
@@ -899,10 +929,7 @@ For sanity-checking your labels match what other sections reference.
 
 **Power rails:**
 
-- `USB_VBUS` — raw 5 V from USB-C, feeds BQ24074 IN
-- `BAT` — LiPo battery + terminal, between BQ24074 BAT pins and J4
-- `SYS` — BQ24074 system output (auto-switches USB vs battery); feeds MT3608 boost
-- `+5V_LED` — regulated 5 V from MT3608 boost; powers WS2812s, TBD62783A VBB, LDO input
+- `+5V_LED` — regulated 5 V from the PowerBoost module's 5V output; powers WS2812s, TBD62783A VCC, AP2112K LDO input
 - `+3V3` — from AP2112K LDO; powers ESP32, pullups, panel logic
 - `GND` — ground
 
@@ -916,14 +943,13 @@ For sanity-checking your labels match what other sections reference.
 
 - `LED_DATA` — 3V3 from ESP32 GPIO32 to 74AHCT125
 - `COL_DRV_A..COL_DRV_H` — 3V3 ESP32 GPIOs to TBD62783A inputs
-- `VBAT_MON` — battery monitor divider output (0–1.3 V) → ESP32 GPIO34 ADC
-- `CC1`, `CC2` — USB-C CC pin local nets (between USB-C and pulldown resistors)
+- `VBAT_MON` — analog battery voltage at the R14/R15 divider junction. Goes to ESP32 GPIO34 (ADC1_CH6). 0.94 V (empty) to 1.31 V (full) at the ADC.
 
 **Panel interface (to J_PANEL / J3):**
 
-- `LED_PWR_N`, `LED_CONN_N`, `LED_BATT_N` — active-low LED sinks
-- `BTN_POWER`, `BTN_MODE`, `BTN_RESET` — buttons (BTN_RESET goes to EN)
-- `PANEL_SPARE` — reserved
+- `I2C_SDA`, `I2C_SCL` — I²C bus from ESP32 (GPIO1/3) to SSD1306 OLED on the panel
+- `BTN_POWER`, `BTN_MODE`, `BTN_SELECT` — three buttons; reset is via the DevKit's onboard EN button (no panel reset)
+- `PANEL_SPARE`, `PANEL_SPARE2` — reserved (single-pin nets on the panel side)
 
 If a label in your schematic doesn't appear in this list, you've
 introduced a typo and ERC will catch it as a one-pin net.

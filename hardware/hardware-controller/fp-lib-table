@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "LipoRiderPlus")(type "KiCad")(uri "${KIPRJMOD}/lib/LipoRiderPlus.pretty")(options "")(descr "Seeed Lipo Rider Plus footprint (product 106990290) — SnapEDA model. Symbol intentionally NOT installed because SnapEDA's pin-name-to-pin-number mapping is reversed from the board silkscreen; use Connector_Generic:Conn_01x08 instead and label pins per the silkscreen (1=3V3, 2=EN, 3=GND, 4=5V, 5=GND, 6=BAT, 7=GND, 8=USB)."))
+)

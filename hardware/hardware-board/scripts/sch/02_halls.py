@@ -131,8 +131,8 @@ def main() -> int:
                 value_offset=(g(-1), g(1)),
                 in_bom=False,
                 on_board=False,
-                hide_ref=True,
-                hide_value=True,
+                hide_ref=True,    # hide the #PWR_Hn reference
+                # value "GND" stays visible as a small label next to the triangle
             )
 
     write_chunk("02_halls", out)

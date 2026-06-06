@@ -56,7 +56,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 55.88 276.86 90)
+		(at 55.88 276.86 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -65,7 +65,7 @@
 		(uuid "ba111b59-0000-4000-8000-000000001b59")
 		(property "Reference" "#PWR_H1"
 			(at 53.34 274.32 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 53.34 279.4 0)
@@ -142,7 +142,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 55.88 248.92 90)
+		(at 55.88 248.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -151,7 +151,7 @@
 		(uuid "ba111b5a-0000-4000-8000-000000001b5a")
 		(property "Reference" "#PWR_H2"
 			(at 53.34 246.38 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 53.34 251.46 0)
@@ -228,7 +228,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 55.88 220.98 90)
+		(at 55.88 220.98 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -237,7 +237,7 @@
 		(uuid "ba111b5b-0000-4000-8000-000000001b5b")
 		(property "Reference" "#PWR_H3"
 			(at 53.34 218.44 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 53.34 223.52 0)
@@ -314,7 +314,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 55.88 193.04 90)
+		(at 55.88 193.04 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -323,7 +323,7 @@
 		(uuid "ba111b5c-0000-4000-8000-000000001b5c")
 		(property "Reference" "#PWR_H4"
 			(at 53.34 190.5 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 53.34 195.58 0)
@@ -400,7 +400,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 55.88 165.1 90)
+		(at 55.88 165.1 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -409,7 +409,7 @@
 		(uuid "ba111b5d-0000-4000-8000-000000001b5d")
 		(property "Reference" "#PWR_H5"
 			(at 53.34 162.56 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 53.34 167.64 0)
@@ -486,7 +486,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 55.88 137.16 90)
+		(at 55.88 137.16 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -495,7 +495,7 @@
 		(uuid "ba111b5e-0000-4000-8000-000000001b5e")
 		(property "Reference" "#PWR_H6"
 			(at 53.34 134.62 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 53.34 139.7 0)
@@ -572,7 +572,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 55.88 109.22 90)
+		(at 55.88 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -581,7 +581,7 @@
 		(uuid "ba111b5f-0000-4000-8000-000000001b5f")
 		(property "Reference" "#PWR_H7"
 			(at 53.34 106.68 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 53.34 111.76 0)
@@ -658,7 +658,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 55.88 81.28 90)
+		(at 55.88 81.28 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -667,7 +667,7 @@
 		(uuid "ba111b60-0000-4000-8000-000000001b60")
 		(property "Reference" "#PWR_H8"
 			(at 53.34 78.74 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 53.34 83.82 0)
@@ -744,7 +744,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 276.86 90)
+		(at 86.36 276.86 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -753,7 +753,7 @@
 		(uuid "ba111b61-0000-4000-8000-000000001b61")
 		(property "Reference" "#PWR_H9"
 			(at 83.82 274.32 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 83.82 279.4 0)
@@ -830,7 +830,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 248.92 90)
+		(at 86.36 248.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -839,7 +839,7 @@
 		(uuid "ba111b62-0000-4000-8000-000000001b62")
 		(property "Reference" "#PWR_H10"
 			(at 83.82 246.38 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 83.82 251.46 0)
@@ -916,7 +916,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 220.98 90)
+		(at 86.36 220.98 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -925,7 +925,7 @@
 		(uuid "ba111b63-0000-4000-8000-000000001b63")
 		(property "Reference" "#PWR_H11"
 			(at 83.82 218.44 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 83.82 223.52 0)
@@ -1002,7 +1002,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 193.04 90)
+		(at 86.36 193.04 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1011,7 +1011,7 @@
 		(uuid "ba111b64-0000-4000-8000-000000001b64")
 		(property "Reference" "#PWR_H12"
 			(at 83.82 190.5 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 83.82 195.58 0)
@@ -1088,7 +1088,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 165.1 90)
+		(at 86.36 165.1 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1097,7 +1097,7 @@
 		(uuid "ba111b65-0000-4000-8000-000000001b65")
 		(property "Reference" "#PWR_H13"
 			(at 83.82 162.56 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 83.82 167.64 0)
@@ -1174,7 +1174,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 137.16 90)
+		(at 86.36 137.16 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1183,7 +1183,7 @@
 		(uuid "ba111b66-0000-4000-8000-000000001b66")
 		(property "Reference" "#PWR_H14"
 			(at 83.82 134.62 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 83.82 139.7 0)
@@ -1260,7 +1260,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 109.22 90)
+		(at 86.36 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1269,7 +1269,7 @@
 		(uuid "ba111b67-0000-4000-8000-000000001b67")
 		(property "Reference" "#PWR_H15"
 			(at 83.82 106.68 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 83.82 111.76 0)
@@ -1346,7 +1346,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 81.28 90)
+		(at 86.36 81.28 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1355,7 +1355,7 @@
 		(uuid "ba111b68-0000-4000-8000-000000001b68")
 		(property "Reference" "#PWR_H16"
 			(at 83.82 78.74 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 83.82 83.82 0)
@@ -1432,7 +1432,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 276.86 90)
+		(at 116.84 276.86 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1441,7 +1441,7 @@
 		(uuid "ba111b69-0000-4000-8000-000000001b69")
 		(property "Reference" "#PWR_H17"
 			(at 114.3 274.32 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 114.3 279.4 0)
@@ -1518,7 +1518,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 248.92 90)
+		(at 116.84 248.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1527,7 +1527,7 @@
 		(uuid "ba111b6a-0000-4000-8000-000000001b6a")
 		(property "Reference" "#PWR_H18"
 			(at 114.3 246.38 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 114.3 251.46 0)
@@ -1604,7 +1604,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 220.98 90)
+		(at 116.84 220.98 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1613,7 +1613,7 @@
 		(uuid "ba111b6b-0000-4000-8000-000000001b6b")
 		(property "Reference" "#PWR_H19"
 			(at 114.3 218.44 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 114.3 223.52 0)
@@ -1690,7 +1690,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 193.04 90)
+		(at 116.84 193.04 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1699,7 +1699,7 @@
 		(uuid "ba111b6c-0000-4000-8000-000000001b6c")
 		(property "Reference" "#PWR_H20"
 			(at 114.3 190.5 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 114.3 195.58 0)
@@ -1776,7 +1776,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 165.1 90)
+		(at 116.84 165.1 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1785,7 +1785,7 @@
 		(uuid "ba111b6d-0000-4000-8000-000000001b6d")
 		(property "Reference" "#PWR_H21"
 			(at 114.3 162.56 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 114.3 167.64 0)
@@ -1862,7 +1862,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 137.16 90)
+		(at 116.84 137.16 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1871,7 +1871,7 @@
 		(uuid "ba111b6e-0000-4000-8000-000000001b6e")
 		(property "Reference" "#PWR_H22"
 			(at 114.3 134.62 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 114.3 139.7 0)
@@ -1948,7 +1948,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 109.22 90)
+		(at 116.84 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1957,7 +1957,7 @@
 		(uuid "ba111b6f-0000-4000-8000-000000001b6f")
 		(property "Reference" "#PWR_H23"
 			(at 114.3 106.68 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 114.3 111.76 0)
@@ -2034,7 +2034,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 81.28 90)
+		(at 116.84 81.28 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2043,7 +2043,7 @@
 		(uuid "ba111b70-0000-4000-8000-000000001b70")
 		(property "Reference" "#PWR_H24"
 			(at 114.3 78.74 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 114.3 83.82 0)
@@ -2120,7 +2120,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 147.32 276.86 90)
+		(at 147.32 276.86 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2129,7 +2129,7 @@
 		(uuid "ba111b71-0000-4000-8000-000000001b71")
 		(property "Reference" "#PWR_H25"
 			(at 144.78 274.32 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 144.78 279.4 0)
@@ -2206,7 +2206,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 147.32 248.92 90)
+		(at 147.32 248.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2215,7 +2215,7 @@
 		(uuid "ba111b72-0000-4000-8000-000000001b72")
 		(property "Reference" "#PWR_H26"
 			(at 144.78 246.38 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 144.78 251.46 0)
@@ -2292,7 +2292,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 147.32 220.98 90)
+		(at 147.32 220.98 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2301,7 +2301,7 @@
 		(uuid "ba111b73-0000-4000-8000-000000001b73")
 		(property "Reference" "#PWR_H27"
 			(at 144.78 218.44 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 144.78 223.52 0)
@@ -2378,7 +2378,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 147.32 193.04 90)
+		(at 147.32 193.04 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2387,7 +2387,7 @@
 		(uuid "ba111b74-0000-4000-8000-000000001b74")
 		(property "Reference" "#PWR_H28"
 			(at 144.78 190.5 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 144.78 195.58 0)
@@ -2464,7 +2464,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 147.32 165.1 90)
+		(at 147.32 165.1 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2473,7 +2473,7 @@
 		(uuid "ba111b75-0000-4000-8000-000000001b75")
 		(property "Reference" "#PWR_H29"
 			(at 144.78 162.56 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 144.78 167.64 0)
@@ -2550,7 +2550,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 147.32 137.16 90)
+		(at 147.32 137.16 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2559,7 +2559,7 @@
 		(uuid "ba111b76-0000-4000-8000-000000001b76")
 		(property "Reference" "#PWR_H30"
 			(at 144.78 134.62 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 144.78 139.7 0)
@@ -2636,7 +2636,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 147.32 109.22 90)
+		(at 147.32 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2645,7 +2645,7 @@
 		(uuid "ba111b77-0000-4000-8000-000000001b77")
 		(property "Reference" "#PWR_H31"
 			(at 144.78 106.68 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 144.78 111.76 0)
@@ -2722,7 +2722,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 147.32 81.28 90)
+		(at 147.32 81.28 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2731,7 +2731,7 @@
 		(uuid "ba111b78-0000-4000-8000-000000001b78")
 		(property "Reference" "#PWR_H32"
 			(at 144.78 78.74 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 144.78 83.82 0)
@@ -2808,7 +2808,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 276.86 90)
+		(at 177.8 276.86 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2817,7 +2817,7 @@
 		(uuid "ba111b79-0000-4000-8000-000000001b79")
 		(property "Reference" "#PWR_H33"
 			(at 175.26 274.32 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 175.26 279.4 0)
@@ -2894,7 +2894,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 248.92 90)
+		(at 177.8 248.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2903,7 +2903,7 @@
 		(uuid "ba111b7a-0000-4000-8000-000000001b7a")
 		(property "Reference" "#PWR_H34"
 			(at 175.26 246.38 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 175.26 251.46 0)
@@ -2980,7 +2980,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 220.98 90)
+		(at 177.8 220.98 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2989,7 +2989,7 @@
 		(uuid "ba111b7b-0000-4000-8000-000000001b7b")
 		(property "Reference" "#PWR_H35"
 			(at 175.26 218.44 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 175.26 223.52 0)
@@ -3066,7 +3066,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 193.04 90)
+		(at 177.8 193.04 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3075,7 +3075,7 @@
 		(uuid "ba111b7c-0000-4000-8000-000000001b7c")
 		(property "Reference" "#PWR_H36"
 			(at 175.26 190.5 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 175.26 195.58 0)
@@ -3152,7 +3152,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 165.1 90)
+		(at 177.8 165.1 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3161,7 +3161,7 @@
 		(uuid "ba111b7d-0000-4000-8000-000000001b7d")
 		(property "Reference" "#PWR_H37"
 			(at 175.26 162.56 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 175.26 167.64 0)
@@ -3238,7 +3238,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 137.16 90)
+		(at 177.8 137.16 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3247,7 +3247,7 @@
 		(uuid "ba111b7e-0000-4000-8000-000000001b7e")
 		(property "Reference" "#PWR_H38"
 			(at 175.26 134.62 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 175.26 139.7 0)
@@ -3324,7 +3324,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 109.22 90)
+		(at 177.8 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3333,7 +3333,7 @@
 		(uuid "ba111b7f-0000-4000-8000-000000001b7f")
 		(property "Reference" "#PWR_H39"
 			(at 175.26 106.68 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 175.26 111.76 0)
@@ -3410,7 +3410,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 81.28 90)
+		(at 177.8 81.28 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3419,7 +3419,7 @@
 		(uuid "ba111b80-0000-4000-8000-000000001b80")
 		(property "Reference" "#PWR_H40"
 			(at 175.26 78.74 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 175.26 83.82 0)
@@ -3496,7 +3496,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 208.28 276.86 90)
+		(at 208.28 276.86 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3505,7 +3505,7 @@
 		(uuid "ba111b81-0000-4000-8000-000000001b81")
 		(property "Reference" "#PWR_H41"
 			(at 205.74 274.32 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 205.74 279.4 0)
@@ -3582,7 +3582,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 208.28 248.92 90)
+		(at 208.28 248.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3591,7 +3591,7 @@
 		(uuid "ba111b82-0000-4000-8000-000000001b82")
 		(property "Reference" "#PWR_H42"
 			(at 205.74 246.38 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 205.74 251.46 0)
@@ -3668,7 +3668,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 208.28 220.98 90)
+		(at 208.28 220.98 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3677,7 +3677,7 @@
 		(uuid "ba111b83-0000-4000-8000-000000001b83")
 		(property "Reference" "#PWR_H43"
 			(at 205.74 218.44 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 205.74 223.52 0)
@@ -3754,7 +3754,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 208.28 193.04 90)
+		(at 208.28 193.04 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3763,7 +3763,7 @@
 		(uuid "ba111b84-0000-4000-8000-000000001b84")
 		(property "Reference" "#PWR_H44"
 			(at 205.74 190.5 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 205.74 195.58 0)
@@ -3840,7 +3840,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 208.28 165.1 90)
+		(at 208.28 165.1 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3849,7 +3849,7 @@
 		(uuid "ba111b85-0000-4000-8000-000000001b85")
 		(property "Reference" "#PWR_H45"
 			(at 205.74 162.56 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 205.74 167.64 0)
@@ -3926,7 +3926,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 208.28 137.16 90)
+		(at 208.28 137.16 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3935,7 +3935,7 @@
 		(uuid "ba111b86-0000-4000-8000-000000001b86")
 		(property "Reference" "#PWR_H46"
 			(at 205.74 134.62 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 205.74 139.7 0)
@@ -4012,7 +4012,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 208.28 109.22 90)
+		(at 208.28 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4021,7 +4021,7 @@
 		(uuid "ba111b87-0000-4000-8000-000000001b87")
 		(property "Reference" "#PWR_H47"
 			(at 205.74 106.68 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 205.74 111.76 0)
@@ -4098,7 +4098,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 208.28 81.28 90)
+		(at 208.28 81.28 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4107,7 +4107,7 @@
 		(uuid "ba111b88-0000-4000-8000-000000001b88")
 		(property "Reference" "#PWR_H48"
 			(at 205.74 78.74 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 205.74 83.82 0)
@@ -4184,7 +4184,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 276.86 90)
+		(at 238.76 276.86 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4193,7 +4193,7 @@
 		(uuid "ba111b89-0000-4000-8000-000000001b89")
 		(property "Reference" "#PWR_H49"
 			(at 236.22 274.32 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 236.22 279.4 0)
@@ -4270,7 +4270,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 248.92 90)
+		(at 238.76 248.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4279,7 +4279,7 @@
 		(uuid "ba111b8a-0000-4000-8000-000000001b8a")
 		(property "Reference" "#PWR_H50"
 			(at 236.22 246.38 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 236.22 251.46 0)
@@ -4356,7 +4356,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 220.98 90)
+		(at 238.76 220.98 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4365,7 +4365,7 @@
 		(uuid "ba111b8b-0000-4000-8000-000000001b8b")
 		(property "Reference" "#PWR_H51"
 			(at 236.22 218.44 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 236.22 223.52 0)
@@ -4442,7 +4442,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 193.04 90)
+		(at 238.76 193.04 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4451,7 +4451,7 @@
 		(uuid "ba111b8c-0000-4000-8000-000000001b8c")
 		(property "Reference" "#PWR_H52"
 			(at 236.22 190.5 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 236.22 195.58 0)
@@ -4528,7 +4528,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 165.1 90)
+		(at 238.76 165.1 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4537,7 +4537,7 @@
 		(uuid "ba111b8d-0000-4000-8000-000000001b8d")
 		(property "Reference" "#PWR_H53"
 			(at 236.22 162.56 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 236.22 167.64 0)
@@ -4614,7 +4614,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 137.16 90)
+		(at 238.76 137.16 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4623,7 +4623,7 @@
 		(uuid "ba111b8e-0000-4000-8000-000000001b8e")
 		(property "Reference" "#PWR_H54"
 			(at 236.22 134.62 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 236.22 139.7 0)
@@ -4700,7 +4700,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 109.22 90)
+		(at 238.76 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4709,7 +4709,7 @@
 		(uuid "ba111b8f-0000-4000-8000-000000001b8f")
 		(property "Reference" "#PWR_H55"
 			(at 236.22 106.68 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 236.22 111.76 0)
@@ -4786,7 +4786,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 81.28 90)
+		(at 238.76 81.28 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4795,7 +4795,7 @@
 		(uuid "ba111b90-0000-4000-8000-000000001b90")
 		(property "Reference" "#PWR_H56"
 			(at 236.22 78.74 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 236.22 83.82 0)
@@ -4872,7 +4872,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 269.24 276.86 90)
+		(at 269.24 276.86 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4881,7 +4881,7 @@
 		(uuid "ba111b91-0000-4000-8000-000000001b91")
 		(property "Reference" "#PWR_H57"
 			(at 266.7 274.32 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 266.7 279.4 0)
@@ -4958,7 +4958,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 269.24 248.92 90)
+		(at 269.24 248.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4967,7 +4967,7 @@
 		(uuid "ba111b92-0000-4000-8000-000000001b92")
 		(property "Reference" "#PWR_H58"
 			(at 266.7 246.38 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 266.7 251.46 0)
@@ -5044,7 +5044,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 269.24 220.98 90)
+		(at 269.24 220.98 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5053,7 +5053,7 @@
 		(uuid "ba111b93-0000-4000-8000-000000001b93")
 		(property "Reference" "#PWR_H59"
 			(at 266.7 218.44 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 266.7 223.52 0)
@@ -5130,7 +5130,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 269.24 193.04 90)
+		(at 269.24 193.04 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5139,7 +5139,7 @@
 		(uuid "ba111b94-0000-4000-8000-000000001b94")
 		(property "Reference" "#PWR_H60"
 			(at 266.7 190.5 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 266.7 195.58 0)
@@ -5216,7 +5216,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 269.24 165.1 90)
+		(at 269.24 165.1 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5225,7 +5225,7 @@
 		(uuid "ba111b95-0000-4000-8000-000000001b95")
 		(property "Reference" "#PWR_H61"
 			(at 266.7 162.56 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 266.7 167.64 0)
@@ -5302,7 +5302,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 269.24 137.16 90)
+		(at 269.24 137.16 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5311,7 +5311,7 @@
 		(uuid "ba111b96-0000-4000-8000-000000001b96")
 		(property "Reference" "#PWR_H62"
 			(at 266.7 134.62 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 266.7 139.7 0)
@@ -5388,7 +5388,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 269.24 109.22 90)
+		(at 269.24 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5397,7 +5397,7 @@
 		(uuid "ba111b97-0000-4000-8000-000000001b97")
 		(property "Reference" "#PWR_H63"
 			(at 266.7 106.68 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 266.7 111.76 0)
@@ -5474,7 +5474,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 269.24 81.28 90)
+		(at 269.24 81.28 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5483,7 +5483,7 @@
 		(uuid "ba111b98-0000-4000-8000-000000001b98")
 		(property "Reference" "#PWR_H64"
 			(at 266.7 78.74 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
 			(at 266.7 83.82 0)

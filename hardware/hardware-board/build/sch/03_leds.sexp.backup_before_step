@@ -80,15 +80,35 @@
 		(effects (font (size 1.27 1.27)) (justify left bottom))
 		(uuid "1ed5138a-0000-4000-8000-00000000138a")
 	)
-	(wire
-		(pts (xy 325.12 82.55) (xy 325.12 85.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed5138b-0000-4000-8000-00000000138b")
-	)
-	(label "GND"
-		(at 325.12 85.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5138c-0000-4000-8000-00000000138c")
+	(symbol
+		(lib_id "power:GND")
+		(at 325.12 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b59-0000-4000-8000-000000001b59")
+		(property "Reference" "#PWR_L1"
+			(at 327.66 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 327.66 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 325.12 82.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c21-0000-4000-8000-000000001c21")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L1") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 312.42 71.12) (xy 325.12 71.12))
@@ -195,22 +215,42 @@
 	(wire
 		(pts (xy 353.06 74.93) (xy 353.06 72.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed5138d-0000-4000-8000-00000000138d")
+		(uuid "1ed5138b-0000-4000-8000-00000000138b")
 	)
 	(label "+5V_LED"
 		(at 353.06 72.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5138e-0000-4000-8000-00000000138e")
+		(uuid "1ed5138c-0000-4000-8000-00000000138c")
 	)
-	(wire
-		(pts (xy 353.06 82.55) (xy 353.06 85.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed5138f-0000-4000-8000-00000000138f")
-	)
-	(label "GND"
-		(at 353.06 85.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51390-0000-4000-8000-000000001390")
+	(symbol
+		(lib_id "power:GND")
+		(at 353.06 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b5a-0000-4000-8000-000000001b5a")
+		(property "Reference" "#PWR_L2"
+			(at 355.6 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 355.6 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 353.06 82.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c22-0000-4000-8000-000000001c22")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L2") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 340.36 71.12) (xy 353.06 71.12))
@@ -312,22 +352,42 @@
 	(wire
 		(pts (xy 381 74.93) (xy 381 72.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed51391-0000-4000-8000-000000001391")
+		(uuid "1ed5138d-0000-4000-8000-00000000138d")
 	)
 	(label "+5V_LED"
 		(at 381 72.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51392-0000-4000-8000-000000001392")
+		(uuid "1ed5138e-0000-4000-8000-00000000138e")
 	)
-	(wire
-		(pts (xy 381 82.55) (xy 381 85.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed51393-0000-4000-8000-000000001393")
-	)
-	(label "GND"
-		(at 381 85.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51394-0000-4000-8000-000000001394")
+	(symbol
+		(lib_id "power:GND")
+		(at 381 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b5b-0000-4000-8000-000000001b5b")
+		(property "Reference" "#PWR_L3"
+			(at 383.54 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 383.54 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 381 82.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c23-0000-4000-8000-000000001c23")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L3") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 368.3 71.12) (xy 381 71.12))
@@ -429,22 +489,42 @@
 	(wire
 		(pts (xy 408.94 74.93) (xy 408.94 72.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed51395-0000-4000-8000-000000001395")
+		(uuid "1ed5138f-0000-4000-8000-00000000138f")
 	)
 	(label "+5V_LED"
 		(at 408.94 72.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51396-0000-4000-8000-000000001396")
+		(uuid "1ed51390-0000-4000-8000-000000001390")
 	)
-	(wire
-		(pts (xy 408.94 82.55) (xy 408.94 85.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed51397-0000-4000-8000-000000001397")
-	)
-	(label "GND"
-		(at 408.94 85.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51398-0000-4000-8000-000000001398")
+	(symbol
+		(lib_id "power:GND")
+		(at 408.94 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b5c-0000-4000-8000-000000001b5c")
+		(property "Reference" "#PWR_L4"
+			(at 411.48 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 411.48 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 408.94 82.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c24-0000-4000-8000-000000001c24")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L4") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 396.24 71.12) (xy 408.94 71.12))
@@ -546,22 +626,42 @@
 	(wire
 		(pts (xy 436.88 74.93) (xy 436.88 72.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed51399-0000-4000-8000-000000001399")
+		(uuid "1ed51391-0000-4000-8000-000000001391")
 	)
 	(label "+5V_LED"
 		(at 436.88 72.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5139a-0000-4000-8000-00000000139a")
+		(uuid "1ed51392-0000-4000-8000-000000001392")
 	)
-	(wire
-		(pts (xy 436.88 82.55) (xy 436.88 85.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed5139b-0000-4000-8000-00000000139b")
-	)
-	(label "GND"
-		(at 436.88 85.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5139c-0000-4000-8000-00000000139c")
+	(symbol
+		(lib_id "power:GND")
+		(at 436.88 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b5d-0000-4000-8000-000000001b5d")
+		(property "Reference" "#PWR_L5"
+			(at 439.42 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 439.42 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 436.88 82.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c25-0000-4000-8000-000000001c25")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L5") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 424.18 71.12) (xy 436.88 71.12))
@@ -663,22 +763,42 @@
 	(wire
 		(pts (xy 464.82 74.93) (xy 464.82 72.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed5139d-0000-4000-8000-00000000139d")
+		(uuid "1ed51393-0000-4000-8000-000000001393")
 	)
 	(label "+5V_LED"
 		(at 464.82 72.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5139e-0000-4000-8000-00000000139e")
+		(uuid "1ed51394-0000-4000-8000-000000001394")
 	)
-	(wire
-		(pts (xy 464.82 82.55) (xy 464.82 85.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed5139f-0000-4000-8000-00000000139f")
-	)
-	(label "GND"
-		(at 464.82 85.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513a0-0000-4000-8000-0000000013a0")
+	(symbol
+		(lib_id "power:GND")
+		(at 464.82 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b5e-0000-4000-8000-000000001b5e")
+		(property "Reference" "#PWR_L6"
+			(at 467.36 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 467.36 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 464.82 82.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c26-0000-4000-8000-000000001c26")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L6") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 452.12 71.12) (xy 464.82 71.12))
@@ -780,22 +900,42 @@
 	(wire
 		(pts (xy 492.76 74.93) (xy 492.76 72.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed513a1-0000-4000-8000-0000000013a1")
+		(uuid "1ed51395-0000-4000-8000-000000001395")
 	)
 	(label "+5V_LED"
 		(at 492.76 72.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513a2-0000-4000-8000-0000000013a2")
+		(uuid "1ed51396-0000-4000-8000-000000001396")
 	)
-	(wire
-		(pts (xy 492.76 82.55) (xy 492.76 85.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed513a3-0000-4000-8000-0000000013a3")
-	)
-	(label "GND"
-		(at 492.76 85.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513a4-0000-4000-8000-0000000013a4")
+	(symbol
+		(lib_id "power:GND")
+		(at 492.76 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b5f-0000-4000-8000-000000001b5f")
+		(property "Reference" "#PWR_L7"
+			(at 495.3 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 495.3 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 492.76 82.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c27-0000-4000-8000-000000001c27")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L7") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 480.06 71.12) (xy 492.76 71.12))
@@ -897,22 +1037,42 @@
 	(wire
 		(pts (xy 520.7 74.93) (xy 520.7 72.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed513a5-0000-4000-8000-0000000013a5")
+		(uuid "1ed51397-0000-4000-8000-000000001397")
 	)
 	(label "+5V_LED"
 		(at 520.7 72.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513a6-0000-4000-8000-0000000013a6")
+		(uuid "1ed51398-0000-4000-8000-000000001398")
 	)
-	(wire
-		(pts (xy 520.7 82.55) (xy 520.7 85.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed513a7-0000-4000-8000-0000000013a7")
-	)
-	(label "GND"
-		(at 520.7 85.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513a8-0000-4000-8000-0000000013a8")
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b60-0000-4000-8000-000000001b60")
+		(property "Reference" "#PWR_L8"
+			(at 523.24 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 523.24 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 520.7 82.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c28-0000-4000-8000-000000001c28")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L8") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 508 71.12) (xy 520.7 71.12))
@@ -1014,22 +1174,42 @@
 	(wire
 		(pts (xy 548.64 74.93) (xy 548.64 72.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed513a9-0000-4000-8000-0000000013a9")
+		(uuid "1ed51399-0000-4000-8000-000000001399")
 	)
 	(label "+5V_LED"
 		(at 548.64 72.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513aa-0000-4000-8000-0000000013aa")
+		(uuid "1ed5139a-0000-4000-8000-00000000139a")
 	)
-	(wire
-		(pts (xy 548.64 82.55) (xy 548.64 85.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed513ab-0000-4000-8000-0000000013ab")
-	)
-	(label "GND"
-		(at 548.64 85.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513ac-0000-4000-8000-0000000013ac")
+	(symbol
+		(lib_id "power:GND")
+		(at 548.64 82.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b61-0000-4000-8000-000000001b61")
+		(property "Reference" "#PWR_L9"
+			(at 551.18 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 551.18 85.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 548.64 82.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c29-0000-4000-8000-000000001c29")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L9") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 535.94 71.12) (xy 548.64 71.12))
@@ -1131,22 +1311,42 @@
 	(wire
 		(pts (xy 325.12 100.33) (xy 325.12 97.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed513ad-0000-4000-8000-0000000013ad")
+		(uuid "1ed5139b-0000-4000-8000-00000000139b")
 	)
 	(label "+5V_LED"
 		(at 325.12 97.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513ae-0000-4000-8000-0000000013ae")
+		(uuid "1ed5139c-0000-4000-8000-00000000139c")
 	)
-	(wire
-		(pts (xy 325.12 107.95) (xy 325.12 110.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed513af-0000-4000-8000-0000000013af")
-	)
-	(label "GND"
-		(at 325.12 110.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513b0-0000-4000-8000-0000000013b0")
+	(symbol
+		(lib_id "power:GND")
+		(at 325.12 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b62-0000-4000-8000-000000001b62")
+		(property "Reference" "#PWR_L10"
+			(at 327.66 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 327.66 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 325.12 107.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c2a-0000-4000-8000-000000001c2a")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L10") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 312.42 96.52) (xy 325.12 96.52))
@@ -1253,22 +1453,42 @@
 	(wire
 		(pts (xy 353.06 100.33) (xy 353.06 97.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed513b1-0000-4000-8000-0000000013b1")
+		(uuid "1ed5139d-0000-4000-8000-00000000139d")
 	)
 	(label "+5V_LED"
 		(at 353.06 97.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513b2-0000-4000-8000-0000000013b2")
+		(uuid "1ed5139e-0000-4000-8000-00000000139e")
 	)
-	(wire
-		(pts (xy 353.06 107.95) (xy 353.06 110.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed513b3-0000-4000-8000-0000000013b3")
-	)
-	(label "GND"
-		(at 353.06 110.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513b4-0000-4000-8000-0000000013b4")
+	(symbol
+		(lib_id "power:GND")
+		(at 353.06 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b63-0000-4000-8000-000000001b63")
+		(property "Reference" "#PWR_L11"
+			(at 355.6 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 355.6 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 353.06 107.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c2b-0000-4000-8000-000000001c2b")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L11") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 340.36 96.52) (xy 353.06 96.52))
@@ -1370,22 +1590,42 @@
 	(wire
 		(pts (xy 381 100.33) (xy 381 97.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed513b5-0000-4000-8000-0000000013b5")
+		(uuid "1ed5139f-0000-4000-8000-00000000139f")
 	)
 	(label "+5V_LED"
 		(at 381 97.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513b6-0000-4000-8000-0000000013b6")
+		(uuid "1ed513a0-0000-4000-8000-0000000013a0")
 	)
-	(wire
-		(pts (xy 381 107.95) (xy 381 110.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed513b7-0000-4000-8000-0000000013b7")
-	)
-	(label "GND"
-		(at 381 110.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513b8-0000-4000-8000-0000000013b8")
+	(symbol
+		(lib_id "power:GND")
+		(at 381 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b64-0000-4000-8000-000000001b64")
+		(property "Reference" "#PWR_L12"
+			(at 383.54 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 383.54 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 381 107.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c2c-0000-4000-8000-000000001c2c")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L12") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 368.3 96.52) (xy 381 96.52))
@@ -1487,22 +1727,42 @@
 	(wire
 		(pts (xy 408.94 100.33) (xy 408.94 97.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed513b9-0000-4000-8000-0000000013b9")
+		(uuid "1ed513a1-0000-4000-8000-0000000013a1")
 	)
 	(label "+5V_LED"
 		(at 408.94 97.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513ba-0000-4000-8000-0000000013ba")
+		(uuid "1ed513a2-0000-4000-8000-0000000013a2")
 	)
-	(wire
-		(pts (xy 408.94 107.95) (xy 408.94 110.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed513bb-0000-4000-8000-0000000013bb")
-	)
-	(label "GND"
-		(at 408.94 110.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513bc-0000-4000-8000-0000000013bc")
+	(symbol
+		(lib_id "power:GND")
+		(at 408.94 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b65-0000-4000-8000-000000001b65")
+		(property "Reference" "#PWR_L13"
+			(at 411.48 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 411.48 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 408.94 107.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c2d-0000-4000-8000-000000001c2d")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L13") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 396.24 96.52) (xy 408.94 96.52))
@@ -1604,22 +1864,42 @@
 	(wire
 		(pts (xy 436.88 100.33) (xy 436.88 97.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed513bd-0000-4000-8000-0000000013bd")
+		(uuid "1ed513a3-0000-4000-8000-0000000013a3")
 	)
 	(label "+5V_LED"
 		(at 436.88 97.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513be-0000-4000-8000-0000000013be")
+		(uuid "1ed513a4-0000-4000-8000-0000000013a4")
 	)
-	(wire
-		(pts (xy 436.88 107.95) (xy 436.88 110.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed513bf-0000-4000-8000-0000000013bf")
-	)
-	(label "GND"
-		(at 436.88 110.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513c0-0000-4000-8000-0000000013c0")
+	(symbol
+		(lib_id "power:GND")
+		(at 436.88 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b66-0000-4000-8000-000000001b66")
+		(property "Reference" "#PWR_L14"
+			(at 439.42 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 439.42 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 436.88 107.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c2e-0000-4000-8000-000000001c2e")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L14") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 424.18 96.52) (xy 436.88 96.52))
@@ -1721,22 +2001,42 @@
 	(wire
 		(pts (xy 464.82 100.33) (xy 464.82 97.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed513c1-0000-4000-8000-0000000013c1")
+		(uuid "1ed513a5-0000-4000-8000-0000000013a5")
 	)
 	(label "+5V_LED"
 		(at 464.82 97.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513c2-0000-4000-8000-0000000013c2")
+		(uuid "1ed513a6-0000-4000-8000-0000000013a6")
 	)
-	(wire
-		(pts (xy 464.82 107.95) (xy 464.82 110.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed513c3-0000-4000-8000-0000000013c3")
-	)
-	(label "GND"
-		(at 464.82 110.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513c4-0000-4000-8000-0000000013c4")
+	(symbol
+		(lib_id "power:GND")
+		(at 464.82 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b67-0000-4000-8000-000000001b67")
+		(property "Reference" "#PWR_L15"
+			(at 467.36 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 467.36 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 464.82 107.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c2f-0000-4000-8000-000000001c2f")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L15") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 452.12 96.52) (xy 464.82 96.52))
@@ -1838,22 +2138,42 @@
 	(wire
 		(pts (xy 492.76 100.33) (xy 492.76 97.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed513c5-0000-4000-8000-0000000013c5")
+		(uuid "1ed513a7-0000-4000-8000-0000000013a7")
 	)
 	(label "+5V_LED"
 		(at 492.76 97.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513c6-0000-4000-8000-0000000013c6")
+		(uuid "1ed513a8-0000-4000-8000-0000000013a8")
 	)
-	(wire
-		(pts (xy 492.76 107.95) (xy 492.76 110.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed513c7-0000-4000-8000-0000000013c7")
-	)
-	(label "GND"
-		(at 492.76 110.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513c8-0000-4000-8000-0000000013c8")
+	(symbol
+		(lib_id "power:GND")
+		(at 492.76 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b68-0000-4000-8000-000000001b68")
+		(property "Reference" "#PWR_L16"
+			(at 495.3 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 495.3 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 492.76 107.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c30-0000-4000-8000-000000001c30")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L16") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 480.06 96.52) (xy 492.76 96.52))
@@ -1955,22 +2275,42 @@
 	(wire
 		(pts (xy 520.7 100.33) (xy 520.7 97.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed513c9-0000-4000-8000-0000000013c9")
+		(uuid "1ed513a9-0000-4000-8000-0000000013a9")
 	)
 	(label "+5V_LED"
 		(at 520.7 97.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513ca-0000-4000-8000-0000000013ca")
+		(uuid "1ed513aa-0000-4000-8000-0000000013aa")
 	)
-	(wire
-		(pts (xy 520.7 107.95) (xy 520.7 110.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed513cb-0000-4000-8000-0000000013cb")
-	)
-	(label "GND"
-		(at 520.7 110.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513cc-0000-4000-8000-0000000013cc")
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b69-0000-4000-8000-000000001b69")
+		(property "Reference" "#PWR_L17"
+			(at 523.24 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 523.24 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 520.7 107.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c31-0000-4000-8000-000000001c31")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L17") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 508 96.52) (xy 520.7 96.52))
@@ -2072,22 +2412,42 @@
 	(wire
 		(pts (xy 548.64 100.33) (xy 548.64 97.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed513cd-0000-4000-8000-0000000013cd")
+		(uuid "1ed513ab-0000-4000-8000-0000000013ab")
 	)
 	(label "+5V_LED"
 		(at 548.64 97.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513ce-0000-4000-8000-0000000013ce")
+		(uuid "1ed513ac-0000-4000-8000-0000000013ac")
 	)
-	(wire
-		(pts (xy 548.64 107.95) (xy 548.64 110.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed513cf-0000-4000-8000-0000000013cf")
-	)
-	(label "GND"
-		(at 548.64 110.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513d0-0000-4000-8000-0000000013d0")
+	(symbol
+		(lib_id "power:GND")
+		(at 548.64 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b6a-0000-4000-8000-000000001b6a")
+		(property "Reference" "#PWR_L18"
+			(at 551.18 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 551.18 110.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 548.64 107.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c32-0000-4000-8000-000000001c32")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L18") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 535.94 96.52) (xy 548.64 96.52))
@@ -2189,22 +2549,42 @@
 	(wire
 		(pts (xy 325.12 125.73) (xy 325.12 123.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed513d1-0000-4000-8000-0000000013d1")
+		(uuid "1ed513ad-0000-4000-8000-0000000013ad")
 	)
 	(label "+5V_LED"
 		(at 325.12 123.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513d2-0000-4000-8000-0000000013d2")
+		(uuid "1ed513ae-0000-4000-8000-0000000013ae")
 	)
-	(wire
-		(pts (xy 325.12 133.35) (xy 325.12 135.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed513d3-0000-4000-8000-0000000013d3")
-	)
-	(label "GND"
-		(at 325.12 135.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513d4-0000-4000-8000-0000000013d4")
+	(symbol
+		(lib_id "power:GND")
+		(at 325.12 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b6b-0000-4000-8000-000000001b6b")
+		(property "Reference" "#PWR_L19"
+			(at 327.66 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 327.66 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 325.12 133.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c33-0000-4000-8000-000000001c33")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L19") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 312.42 121.92) (xy 325.12 121.92))
@@ -2311,22 +2691,42 @@
 	(wire
 		(pts (xy 353.06 125.73) (xy 353.06 123.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed513d5-0000-4000-8000-0000000013d5")
+		(uuid "1ed513af-0000-4000-8000-0000000013af")
 	)
 	(label "+5V_LED"
 		(at 353.06 123.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513d6-0000-4000-8000-0000000013d6")
+		(uuid "1ed513b0-0000-4000-8000-0000000013b0")
 	)
-	(wire
-		(pts (xy 353.06 133.35) (xy 353.06 135.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed513d7-0000-4000-8000-0000000013d7")
-	)
-	(label "GND"
-		(at 353.06 135.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513d8-0000-4000-8000-0000000013d8")
+	(symbol
+		(lib_id "power:GND")
+		(at 353.06 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b6c-0000-4000-8000-000000001b6c")
+		(property "Reference" "#PWR_L20"
+			(at 355.6 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 355.6 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 353.06 133.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c34-0000-4000-8000-000000001c34")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L20") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 340.36 121.92) (xy 353.06 121.92))
@@ -2428,22 +2828,42 @@
 	(wire
 		(pts (xy 381 125.73) (xy 381 123.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed513d9-0000-4000-8000-0000000013d9")
+		(uuid "1ed513b1-0000-4000-8000-0000000013b1")
 	)
 	(label "+5V_LED"
 		(at 381 123.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513da-0000-4000-8000-0000000013da")
+		(uuid "1ed513b2-0000-4000-8000-0000000013b2")
 	)
-	(wire
-		(pts (xy 381 133.35) (xy 381 135.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed513db-0000-4000-8000-0000000013db")
-	)
-	(label "GND"
-		(at 381 135.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513dc-0000-4000-8000-0000000013dc")
+	(symbol
+		(lib_id "power:GND")
+		(at 381 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b6d-0000-4000-8000-000000001b6d")
+		(property "Reference" "#PWR_L21"
+			(at 383.54 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 383.54 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 381 133.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c35-0000-4000-8000-000000001c35")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L21") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 368.3 121.92) (xy 381 121.92))
@@ -2545,22 +2965,42 @@
 	(wire
 		(pts (xy 408.94 125.73) (xy 408.94 123.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed513dd-0000-4000-8000-0000000013dd")
+		(uuid "1ed513b3-0000-4000-8000-0000000013b3")
 	)
 	(label "+5V_LED"
 		(at 408.94 123.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513de-0000-4000-8000-0000000013de")
+		(uuid "1ed513b4-0000-4000-8000-0000000013b4")
 	)
-	(wire
-		(pts (xy 408.94 133.35) (xy 408.94 135.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed513df-0000-4000-8000-0000000013df")
-	)
-	(label "GND"
-		(at 408.94 135.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513e0-0000-4000-8000-0000000013e0")
+	(symbol
+		(lib_id "power:GND")
+		(at 408.94 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b6e-0000-4000-8000-000000001b6e")
+		(property "Reference" "#PWR_L22"
+			(at 411.48 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 411.48 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 408.94 133.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c36-0000-4000-8000-000000001c36")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L22") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 396.24 121.92) (xy 408.94 121.92))
@@ -2662,22 +3102,42 @@
 	(wire
 		(pts (xy 436.88 125.73) (xy 436.88 123.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed513e1-0000-4000-8000-0000000013e1")
+		(uuid "1ed513b5-0000-4000-8000-0000000013b5")
 	)
 	(label "+5V_LED"
 		(at 436.88 123.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513e2-0000-4000-8000-0000000013e2")
+		(uuid "1ed513b6-0000-4000-8000-0000000013b6")
 	)
-	(wire
-		(pts (xy 436.88 133.35) (xy 436.88 135.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed513e3-0000-4000-8000-0000000013e3")
-	)
-	(label "GND"
-		(at 436.88 135.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513e4-0000-4000-8000-0000000013e4")
+	(symbol
+		(lib_id "power:GND")
+		(at 436.88 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b6f-0000-4000-8000-000000001b6f")
+		(property "Reference" "#PWR_L23"
+			(at 439.42 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 439.42 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 436.88 133.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c37-0000-4000-8000-000000001c37")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L23") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 424.18 121.92) (xy 436.88 121.92))
@@ -2779,22 +3239,42 @@
 	(wire
 		(pts (xy 464.82 125.73) (xy 464.82 123.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed513e5-0000-4000-8000-0000000013e5")
+		(uuid "1ed513b7-0000-4000-8000-0000000013b7")
 	)
 	(label "+5V_LED"
 		(at 464.82 123.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513e6-0000-4000-8000-0000000013e6")
+		(uuid "1ed513b8-0000-4000-8000-0000000013b8")
 	)
-	(wire
-		(pts (xy 464.82 133.35) (xy 464.82 135.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed513e7-0000-4000-8000-0000000013e7")
-	)
-	(label "GND"
-		(at 464.82 135.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513e8-0000-4000-8000-0000000013e8")
+	(symbol
+		(lib_id "power:GND")
+		(at 464.82 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b70-0000-4000-8000-000000001b70")
+		(property "Reference" "#PWR_L24"
+			(at 467.36 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 467.36 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 464.82 133.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c38-0000-4000-8000-000000001c38")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L24") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 452.12 121.92) (xy 464.82 121.92))
@@ -2896,22 +3376,42 @@
 	(wire
 		(pts (xy 492.76 125.73) (xy 492.76 123.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed513e9-0000-4000-8000-0000000013e9")
+		(uuid "1ed513b9-0000-4000-8000-0000000013b9")
 	)
 	(label "+5V_LED"
 		(at 492.76 123.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513ea-0000-4000-8000-0000000013ea")
+		(uuid "1ed513ba-0000-4000-8000-0000000013ba")
 	)
-	(wire
-		(pts (xy 492.76 133.35) (xy 492.76 135.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed513eb-0000-4000-8000-0000000013eb")
-	)
-	(label "GND"
-		(at 492.76 135.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513ec-0000-4000-8000-0000000013ec")
+	(symbol
+		(lib_id "power:GND")
+		(at 492.76 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b71-0000-4000-8000-000000001b71")
+		(property "Reference" "#PWR_L25"
+			(at 495.3 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 495.3 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 492.76 133.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c39-0000-4000-8000-000000001c39")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L25") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 480.06 121.92) (xy 492.76 121.92))
@@ -3013,22 +3513,42 @@
 	(wire
 		(pts (xy 520.7 125.73) (xy 520.7 123.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed513ed-0000-4000-8000-0000000013ed")
+		(uuid "1ed513bb-0000-4000-8000-0000000013bb")
 	)
 	(label "+5V_LED"
 		(at 520.7 123.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513ee-0000-4000-8000-0000000013ee")
+		(uuid "1ed513bc-0000-4000-8000-0000000013bc")
 	)
-	(wire
-		(pts (xy 520.7 133.35) (xy 520.7 135.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed513ef-0000-4000-8000-0000000013ef")
-	)
-	(label "GND"
-		(at 520.7 135.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513f0-0000-4000-8000-0000000013f0")
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b72-0000-4000-8000-000000001b72")
+		(property "Reference" "#PWR_L26"
+			(at 523.24 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 523.24 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 520.7 133.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c3a-0000-4000-8000-000000001c3a")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L26") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 508 121.92) (xy 520.7 121.92))
@@ -3130,22 +3650,42 @@
 	(wire
 		(pts (xy 548.64 125.73) (xy 548.64 123.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed513f1-0000-4000-8000-0000000013f1")
+		(uuid "1ed513bd-0000-4000-8000-0000000013bd")
 	)
 	(label "+5V_LED"
 		(at 548.64 123.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513f2-0000-4000-8000-0000000013f2")
+		(uuid "1ed513be-0000-4000-8000-0000000013be")
 	)
-	(wire
-		(pts (xy 548.64 133.35) (xy 548.64 135.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed513f3-0000-4000-8000-0000000013f3")
-	)
-	(label "GND"
-		(at 548.64 135.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513f4-0000-4000-8000-0000000013f4")
+	(symbol
+		(lib_id "power:GND")
+		(at 548.64 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b73-0000-4000-8000-000000001b73")
+		(property "Reference" "#PWR_L27"
+			(at 551.18 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 551.18 135.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 548.64 133.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c3b-0000-4000-8000-000000001c3b")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L27") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 535.94 121.92) (xy 548.64 121.92))
@@ -3247,22 +3787,42 @@
 	(wire
 		(pts (xy 325.12 151.13) (xy 325.12 148.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed513f5-0000-4000-8000-0000000013f5")
+		(uuid "1ed513bf-0000-4000-8000-0000000013bf")
 	)
 	(label "+5V_LED"
 		(at 325.12 148.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513f6-0000-4000-8000-0000000013f6")
+		(uuid "1ed513c0-0000-4000-8000-0000000013c0")
 	)
-	(wire
-		(pts (xy 325.12 158.75) (xy 325.12 161.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed513f7-0000-4000-8000-0000000013f7")
-	)
-	(label "GND"
-		(at 325.12 161.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513f8-0000-4000-8000-0000000013f8")
+	(symbol
+		(lib_id "power:GND")
+		(at 325.12 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b74-0000-4000-8000-000000001b74")
+		(property "Reference" "#PWR_L28"
+			(at 327.66 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 327.66 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 325.12 158.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c3c-0000-4000-8000-000000001c3c")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L28") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 312.42 147.32) (xy 325.12 147.32))
@@ -3369,22 +3929,42 @@
 	(wire
 		(pts (xy 353.06 151.13) (xy 353.06 148.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed513f9-0000-4000-8000-0000000013f9")
+		(uuid "1ed513c1-0000-4000-8000-0000000013c1")
 	)
 	(label "+5V_LED"
 		(at 353.06 148.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513fa-0000-4000-8000-0000000013fa")
+		(uuid "1ed513c2-0000-4000-8000-0000000013c2")
 	)
-	(wire
-		(pts (xy 353.06 158.75) (xy 353.06 161.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed513fb-0000-4000-8000-0000000013fb")
-	)
-	(label "GND"
-		(at 353.06 161.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513fc-0000-4000-8000-0000000013fc")
+	(symbol
+		(lib_id "power:GND")
+		(at 353.06 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b75-0000-4000-8000-000000001b75")
+		(property "Reference" "#PWR_L29"
+			(at 355.6 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 355.6 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 353.06 158.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c3d-0000-4000-8000-000000001c3d")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L29") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 340.36 147.32) (xy 353.06 147.32))
@@ -3486,22 +4066,42 @@
 	(wire
 		(pts (xy 381 151.13) (xy 381 148.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed513fd-0000-4000-8000-0000000013fd")
+		(uuid "1ed513c3-0000-4000-8000-0000000013c3")
 	)
 	(label "+5V_LED"
 		(at 381 148.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed513fe-0000-4000-8000-0000000013fe")
+		(uuid "1ed513c4-0000-4000-8000-0000000013c4")
 	)
-	(wire
-		(pts (xy 381 158.75) (xy 381 161.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed513ff-0000-4000-8000-0000000013ff")
-	)
-	(label "GND"
-		(at 381 161.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51400-0000-4000-8000-000000001400")
+	(symbol
+		(lib_id "power:GND")
+		(at 381 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b76-0000-4000-8000-000000001b76")
+		(property "Reference" "#PWR_L30"
+			(at 383.54 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 383.54 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 381 158.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c3e-0000-4000-8000-000000001c3e")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L30") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 368.3 147.32) (xy 381 147.32))
@@ -3603,22 +4203,42 @@
 	(wire
 		(pts (xy 408.94 151.13) (xy 408.94 148.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed51401-0000-4000-8000-000000001401")
+		(uuid "1ed513c5-0000-4000-8000-0000000013c5")
 	)
 	(label "+5V_LED"
 		(at 408.94 148.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51402-0000-4000-8000-000000001402")
+		(uuid "1ed513c6-0000-4000-8000-0000000013c6")
 	)
-	(wire
-		(pts (xy 408.94 158.75) (xy 408.94 161.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed51403-0000-4000-8000-000000001403")
-	)
-	(label "GND"
-		(at 408.94 161.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51404-0000-4000-8000-000000001404")
+	(symbol
+		(lib_id "power:GND")
+		(at 408.94 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b77-0000-4000-8000-000000001b77")
+		(property "Reference" "#PWR_L31"
+			(at 411.48 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 411.48 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 408.94 158.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c3f-0000-4000-8000-000000001c3f")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L31") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 396.24 147.32) (xy 408.94 147.32))
@@ -3720,22 +4340,42 @@
 	(wire
 		(pts (xy 436.88 151.13) (xy 436.88 148.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed51405-0000-4000-8000-000000001405")
+		(uuid "1ed513c7-0000-4000-8000-0000000013c7")
 	)
 	(label "+5V_LED"
 		(at 436.88 148.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51406-0000-4000-8000-000000001406")
+		(uuid "1ed513c8-0000-4000-8000-0000000013c8")
 	)
-	(wire
-		(pts (xy 436.88 158.75) (xy 436.88 161.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed51407-0000-4000-8000-000000001407")
-	)
-	(label "GND"
-		(at 436.88 161.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51408-0000-4000-8000-000000001408")
+	(symbol
+		(lib_id "power:GND")
+		(at 436.88 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b78-0000-4000-8000-000000001b78")
+		(property "Reference" "#PWR_L32"
+			(at 439.42 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 439.42 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 436.88 158.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c40-0000-4000-8000-000000001c40")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L32") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 424.18 147.32) (xy 436.88 147.32))
@@ -3837,22 +4477,42 @@
 	(wire
 		(pts (xy 464.82 151.13) (xy 464.82 148.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed51409-0000-4000-8000-000000001409")
+		(uuid "1ed513c9-0000-4000-8000-0000000013c9")
 	)
 	(label "+5V_LED"
 		(at 464.82 148.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5140a-0000-4000-8000-00000000140a")
+		(uuid "1ed513ca-0000-4000-8000-0000000013ca")
 	)
-	(wire
-		(pts (xy 464.82 158.75) (xy 464.82 161.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed5140b-0000-4000-8000-00000000140b")
-	)
-	(label "GND"
-		(at 464.82 161.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5140c-0000-4000-8000-00000000140c")
+	(symbol
+		(lib_id "power:GND")
+		(at 464.82 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b79-0000-4000-8000-000000001b79")
+		(property "Reference" "#PWR_L33"
+			(at 467.36 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 467.36 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 464.82 158.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c41-0000-4000-8000-000000001c41")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L33") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 452.12 147.32) (xy 464.82 147.32))
@@ -3954,22 +4614,42 @@
 	(wire
 		(pts (xy 492.76 151.13) (xy 492.76 148.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed5140d-0000-4000-8000-00000000140d")
+		(uuid "1ed513cb-0000-4000-8000-0000000013cb")
 	)
 	(label "+5V_LED"
 		(at 492.76 148.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5140e-0000-4000-8000-00000000140e")
+		(uuid "1ed513cc-0000-4000-8000-0000000013cc")
 	)
-	(wire
-		(pts (xy 492.76 158.75) (xy 492.76 161.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed5140f-0000-4000-8000-00000000140f")
-	)
-	(label "GND"
-		(at 492.76 161.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51410-0000-4000-8000-000000001410")
+	(symbol
+		(lib_id "power:GND")
+		(at 492.76 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b7a-0000-4000-8000-000000001b7a")
+		(property "Reference" "#PWR_L34"
+			(at 495.3 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 495.3 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 492.76 158.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c42-0000-4000-8000-000000001c42")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L34") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 480.06 147.32) (xy 492.76 147.32))
@@ -4071,22 +4751,42 @@
 	(wire
 		(pts (xy 520.7 151.13) (xy 520.7 148.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed51411-0000-4000-8000-000000001411")
+		(uuid "1ed513cd-0000-4000-8000-0000000013cd")
 	)
 	(label "+5V_LED"
 		(at 520.7 148.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51412-0000-4000-8000-000000001412")
+		(uuid "1ed513ce-0000-4000-8000-0000000013ce")
 	)
-	(wire
-		(pts (xy 520.7 158.75) (xy 520.7 161.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed51413-0000-4000-8000-000000001413")
-	)
-	(label "GND"
-		(at 520.7 161.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51414-0000-4000-8000-000000001414")
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b7b-0000-4000-8000-000000001b7b")
+		(property "Reference" "#PWR_L35"
+			(at 523.24 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 523.24 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 520.7 158.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c43-0000-4000-8000-000000001c43")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L35") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 508 147.32) (xy 520.7 147.32))
@@ -4188,22 +4888,42 @@
 	(wire
 		(pts (xy 548.64 151.13) (xy 548.64 148.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed51415-0000-4000-8000-000000001415")
+		(uuid "1ed513cf-0000-4000-8000-0000000013cf")
 	)
 	(label "+5V_LED"
 		(at 548.64 148.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51416-0000-4000-8000-000000001416")
+		(uuid "1ed513d0-0000-4000-8000-0000000013d0")
 	)
-	(wire
-		(pts (xy 548.64 158.75) (xy 548.64 161.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed51417-0000-4000-8000-000000001417")
-	)
-	(label "GND"
-		(at 548.64 161.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51418-0000-4000-8000-000000001418")
+	(symbol
+		(lib_id "power:GND")
+		(at 548.64 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b7c-0000-4000-8000-000000001b7c")
+		(property "Reference" "#PWR_L36"
+			(at 551.18 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 551.18 161.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 548.64 158.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c44-0000-4000-8000-000000001c44")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L36") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 535.94 147.32) (xy 548.64 147.32))
@@ -4305,22 +5025,42 @@
 	(wire
 		(pts (xy 325.12 176.53) (xy 325.12 173.99))
 		(stroke (width 0) (type default))
-		(uuid "1ed51419-0000-4000-8000-000000001419")
+		(uuid "1ed513d1-0000-4000-8000-0000000013d1")
 	)
 	(label "+5V_LED"
 		(at 325.12 173.99 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5141a-0000-4000-8000-00000000141a")
+		(uuid "1ed513d2-0000-4000-8000-0000000013d2")
 	)
-	(wire
-		(pts (xy 325.12 184.15) (xy 325.12 186.69))
-		(stroke (width 0) (type default))
-		(uuid "1ed5141b-0000-4000-8000-00000000141b")
-	)
-	(label "GND"
-		(at 325.12 186.69 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5141c-0000-4000-8000-00000000141c")
+	(symbol
+		(lib_id "power:GND")
+		(at 325.12 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b7d-0000-4000-8000-000000001b7d")
+		(property "Reference" "#PWR_L37"
+			(at 327.66 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 327.66 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 325.12 184.15 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c45-0000-4000-8000-000000001c45")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L37") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 312.42 172.72) (xy 325.12 172.72))
@@ -4427,22 +5167,42 @@
 	(wire
 		(pts (xy 353.06 176.53) (xy 353.06 173.99))
 		(stroke (width 0) (type default))
-		(uuid "1ed5141d-0000-4000-8000-00000000141d")
+		(uuid "1ed513d3-0000-4000-8000-0000000013d3")
 	)
 	(label "+5V_LED"
 		(at 353.06 173.99 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5141e-0000-4000-8000-00000000141e")
+		(uuid "1ed513d4-0000-4000-8000-0000000013d4")
 	)
-	(wire
-		(pts (xy 353.06 184.15) (xy 353.06 186.69))
-		(stroke (width 0) (type default))
-		(uuid "1ed5141f-0000-4000-8000-00000000141f")
-	)
-	(label "GND"
-		(at 353.06 186.69 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51420-0000-4000-8000-000000001420")
+	(symbol
+		(lib_id "power:GND")
+		(at 353.06 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b7e-0000-4000-8000-000000001b7e")
+		(property "Reference" "#PWR_L38"
+			(at 355.6 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 355.6 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 353.06 184.15 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c46-0000-4000-8000-000000001c46")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L38") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 340.36 172.72) (xy 353.06 172.72))
@@ -4544,22 +5304,42 @@
 	(wire
 		(pts (xy 381 176.53) (xy 381 173.99))
 		(stroke (width 0) (type default))
-		(uuid "1ed51421-0000-4000-8000-000000001421")
+		(uuid "1ed513d5-0000-4000-8000-0000000013d5")
 	)
 	(label "+5V_LED"
 		(at 381 173.99 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51422-0000-4000-8000-000000001422")
+		(uuid "1ed513d6-0000-4000-8000-0000000013d6")
 	)
-	(wire
-		(pts (xy 381 184.15) (xy 381 186.69))
-		(stroke (width 0) (type default))
-		(uuid "1ed51423-0000-4000-8000-000000001423")
-	)
-	(label "GND"
-		(at 381 186.69 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51424-0000-4000-8000-000000001424")
+	(symbol
+		(lib_id "power:GND")
+		(at 381 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b7f-0000-4000-8000-000000001b7f")
+		(property "Reference" "#PWR_L39"
+			(at 383.54 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 383.54 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 381 184.15 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c47-0000-4000-8000-000000001c47")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L39") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 368.3 172.72) (xy 381 172.72))
@@ -4661,22 +5441,42 @@
 	(wire
 		(pts (xy 408.94 176.53) (xy 408.94 173.99))
 		(stroke (width 0) (type default))
-		(uuid "1ed51425-0000-4000-8000-000000001425")
+		(uuid "1ed513d7-0000-4000-8000-0000000013d7")
 	)
 	(label "+5V_LED"
 		(at 408.94 173.99 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51426-0000-4000-8000-000000001426")
+		(uuid "1ed513d8-0000-4000-8000-0000000013d8")
 	)
-	(wire
-		(pts (xy 408.94 184.15) (xy 408.94 186.69))
-		(stroke (width 0) (type default))
-		(uuid "1ed51427-0000-4000-8000-000000001427")
-	)
-	(label "GND"
-		(at 408.94 186.69 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51428-0000-4000-8000-000000001428")
+	(symbol
+		(lib_id "power:GND")
+		(at 408.94 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b80-0000-4000-8000-000000001b80")
+		(property "Reference" "#PWR_L40"
+			(at 411.48 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 411.48 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 408.94 184.15 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c48-0000-4000-8000-000000001c48")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L40") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 396.24 172.72) (xy 408.94 172.72))
@@ -4778,22 +5578,42 @@
 	(wire
 		(pts (xy 436.88 176.53) (xy 436.88 173.99))
 		(stroke (width 0) (type default))
-		(uuid "1ed51429-0000-4000-8000-000000001429")
+		(uuid "1ed513d9-0000-4000-8000-0000000013d9")
 	)
 	(label "+5V_LED"
 		(at 436.88 173.99 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5142a-0000-4000-8000-00000000142a")
+		(uuid "1ed513da-0000-4000-8000-0000000013da")
 	)
-	(wire
-		(pts (xy 436.88 184.15) (xy 436.88 186.69))
-		(stroke (width 0) (type default))
-		(uuid "1ed5142b-0000-4000-8000-00000000142b")
-	)
-	(label "GND"
-		(at 436.88 186.69 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5142c-0000-4000-8000-00000000142c")
+	(symbol
+		(lib_id "power:GND")
+		(at 436.88 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b81-0000-4000-8000-000000001b81")
+		(property "Reference" "#PWR_L41"
+			(at 439.42 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 439.42 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 436.88 184.15 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c49-0000-4000-8000-000000001c49")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L41") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 424.18 172.72) (xy 436.88 172.72))
@@ -4895,22 +5715,42 @@
 	(wire
 		(pts (xy 464.82 176.53) (xy 464.82 173.99))
 		(stroke (width 0) (type default))
-		(uuid "1ed5142d-0000-4000-8000-00000000142d")
+		(uuid "1ed513db-0000-4000-8000-0000000013db")
 	)
 	(label "+5V_LED"
 		(at 464.82 173.99 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5142e-0000-4000-8000-00000000142e")
+		(uuid "1ed513dc-0000-4000-8000-0000000013dc")
 	)
-	(wire
-		(pts (xy 464.82 184.15) (xy 464.82 186.69))
-		(stroke (width 0) (type default))
-		(uuid "1ed5142f-0000-4000-8000-00000000142f")
-	)
-	(label "GND"
-		(at 464.82 186.69 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51430-0000-4000-8000-000000001430")
+	(symbol
+		(lib_id "power:GND")
+		(at 464.82 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b82-0000-4000-8000-000000001b82")
+		(property "Reference" "#PWR_L42"
+			(at 467.36 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 467.36 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 464.82 184.15 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c4a-0000-4000-8000-000000001c4a")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L42") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 452.12 172.72) (xy 464.82 172.72))
@@ -5012,22 +5852,42 @@
 	(wire
 		(pts (xy 492.76 176.53) (xy 492.76 173.99))
 		(stroke (width 0) (type default))
-		(uuid "1ed51431-0000-4000-8000-000000001431")
+		(uuid "1ed513dd-0000-4000-8000-0000000013dd")
 	)
 	(label "+5V_LED"
 		(at 492.76 173.99 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51432-0000-4000-8000-000000001432")
+		(uuid "1ed513de-0000-4000-8000-0000000013de")
 	)
-	(wire
-		(pts (xy 492.76 184.15) (xy 492.76 186.69))
-		(stroke (width 0) (type default))
-		(uuid "1ed51433-0000-4000-8000-000000001433")
-	)
-	(label "GND"
-		(at 492.76 186.69 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51434-0000-4000-8000-000000001434")
+	(symbol
+		(lib_id "power:GND")
+		(at 492.76 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b83-0000-4000-8000-000000001b83")
+		(property "Reference" "#PWR_L43"
+			(at 495.3 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 495.3 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 492.76 184.15 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c4b-0000-4000-8000-000000001c4b")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L43") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 480.06 172.72) (xy 492.76 172.72))
@@ -5129,22 +5989,42 @@
 	(wire
 		(pts (xy 520.7 176.53) (xy 520.7 173.99))
 		(stroke (width 0) (type default))
-		(uuid "1ed51435-0000-4000-8000-000000001435")
+		(uuid "1ed513df-0000-4000-8000-0000000013df")
 	)
 	(label "+5V_LED"
 		(at 520.7 173.99 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51436-0000-4000-8000-000000001436")
+		(uuid "1ed513e0-0000-4000-8000-0000000013e0")
 	)
-	(wire
-		(pts (xy 520.7 184.15) (xy 520.7 186.69))
-		(stroke (width 0) (type default))
-		(uuid "1ed51437-0000-4000-8000-000000001437")
-	)
-	(label "GND"
-		(at 520.7 186.69 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51438-0000-4000-8000-000000001438")
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b84-0000-4000-8000-000000001b84")
+		(property "Reference" "#PWR_L44"
+			(at 523.24 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 523.24 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 520.7 184.15 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c4c-0000-4000-8000-000000001c4c")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L44") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 508 172.72) (xy 520.7 172.72))
@@ -5246,22 +6126,42 @@
 	(wire
 		(pts (xy 548.64 176.53) (xy 548.64 173.99))
 		(stroke (width 0) (type default))
-		(uuid "1ed51439-0000-4000-8000-000000001439")
+		(uuid "1ed513e1-0000-4000-8000-0000000013e1")
 	)
 	(label "+5V_LED"
 		(at 548.64 173.99 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5143a-0000-4000-8000-00000000143a")
+		(uuid "1ed513e2-0000-4000-8000-0000000013e2")
 	)
-	(wire
-		(pts (xy 548.64 184.15) (xy 548.64 186.69))
-		(stroke (width 0) (type default))
-		(uuid "1ed5143b-0000-4000-8000-00000000143b")
-	)
-	(label "GND"
-		(at 548.64 186.69 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5143c-0000-4000-8000-00000000143c")
+	(symbol
+		(lib_id "power:GND")
+		(at 548.64 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b85-0000-4000-8000-000000001b85")
+		(property "Reference" "#PWR_L45"
+			(at 551.18 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 551.18 186.69 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 548.64 184.15 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c4d-0000-4000-8000-000000001c4d")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L45") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 535.94 172.72) (xy 548.64 172.72))
@@ -5363,22 +6263,42 @@
 	(wire
 		(pts (xy 325.12 201.93) (xy 325.12 199.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed5143d-0000-4000-8000-00000000143d")
+		(uuid "1ed513e3-0000-4000-8000-0000000013e3")
 	)
 	(label "+5V_LED"
 		(at 325.12 199.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5143e-0000-4000-8000-00000000143e")
+		(uuid "1ed513e4-0000-4000-8000-0000000013e4")
 	)
-	(wire
-		(pts (xy 325.12 209.55) (xy 325.12 212.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed5143f-0000-4000-8000-00000000143f")
-	)
-	(label "GND"
-		(at 325.12 212.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51440-0000-4000-8000-000000001440")
+	(symbol
+		(lib_id "power:GND")
+		(at 325.12 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b86-0000-4000-8000-000000001b86")
+		(property "Reference" "#PWR_L46"
+			(at 327.66 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 327.66 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 325.12 209.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c4e-0000-4000-8000-000000001c4e")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L46") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 312.42 198.12) (xy 325.12 198.12))
@@ -5485,22 +6405,42 @@
 	(wire
 		(pts (xy 353.06 201.93) (xy 353.06 199.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed51441-0000-4000-8000-000000001441")
+		(uuid "1ed513e5-0000-4000-8000-0000000013e5")
 	)
 	(label "+5V_LED"
 		(at 353.06 199.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51442-0000-4000-8000-000000001442")
+		(uuid "1ed513e6-0000-4000-8000-0000000013e6")
 	)
-	(wire
-		(pts (xy 353.06 209.55) (xy 353.06 212.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed51443-0000-4000-8000-000000001443")
-	)
-	(label "GND"
-		(at 353.06 212.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51444-0000-4000-8000-000000001444")
+	(symbol
+		(lib_id "power:GND")
+		(at 353.06 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b87-0000-4000-8000-000000001b87")
+		(property "Reference" "#PWR_L47"
+			(at 355.6 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 355.6 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 353.06 209.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c4f-0000-4000-8000-000000001c4f")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L47") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 340.36 198.12) (xy 353.06 198.12))
@@ -5602,22 +6542,42 @@
 	(wire
 		(pts (xy 381 201.93) (xy 381 199.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed51445-0000-4000-8000-000000001445")
+		(uuid "1ed513e7-0000-4000-8000-0000000013e7")
 	)
 	(label "+5V_LED"
 		(at 381 199.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51446-0000-4000-8000-000000001446")
+		(uuid "1ed513e8-0000-4000-8000-0000000013e8")
 	)
-	(wire
-		(pts (xy 381 209.55) (xy 381 212.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed51447-0000-4000-8000-000000001447")
-	)
-	(label "GND"
-		(at 381 212.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51448-0000-4000-8000-000000001448")
+	(symbol
+		(lib_id "power:GND")
+		(at 381 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b88-0000-4000-8000-000000001b88")
+		(property "Reference" "#PWR_L48"
+			(at 383.54 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 383.54 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 381 209.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c50-0000-4000-8000-000000001c50")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L48") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 368.3 198.12) (xy 381 198.12))
@@ -5719,22 +6679,42 @@
 	(wire
 		(pts (xy 408.94 201.93) (xy 408.94 199.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed51449-0000-4000-8000-000000001449")
+		(uuid "1ed513e9-0000-4000-8000-0000000013e9")
 	)
 	(label "+5V_LED"
 		(at 408.94 199.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5144a-0000-4000-8000-00000000144a")
+		(uuid "1ed513ea-0000-4000-8000-0000000013ea")
 	)
-	(wire
-		(pts (xy 408.94 209.55) (xy 408.94 212.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed5144b-0000-4000-8000-00000000144b")
-	)
-	(label "GND"
-		(at 408.94 212.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5144c-0000-4000-8000-00000000144c")
+	(symbol
+		(lib_id "power:GND")
+		(at 408.94 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b89-0000-4000-8000-000000001b89")
+		(property "Reference" "#PWR_L49"
+			(at 411.48 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 411.48 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 408.94 209.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c51-0000-4000-8000-000000001c51")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L49") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 396.24 198.12) (xy 408.94 198.12))
@@ -5836,22 +6816,42 @@
 	(wire
 		(pts (xy 436.88 201.93) (xy 436.88 199.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed5144d-0000-4000-8000-00000000144d")
+		(uuid "1ed513eb-0000-4000-8000-0000000013eb")
 	)
 	(label "+5V_LED"
 		(at 436.88 199.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5144e-0000-4000-8000-00000000144e")
+		(uuid "1ed513ec-0000-4000-8000-0000000013ec")
 	)
-	(wire
-		(pts (xy 436.88 209.55) (xy 436.88 212.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed5144f-0000-4000-8000-00000000144f")
-	)
-	(label "GND"
-		(at 436.88 212.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51450-0000-4000-8000-000000001450")
+	(symbol
+		(lib_id "power:GND")
+		(at 436.88 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b8a-0000-4000-8000-000000001b8a")
+		(property "Reference" "#PWR_L50"
+			(at 439.42 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 439.42 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 436.88 209.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c52-0000-4000-8000-000000001c52")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L50") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 424.18 198.12) (xy 436.88 198.12))
@@ -5953,22 +6953,42 @@
 	(wire
 		(pts (xy 464.82 201.93) (xy 464.82 199.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed51451-0000-4000-8000-000000001451")
+		(uuid "1ed513ed-0000-4000-8000-0000000013ed")
 	)
 	(label "+5V_LED"
 		(at 464.82 199.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51452-0000-4000-8000-000000001452")
+		(uuid "1ed513ee-0000-4000-8000-0000000013ee")
 	)
-	(wire
-		(pts (xy 464.82 209.55) (xy 464.82 212.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed51453-0000-4000-8000-000000001453")
-	)
-	(label "GND"
-		(at 464.82 212.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51454-0000-4000-8000-000000001454")
+	(symbol
+		(lib_id "power:GND")
+		(at 464.82 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b8b-0000-4000-8000-000000001b8b")
+		(property "Reference" "#PWR_L51"
+			(at 467.36 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 467.36 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 464.82 209.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c53-0000-4000-8000-000000001c53")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L51") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 452.12 198.12) (xy 464.82 198.12))
@@ -6070,22 +7090,42 @@
 	(wire
 		(pts (xy 492.76 201.93) (xy 492.76 199.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed51455-0000-4000-8000-000000001455")
+		(uuid "1ed513ef-0000-4000-8000-0000000013ef")
 	)
 	(label "+5V_LED"
 		(at 492.76 199.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51456-0000-4000-8000-000000001456")
+		(uuid "1ed513f0-0000-4000-8000-0000000013f0")
 	)
-	(wire
-		(pts (xy 492.76 209.55) (xy 492.76 212.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed51457-0000-4000-8000-000000001457")
-	)
-	(label "GND"
-		(at 492.76 212.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51458-0000-4000-8000-000000001458")
+	(symbol
+		(lib_id "power:GND")
+		(at 492.76 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b8c-0000-4000-8000-000000001b8c")
+		(property "Reference" "#PWR_L52"
+			(at 495.3 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 495.3 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 492.76 209.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c54-0000-4000-8000-000000001c54")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L52") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 480.06 198.12) (xy 492.76 198.12))
@@ -6187,22 +7227,42 @@
 	(wire
 		(pts (xy 520.7 201.93) (xy 520.7 199.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed51459-0000-4000-8000-000000001459")
+		(uuid "1ed513f1-0000-4000-8000-0000000013f1")
 	)
 	(label "+5V_LED"
 		(at 520.7 199.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5145a-0000-4000-8000-00000000145a")
+		(uuid "1ed513f2-0000-4000-8000-0000000013f2")
 	)
-	(wire
-		(pts (xy 520.7 209.55) (xy 520.7 212.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed5145b-0000-4000-8000-00000000145b")
-	)
-	(label "GND"
-		(at 520.7 212.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5145c-0000-4000-8000-00000000145c")
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b8d-0000-4000-8000-000000001b8d")
+		(property "Reference" "#PWR_L53"
+			(at 523.24 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 523.24 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 520.7 209.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c55-0000-4000-8000-000000001c55")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L53") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 508 198.12) (xy 520.7 198.12))
@@ -6304,22 +7364,42 @@
 	(wire
 		(pts (xy 548.64 201.93) (xy 548.64 199.39))
 		(stroke (width 0) (type default))
-		(uuid "1ed5145d-0000-4000-8000-00000000145d")
+		(uuid "1ed513f3-0000-4000-8000-0000000013f3")
 	)
 	(label "+5V_LED"
 		(at 548.64 199.39 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5145e-0000-4000-8000-00000000145e")
+		(uuid "1ed513f4-0000-4000-8000-0000000013f4")
 	)
-	(wire
-		(pts (xy 548.64 209.55) (xy 548.64 212.09))
-		(stroke (width 0) (type default))
-		(uuid "1ed5145f-0000-4000-8000-00000000145f")
-	)
-	(label "GND"
-		(at 548.64 212.09 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51460-0000-4000-8000-000000001460")
+	(symbol
+		(lib_id "power:GND")
+		(at 548.64 209.55 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b8e-0000-4000-8000-000000001b8e")
+		(property "Reference" "#PWR_L54"
+			(at 551.18 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 551.18 212.09 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 548.64 209.55 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c56-0000-4000-8000-000000001c56")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L54") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 535.94 198.12) (xy 548.64 198.12))
@@ -6421,22 +7501,42 @@
 	(wire
 		(pts (xy 325.12 227.33) (xy 325.12 224.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed51461-0000-4000-8000-000000001461")
+		(uuid "1ed513f5-0000-4000-8000-0000000013f5")
 	)
 	(label "+5V_LED"
 		(at 325.12 224.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51462-0000-4000-8000-000000001462")
+		(uuid "1ed513f6-0000-4000-8000-0000000013f6")
 	)
-	(wire
-		(pts (xy 325.12 234.95) (xy 325.12 237.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed51463-0000-4000-8000-000000001463")
-	)
-	(label "GND"
-		(at 325.12 237.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51464-0000-4000-8000-000000001464")
+	(symbol
+		(lib_id "power:GND")
+		(at 325.12 234.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b8f-0000-4000-8000-000000001b8f")
+		(property "Reference" "#PWR_L55"
+			(at 327.66 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 327.66 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 325.12 234.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c57-0000-4000-8000-000000001c57")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L55") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 312.42 223.52) (xy 325.12 223.52))
@@ -6543,22 +7643,42 @@
 	(wire
 		(pts (xy 353.06 227.33) (xy 353.06 224.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed51465-0000-4000-8000-000000001465")
+		(uuid "1ed513f7-0000-4000-8000-0000000013f7")
 	)
 	(label "+5V_LED"
 		(at 353.06 224.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51466-0000-4000-8000-000000001466")
+		(uuid "1ed513f8-0000-4000-8000-0000000013f8")
 	)
-	(wire
-		(pts (xy 353.06 234.95) (xy 353.06 237.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed51467-0000-4000-8000-000000001467")
-	)
-	(label "GND"
-		(at 353.06 237.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51468-0000-4000-8000-000000001468")
+	(symbol
+		(lib_id "power:GND")
+		(at 353.06 234.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b90-0000-4000-8000-000000001b90")
+		(property "Reference" "#PWR_L56"
+			(at 355.6 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 355.6 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 353.06 234.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c58-0000-4000-8000-000000001c58")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L56") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 340.36 223.52) (xy 353.06 223.52))
@@ -6660,22 +7780,42 @@
 	(wire
 		(pts (xy 381 227.33) (xy 381 224.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed51469-0000-4000-8000-000000001469")
+		(uuid "1ed513f9-0000-4000-8000-0000000013f9")
 	)
 	(label "+5V_LED"
 		(at 381 224.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5146a-0000-4000-8000-00000000146a")
+		(uuid "1ed513fa-0000-4000-8000-0000000013fa")
 	)
-	(wire
-		(pts (xy 381 234.95) (xy 381 237.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed5146b-0000-4000-8000-00000000146b")
-	)
-	(label "GND"
-		(at 381 237.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5146c-0000-4000-8000-00000000146c")
+	(symbol
+		(lib_id "power:GND")
+		(at 381 234.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b91-0000-4000-8000-000000001b91")
+		(property "Reference" "#PWR_L57"
+			(at 383.54 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 383.54 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 381 234.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c59-0000-4000-8000-000000001c59")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L57") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 368.3 223.52) (xy 381 223.52))
@@ -6777,22 +7917,42 @@
 	(wire
 		(pts (xy 408.94 227.33) (xy 408.94 224.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed5146d-0000-4000-8000-00000000146d")
+		(uuid "1ed513fb-0000-4000-8000-0000000013fb")
 	)
 	(label "+5V_LED"
 		(at 408.94 224.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5146e-0000-4000-8000-00000000146e")
+		(uuid "1ed513fc-0000-4000-8000-0000000013fc")
 	)
-	(wire
-		(pts (xy 408.94 234.95) (xy 408.94 237.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed5146f-0000-4000-8000-00000000146f")
-	)
-	(label "GND"
-		(at 408.94 237.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51470-0000-4000-8000-000000001470")
+	(symbol
+		(lib_id "power:GND")
+		(at 408.94 234.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b92-0000-4000-8000-000000001b92")
+		(property "Reference" "#PWR_L58"
+			(at 411.48 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 411.48 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 408.94 234.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c5a-0000-4000-8000-000000001c5a")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L58") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 396.24 223.52) (xy 408.94 223.52))
@@ -6894,22 +8054,42 @@
 	(wire
 		(pts (xy 436.88 227.33) (xy 436.88 224.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed51471-0000-4000-8000-000000001471")
+		(uuid "1ed513fd-0000-4000-8000-0000000013fd")
 	)
 	(label "+5V_LED"
 		(at 436.88 224.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51472-0000-4000-8000-000000001472")
+		(uuid "1ed513fe-0000-4000-8000-0000000013fe")
 	)
-	(wire
-		(pts (xy 436.88 234.95) (xy 436.88 237.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed51473-0000-4000-8000-000000001473")
-	)
-	(label "GND"
-		(at 436.88 237.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51474-0000-4000-8000-000000001474")
+	(symbol
+		(lib_id "power:GND")
+		(at 436.88 234.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b93-0000-4000-8000-000000001b93")
+		(property "Reference" "#PWR_L59"
+			(at 439.42 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 439.42 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 436.88 234.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c5b-0000-4000-8000-000000001c5b")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L59") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 424.18 223.52) (xy 436.88 223.52))
@@ -7011,22 +8191,42 @@
 	(wire
 		(pts (xy 464.82 227.33) (xy 464.82 224.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed51475-0000-4000-8000-000000001475")
+		(uuid "1ed513ff-0000-4000-8000-0000000013ff")
 	)
 	(label "+5V_LED"
 		(at 464.82 224.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51476-0000-4000-8000-000000001476")
+		(uuid "1ed51400-0000-4000-8000-000000001400")
 	)
-	(wire
-		(pts (xy 464.82 234.95) (xy 464.82 237.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed51477-0000-4000-8000-000000001477")
-	)
-	(label "GND"
-		(at 464.82 237.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51478-0000-4000-8000-000000001478")
+	(symbol
+		(lib_id "power:GND")
+		(at 464.82 234.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b94-0000-4000-8000-000000001b94")
+		(property "Reference" "#PWR_L60"
+			(at 467.36 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 467.36 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 464.82 234.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c5c-0000-4000-8000-000000001c5c")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L60") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 452.12 223.52) (xy 464.82 223.52))
@@ -7128,22 +8328,42 @@
 	(wire
 		(pts (xy 492.76 227.33) (xy 492.76 224.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed51479-0000-4000-8000-000000001479")
+		(uuid "1ed51401-0000-4000-8000-000000001401")
 	)
 	(label "+5V_LED"
 		(at 492.76 224.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5147a-0000-4000-8000-00000000147a")
+		(uuid "1ed51402-0000-4000-8000-000000001402")
 	)
-	(wire
-		(pts (xy 492.76 234.95) (xy 492.76 237.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed5147b-0000-4000-8000-00000000147b")
-	)
-	(label "GND"
-		(at 492.76 237.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5147c-0000-4000-8000-00000000147c")
+	(symbol
+		(lib_id "power:GND")
+		(at 492.76 234.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b95-0000-4000-8000-000000001b95")
+		(property "Reference" "#PWR_L61"
+			(at 495.3 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 495.3 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 492.76 234.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c5d-0000-4000-8000-000000001c5d")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L61") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 480.06 223.52) (xy 492.76 223.52))
@@ -7245,22 +8465,42 @@
 	(wire
 		(pts (xy 520.7 227.33) (xy 520.7 224.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed5147d-0000-4000-8000-00000000147d")
+		(uuid "1ed51403-0000-4000-8000-000000001403")
 	)
 	(label "+5V_LED"
 		(at 520.7 224.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5147e-0000-4000-8000-00000000147e")
+		(uuid "1ed51404-0000-4000-8000-000000001404")
 	)
-	(wire
-		(pts (xy 520.7 234.95) (xy 520.7 237.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed5147f-0000-4000-8000-00000000147f")
-	)
-	(label "GND"
-		(at 520.7 237.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51480-0000-4000-8000-000000001480")
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 234.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b96-0000-4000-8000-000000001b96")
+		(property "Reference" "#PWR_L62"
+			(at 523.24 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 523.24 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 520.7 234.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c5e-0000-4000-8000-000000001c5e")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L62") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 508 223.52) (xy 520.7 223.52))
@@ -7362,22 +8602,42 @@
 	(wire
 		(pts (xy 548.64 227.33) (xy 548.64 224.79))
 		(stroke (width 0) (type default))
-		(uuid "1ed51481-0000-4000-8000-000000001481")
+		(uuid "1ed51405-0000-4000-8000-000000001405")
 	)
 	(label "+5V_LED"
 		(at 548.64 224.79 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51482-0000-4000-8000-000000001482")
+		(uuid "1ed51406-0000-4000-8000-000000001406")
 	)
-	(wire
-		(pts (xy 548.64 234.95) (xy 548.64 237.49))
-		(stroke (width 0) (type default))
-		(uuid "1ed51483-0000-4000-8000-000000001483")
-	)
-	(label "GND"
-		(at 548.64 237.49 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51484-0000-4000-8000-000000001484")
+	(symbol
+		(lib_id "power:GND")
+		(at 548.64 234.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b97-0000-4000-8000-000000001b97")
+		(property "Reference" "#PWR_L63"
+			(at 551.18 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 551.18 237.49 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 548.64 234.95 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c5f-0000-4000-8000-000000001c5f")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L63") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 535.94 223.52) (xy 548.64 223.52))
@@ -7479,22 +8739,42 @@
 	(wire
 		(pts (xy 325.12 252.73) (xy 325.12 250.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed51485-0000-4000-8000-000000001485")
+		(uuid "1ed51407-0000-4000-8000-000000001407")
 	)
 	(label "+5V_LED"
 		(at 325.12 250.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51486-0000-4000-8000-000000001486")
+		(uuid "1ed51408-0000-4000-8000-000000001408")
 	)
-	(wire
-		(pts (xy 325.12 260.35) (xy 325.12 262.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed51487-0000-4000-8000-000000001487")
-	)
-	(label "GND"
-		(at 325.12 262.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51488-0000-4000-8000-000000001488")
+	(symbol
+		(lib_id "power:GND")
+		(at 325.12 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b98-0000-4000-8000-000000001b98")
+		(property "Reference" "#PWR_L64"
+			(at 327.66 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 327.66 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 325.12 260.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c60-0000-4000-8000-000000001c60")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L64") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 312.42 248.92) (xy 325.12 248.92))
@@ -7601,22 +8881,42 @@
 	(wire
 		(pts (xy 353.06 252.73) (xy 353.06 250.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed51489-0000-4000-8000-000000001489")
+		(uuid "1ed51409-0000-4000-8000-000000001409")
 	)
 	(label "+5V_LED"
 		(at 353.06 250.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5148a-0000-4000-8000-00000000148a")
+		(uuid "1ed5140a-0000-4000-8000-00000000140a")
 	)
-	(wire
-		(pts (xy 353.06 260.35) (xy 353.06 262.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed5148b-0000-4000-8000-00000000148b")
-	)
-	(label "GND"
-		(at 353.06 262.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5148c-0000-4000-8000-00000000148c")
+	(symbol
+		(lib_id "power:GND")
+		(at 353.06 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b99-0000-4000-8000-000000001b99")
+		(property "Reference" "#PWR_L65"
+			(at 355.6 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 355.6 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 353.06 260.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c61-0000-4000-8000-000000001c61")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L65") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 340.36 248.92) (xy 353.06 248.92))
@@ -7718,22 +9018,42 @@
 	(wire
 		(pts (xy 381 252.73) (xy 381 250.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed5148d-0000-4000-8000-00000000148d")
+		(uuid "1ed5140b-0000-4000-8000-00000000140b")
 	)
 	(label "+5V_LED"
 		(at 381 250.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5148e-0000-4000-8000-00000000148e")
+		(uuid "1ed5140c-0000-4000-8000-00000000140c")
 	)
-	(wire
-		(pts (xy 381 260.35) (xy 381 262.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed5148f-0000-4000-8000-00000000148f")
-	)
-	(label "GND"
-		(at 381 262.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51490-0000-4000-8000-000000001490")
+	(symbol
+		(lib_id "power:GND")
+		(at 381 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b9a-0000-4000-8000-000000001b9a")
+		(property "Reference" "#PWR_L66"
+			(at 383.54 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 383.54 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 381 260.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c62-0000-4000-8000-000000001c62")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L66") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 368.3 248.92) (xy 381 248.92))
@@ -7835,22 +9155,42 @@
 	(wire
 		(pts (xy 408.94 252.73) (xy 408.94 250.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed51491-0000-4000-8000-000000001491")
+		(uuid "1ed5140d-0000-4000-8000-00000000140d")
 	)
 	(label "+5V_LED"
 		(at 408.94 250.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51492-0000-4000-8000-000000001492")
+		(uuid "1ed5140e-0000-4000-8000-00000000140e")
 	)
-	(wire
-		(pts (xy 408.94 260.35) (xy 408.94 262.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed51493-0000-4000-8000-000000001493")
-	)
-	(label "GND"
-		(at 408.94 262.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51494-0000-4000-8000-000000001494")
+	(symbol
+		(lib_id "power:GND")
+		(at 408.94 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b9b-0000-4000-8000-000000001b9b")
+		(property "Reference" "#PWR_L67"
+			(at 411.48 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 411.48 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 408.94 260.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c63-0000-4000-8000-000000001c63")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L67") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 396.24 248.92) (xy 408.94 248.92))
@@ -7952,22 +9292,42 @@
 	(wire
 		(pts (xy 436.88 252.73) (xy 436.88 250.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed51495-0000-4000-8000-000000001495")
+		(uuid "1ed5140f-0000-4000-8000-00000000140f")
 	)
 	(label "+5V_LED"
 		(at 436.88 250.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51496-0000-4000-8000-000000001496")
+		(uuid "1ed51410-0000-4000-8000-000000001410")
 	)
-	(wire
-		(pts (xy 436.88 260.35) (xy 436.88 262.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed51497-0000-4000-8000-000000001497")
-	)
-	(label "GND"
-		(at 436.88 262.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed51498-0000-4000-8000-000000001498")
+	(symbol
+		(lib_id "power:GND")
+		(at 436.88 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b9c-0000-4000-8000-000000001b9c")
+		(property "Reference" "#PWR_L68"
+			(at 439.42 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 439.42 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 436.88 260.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c64-0000-4000-8000-000000001c64")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L68") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 424.18 248.92) (xy 436.88 248.92))
@@ -8069,22 +9429,42 @@
 	(wire
 		(pts (xy 464.82 252.73) (xy 464.82 250.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed51499-0000-4000-8000-000000001499")
+		(uuid "1ed51411-0000-4000-8000-000000001411")
 	)
 	(label "+5V_LED"
 		(at 464.82 250.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5149a-0000-4000-8000-00000000149a")
+		(uuid "1ed51412-0000-4000-8000-000000001412")
 	)
-	(wire
-		(pts (xy 464.82 260.35) (xy 464.82 262.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed5149b-0000-4000-8000-00000000149b")
-	)
-	(label "GND"
-		(at 464.82 262.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5149c-0000-4000-8000-00000000149c")
+	(symbol
+		(lib_id "power:GND")
+		(at 464.82 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b9d-0000-4000-8000-000000001b9d")
+		(property "Reference" "#PWR_L69"
+			(at 467.36 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 467.36 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 464.82 260.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c65-0000-4000-8000-000000001c65")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L69") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 452.12 248.92) (xy 464.82 248.92))
@@ -8186,22 +9566,42 @@
 	(wire
 		(pts (xy 492.76 252.73) (xy 492.76 250.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed5149d-0000-4000-8000-00000000149d")
+		(uuid "1ed51413-0000-4000-8000-000000001413")
 	)
 	(label "+5V_LED"
 		(at 492.76 250.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed5149e-0000-4000-8000-00000000149e")
+		(uuid "1ed51414-0000-4000-8000-000000001414")
 	)
-	(wire
-		(pts (xy 492.76 260.35) (xy 492.76 262.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed5149f-0000-4000-8000-00000000149f")
-	)
-	(label "GND"
-		(at 492.76 262.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514a0-0000-4000-8000-0000000014a0")
+	(symbol
+		(lib_id "power:GND")
+		(at 492.76 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b9e-0000-4000-8000-000000001b9e")
+		(property "Reference" "#PWR_L70"
+			(at 495.3 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 495.3 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 492.76 260.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c66-0000-4000-8000-000000001c66")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L70") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 480.06 248.92) (xy 492.76 248.92))
@@ -8303,22 +9703,42 @@
 	(wire
 		(pts (xy 520.7 252.73) (xy 520.7 250.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed514a1-0000-4000-8000-0000000014a1")
+		(uuid "1ed51415-0000-4000-8000-000000001415")
 	)
 	(label "+5V_LED"
 		(at 520.7 250.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514a2-0000-4000-8000-0000000014a2")
+		(uuid "1ed51416-0000-4000-8000-000000001416")
 	)
-	(wire
-		(pts (xy 520.7 260.35) (xy 520.7 262.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed514a3-0000-4000-8000-0000000014a3")
-	)
-	(label "GND"
-		(at 520.7 262.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514a4-0000-4000-8000-0000000014a4")
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51b9f-0000-4000-8000-000000001b9f")
+		(property "Reference" "#PWR_L71"
+			(at 523.24 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 523.24 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 520.7 260.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c67-0000-4000-8000-000000001c67")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L71") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 508 248.92) (xy 520.7 248.92))
@@ -8420,22 +9840,42 @@
 	(wire
 		(pts (xy 548.64 252.73) (xy 548.64 250.19))
 		(stroke (width 0) (type default))
-		(uuid "1ed514a5-0000-4000-8000-0000000014a5")
+		(uuid "1ed51417-0000-4000-8000-000000001417")
 	)
 	(label "+5V_LED"
 		(at 548.64 250.19 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514a6-0000-4000-8000-0000000014a6")
+		(uuid "1ed51418-0000-4000-8000-000000001418")
 	)
-	(wire
-		(pts (xy 548.64 260.35) (xy 548.64 262.89))
-		(stroke (width 0) (type default))
-		(uuid "1ed514a7-0000-4000-8000-0000000014a7")
-	)
-	(label "GND"
-		(at 548.64 262.89 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514a8-0000-4000-8000-0000000014a8")
+	(symbol
+		(lib_id "power:GND")
+		(at 548.64 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51ba0-0000-4000-8000-000000001ba0")
+		(property "Reference" "#PWR_L72"
+			(at 551.18 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 551.18 262.89 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 548.64 260.35 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c68-0000-4000-8000-000000001c68")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L72") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 535.94 248.92) (xy 548.64 248.92))
@@ -8537,22 +9977,42 @@
 	(wire
 		(pts (xy 325.12 278.13) (xy 325.12 275.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed514a9-0000-4000-8000-0000000014a9")
+		(uuid "1ed51419-0000-4000-8000-000000001419")
 	)
 	(label "+5V_LED"
 		(at 325.12 275.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514aa-0000-4000-8000-0000000014aa")
+		(uuid "1ed5141a-0000-4000-8000-00000000141a")
 	)
-	(wire
-		(pts (xy 325.12 285.75) (xy 325.12 288.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed514ab-0000-4000-8000-0000000014ab")
-	)
-	(label "GND"
-		(at 325.12 288.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514ac-0000-4000-8000-0000000014ac")
+	(symbol
+		(lib_id "power:GND")
+		(at 325.12 285.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51ba1-0000-4000-8000-000000001ba1")
+		(property "Reference" "#PWR_L73"
+			(at 327.66 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 327.66 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 325.12 285.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c69-0000-4000-8000-000000001c69")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L73") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 312.42 274.32) (xy 325.12 274.32))
@@ -8659,22 +10119,42 @@
 	(wire
 		(pts (xy 353.06 278.13) (xy 353.06 275.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed514ad-0000-4000-8000-0000000014ad")
+		(uuid "1ed5141b-0000-4000-8000-00000000141b")
 	)
 	(label "+5V_LED"
 		(at 353.06 275.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514ae-0000-4000-8000-0000000014ae")
+		(uuid "1ed5141c-0000-4000-8000-00000000141c")
 	)
-	(wire
-		(pts (xy 353.06 285.75) (xy 353.06 288.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed514af-0000-4000-8000-0000000014af")
-	)
-	(label "GND"
-		(at 353.06 288.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514b0-0000-4000-8000-0000000014b0")
+	(symbol
+		(lib_id "power:GND")
+		(at 353.06 285.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51ba2-0000-4000-8000-000000001ba2")
+		(property "Reference" "#PWR_L74"
+			(at 355.6 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 355.6 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 353.06 285.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c6a-0000-4000-8000-000000001c6a")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L74") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 340.36 274.32) (xy 353.06 274.32))
@@ -8776,22 +10256,42 @@
 	(wire
 		(pts (xy 381 278.13) (xy 381 275.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed514b1-0000-4000-8000-0000000014b1")
+		(uuid "1ed5141d-0000-4000-8000-00000000141d")
 	)
 	(label "+5V_LED"
 		(at 381 275.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514b2-0000-4000-8000-0000000014b2")
+		(uuid "1ed5141e-0000-4000-8000-00000000141e")
 	)
-	(wire
-		(pts (xy 381 285.75) (xy 381 288.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed514b3-0000-4000-8000-0000000014b3")
-	)
-	(label "GND"
-		(at 381 288.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514b4-0000-4000-8000-0000000014b4")
+	(symbol
+		(lib_id "power:GND")
+		(at 381 285.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51ba3-0000-4000-8000-000000001ba3")
+		(property "Reference" "#PWR_L75"
+			(at 383.54 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 383.54 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 381 285.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c6b-0000-4000-8000-000000001c6b")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L75") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 368.3 274.32) (xy 381 274.32))
@@ -8893,22 +10393,42 @@
 	(wire
 		(pts (xy 408.94 278.13) (xy 408.94 275.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed514b5-0000-4000-8000-0000000014b5")
+		(uuid "1ed5141f-0000-4000-8000-00000000141f")
 	)
 	(label "+5V_LED"
 		(at 408.94 275.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514b6-0000-4000-8000-0000000014b6")
+		(uuid "1ed51420-0000-4000-8000-000000001420")
 	)
-	(wire
-		(pts (xy 408.94 285.75) (xy 408.94 288.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed514b7-0000-4000-8000-0000000014b7")
-	)
-	(label "GND"
-		(at 408.94 288.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514b8-0000-4000-8000-0000000014b8")
+	(symbol
+		(lib_id "power:GND")
+		(at 408.94 285.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51ba4-0000-4000-8000-000000001ba4")
+		(property "Reference" "#PWR_L76"
+			(at 411.48 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 411.48 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 408.94 285.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c6c-0000-4000-8000-000000001c6c")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L76") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 396.24 274.32) (xy 408.94 274.32))
@@ -9010,22 +10530,42 @@
 	(wire
 		(pts (xy 436.88 278.13) (xy 436.88 275.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed514b9-0000-4000-8000-0000000014b9")
+		(uuid "1ed51421-0000-4000-8000-000000001421")
 	)
 	(label "+5V_LED"
 		(at 436.88 275.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514ba-0000-4000-8000-0000000014ba")
+		(uuid "1ed51422-0000-4000-8000-000000001422")
 	)
-	(wire
-		(pts (xy 436.88 285.75) (xy 436.88 288.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed514bb-0000-4000-8000-0000000014bb")
-	)
-	(label "GND"
-		(at 436.88 288.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514bc-0000-4000-8000-0000000014bc")
+	(symbol
+		(lib_id "power:GND")
+		(at 436.88 285.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51ba5-0000-4000-8000-000000001ba5")
+		(property "Reference" "#PWR_L77"
+			(at 439.42 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 439.42 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 436.88 285.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c6d-0000-4000-8000-000000001c6d")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L77") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 424.18 274.32) (xy 436.88 274.32))
@@ -9127,22 +10667,42 @@
 	(wire
 		(pts (xy 464.82 278.13) (xy 464.82 275.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed514bd-0000-4000-8000-0000000014bd")
+		(uuid "1ed51423-0000-4000-8000-000000001423")
 	)
 	(label "+5V_LED"
 		(at 464.82 275.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514be-0000-4000-8000-0000000014be")
+		(uuid "1ed51424-0000-4000-8000-000000001424")
 	)
-	(wire
-		(pts (xy 464.82 285.75) (xy 464.82 288.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed514bf-0000-4000-8000-0000000014bf")
-	)
-	(label "GND"
-		(at 464.82 288.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514c0-0000-4000-8000-0000000014c0")
+	(symbol
+		(lib_id "power:GND")
+		(at 464.82 285.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51ba6-0000-4000-8000-000000001ba6")
+		(property "Reference" "#PWR_L78"
+			(at 467.36 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 467.36 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 464.82 285.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c6e-0000-4000-8000-000000001c6e")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L78") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 452.12 274.32) (xy 464.82 274.32))
@@ -9244,22 +10804,42 @@
 	(wire
 		(pts (xy 492.76 278.13) (xy 492.76 275.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed514c1-0000-4000-8000-0000000014c1")
+		(uuid "1ed51425-0000-4000-8000-000000001425")
 	)
 	(label "+5V_LED"
 		(at 492.76 275.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514c2-0000-4000-8000-0000000014c2")
+		(uuid "1ed51426-0000-4000-8000-000000001426")
 	)
-	(wire
-		(pts (xy 492.76 285.75) (xy 492.76 288.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed514c3-0000-4000-8000-0000000014c3")
-	)
-	(label "GND"
-		(at 492.76 288.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514c4-0000-4000-8000-0000000014c4")
+	(symbol
+		(lib_id "power:GND")
+		(at 492.76 285.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51ba7-0000-4000-8000-000000001ba7")
+		(property "Reference" "#PWR_L79"
+			(at 495.3 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 495.3 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 492.76 285.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c6f-0000-4000-8000-000000001c6f")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L79") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 480.06 274.32) (xy 492.76 274.32))
@@ -9361,22 +10941,42 @@
 	(wire
 		(pts (xy 520.7 278.13) (xy 520.7 275.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed514c5-0000-4000-8000-0000000014c5")
+		(uuid "1ed51427-0000-4000-8000-000000001427")
 	)
 	(label "+5V_LED"
 		(at 520.7 275.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514c6-0000-4000-8000-0000000014c6")
+		(uuid "1ed51428-0000-4000-8000-000000001428")
 	)
-	(wire
-		(pts (xy 520.7 285.75) (xy 520.7 288.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed514c7-0000-4000-8000-0000000014c7")
-	)
-	(label "GND"
-		(at 520.7 288.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514c8-0000-4000-8000-0000000014c8")
+	(symbol
+		(lib_id "power:GND")
+		(at 520.7 285.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51ba8-0000-4000-8000-000000001ba8")
+		(property "Reference" "#PWR_L80"
+			(at 523.24 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 523.24 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 520.7 285.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c70-0000-4000-8000-000000001c70")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L80") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 508 274.32) (xy 520.7 274.32))
@@ -9478,22 +11078,42 @@
 	(wire
 		(pts (xy 548.64 278.13) (xy 548.64 275.59))
 		(stroke (width 0) (type default))
-		(uuid "1ed514c9-0000-4000-8000-0000000014c9")
+		(uuid "1ed51429-0000-4000-8000-000000001429")
 	)
 	(label "+5V_LED"
 		(at 548.64 275.59 90)
 		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514ca-0000-4000-8000-0000000014ca")
+		(uuid "1ed5142a-0000-4000-8000-00000000142a")
 	)
-	(wire
-		(pts (xy 548.64 285.75) (xy 548.64 288.29))
-		(stroke (width 0) (type default))
-		(uuid "1ed514cb-0000-4000-8000-0000000014cb")
-	)
-	(label "GND"
-		(at 548.64 288.29 90)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "1ed514cc-0000-4000-8000-0000000014cc")
+	(symbol
+		(lib_id "power:GND")
+		(at 548.64 285.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1ed51ba9-0000-4000-8000-000000001ba9")
+		(property "Reference" "#PWR_L81"
+			(at 551.18 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 551.18 288.29 0)
+			(effects (font (size 1.27 1.27)) (justify left))
+		)
+		(property "Footprint" ""
+			(at 548.64 285.75 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "1ed51c71-0000-4000-8000-000000001c71")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_L81") (unit 1))
+			)
+		)
 	)
 	(wire
 		(pts (xy 535.94 274.32) (xy 548.64 274.32))

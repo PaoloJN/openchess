@@ -155,22 +155,26 @@ def main() -> int:
                        uid(PFX_LED_CAP, 5000 + rail_counter),
                        justify="left bottom")
 
-            # GND on cap pin 2 — use a power:GND symbol rotated 180° so the
-            # triangle extends DOWN, away from the cap body. The symbol's
-            # pin sits exactly on cap pin 2 — no stub wire needed.
+            # GND on cap pin 2 — drop a power:GND symbol AT the pin endpoint.
+            # rot=0 keeps the triangle drawn at sym y<0 below the pin in
+            # world coords (Y-down), so the arrow points DOWN, away from
+            # the cap body. ref (#PWR_Ln) is hidden; the triangle and the
+            # "GND" value text are enough.
             emit_symbol(
                 out,
                 lib_id=GND_POWER_LIB,
-                x=p2x, y=p2y, rot=180,
+                x=p2x, y=p2y, rot=0,
                 ref=f"#PWR_L{n}",
                 value="GND",
                 footprint="",
                 sym_uuid=uid(PFX_LED_CAP, 7000 + n),
                 pin_uuids={"1": uid(PFX_LED_CAP, 7200 + n)},
                 ref_offset=(g(1), g(1)),
-                value_offset=(g(1), -g(1)),
+                value_offset=(g(1), g(1)),
                 in_bom=False,
                 on_board=False,
+                hide_ref=True,   # hide the #PWR_Ln reference
+                # value "GND" stays visible next to the triangle
             )
 
             # ── Power wires: LED VDD → cap pin 1, LED VSS → cap pin 2 ──

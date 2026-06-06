@@ -45,24 +45,44 @@
 		(uuid "ba11138a-0000-4000-8000-00000000138a")
 	)
 	(wire
-		(pts (xy 55.88 276.86) (xy 50.8 276.86))
-		(stroke (width 0) (type default))
-		(uuid "ba11138b-0000-4000-8000-00000000138b")
-	)
-	(label "GND"
-		(at 50.8 276.86 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11138c-0000-4000-8000-00000000138c")
-	)
-	(wire
 		(pts (xy 55.88 279.4) (xy 50.8 279.4))
 		(stroke (width 0) (type default))
-		(uuid "ba11138d-0000-4000-8000-00000000138d")
+		(uuid "ba11138b-0000-4000-8000-00000000138b")
 	)
 	(label "S0"
 		(at 50.8 279.4 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11138e-0000-4000-8000-00000000138e")
+		(uuid "ba11138c-0000-4000-8000-00000000138c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 276.86 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b59-0000-4000-8000-000000001b59")
+		(property "Reference" "#PWR_H1"
+			(at 53.34 274.32 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 53.34 279.4 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 55.88 276.86 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c21-0000-4000-8000-000000001c21")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H1") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -103,32 +123,52 @@
 	(wire
 		(pts (xy 55.88 246.38) (xy 50.8 246.38))
 		(stroke (width 0) (type default))
-		(uuid "ba11138f-0000-4000-8000-00000000138f")
+		(uuid "ba11138d-0000-4000-8000-00000000138d")
 	)
 	(label "CA_PWR"
 		(at 50.8 246.38 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111390-0000-4000-8000-000000001390")
-	)
-	(wire
-		(pts (xy 55.88 248.92) (xy 50.8 248.92))
-		(stroke (width 0) (type default))
-		(uuid "ba111391-0000-4000-8000-000000001391")
-	)
-	(label "GND"
-		(at 50.8 248.92 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111392-0000-4000-8000-000000001392")
+		(uuid "ba11138e-0000-4000-8000-00000000138e")
 	)
 	(wire
 		(pts (xy 55.88 251.46) (xy 50.8 251.46))
 		(stroke (width 0) (type default))
-		(uuid "ba111393-0000-4000-8000-000000001393")
+		(uuid "ba11138f-0000-4000-8000-00000000138f")
 	)
 	(label "S1"
 		(at 50.8 251.46 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111394-0000-4000-8000-000000001394")
+		(uuid "ba111390-0000-4000-8000-000000001390")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 248.92 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b5a-0000-4000-8000-000000001b5a")
+		(property "Reference" "#PWR_H2"
+			(at 53.34 246.38 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 53.34 251.46 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 55.88 248.92 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c22-0000-4000-8000-000000001c22")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H2") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -169,32 +209,52 @@
 	(wire
 		(pts (xy 55.88 218.44) (xy 50.8 218.44))
 		(stroke (width 0) (type default))
-		(uuid "ba111395-0000-4000-8000-000000001395")
+		(uuid "ba111391-0000-4000-8000-000000001391")
 	)
 	(label "CA_PWR"
 		(at 50.8 218.44 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111396-0000-4000-8000-000000001396")
-	)
-	(wire
-		(pts (xy 55.88 220.98) (xy 50.8 220.98))
-		(stroke (width 0) (type default))
-		(uuid "ba111397-0000-4000-8000-000000001397")
-	)
-	(label "GND"
-		(at 50.8 220.98 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111398-0000-4000-8000-000000001398")
+		(uuid "ba111392-0000-4000-8000-000000001392")
 	)
 	(wire
 		(pts (xy 55.88 223.52) (xy 50.8 223.52))
 		(stroke (width 0) (type default))
-		(uuid "ba111399-0000-4000-8000-000000001399")
+		(uuid "ba111393-0000-4000-8000-000000001393")
 	)
 	(label "S2"
 		(at 50.8 223.52 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11139a-0000-4000-8000-00000000139a")
+		(uuid "ba111394-0000-4000-8000-000000001394")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 220.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b5b-0000-4000-8000-000000001b5b")
+		(property "Reference" "#PWR_H3"
+			(at 53.34 218.44 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 53.34 223.52 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 55.88 220.98 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c23-0000-4000-8000-000000001c23")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H3") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -235,32 +295,52 @@
 	(wire
 		(pts (xy 55.88 190.5) (xy 50.8 190.5))
 		(stroke (width 0) (type default))
-		(uuid "ba11139b-0000-4000-8000-00000000139b")
+		(uuid "ba111395-0000-4000-8000-000000001395")
 	)
 	(label "CA_PWR"
 		(at 50.8 190.5 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11139c-0000-4000-8000-00000000139c")
-	)
-	(wire
-		(pts (xy 55.88 193.04) (xy 50.8 193.04))
-		(stroke (width 0) (type default))
-		(uuid "ba11139d-0000-4000-8000-00000000139d")
-	)
-	(label "GND"
-		(at 50.8 193.04 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11139e-0000-4000-8000-00000000139e")
+		(uuid "ba111396-0000-4000-8000-000000001396")
 	)
 	(wire
 		(pts (xy 55.88 195.58) (xy 50.8 195.58))
 		(stroke (width 0) (type default))
-		(uuid "ba11139f-0000-4000-8000-00000000139f")
+		(uuid "ba111397-0000-4000-8000-000000001397")
 	)
 	(label "S3"
 		(at 50.8 195.58 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113a0-0000-4000-8000-0000000013a0")
+		(uuid "ba111398-0000-4000-8000-000000001398")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 193.04 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b5c-0000-4000-8000-000000001b5c")
+		(property "Reference" "#PWR_H4"
+			(at 53.34 190.5 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 53.34 195.58 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 55.88 193.04 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c24-0000-4000-8000-000000001c24")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H4") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -301,32 +381,52 @@
 	(wire
 		(pts (xy 55.88 162.56) (xy 50.8 162.56))
 		(stroke (width 0) (type default))
-		(uuid "ba1113a1-0000-4000-8000-0000000013a1")
+		(uuid "ba111399-0000-4000-8000-000000001399")
 	)
 	(label "CA_PWR"
 		(at 50.8 162.56 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113a2-0000-4000-8000-0000000013a2")
-	)
-	(wire
-		(pts (xy 55.88 165.1) (xy 50.8 165.1))
-		(stroke (width 0) (type default))
-		(uuid "ba1113a3-0000-4000-8000-0000000013a3")
-	)
-	(label "GND"
-		(at 50.8 165.1 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113a4-0000-4000-8000-0000000013a4")
+		(uuid "ba11139a-0000-4000-8000-00000000139a")
 	)
 	(wire
 		(pts (xy 55.88 167.64) (xy 50.8 167.64))
 		(stroke (width 0) (type default))
-		(uuid "ba1113a5-0000-4000-8000-0000000013a5")
+		(uuid "ba11139b-0000-4000-8000-00000000139b")
 	)
 	(label "S4"
 		(at 50.8 167.64 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113a6-0000-4000-8000-0000000013a6")
+		(uuid "ba11139c-0000-4000-8000-00000000139c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 165.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b5d-0000-4000-8000-000000001b5d")
+		(property "Reference" "#PWR_H5"
+			(at 53.34 162.56 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 53.34 167.64 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 55.88 165.1 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c25-0000-4000-8000-000000001c25")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H5") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -367,32 +467,52 @@
 	(wire
 		(pts (xy 55.88 134.62) (xy 50.8 134.62))
 		(stroke (width 0) (type default))
-		(uuid "ba1113a7-0000-4000-8000-0000000013a7")
+		(uuid "ba11139d-0000-4000-8000-00000000139d")
 	)
 	(label "CA_PWR"
 		(at 50.8 134.62 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113a8-0000-4000-8000-0000000013a8")
-	)
-	(wire
-		(pts (xy 55.88 137.16) (xy 50.8 137.16))
-		(stroke (width 0) (type default))
-		(uuid "ba1113a9-0000-4000-8000-0000000013a9")
-	)
-	(label "GND"
-		(at 50.8 137.16 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113aa-0000-4000-8000-0000000013aa")
+		(uuid "ba11139e-0000-4000-8000-00000000139e")
 	)
 	(wire
 		(pts (xy 55.88 139.7) (xy 50.8 139.7))
 		(stroke (width 0) (type default))
-		(uuid "ba1113ab-0000-4000-8000-0000000013ab")
+		(uuid "ba11139f-0000-4000-8000-00000000139f")
 	)
 	(label "S5"
 		(at 50.8 139.7 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113ac-0000-4000-8000-0000000013ac")
+		(uuid "ba1113a0-0000-4000-8000-0000000013a0")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 137.16 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b5e-0000-4000-8000-000000001b5e")
+		(property "Reference" "#PWR_H6"
+			(at 53.34 134.62 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 53.34 139.7 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 55.88 137.16 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c26-0000-4000-8000-000000001c26")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H6") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -433,32 +553,52 @@
 	(wire
 		(pts (xy 55.88 106.68) (xy 50.8 106.68))
 		(stroke (width 0) (type default))
-		(uuid "ba1113ad-0000-4000-8000-0000000013ad")
+		(uuid "ba1113a1-0000-4000-8000-0000000013a1")
 	)
 	(label "CA_PWR"
 		(at 50.8 106.68 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113ae-0000-4000-8000-0000000013ae")
-	)
-	(wire
-		(pts (xy 55.88 109.22) (xy 50.8 109.22))
-		(stroke (width 0) (type default))
-		(uuid "ba1113af-0000-4000-8000-0000000013af")
-	)
-	(label "GND"
-		(at 50.8 109.22 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113b0-0000-4000-8000-0000000013b0")
+		(uuid "ba1113a2-0000-4000-8000-0000000013a2")
 	)
 	(wire
 		(pts (xy 55.88 111.76) (xy 50.8 111.76))
 		(stroke (width 0) (type default))
-		(uuid "ba1113b1-0000-4000-8000-0000000013b1")
+		(uuid "ba1113a3-0000-4000-8000-0000000013a3")
 	)
 	(label "S6"
 		(at 50.8 111.76 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113b2-0000-4000-8000-0000000013b2")
+		(uuid "ba1113a4-0000-4000-8000-0000000013a4")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 109.22 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b5f-0000-4000-8000-000000001b5f")
+		(property "Reference" "#PWR_H7"
+			(at 53.34 106.68 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 53.34 111.76 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 55.88 109.22 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c27-0000-4000-8000-000000001c27")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H7") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -499,32 +639,52 @@
 	(wire
 		(pts (xy 55.88 78.74) (xy 50.8 78.74))
 		(stroke (width 0) (type default))
-		(uuid "ba1113b3-0000-4000-8000-0000000013b3")
+		(uuid "ba1113a5-0000-4000-8000-0000000013a5")
 	)
 	(label "CA_PWR"
 		(at 50.8 78.74 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113b4-0000-4000-8000-0000000013b4")
-	)
-	(wire
-		(pts (xy 55.88 81.28) (xy 50.8 81.28))
-		(stroke (width 0) (type default))
-		(uuid "ba1113b5-0000-4000-8000-0000000013b5")
-	)
-	(label "GND"
-		(at 50.8 81.28 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113b6-0000-4000-8000-0000000013b6")
+		(uuid "ba1113a6-0000-4000-8000-0000000013a6")
 	)
 	(wire
 		(pts (xy 55.88 83.82) (xy 50.8 83.82))
 		(stroke (width 0) (type default))
-		(uuid "ba1113b7-0000-4000-8000-0000000013b7")
+		(uuid "ba1113a7-0000-4000-8000-0000000013a7")
 	)
 	(label "S7"
 		(at 50.8 83.82 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113b8-0000-4000-8000-0000000013b8")
+		(uuid "ba1113a8-0000-4000-8000-0000000013a8")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 81.28 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b60-0000-4000-8000-000000001b60")
+		(property "Reference" "#PWR_H8"
+			(at 53.34 78.74 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 53.34 83.82 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 55.88 81.28 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c28-0000-4000-8000-000000001c28")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H8") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -565,32 +725,52 @@
 	(wire
 		(pts (xy 86.36 274.32) (xy 81.28 274.32))
 		(stroke (width 0) (type default))
-		(uuid "ba1113b9-0000-4000-8000-0000000013b9")
+		(uuid "ba1113a9-0000-4000-8000-0000000013a9")
 	)
 	(label "CB_PWR"
 		(at 81.28 274.32 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113ba-0000-4000-8000-0000000013ba")
-	)
-	(wire
-		(pts (xy 86.36 276.86) (xy 81.28 276.86))
-		(stroke (width 0) (type default))
-		(uuid "ba1113bb-0000-4000-8000-0000000013bb")
-	)
-	(label "GND"
-		(at 81.28 276.86 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113bc-0000-4000-8000-0000000013bc")
+		(uuid "ba1113aa-0000-4000-8000-0000000013aa")
 	)
 	(wire
 		(pts (xy 86.36 279.4) (xy 81.28 279.4))
 		(stroke (width 0) (type default))
-		(uuid "ba1113bd-0000-4000-8000-0000000013bd")
+		(uuid "ba1113ab-0000-4000-8000-0000000013ab")
 	)
 	(label "S0"
 		(at 81.28 279.4 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113be-0000-4000-8000-0000000013be")
+		(uuid "ba1113ac-0000-4000-8000-0000000013ac")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.36 276.86 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b61-0000-4000-8000-000000001b61")
+		(property "Reference" "#PWR_H9"
+			(at 83.82 274.32 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 83.82 279.4 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 86.36 276.86 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c29-0000-4000-8000-000000001c29")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H9") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -631,32 +811,52 @@
 	(wire
 		(pts (xy 86.36 246.38) (xy 81.28 246.38))
 		(stroke (width 0) (type default))
-		(uuid "ba1113bf-0000-4000-8000-0000000013bf")
+		(uuid "ba1113ad-0000-4000-8000-0000000013ad")
 	)
 	(label "CB_PWR"
 		(at 81.28 246.38 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113c0-0000-4000-8000-0000000013c0")
-	)
-	(wire
-		(pts (xy 86.36 248.92) (xy 81.28 248.92))
-		(stroke (width 0) (type default))
-		(uuid "ba1113c1-0000-4000-8000-0000000013c1")
-	)
-	(label "GND"
-		(at 81.28 248.92 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113c2-0000-4000-8000-0000000013c2")
+		(uuid "ba1113ae-0000-4000-8000-0000000013ae")
 	)
 	(wire
 		(pts (xy 86.36 251.46) (xy 81.28 251.46))
 		(stroke (width 0) (type default))
-		(uuid "ba1113c3-0000-4000-8000-0000000013c3")
+		(uuid "ba1113af-0000-4000-8000-0000000013af")
 	)
 	(label "S1"
 		(at 81.28 251.46 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113c4-0000-4000-8000-0000000013c4")
+		(uuid "ba1113b0-0000-4000-8000-0000000013b0")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.36 248.92 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b62-0000-4000-8000-000000001b62")
+		(property "Reference" "#PWR_H10"
+			(at 83.82 246.38 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 83.82 251.46 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 86.36 248.92 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c2a-0000-4000-8000-000000001c2a")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H10") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -697,32 +897,52 @@
 	(wire
 		(pts (xy 86.36 218.44) (xy 81.28 218.44))
 		(stroke (width 0) (type default))
-		(uuid "ba1113c5-0000-4000-8000-0000000013c5")
+		(uuid "ba1113b1-0000-4000-8000-0000000013b1")
 	)
 	(label "CB_PWR"
 		(at 81.28 218.44 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113c6-0000-4000-8000-0000000013c6")
-	)
-	(wire
-		(pts (xy 86.36 220.98) (xy 81.28 220.98))
-		(stroke (width 0) (type default))
-		(uuid "ba1113c7-0000-4000-8000-0000000013c7")
-	)
-	(label "GND"
-		(at 81.28 220.98 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113c8-0000-4000-8000-0000000013c8")
+		(uuid "ba1113b2-0000-4000-8000-0000000013b2")
 	)
 	(wire
 		(pts (xy 86.36 223.52) (xy 81.28 223.52))
 		(stroke (width 0) (type default))
-		(uuid "ba1113c9-0000-4000-8000-0000000013c9")
+		(uuid "ba1113b3-0000-4000-8000-0000000013b3")
 	)
 	(label "S2"
 		(at 81.28 223.52 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113ca-0000-4000-8000-0000000013ca")
+		(uuid "ba1113b4-0000-4000-8000-0000000013b4")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.36 220.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b63-0000-4000-8000-000000001b63")
+		(property "Reference" "#PWR_H11"
+			(at 83.82 218.44 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 83.82 223.52 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 86.36 220.98 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c2b-0000-4000-8000-000000001c2b")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H11") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -763,32 +983,52 @@
 	(wire
 		(pts (xy 86.36 190.5) (xy 81.28 190.5))
 		(stroke (width 0) (type default))
-		(uuid "ba1113cb-0000-4000-8000-0000000013cb")
+		(uuid "ba1113b5-0000-4000-8000-0000000013b5")
 	)
 	(label "CB_PWR"
 		(at 81.28 190.5 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113cc-0000-4000-8000-0000000013cc")
-	)
-	(wire
-		(pts (xy 86.36 193.04) (xy 81.28 193.04))
-		(stroke (width 0) (type default))
-		(uuid "ba1113cd-0000-4000-8000-0000000013cd")
-	)
-	(label "GND"
-		(at 81.28 193.04 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113ce-0000-4000-8000-0000000013ce")
+		(uuid "ba1113b6-0000-4000-8000-0000000013b6")
 	)
 	(wire
 		(pts (xy 86.36 195.58) (xy 81.28 195.58))
 		(stroke (width 0) (type default))
-		(uuid "ba1113cf-0000-4000-8000-0000000013cf")
+		(uuid "ba1113b7-0000-4000-8000-0000000013b7")
 	)
 	(label "S3"
 		(at 81.28 195.58 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113d0-0000-4000-8000-0000000013d0")
+		(uuid "ba1113b8-0000-4000-8000-0000000013b8")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.36 193.04 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b64-0000-4000-8000-000000001b64")
+		(property "Reference" "#PWR_H12"
+			(at 83.82 190.5 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 83.82 195.58 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 86.36 193.04 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c2c-0000-4000-8000-000000001c2c")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H12") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -829,32 +1069,52 @@
 	(wire
 		(pts (xy 86.36 162.56) (xy 81.28 162.56))
 		(stroke (width 0) (type default))
-		(uuid "ba1113d1-0000-4000-8000-0000000013d1")
+		(uuid "ba1113b9-0000-4000-8000-0000000013b9")
 	)
 	(label "CB_PWR"
 		(at 81.28 162.56 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113d2-0000-4000-8000-0000000013d2")
-	)
-	(wire
-		(pts (xy 86.36 165.1) (xy 81.28 165.1))
-		(stroke (width 0) (type default))
-		(uuid "ba1113d3-0000-4000-8000-0000000013d3")
-	)
-	(label "GND"
-		(at 81.28 165.1 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113d4-0000-4000-8000-0000000013d4")
+		(uuid "ba1113ba-0000-4000-8000-0000000013ba")
 	)
 	(wire
 		(pts (xy 86.36 167.64) (xy 81.28 167.64))
 		(stroke (width 0) (type default))
-		(uuid "ba1113d5-0000-4000-8000-0000000013d5")
+		(uuid "ba1113bb-0000-4000-8000-0000000013bb")
 	)
 	(label "S4"
 		(at 81.28 167.64 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113d6-0000-4000-8000-0000000013d6")
+		(uuid "ba1113bc-0000-4000-8000-0000000013bc")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.36 165.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b65-0000-4000-8000-000000001b65")
+		(property "Reference" "#PWR_H13"
+			(at 83.82 162.56 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 83.82 167.64 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 86.36 165.1 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c2d-0000-4000-8000-000000001c2d")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H13") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -895,32 +1155,52 @@
 	(wire
 		(pts (xy 86.36 134.62) (xy 81.28 134.62))
 		(stroke (width 0) (type default))
-		(uuid "ba1113d7-0000-4000-8000-0000000013d7")
+		(uuid "ba1113bd-0000-4000-8000-0000000013bd")
 	)
 	(label "CB_PWR"
 		(at 81.28 134.62 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113d8-0000-4000-8000-0000000013d8")
-	)
-	(wire
-		(pts (xy 86.36 137.16) (xy 81.28 137.16))
-		(stroke (width 0) (type default))
-		(uuid "ba1113d9-0000-4000-8000-0000000013d9")
-	)
-	(label "GND"
-		(at 81.28 137.16 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113da-0000-4000-8000-0000000013da")
+		(uuid "ba1113be-0000-4000-8000-0000000013be")
 	)
 	(wire
 		(pts (xy 86.36 139.7) (xy 81.28 139.7))
 		(stroke (width 0) (type default))
-		(uuid "ba1113db-0000-4000-8000-0000000013db")
+		(uuid "ba1113bf-0000-4000-8000-0000000013bf")
 	)
 	(label "S5"
 		(at 81.28 139.7 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113dc-0000-4000-8000-0000000013dc")
+		(uuid "ba1113c0-0000-4000-8000-0000000013c0")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.36 137.16 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b66-0000-4000-8000-000000001b66")
+		(property "Reference" "#PWR_H14"
+			(at 83.82 134.62 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 83.82 139.7 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 86.36 137.16 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c2e-0000-4000-8000-000000001c2e")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H14") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -961,32 +1241,52 @@
 	(wire
 		(pts (xy 86.36 106.68) (xy 81.28 106.68))
 		(stroke (width 0) (type default))
-		(uuid "ba1113dd-0000-4000-8000-0000000013dd")
+		(uuid "ba1113c1-0000-4000-8000-0000000013c1")
 	)
 	(label "CB_PWR"
 		(at 81.28 106.68 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113de-0000-4000-8000-0000000013de")
-	)
-	(wire
-		(pts (xy 86.36 109.22) (xy 81.28 109.22))
-		(stroke (width 0) (type default))
-		(uuid "ba1113df-0000-4000-8000-0000000013df")
-	)
-	(label "GND"
-		(at 81.28 109.22 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113e0-0000-4000-8000-0000000013e0")
+		(uuid "ba1113c2-0000-4000-8000-0000000013c2")
 	)
 	(wire
 		(pts (xy 86.36 111.76) (xy 81.28 111.76))
 		(stroke (width 0) (type default))
-		(uuid "ba1113e1-0000-4000-8000-0000000013e1")
+		(uuid "ba1113c3-0000-4000-8000-0000000013c3")
 	)
 	(label "S6"
 		(at 81.28 111.76 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113e2-0000-4000-8000-0000000013e2")
+		(uuid "ba1113c4-0000-4000-8000-0000000013c4")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.36 109.22 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b67-0000-4000-8000-000000001b67")
+		(property "Reference" "#PWR_H15"
+			(at 83.82 106.68 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 83.82 111.76 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 86.36 109.22 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c2f-0000-4000-8000-000000001c2f")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H15") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1027,32 +1327,52 @@
 	(wire
 		(pts (xy 86.36 78.74) (xy 81.28 78.74))
 		(stroke (width 0) (type default))
-		(uuid "ba1113e3-0000-4000-8000-0000000013e3")
+		(uuid "ba1113c5-0000-4000-8000-0000000013c5")
 	)
 	(label "CB_PWR"
 		(at 81.28 78.74 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113e4-0000-4000-8000-0000000013e4")
-	)
-	(wire
-		(pts (xy 86.36 81.28) (xy 81.28 81.28))
-		(stroke (width 0) (type default))
-		(uuid "ba1113e5-0000-4000-8000-0000000013e5")
-	)
-	(label "GND"
-		(at 81.28 81.28 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113e6-0000-4000-8000-0000000013e6")
+		(uuid "ba1113c6-0000-4000-8000-0000000013c6")
 	)
 	(wire
 		(pts (xy 86.36 83.82) (xy 81.28 83.82))
 		(stroke (width 0) (type default))
-		(uuid "ba1113e7-0000-4000-8000-0000000013e7")
+		(uuid "ba1113c7-0000-4000-8000-0000000013c7")
 	)
 	(label "S7"
 		(at 81.28 83.82 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113e8-0000-4000-8000-0000000013e8")
+		(uuid "ba1113c8-0000-4000-8000-0000000013c8")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 86.36 81.28 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b68-0000-4000-8000-000000001b68")
+		(property "Reference" "#PWR_H16"
+			(at 83.82 78.74 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 83.82 83.82 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 86.36 81.28 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c30-0000-4000-8000-000000001c30")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H16") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1093,32 +1413,52 @@
 	(wire
 		(pts (xy 116.84 274.32) (xy 111.76 274.32))
 		(stroke (width 0) (type default))
-		(uuid "ba1113e9-0000-4000-8000-0000000013e9")
+		(uuid "ba1113c9-0000-4000-8000-0000000013c9")
 	)
 	(label "CC_PWR"
 		(at 111.76 274.32 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113ea-0000-4000-8000-0000000013ea")
-	)
-	(wire
-		(pts (xy 116.84 276.86) (xy 111.76 276.86))
-		(stroke (width 0) (type default))
-		(uuid "ba1113eb-0000-4000-8000-0000000013eb")
-	)
-	(label "GND"
-		(at 111.76 276.86 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113ec-0000-4000-8000-0000000013ec")
+		(uuid "ba1113ca-0000-4000-8000-0000000013ca")
 	)
 	(wire
 		(pts (xy 116.84 279.4) (xy 111.76 279.4))
 		(stroke (width 0) (type default))
-		(uuid "ba1113ed-0000-4000-8000-0000000013ed")
+		(uuid "ba1113cb-0000-4000-8000-0000000013cb")
 	)
 	(label "S0"
 		(at 111.76 279.4 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113ee-0000-4000-8000-0000000013ee")
+		(uuid "ba1113cc-0000-4000-8000-0000000013cc")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 276.86 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b69-0000-4000-8000-000000001b69")
+		(property "Reference" "#PWR_H17"
+			(at 114.3 274.32 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 114.3 279.4 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 116.84 276.86 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c31-0000-4000-8000-000000001c31")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H17") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1159,32 +1499,52 @@
 	(wire
 		(pts (xy 116.84 246.38) (xy 111.76 246.38))
 		(stroke (width 0) (type default))
-		(uuid "ba1113ef-0000-4000-8000-0000000013ef")
+		(uuid "ba1113cd-0000-4000-8000-0000000013cd")
 	)
 	(label "CC_PWR"
 		(at 111.76 246.38 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113f0-0000-4000-8000-0000000013f0")
-	)
-	(wire
-		(pts (xy 116.84 248.92) (xy 111.76 248.92))
-		(stroke (width 0) (type default))
-		(uuid "ba1113f1-0000-4000-8000-0000000013f1")
-	)
-	(label "GND"
-		(at 111.76 248.92 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113f2-0000-4000-8000-0000000013f2")
+		(uuid "ba1113ce-0000-4000-8000-0000000013ce")
 	)
 	(wire
 		(pts (xy 116.84 251.46) (xy 111.76 251.46))
 		(stroke (width 0) (type default))
-		(uuid "ba1113f3-0000-4000-8000-0000000013f3")
+		(uuid "ba1113cf-0000-4000-8000-0000000013cf")
 	)
 	(label "S1"
 		(at 111.76 251.46 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113f4-0000-4000-8000-0000000013f4")
+		(uuid "ba1113d0-0000-4000-8000-0000000013d0")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 248.92 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b6a-0000-4000-8000-000000001b6a")
+		(property "Reference" "#PWR_H18"
+			(at 114.3 246.38 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 114.3 251.46 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 116.84 248.92 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c32-0000-4000-8000-000000001c32")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H18") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1225,32 +1585,52 @@
 	(wire
 		(pts (xy 116.84 218.44) (xy 111.76 218.44))
 		(stroke (width 0) (type default))
-		(uuid "ba1113f5-0000-4000-8000-0000000013f5")
+		(uuid "ba1113d1-0000-4000-8000-0000000013d1")
 	)
 	(label "CC_PWR"
 		(at 111.76 218.44 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113f6-0000-4000-8000-0000000013f6")
-	)
-	(wire
-		(pts (xy 116.84 220.98) (xy 111.76 220.98))
-		(stroke (width 0) (type default))
-		(uuid "ba1113f7-0000-4000-8000-0000000013f7")
-	)
-	(label "GND"
-		(at 111.76 220.98 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113f8-0000-4000-8000-0000000013f8")
+		(uuid "ba1113d2-0000-4000-8000-0000000013d2")
 	)
 	(wire
 		(pts (xy 116.84 223.52) (xy 111.76 223.52))
 		(stroke (width 0) (type default))
-		(uuid "ba1113f9-0000-4000-8000-0000000013f9")
+		(uuid "ba1113d3-0000-4000-8000-0000000013d3")
 	)
 	(label "S2"
 		(at 111.76 223.52 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113fa-0000-4000-8000-0000000013fa")
+		(uuid "ba1113d4-0000-4000-8000-0000000013d4")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 220.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b6b-0000-4000-8000-000000001b6b")
+		(property "Reference" "#PWR_H19"
+			(at 114.3 218.44 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 114.3 223.52 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 116.84 220.98 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c33-0000-4000-8000-000000001c33")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H19") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1291,32 +1671,52 @@
 	(wire
 		(pts (xy 116.84 190.5) (xy 111.76 190.5))
 		(stroke (width 0) (type default))
-		(uuid "ba1113fb-0000-4000-8000-0000000013fb")
+		(uuid "ba1113d5-0000-4000-8000-0000000013d5")
 	)
 	(label "CC_PWR"
 		(at 111.76 190.5 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113fc-0000-4000-8000-0000000013fc")
-	)
-	(wire
-		(pts (xy 116.84 193.04) (xy 111.76 193.04))
-		(stroke (width 0) (type default))
-		(uuid "ba1113fd-0000-4000-8000-0000000013fd")
-	)
-	(label "GND"
-		(at 111.76 193.04 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1113fe-0000-4000-8000-0000000013fe")
+		(uuid "ba1113d6-0000-4000-8000-0000000013d6")
 	)
 	(wire
 		(pts (xy 116.84 195.58) (xy 111.76 195.58))
 		(stroke (width 0) (type default))
-		(uuid "ba1113ff-0000-4000-8000-0000000013ff")
+		(uuid "ba1113d7-0000-4000-8000-0000000013d7")
 	)
 	(label "S3"
 		(at 111.76 195.58 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111400-0000-4000-8000-000000001400")
+		(uuid "ba1113d8-0000-4000-8000-0000000013d8")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 193.04 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b6c-0000-4000-8000-000000001b6c")
+		(property "Reference" "#PWR_H20"
+			(at 114.3 190.5 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 114.3 195.58 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 116.84 193.04 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c34-0000-4000-8000-000000001c34")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H20") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1357,32 +1757,52 @@
 	(wire
 		(pts (xy 116.84 162.56) (xy 111.76 162.56))
 		(stroke (width 0) (type default))
-		(uuid "ba111401-0000-4000-8000-000000001401")
+		(uuid "ba1113d9-0000-4000-8000-0000000013d9")
 	)
 	(label "CC_PWR"
 		(at 111.76 162.56 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111402-0000-4000-8000-000000001402")
-	)
-	(wire
-		(pts (xy 116.84 165.1) (xy 111.76 165.1))
-		(stroke (width 0) (type default))
-		(uuid "ba111403-0000-4000-8000-000000001403")
-	)
-	(label "GND"
-		(at 111.76 165.1 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111404-0000-4000-8000-000000001404")
+		(uuid "ba1113da-0000-4000-8000-0000000013da")
 	)
 	(wire
 		(pts (xy 116.84 167.64) (xy 111.76 167.64))
 		(stroke (width 0) (type default))
-		(uuid "ba111405-0000-4000-8000-000000001405")
+		(uuid "ba1113db-0000-4000-8000-0000000013db")
 	)
 	(label "S4"
 		(at 111.76 167.64 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111406-0000-4000-8000-000000001406")
+		(uuid "ba1113dc-0000-4000-8000-0000000013dc")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 165.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b6d-0000-4000-8000-000000001b6d")
+		(property "Reference" "#PWR_H21"
+			(at 114.3 162.56 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 114.3 167.64 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 116.84 165.1 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c35-0000-4000-8000-000000001c35")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H21") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1423,32 +1843,52 @@
 	(wire
 		(pts (xy 116.84 134.62) (xy 111.76 134.62))
 		(stroke (width 0) (type default))
-		(uuid "ba111407-0000-4000-8000-000000001407")
+		(uuid "ba1113dd-0000-4000-8000-0000000013dd")
 	)
 	(label "CC_PWR"
 		(at 111.76 134.62 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111408-0000-4000-8000-000000001408")
-	)
-	(wire
-		(pts (xy 116.84 137.16) (xy 111.76 137.16))
-		(stroke (width 0) (type default))
-		(uuid "ba111409-0000-4000-8000-000000001409")
-	)
-	(label "GND"
-		(at 111.76 137.16 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11140a-0000-4000-8000-00000000140a")
+		(uuid "ba1113de-0000-4000-8000-0000000013de")
 	)
 	(wire
 		(pts (xy 116.84 139.7) (xy 111.76 139.7))
 		(stroke (width 0) (type default))
-		(uuid "ba11140b-0000-4000-8000-00000000140b")
+		(uuid "ba1113df-0000-4000-8000-0000000013df")
 	)
 	(label "S5"
 		(at 111.76 139.7 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11140c-0000-4000-8000-00000000140c")
+		(uuid "ba1113e0-0000-4000-8000-0000000013e0")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 137.16 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b6e-0000-4000-8000-000000001b6e")
+		(property "Reference" "#PWR_H22"
+			(at 114.3 134.62 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 114.3 139.7 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 116.84 137.16 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c36-0000-4000-8000-000000001c36")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H22") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1489,32 +1929,52 @@
 	(wire
 		(pts (xy 116.84 106.68) (xy 111.76 106.68))
 		(stroke (width 0) (type default))
-		(uuid "ba11140d-0000-4000-8000-00000000140d")
+		(uuid "ba1113e1-0000-4000-8000-0000000013e1")
 	)
 	(label "CC_PWR"
 		(at 111.76 106.68 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11140e-0000-4000-8000-00000000140e")
-	)
-	(wire
-		(pts (xy 116.84 109.22) (xy 111.76 109.22))
-		(stroke (width 0) (type default))
-		(uuid "ba11140f-0000-4000-8000-00000000140f")
-	)
-	(label "GND"
-		(at 111.76 109.22 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111410-0000-4000-8000-000000001410")
+		(uuid "ba1113e2-0000-4000-8000-0000000013e2")
 	)
 	(wire
 		(pts (xy 116.84 111.76) (xy 111.76 111.76))
 		(stroke (width 0) (type default))
-		(uuid "ba111411-0000-4000-8000-000000001411")
+		(uuid "ba1113e3-0000-4000-8000-0000000013e3")
 	)
 	(label "S6"
 		(at 111.76 111.76 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111412-0000-4000-8000-000000001412")
+		(uuid "ba1113e4-0000-4000-8000-0000000013e4")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 109.22 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b6f-0000-4000-8000-000000001b6f")
+		(property "Reference" "#PWR_H23"
+			(at 114.3 106.68 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 114.3 111.76 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 116.84 109.22 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c37-0000-4000-8000-000000001c37")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H23") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1555,32 +2015,52 @@
 	(wire
 		(pts (xy 116.84 78.74) (xy 111.76 78.74))
 		(stroke (width 0) (type default))
-		(uuid "ba111413-0000-4000-8000-000000001413")
+		(uuid "ba1113e5-0000-4000-8000-0000000013e5")
 	)
 	(label "CC_PWR"
 		(at 111.76 78.74 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111414-0000-4000-8000-000000001414")
-	)
-	(wire
-		(pts (xy 116.84 81.28) (xy 111.76 81.28))
-		(stroke (width 0) (type default))
-		(uuid "ba111415-0000-4000-8000-000000001415")
-	)
-	(label "GND"
-		(at 111.76 81.28 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111416-0000-4000-8000-000000001416")
+		(uuid "ba1113e6-0000-4000-8000-0000000013e6")
 	)
 	(wire
 		(pts (xy 116.84 83.82) (xy 111.76 83.82))
 		(stroke (width 0) (type default))
-		(uuid "ba111417-0000-4000-8000-000000001417")
+		(uuid "ba1113e7-0000-4000-8000-0000000013e7")
 	)
 	(label "S7"
 		(at 111.76 83.82 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111418-0000-4000-8000-000000001418")
+		(uuid "ba1113e8-0000-4000-8000-0000000013e8")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 81.28 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b70-0000-4000-8000-000000001b70")
+		(property "Reference" "#PWR_H24"
+			(at 114.3 78.74 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 114.3 83.82 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 116.84 81.28 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c38-0000-4000-8000-000000001c38")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H24") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1621,32 +2101,52 @@
 	(wire
 		(pts (xy 147.32 274.32) (xy 142.24 274.32))
 		(stroke (width 0) (type default))
-		(uuid "ba111419-0000-4000-8000-000000001419")
+		(uuid "ba1113e9-0000-4000-8000-0000000013e9")
 	)
 	(label "CD_PWR"
 		(at 142.24 274.32 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11141a-0000-4000-8000-00000000141a")
-	)
-	(wire
-		(pts (xy 147.32 276.86) (xy 142.24 276.86))
-		(stroke (width 0) (type default))
-		(uuid "ba11141b-0000-4000-8000-00000000141b")
-	)
-	(label "GND"
-		(at 142.24 276.86 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11141c-0000-4000-8000-00000000141c")
+		(uuid "ba1113ea-0000-4000-8000-0000000013ea")
 	)
 	(wire
 		(pts (xy 147.32 279.4) (xy 142.24 279.4))
 		(stroke (width 0) (type default))
-		(uuid "ba11141d-0000-4000-8000-00000000141d")
+		(uuid "ba1113eb-0000-4000-8000-0000000013eb")
 	)
 	(label "S0"
 		(at 142.24 279.4 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11141e-0000-4000-8000-00000000141e")
+		(uuid "ba1113ec-0000-4000-8000-0000000013ec")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 276.86 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b71-0000-4000-8000-000000001b71")
+		(property "Reference" "#PWR_H25"
+			(at 144.78 274.32 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 144.78 279.4 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 147.32 276.86 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c39-0000-4000-8000-000000001c39")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H25") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1687,32 +2187,52 @@
 	(wire
 		(pts (xy 147.32 246.38) (xy 142.24 246.38))
 		(stroke (width 0) (type default))
-		(uuid "ba11141f-0000-4000-8000-00000000141f")
+		(uuid "ba1113ed-0000-4000-8000-0000000013ed")
 	)
 	(label "CD_PWR"
 		(at 142.24 246.38 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111420-0000-4000-8000-000000001420")
-	)
-	(wire
-		(pts (xy 147.32 248.92) (xy 142.24 248.92))
-		(stroke (width 0) (type default))
-		(uuid "ba111421-0000-4000-8000-000000001421")
-	)
-	(label "GND"
-		(at 142.24 248.92 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111422-0000-4000-8000-000000001422")
+		(uuid "ba1113ee-0000-4000-8000-0000000013ee")
 	)
 	(wire
 		(pts (xy 147.32 251.46) (xy 142.24 251.46))
 		(stroke (width 0) (type default))
-		(uuid "ba111423-0000-4000-8000-000000001423")
+		(uuid "ba1113ef-0000-4000-8000-0000000013ef")
 	)
 	(label "S1"
 		(at 142.24 251.46 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111424-0000-4000-8000-000000001424")
+		(uuid "ba1113f0-0000-4000-8000-0000000013f0")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 248.92 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b72-0000-4000-8000-000000001b72")
+		(property "Reference" "#PWR_H26"
+			(at 144.78 246.38 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 144.78 251.46 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 147.32 248.92 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c3a-0000-4000-8000-000000001c3a")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H26") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1753,32 +2273,52 @@
 	(wire
 		(pts (xy 147.32 218.44) (xy 142.24 218.44))
 		(stroke (width 0) (type default))
-		(uuid "ba111425-0000-4000-8000-000000001425")
+		(uuid "ba1113f1-0000-4000-8000-0000000013f1")
 	)
 	(label "CD_PWR"
 		(at 142.24 218.44 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111426-0000-4000-8000-000000001426")
-	)
-	(wire
-		(pts (xy 147.32 220.98) (xy 142.24 220.98))
-		(stroke (width 0) (type default))
-		(uuid "ba111427-0000-4000-8000-000000001427")
-	)
-	(label "GND"
-		(at 142.24 220.98 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111428-0000-4000-8000-000000001428")
+		(uuid "ba1113f2-0000-4000-8000-0000000013f2")
 	)
 	(wire
 		(pts (xy 147.32 223.52) (xy 142.24 223.52))
 		(stroke (width 0) (type default))
-		(uuid "ba111429-0000-4000-8000-000000001429")
+		(uuid "ba1113f3-0000-4000-8000-0000000013f3")
 	)
 	(label "S2"
 		(at 142.24 223.52 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11142a-0000-4000-8000-00000000142a")
+		(uuid "ba1113f4-0000-4000-8000-0000000013f4")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 220.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b73-0000-4000-8000-000000001b73")
+		(property "Reference" "#PWR_H27"
+			(at 144.78 218.44 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 144.78 223.52 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 147.32 220.98 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c3b-0000-4000-8000-000000001c3b")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H27") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1819,32 +2359,52 @@
 	(wire
 		(pts (xy 147.32 190.5) (xy 142.24 190.5))
 		(stroke (width 0) (type default))
-		(uuid "ba11142b-0000-4000-8000-00000000142b")
+		(uuid "ba1113f5-0000-4000-8000-0000000013f5")
 	)
 	(label "CD_PWR"
 		(at 142.24 190.5 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11142c-0000-4000-8000-00000000142c")
-	)
-	(wire
-		(pts (xy 147.32 193.04) (xy 142.24 193.04))
-		(stroke (width 0) (type default))
-		(uuid "ba11142d-0000-4000-8000-00000000142d")
-	)
-	(label "GND"
-		(at 142.24 193.04 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11142e-0000-4000-8000-00000000142e")
+		(uuid "ba1113f6-0000-4000-8000-0000000013f6")
 	)
 	(wire
 		(pts (xy 147.32 195.58) (xy 142.24 195.58))
 		(stroke (width 0) (type default))
-		(uuid "ba11142f-0000-4000-8000-00000000142f")
+		(uuid "ba1113f7-0000-4000-8000-0000000013f7")
 	)
 	(label "S3"
 		(at 142.24 195.58 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111430-0000-4000-8000-000000001430")
+		(uuid "ba1113f8-0000-4000-8000-0000000013f8")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 193.04 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b74-0000-4000-8000-000000001b74")
+		(property "Reference" "#PWR_H28"
+			(at 144.78 190.5 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 144.78 195.58 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 147.32 193.04 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c3c-0000-4000-8000-000000001c3c")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H28") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1885,32 +2445,52 @@
 	(wire
 		(pts (xy 147.32 162.56) (xy 142.24 162.56))
 		(stroke (width 0) (type default))
-		(uuid "ba111431-0000-4000-8000-000000001431")
+		(uuid "ba1113f9-0000-4000-8000-0000000013f9")
 	)
 	(label "CD_PWR"
 		(at 142.24 162.56 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111432-0000-4000-8000-000000001432")
-	)
-	(wire
-		(pts (xy 147.32 165.1) (xy 142.24 165.1))
-		(stroke (width 0) (type default))
-		(uuid "ba111433-0000-4000-8000-000000001433")
-	)
-	(label "GND"
-		(at 142.24 165.1 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111434-0000-4000-8000-000000001434")
+		(uuid "ba1113fa-0000-4000-8000-0000000013fa")
 	)
 	(wire
 		(pts (xy 147.32 167.64) (xy 142.24 167.64))
 		(stroke (width 0) (type default))
-		(uuid "ba111435-0000-4000-8000-000000001435")
+		(uuid "ba1113fb-0000-4000-8000-0000000013fb")
 	)
 	(label "S4"
 		(at 142.24 167.64 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111436-0000-4000-8000-000000001436")
+		(uuid "ba1113fc-0000-4000-8000-0000000013fc")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 165.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b75-0000-4000-8000-000000001b75")
+		(property "Reference" "#PWR_H29"
+			(at 144.78 162.56 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 144.78 167.64 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 147.32 165.1 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c3d-0000-4000-8000-000000001c3d")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H29") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -1951,32 +2531,52 @@
 	(wire
 		(pts (xy 147.32 134.62) (xy 142.24 134.62))
 		(stroke (width 0) (type default))
-		(uuid "ba111437-0000-4000-8000-000000001437")
+		(uuid "ba1113fd-0000-4000-8000-0000000013fd")
 	)
 	(label "CD_PWR"
 		(at 142.24 134.62 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111438-0000-4000-8000-000000001438")
-	)
-	(wire
-		(pts (xy 147.32 137.16) (xy 142.24 137.16))
-		(stroke (width 0) (type default))
-		(uuid "ba111439-0000-4000-8000-000000001439")
-	)
-	(label "GND"
-		(at 142.24 137.16 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11143a-0000-4000-8000-00000000143a")
+		(uuid "ba1113fe-0000-4000-8000-0000000013fe")
 	)
 	(wire
 		(pts (xy 147.32 139.7) (xy 142.24 139.7))
 		(stroke (width 0) (type default))
-		(uuid "ba11143b-0000-4000-8000-00000000143b")
+		(uuid "ba1113ff-0000-4000-8000-0000000013ff")
 	)
 	(label "S5"
 		(at 142.24 139.7 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11143c-0000-4000-8000-00000000143c")
+		(uuid "ba111400-0000-4000-8000-000000001400")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 137.16 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b76-0000-4000-8000-000000001b76")
+		(property "Reference" "#PWR_H30"
+			(at 144.78 134.62 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 144.78 139.7 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 147.32 137.16 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c3e-0000-4000-8000-000000001c3e")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H30") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2017,32 +2617,52 @@
 	(wire
 		(pts (xy 147.32 106.68) (xy 142.24 106.68))
 		(stroke (width 0) (type default))
-		(uuid "ba11143d-0000-4000-8000-00000000143d")
+		(uuid "ba111401-0000-4000-8000-000000001401")
 	)
 	(label "CD_PWR"
 		(at 142.24 106.68 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11143e-0000-4000-8000-00000000143e")
-	)
-	(wire
-		(pts (xy 147.32 109.22) (xy 142.24 109.22))
-		(stroke (width 0) (type default))
-		(uuid "ba11143f-0000-4000-8000-00000000143f")
-	)
-	(label "GND"
-		(at 142.24 109.22 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111440-0000-4000-8000-000000001440")
+		(uuid "ba111402-0000-4000-8000-000000001402")
 	)
 	(wire
 		(pts (xy 147.32 111.76) (xy 142.24 111.76))
 		(stroke (width 0) (type default))
-		(uuid "ba111441-0000-4000-8000-000000001441")
+		(uuid "ba111403-0000-4000-8000-000000001403")
 	)
 	(label "S6"
 		(at 142.24 111.76 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111442-0000-4000-8000-000000001442")
+		(uuid "ba111404-0000-4000-8000-000000001404")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 109.22 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b77-0000-4000-8000-000000001b77")
+		(property "Reference" "#PWR_H31"
+			(at 144.78 106.68 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 144.78 111.76 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 147.32 109.22 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c3f-0000-4000-8000-000000001c3f")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H31") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2083,32 +2703,52 @@
 	(wire
 		(pts (xy 147.32 78.74) (xy 142.24 78.74))
 		(stroke (width 0) (type default))
-		(uuid "ba111443-0000-4000-8000-000000001443")
+		(uuid "ba111405-0000-4000-8000-000000001405")
 	)
 	(label "CD_PWR"
 		(at 142.24 78.74 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111444-0000-4000-8000-000000001444")
-	)
-	(wire
-		(pts (xy 147.32 81.28) (xy 142.24 81.28))
-		(stroke (width 0) (type default))
-		(uuid "ba111445-0000-4000-8000-000000001445")
-	)
-	(label "GND"
-		(at 142.24 81.28 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111446-0000-4000-8000-000000001446")
+		(uuid "ba111406-0000-4000-8000-000000001406")
 	)
 	(wire
 		(pts (xy 147.32 83.82) (xy 142.24 83.82))
 		(stroke (width 0) (type default))
-		(uuid "ba111447-0000-4000-8000-000000001447")
+		(uuid "ba111407-0000-4000-8000-000000001407")
 	)
 	(label "S7"
 		(at 142.24 83.82 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111448-0000-4000-8000-000000001448")
+		(uuid "ba111408-0000-4000-8000-000000001408")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 81.28 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b78-0000-4000-8000-000000001b78")
+		(property "Reference" "#PWR_H32"
+			(at 144.78 78.74 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 144.78 83.82 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 147.32 81.28 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c40-0000-4000-8000-000000001c40")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H32") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2149,32 +2789,52 @@
 	(wire
 		(pts (xy 177.8 274.32) (xy 172.72 274.32))
 		(stroke (width 0) (type default))
-		(uuid "ba111449-0000-4000-8000-000000001449")
+		(uuid "ba111409-0000-4000-8000-000000001409")
 	)
 	(label "CE_PWR"
 		(at 172.72 274.32 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11144a-0000-4000-8000-00000000144a")
-	)
-	(wire
-		(pts (xy 177.8 276.86) (xy 172.72 276.86))
-		(stroke (width 0) (type default))
-		(uuid "ba11144b-0000-4000-8000-00000000144b")
-	)
-	(label "GND"
-		(at 172.72 276.86 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11144c-0000-4000-8000-00000000144c")
+		(uuid "ba11140a-0000-4000-8000-00000000140a")
 	)
 	(wire
 		(pts (xy 177.8 279.4) (xy 172.72 279.4))
 		(stroke (width 0) (type default))
-		(uuid "ba11144d-0000-4000-8000-00000000144d")
+		(uuid "ba11140b-0000-4000-8000-00000000140b")
 	)
 	(label "S0"
 		(at 172.72 279.4 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11144e-0000-4000-8000-00000000144e")
+		(uuid "ba11140c-0000-4000-8000-00000000140c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 177.8 276.86 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b79-0000-4000-8000-000000001b79")
+		(property "Reference" "#PWR_H33"
+			(at 175.26 274.32 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 175.26 279.4 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 177.8 276.86 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c41-0000-4000-8000-000000001c41")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H33") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2215,32 +2875,52 @@
 	(wire
 		(pts (xy 177.8 246.38) (xy 172.72 246.38))
 		(stroke (width 0) (type default))
-		(uuid "ba11144f-0000-4000-8000-00000000144f")
+		(uuid "ba11140d-0000-4000-8000-00000000140d")
 	)
 	(label "CE_PWR"
 		(at 172.72 246.38 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111450-0000-4000-8000-000000001450")
-	)
-	(wire
-		(pts (xy 177.8 248.92) (xy 172.72 248.92))
-		(stroke (width 0) (type default))
-		(uuid "ba111451-0000-4000-8000-000000001451")
-	)
-	(label "GND"
-		(at 172.72 248.92 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111452-0000-4000-8000-000000001452")
+		(uuid "ba11140e-0000-4000-8000-00000000140e")
 	)
 	(wire
 		(pts (xy 177.8 251.46) (xy 172.72 251.46))
 		(stroke (width 0) (type default))
-		(uuid "ba111453-0000-4000-8000-000000001453")
+		(uuid "ba11140f-0000-4000-8000-00000000140f")
 	)
 	(label "S1"
 		(at 172.72 251.46 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111454-0000-4000-8000-000000001454")
+		(uuid "ba111410-0000-4000-8000-000000001410")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 177.8 248.92 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b7a-0000-4000-8000-000000001b7a")
+		(property "Reference" "#PWR_H34"
+			(at 175.26 246.38 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 175.26 251.46 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 177.8 248.92 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c42-0000-4000-8000-000000001c42")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H34") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2281,32 +2961,52 @@
 	(wire
 		(pts (xy 177.8 218.44) (xy 172.72 218.44))
 		(stroke (width 0) (type default))
-		(uuid "ba111455-0000-4000-8000-000000001455")
+		(uuid "ba111411-0000-4000-8000-000000001411")
 	)
 	(label "CE_PWR"
 		(at 172.72 218.44 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111456-0000-4000-8000-000000001456")
-	)
-	(wire
-		(pts (xy 177.8 220.98) (xy 172.72 220.98))
-		(stroke (width 0) (type default))
-		(uuid "ba111457-0000-4000-8000-000000001457")
-	)
-	(label "GND"
-		(at 172.72 220.98 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111458-0000-4000-8000-000000001458")
+		(uuid "ba111412-0000-4000-8000-000000001412")
 	)
 	(wire
 		(pts (xy 177.8 223.52) (xy 172.72 223.52))
 		(stroke (width 0) (type default))
-		(uuid "ba111459-0000-4000-8000-000000001459")
+		(uuid "ba111413-0000-4000-8000-000000001413")
 	)
 	(label "S2"
 		(at 172.72 223.52 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11145a-0000-4000-8000-00000000145a")
+		(uuid "ba111414-0000-4000-8000-000000001414")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 177.8 220.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b7b-0000-4000-8000-000000001b7b")
+		(property "Reference" "#PWR_H35"
+			(at 175.26 218.44 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 175.26 223.52 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 177.8 220.98 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c43-0000-4000-8000-000000001c43")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H35") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2347,32 +3047,52 @@
 	(wire
 		(pts (xy 177.8 190.5) (xy 172.72 190.5))
 		(stroke (width 0) (type default))
-		(uuid "ba11145b-0000-4000-8000-00000000145b")
+		(uuid "ba111415-0000-4000-8000-000000001415")
 	)
 	(label "CE_PWR"
 		(at 172.72 190.5 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11145c-0000-4000-8000-00000000145c")
-	)
-	(wire
-		(pts (xy 177.8 193.04) (xy 172.72 193.04))
-		(stroke (width 0) (type default))
-		(uuid "ba11145d-0000-4000-8000-00000000145d")
-	)
-	(label "GND"
-		(at 172.72 193.04 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11145e-0000-4000-8000-00000000145e")
+		(uuid "ba111416-0000-4000-8000-000000001416")
 	)
 	(wire
 		(pts (xy 177.8 195.58) (xy 172.72 195.58))
 		(stroke (width 0) (type default))
-		(uuid "ba11145f-0000-4000-8000-00000000145f")
+		(uuid "ba111417-0000-4000-8000-000000001417")
 	)
 	(label "S3"
 		(at 172.72 195.58 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111460-0000-4000-8000-000000001460")
+		(uuid "ba111418-0000-4000-8000-000000001418")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 177.8 193.04 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b7c-0000-4000-8000-000000001b7c")
+		(property "Reference" "#PWR_H36"
+			(at 175.26 190.5 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 175.26 195.58 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 177.8 193.04 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c44-0000-4000-8000-000000001c44")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H36") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2413,32 +3133,52 @@
 	(wire
 		(pts (xy 177.8 162.56) (xy 172.72 162.56))
 		(stroke (width 0) (type default))
-		(uuid "ba111461-0000-4000-8000-000000001461")
+		(uuid "ba111419-0000-4000-8000-000000001419")
 	)
 	(label "CE_PWR"
 		(at 172.72 162.56 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111462-0000-4000-8000-000000001462")
-	)
-	(wire
-		(pts (xy 177.8 165.1) (xy 172.72 165.1))
-		(stroke (width 0) (type default))
-		(uuid "ba111463-0000-4000-8000-000000001463")
-	)
-	(label "GND"
-		(at 172.72 165.1 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111464-0000-4000-8000-000000001464")
+		(uuid "ba11141a-0000-4000-8000-00000000141a")
 	)
 	(wire
 		(pts (xy 177.8 167.64) (xy 172.72 167.64))
 		(stroke (width 0) (type default))
-		(uuid "ba111465-0000-4000-8000-000000001465")
+		(uuid "ba11141b-0000-4000-8000-00000000141b")
 	)
 	(label "S4"
 		(at 172.72 167.64 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111466-0000-4000-8000-000000001466")
+		(uuid "ba11141c-0000-4000-8000-00000000141c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 177.8 165.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b7d-0000-4000-8000-000000001b7d")
+		(property "Reference" "#PWR_H37"
+			(at 175.26 162.56 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 175.26 167.64 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 177.8 165.1 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c45-0000-4000-8000-000000001c45")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H37") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2479,32 +3219,52 @@
 	(wire
 		(pts (xy 177.8 134.62) (xy 172.72 134.62))
 		(stroke (width 0) (type default))
-		(uuid "ba111467-0000-4000-8000-000000001467")
+		(uuid "ba11141d-0000-4000-8000-00000000141d")
 	)
 	(label "CE_PWR"
 		(at 172.72 134.62 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111468-0000-4000-8000-000000001468")
-	)
-	(wire
-		(pts (xy 177.8 137.16) (xy 172.72 137.16))
-		(stroke (width 0) (type default))
-		(uuid "ba111469-0000-4000-8000-000000001469")
-	)
-	(label "GND"
-		(at 172.72 137.16 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11146a-0000-4000-8000-00000000146a")
+		(uuid "ba11141e-0000-4000-8000-00000000141e")
 	)
 	(wire
 		(pts (xy 177.8 139.7) (xy 172.72 139.7))
 		(stroke (width 0) (type default))
-		(uuid "ba11146b-0000-4000-8000-00000000146b")
+		(uuid "ba11141f-0000-4000-8000-00000000141f")
 	)
 	(label "S5"
 		(at 172.72 139.7 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11146c-0000-4000-8000-00000000146c")
+		(uuid "ba111420-0000-4000-8000-000000001420")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 177.8 137.16 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b7e-0000-4000-8000-000000001b7e")
+		(property "Reference" "#PWR_H38"
+			(at 175.26 134.62 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 175.26 139.7 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 177.8 137.16 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c46-0000-4000-8000-000000001c46")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H38") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2545,32 +3305,52 @@
 	(wire
 		(pts (xy 177.8 106.68) (xy 172.72 106.68))
 		(stroke (width 0) (type default))
-		(uuid "ba11146d-0000-4000-8000-00000000146d")
+		(uuid "ba111421-0000-4000-8000-000000001421")
 	)
 	(label "CE_PWR"
 		(at 172.72 106.68 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11146e-0000-4000-8000-00000000146e")
-	)
-	(wire
-		(pts (xy 177.8 109.22) (xy 172.72 109.22))
-		(stroke (width 0) (type default))
-		(uuid "ba11146f-0000-4000-8000-00000000146f")
-	)
-	(label "GND"
-		(at 172.72 109.22 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111470-0000-4000-8000-000000001470")
+		(uuid "ba111422-0000-4000-8000-000000001422")
 	)
 	(wire
 		(pts (xy 177.8 111.76) (xy 172.72 111.76))
 		(stroke (width 0) (type default))
-		(uuid "ba111471-0000-4000-8000-000000001471")
+		(uuid "ba111423-0000-4000-8000-000000001423")
 	)
 	(label "S6"
 		(at 172.72 111.76 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111472-0000-4000-8000-000000001472")
+		(uuid "ba111424-0000-4000-8000-000000001424")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 177.8 109.22 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b7f-0000-4000-8000-000000001b7f")
+		(property "Reference" "#PWR_H39"
+			(at 175.26 106.68 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 175.26 111.76 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 177.8 109.22 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c47-0000-4000-8000-000000001c47")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H39") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2611,32 +3391,52 @@
 	(wire
 		(pts (xy 177.8 78.74) (xy 172.72 78.74))
 		(stroke (width 0) (type default))
-		(uuid "ba111473-0000-4000-8000-000000001473")
+		(uuid "ba111425-0000-4000-8000-000000001425")
 	)
 	(label "CE_PWR"
 		(at 172.72 78.74 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111474-0000-4000-8000-000000001474")
-	)
-	(wire
-		(pts (xy 177.8 81.28) (xy 172.72 81.28))
-		(stroke (width 0) (type default))
-		(uuid "ba111475-0000-4000-8000-000000001475")
-	)
-	(label "GND"
-		(at 172.72 81.28 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111476-0000-4000-8000-000000001476")
+		(uuid "ba111426-0000-4000-8000-000000001426")
 	)
 	(wire
 		(pts (xy 177.8 83.82) (xy 172.72 83.82))
 		(stroke (width 0) (type default))
-		(uuid "ba111477-0000-4000-8000-000000001477")
+		(uuid "ba111427-0000-4000-8000-000000001427")
 	)
 	(label "S7"
 		(at 172.72 83.82 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111478-0000-4000-8000-000000001478")
+		(uuid "ba111428-0000-4000-8000-000000001428")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 177.8 81.28 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b80-0000-4000-8000-000000001b80")
+		(property "Reference" "#PWR_H40"
+			(at 175.26 78.74 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 175.26 83.82 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 177.8 81.28 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c48-0000-4000-8000-000000001c48")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H40") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2677,32 +3477,52 @@
 	(wire
 		(pts (xy 208.28 274.32) (xy 203.2 274.32))
 		(stroke (width 0) (type default))
-		(uuid "ba111479-0000-4000-8000-000000001479")
+		(uuid "ba111429-0000-4000-8000-000000001429")
 	)
 	(label "CF_PWR"
 		(at 203.2 274.32 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11147a-0000-4000-8000-00000000147a")
-	)
-	(wire
-		(pts (xy 208.28 276.86) (xy 203.2 276.86))
-		(stroke (width 0) (type default))
-		(uuid "ba11147b-0000-4000-8000-00000000147b")
-	)
-	(label "GND"
-		(at 203.2 276.86 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11147c-0000-4000-8000-00000000147c")
+		(uuid "ba11142a-0000-4000-8000-00000000142a")
 	)
 	(wire
 		(pts (xy 208.28 279.4) (xy 203.2 279.4))
 		(stroke (width 0) (type default))
-		(uuid "ba11147d-0000-4000-8000-00000000147d")
+		(uuid "ba11142b-0000-4000-8000-00000000142b")
 	)
 	(label "S0"
 		(at 203.2 279.4 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11147e-0000-4000-8000-00000000147e")
+		(uuid "ba11142c-0000-4000-8000-00000000142c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 276.86 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b81-0000-4000-8000-000000001b81")
+		(property "Reference" "#PWR_H41"
+			(at 205.74 274.32 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 205.74 279.4 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 208.28 276.86 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c49-0000-4000-8000-000000001c49")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H41") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2743,32 +3563,52 @@
 	(wire
 		(pts (xy 208.28 246.38) (xy 203.2 246.38))
 		(stroke (width 0) (type default))
-		(uuid "ba11147f-0000-4000-8000-00000000147f")
+		(uuid "ba11142d-0000-4000-8000-00000000142d")
 	)
 	(label "CF_PWR"
 		(at 203.2 246.38 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111480-0000-4000-8000-000000001480")
-	)
-	(wire
-		(pts (xy 208.28 248.92) (xy 203.2 248.92))
-		(stroke (width 0) (type default))
-		(uuid "ba111481-0000-4000-8000-000000001481")
-	)
-	(label "GND"
-		(at 203.2 248.92 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111482-0000-4000-8000-000000001482")
+		(uuid "ba11142e-0000-4000-8000-00000000142e")
 	)
 	(wire
 		(pts (xy 208.28 251.46) (xy 203.2 251.46))
 		(stroke (width 0) (type default))
-		(uuid "ba111483-0000-4000-8000-000000001483")
+		(uuid "ba11142f-0000-4000-8000-00000000142f")
 	)
 	(label "S1"
 		(at 203.2 251.46 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111484-0000-4000-8000-000000001484")
+		(uuid "ba111430-0000-4000-8000-000000001430")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 248.92 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b82-0000-4000-8000-000000001b82")
+		(property "Reference" "#PWR_H42"
+			(at 205.74 246.38 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 205.74 251.46 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 208.28 248.92 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c4a-0000-4000-8000-000000001c4a")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H42") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2809,32 +3649,52 @@
 	(wire
 		(pts (xy 208.28 218.44) (xy 203.2 218.44))
 		(stroke (width 0) (type default))
-		(uuid "ba111485-0000-4000-8000-000000001485")
+		(uuid "ba111431-0000-4000-8000-000000001431")
 	)
 	(label "CF_PWR"
 		(at 203.2 218.44 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111486-0000-4000-8000-000000001486")
-	)
-	(wire
-		(pts (xy 208.28 220.98) (xy 203.2 220.98))
-		(stroke (width 0) (type default))
-		(uuid "ba111487-0000-4000-8000-000000001487")
-	)
-	(label "GND"
-		(at 203.2 220.98 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111488-0000-4000-8000-000000001488")
+		(uuid "ba111432-0000-4000-8000-000000001432")
 	)
 	(wire
 		(pts (xy 208.28 223.52) (xy 203.2 223.52))
 		(stroke (width 0) (type default))
-		(uuid "ba111489-0000-4000-8000-000000001489")
+		(uuid "ba111433-0000-4000-8000-000000001433")
 	)
 	(label "S2"
 		(at 203.2 223.52 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11148a-0000-4000-8000-00000000148a")
+		(uuid "ba111434-0000-4000-8000-000000001434")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 220.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b83-0000-4000-8000-000000001b83")
+		(property "Reference" "#PWR_H43"
+			(at 205.74 218.44 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 205.74 223.52 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 208.28 220.98 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c4b-0000-4000-8000-000000001c4b")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H43") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2875,32 +3735,52 @@
 	(wire
 		(pts (xy 208.28 190.5) (xy 203.2 190.5))
 		(stroke (width 0) (type default))
-		(uuid "ba11148b-0000-4000-8000-00000000148b")
+		(uuid "ba111435-0000-4000-8000-000000001435")
 	)
 	(label "CF_PWR"
 		(at 203.2 190.5 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11148c-0000-4000-8000-00000000148c")
-	)
-	(wire
-		(pts (xy 208.28 193.04) (xy 203.2 193.04))
-		(stroke (width 0) (type default))
-		(uuid "ba11148d-0000-4000-8000-00000000148d")
-	)
-	(label "GND"
-		(at 203.2 193.04 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11148e-0000-4000-8000-00000000148e")
+		(uuid "ba111436-0000-4000-8000-000000001436")
 	)
 	(wire
 		(pts (xy 208.28 195.58) (xy 203.2 195.58))
 		(stroke (width 0) (type default))
-		(uuid "ba11148f-0000-4000-8000-00000000148f")
+		(uuid "ba111437-0000-4000-8000-000000001437")
 	)
 	(label "S3"
 		(at 203.2 195.58 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111490-0000-4000-8000-000000001490")
+		(uuid "ba111438-0000-4000-8000-000000001438")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 193.04 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b84-0000-4000-8000-000000001b84")
+		(property "Reference" "#PWR_H44"
+			(at 205.74 190.5 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 205.74 195.58 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 208.28 193.04 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c4c-0000-4000-8000-000000001c4c")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H44") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -2941,32 +3821,52 @@
 	(wire
 		(pts (xy 208.28 162.56) (xy 203.2 162.56))
 		(stroke (width 0) (type default))
-		(uuid "ba111491-0000-4000-8000-000000001491")
+		(uuid "ba111439-0000-4000-8000-000000001439")
 	)
 	(label "CF_PWR"
 		(at 203.2 162.56 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111492-0000-4000-8000-000000001492")
-	)
-	(wire
-		(pts (xy 208.28 165.1) (xy 203.2 165.1))
-		(stroke (width 0) (type default))
-		(uuid "ba111493-0000-4000-8000-000000001493")
-	)
-	(label "GND"
-		(at 203.2 165.1 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111494-0000-4000-8000-000000001494")
+		(uuid "ba11143a-0000-4000-8000-00000000143a")
 	)
 	(wire
 		(pts (xy 208.28 167.64) (xy 203.2 167.64))
 		(stroke (width 0) (type default))
-		(uuid "ba111495-0000-4000-8000-000000001495")
+		(uuid "ba11143b-0000-4000-8000-00000000143b")
 	)
 	(label "S4"
 		(at 203.2 167.64 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111496-0000-4000-8000-000000001496")
+		(uuid "ba11143c-0000-4000-8000-00000000143c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 165.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b85-0000-4000-8000-000000001b85")
+		(property "Reference" "#PWR_H45"
+			(at 205.74 162.56 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 205.74 167.64 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 208.28 165.1 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c4d-0000-4000-8000-000000001c4d")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H45") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3007,32 +3907,52 @@
 	(wire
 		(pts (xy 208.28 134.62) (xy 203.2 134.62))
 		(stroke (width 0) (type default))
-		(uuid "ba111497-0000-4000-8000-000000001497")
+		(uuid "ba11143d-0000-4000-8000-00000000143d")
 	)
 	(label "CF_PWR"
 		(at 203.2 134.62 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111498-0000-4000-8000-000000001498")
-	)
-	(wire
-		(pts (xy 208.28 137.16) (xy 203.2 137.16))
-		(stroke (width 0) (type default))
-		(uuid "ba111499-0000-4000-8000-000000001499")
-	)
-	(label "GND"
-		(at 203.2 137.16 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11149a-0000-4000-8000-00000000149a")
+		(uuid "ba11143e-0000-4000-8000-00000000143e")
 	)
 	(wire
 		(pts (xy 208.28 139.7) (xy 203.2 139.7))
 		(stroke (width 0) (type default))
-		(uuid "ba11149b-0000-4000-8000-00000000149b")
+		(uuid "ba11143f-0000-4000-8000-00000000143f")
 	)
 	(label "S5"
 		(at 203.2 139.7 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11149c-0000-4000-8000-00000000149c")
+		(uuid "ba111440-0000-4000-8000-000000001440")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 137.16 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b86-0000-4000-8000-000000001b86")
+		(property "Reference" "#PWR_H46"
+			(at 205.74 134.62 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 205.74 139.7 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 208.28 137.16 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c4e-0000-4000-8000-000000001c4e")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H46") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3073,32 +3993,52 @@
 	(wire
 		(pts (xy 208.28 106.68) (xy 203.2 106.68))
 		(stroke (width 0) (type default))
-		(uuid "ba11149d-0000-4000-8000-00000000149d")
+		(uuid "ba111441-0000-4000-8000-000000001441")
 	)
 	(label "CF_PWR"
 		(at 203.2 106.68 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba11149e-0000-4000-8000-00000000149e")
-	)
-	(wire
-		(pts (xy 208.28 109.22) (xy 203.2 109.22))
-		(stroke (width 0) (type default))
-		(uuid "ba11149f-0000-4000-8000-00000000149f")
-	)
-	(label "GND"
-		(at 203.2 109.22 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114a0-0000-4000-8000-0000000014a0")
+		(uuid "ba111442-0000-4000-8000-000000001442")
 	)
 	(wire
 		(pts (xy 208.28 111.76) (xy 203.2 111.76))
 		(stroke (width 0) (type default))
-		(uuid "ba1114a1-0000-4000-8000-0000000014a1")
+		(uuid "ba111443-0000-4000-8000-000000001443")
 	)
 	(label "S6"
 		(at 203.2 111.76 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114a2-0000-4000-8000-0000000014a2")
+		(uuid "ba111444-0000-4000-8000-000000001444")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 109.22 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b87-0000-4000-8000-000000001b87")
+		(property "Reference" "#PWR_H47"
+			(at 205.74 106.68 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 205.74 111.76 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 208.28 109.22 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c4f-0000-4000-8000-000000001c4f")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H47") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3139,32 +4079,52 @@
 	(wire
 		(pts (xy 208.28 78.74) (xy 203.2 78.74))
 		(stroke (width 0) (type default))
-		(uuid "ba1114a3-0000-4000-8000-0000000014a3")
+		(uuid "ba111445-0000-4000-8000-000000001445")
 	)
 	(label "CF_PWR"
 		(at 203.2 78.74 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114a4-0000-4000-8000-0000000014a4")
-	)
-	(wire
-		(pts (xy 208.28 81.28) (xy 203.2 81.28))
-		(stroke (width 0) (type default))
-		(uuid "ba1114a5-0000-4000-8000-0000000014a5")
-	)
-	(label "GND"
-		(at 203.2 81.28 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114a6-0000-4000-8000-0000000014a6")
+		(uuid "ba111446-0000-4000-8000-000000001446")
 	)
 	(wire
 		(pts (xy 208.28 83.82) (xy 203.2 83.82))
 		(stroke (width 0) (type default))
-		(uuid "ba1114a7-0000-4000-8000-0000000014a7")
+		(uuid "ba111447-0000-4000-8000-000000001447")
 	)
 	(label "S7"
 		(at 203.2 83.82 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114a8-0000-4000-8000-0000000014a8")
+		(uuid "ba111448-0000-4000-8000-000000001448")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 208.28 81.28 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b88-0000-4000-8000-000000001b88")
+		(property "Reference" "#PWR_H48"
+			(at 205.74 78.74 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 205.74 83.82 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 208.28 81.28 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c50-0000-4000-8000-000000001c50")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H48") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3205,32 +4165,52 @@
 	(wire
 		(pts (xy 238.76 274.32) (xy 233.68 274.32))
 		(stroke (width 0) (type default))
-		(uuid "ba1114a9-0000-4000-8000-0000000014a9")
+		(uuid "ba111449-0000-4000-8000-000000001449")
 	)
 	(label "CG_PWR"
 		(at 233.68 274.32 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114aa-0000-4000-8000-0000000014aa")
-	)
-	(wire
-		(pts (xy 238.76 276.86) (xy 233.68 276.86))
-		(stroke (width 0) (type default))
-		(uuid "ba1114ab-0000-4000-8000-0000000014ab")
-	)
-	(label "GND"
-		(at 233.68 276.86 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114ac-0000-4000-8000-0000000014ac")
+		(uuid "ba11144a-0000-4000-8000-00000000144a")
 	)
 	(wire
 		(pts (xy 238.76 279.4) (xy 233.68 279.4))
 		(stroke (width 0) (type default))
-		(uuid "ba1114ad-0000-4000-8000-0000000014ad")
+		(uuid "ba11144b-0000-4000-8000-00000000144b")
 	)
 	(label "S0"
 		(at 233.68 279.4 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114ae-0000-4000-8000-0000000014ae")
+		(uuid "ba11144c-0000-4000-8000-00000000144c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 238.76 276.86 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b89-0000-4000-8000-000000001b89")
+		(property "Reference" "#PWR_H49"
+			(at 236.22 274.32 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 236.22 279.4 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 238.76 276.86 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c51-0000-4000-8000-000000001c51")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H49") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3271,32 +4251,52 @@
 	(wire
 		(pts (xy 238.76 246.38) (xy 233.68 246.38))
 		(stroke (width 0) (type default))
-		(uuid "ba1114af-0000-4000-8000-0000000014af")
+		(uuid "ba11144d-0000-4000-8000-00000000144d")
 	)
 	(label "CG_PWR"
 		(at 233.68 246.38 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114b0-0000-4000-8000-0000000014b0")
-	)
-	(wire
-		(pts (xy 238.76 248.92) (xy 233.68 248.92))
-		(stroke (width 0) (type default))
-		(uuid "ba1114b1-0000-4000-8000-0000000014b1")
-	)
-	(label "GND"
-		(at 233.68 248.92 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114b2-0000-4000-8000-0000000014b2")
+		(uuid "ba11144e-0000-4000-8000-00000000144e")
 	)
 	(wire
 		(pts (xy 238.76 251.46) (xy 233.68 251.46))
 		(stroke (width 0) (type default))
-		(uuid "ba1114b3-0000-4000-8000-0000000014b3")
+		(uuid "ba11144f-0000-4000-8000-00000000144f")
 	)
 	(label "S1"
 		(at 233.68 251.46 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114b4-0000-4000-8000-0000000014b4")
+		(uuid "ba111450-0000-4000-8000-000000001450")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 238.76 248.92 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b8a-0000-4000-8000-000000001b8a")
+		(property "Reference" "#PWR_H50"
+			(at 236.22 246.38 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 236.22 251.46 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 238.76 248.92 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c52-0000-4000-8000-000000001c52")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H50") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3337,32 +4337,52 @@
 	(wire
 		(pts (xy 238.76 218.44) (xy 233.68 218.44))
 		(stroke (width 0) (type default))
-		(uuid "ba1114b5-0000-4000-8000-0000000014b5")
+		(uuid "ba111451-0000-4000-8000-000000001451")
 	)
 	(label "CG_PWR"
 		(at 233.68 218.44 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114b6-0000-4000-8000-0000000014b6")
-	)
-	(wire
-		(pts (xy 238.76 220.98) (xy 233.68 220.98))
-		(stroke (width 0) (type default))
-		(uuid "ba1114b7-0000-4000-8000-0000000014b7")
-	)
-	(label "GND"
-		(at 233.68 220.98 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114b8-0000-4000-8000-0000000014b8")
+		(uuid "ba111452-0000-4000-8000-000000001452")
 	)
 	(wire
 		(pts (xy 238.76 223.52) (xy 233.68 223.52))
 		(stroke (width 0) (type default))
-		(uuid "ba1114b9-0000-4000-8000-0000000014b9")
+		(uuid "ba111453-0000-4000-8000-000000001453")
 	)
 	(label "S2"
 		(at 233.68 223.52 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114ba-0000-4000-8000-0000000014ba")
+		(uuid "ba111454-0000-4000-8000-000000001454")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 238.76 220.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b8b-0000-4000-8000-000000001b8b")
+		(property "Reference" "#PWR_H51"
+			(at 236.22 218.44 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 236.22 223.52 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 238.76 220.98 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c53-0000-4000-8000-000000001c53")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H51") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3403,32 +4423,52 @@
 	(wire
 		(pts (xy 238.76 190.5) (xy 233.68 190.5))
 		(stroke (width 0) (type default))
-		(uuid "ba1114bb-0000-4000-8000-0000000014bb")
+		(uuid "ba111455-0000-4000-8000-000000001455")
 	)
 	(label "CG_PWR"
 		(at 233.68 190.5 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114bc-0000-4000-8000-0000000014bc")
-	)
-	(wire
-		(pts (xy 238.76 193.04) (xy 233.68 193.04))
-		(stroke (width 0) (type default))
-		(uuid "ba1114bd-0000-4000-8000-0000000014bd")
-	)
-	(label "GND"
-		(at 233.68 193.04 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114be-0000-4000-8000-0000000014be")
+		(uuid "ba111456-0000-4000-8000-000000001456")
 	)
 	(wire
 		(pts (xy 238.76 195.58) (xy 233.68 195.58))
 		(stroke (width 0) (type default))
-		(uuid "ba1114bf-0000-4000-8000-0000000014bf")
+		(uuid "ba111457-0000-4000-8000-000000001457")
 	)
 	(label "S3"
 		(at 233.68 195.58 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114c0-0000-4000-8000-0000000014c0")
+		(uuid "ba111458-0000-4000-8000-000000001458")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 238.76 193.04 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b8c-0000-4000-8000-000000001b8c")
+		(property "Reference" "#PWR_H52"
+			(at 236.22 190.5 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 236.22 195.58 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 238.76 193.04 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c54-0000-4000-8000-000000001c54")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H52") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3469,32 +4509,52 @@
 	(wire
 		(pts (xy 238.76 162.56) (xy 233.68 162.56))
 		(stroke (width 0) (type default))
-		(uuid "ba1114c1-0000-4000-8000-0000000014c1")
+		(uuid "ba111459-0000-4000-8000-000000001459")
 	)
 	(label "CG_PWR"
 		(at 233.68 162.56 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114c2-0000-4000-8000-0000000014c2")
-	)
-	(wire
-		(pts (xy 238.76 165.1) (xy 233.68 165.1))
-		(stroke (width 0) (type default))
-		(uuid "ba1114c3-0000-4000-8000-0000000014c3")
-	)
-	(label "GND"
-		(at 233.68 165.1 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114c4-0000-4000-8000-0000000014c4")
+		(uuid "ba11145a-0000-4000-8000-00000000145a")
 	)
 	(wire
 		(pts (xy 238.76 167.64) (xy 233.68 167.64))
 		(stroke (width 0) (type default))
-		(uuid "ba1114c5-0000-4000-8000-0000000014c5")
+		(uuid "ba11145b-0000-4000-8000-00000000145b")
 	)
 	(label "S4"
 		(at 233.68 167.64 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114c6-0000-4000-8000-0000000014c6")
+		(uuid "ba11145c-0000-4000-8000-00000000145c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 238.76 165.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b8d-0000-4000-8000-000000001b8d")
+		(property "Reference" "#PWR_H53"
+			(at 236.22 162.56 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 236.22 167.64 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 238.76 165.1 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c55-0000-4000-8000-000000001c55")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H53") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3535,32 +4595,52 @@
 	(wire
 		(pts (xy 238.76 134.62) (xy 233.68 134.62))
 		(stroke (width 0) (type default))
-		(uuid "ba1114c7-0000-4000-8000-0000000014c7")
+		(uuid "ba11145d-0000-4000-8000-00000000145d")
 	)
 	(label "CG_PWR"
 		(at 233.68 134.62 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114c8-0000-4000-8000-0000000014c8")
-	)
-	(wire
-		(pts (xy 238.76 137.16) (xy 233.68 137.16))
-		(stroke (width 0) (type default))
-		(uuid "ba1114c9-0000-4000-8000-0000000014c9")
-	)
-	(label "GND"
-		(at 233.68 137.16 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114ca-0000-4000-8000-0000000014ca")
+		(uuid "ba11145e-0000-4000-8000-00000000145e")
 	)
 	(wire
 		(pts (xy 238.76 139.7) (xy 233.68 139.7))
 		(stroke (width 0) (type default))
-		(uuid "ba1114cb-0000-4000-8000-0000000014cb")
+		(uuid "ba11145f-0000-4000-8000-00000000145f")
 	)
 	(label "S5"
 		(at 233.68 139.7 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114cc-0000-4000-8000-0000000014cc")
+		(uuid "ba111460-0000-4000-8000-000000001460")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 238.76 137.16 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b8e-0000-4000-8000-000000001b8e")
+		(property "Reference" "#PWR_H54"
+			(at 236.22 134.62 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 236.22 139.7 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 238.76 137.16 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c56-0000-4000-8000-000000001c56")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H54") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3601,32 +4681,52 @@
 	(wire
 		(pts (xy 238.76 106.68) (xy 233.68 106.68))
 		(stroke (width 0) (type default))
-		(uuid "ba1114cd-0000-4000-8000-0000000014cd")
+		(uuid "ba111461-0000-4000-8000-000000001461")
 	)
 	(label "CG_PWR"
 		(at 233.68 106.68 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114ce-0000-4000-8000-0000000014ce")
-	)
-	(wire
-		(pts (xy 238.76 109.22) (xy 233.68 109.22))
-		(stroke (width 0) (type default))
-		(uuid "ba1114cf-0000-4000-8000-0000000014cf")
-	)
-	(label "GND"
-		(at 233.68 109.22 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114d0-0000-4000-8000-0000000014d0")
+		(uuid "ba111462-0000-4000-8000-000000001462")
 	)
 	(wire
 		(pts (xy 238.76 111.76) (xy 233.68 111.76))
 		(stroke (width 0) (type default))
-		(uuid "ba1114d1-0000-4000-8000-0000000014d1")
+		(uuid "ba111463-0000-4000-8000-000000001463")
 	)
 	(label "S6"
 		(at 233.68 111.76 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114d2-0000-4000-8000-0000000014d2")
+		(uuid "ba111464-0000-4000-8000-000000001464")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 238.76 109.22 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b8f-0000-4000-8000-000000001b8f")
+		(property "Reference" "#PWR_H55"
+			(at 236.22 106.68 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 236.22 111.76 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 238.76 109.22 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c57-0000-4000-8000-000000001c57")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H55") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3667,32 +4767,52 @@
 	(wire
 		(pts (xy 238.76 78.74) (xy 233.68 78.74))
 		(stroke (width 0) (type default))
-		(uuid "ba1114d3-0000-4000-8000-0000000014d3")
+		(uuid "ba111465-0000-4000-8000-000000001465")
 	)
 	(label "CG_PWR"
 		(at 233.68 78.74 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114d4-0000-4000-8000-0000000014d4")
-	)
-	(wire
-		(pts (xy 238.76 81.28) (xy 233.68 81.28))
-		(stroke (width 0) (type default))
-		(uuid "ba1114d5-0000-4000-8000-0000000014d5")
-	)
-	(label "GND"
-		(at 233.68 81.28 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114d6-0000-4000-8000-0000000014d6")
+		(uuid "ba111466-0000-4000-8000-000000001466")
 	)
 	(wire
 		(pts (xy 238.76 83.82) (xy 233.68 83.82))
 		(stroke (width 0) (type default))
-		(uuid "ba1114d7-0000-4000-8000-0000000014d7")
+		(uuid "ba111467-0000-4000-8000-000000001467")
 	)
 	(label "S7"
 		(at 233.68 83.82 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114d8-0000-4000-8000-0000000014d8")
+		(uuid "ba111468-0000-4000-8000-000000001468")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 238.76 81.28 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b90-0000-4000-8000-000000001b90")
+		(property "Reference" "#PWR_H56"
+			(at 236.22 78.74 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 236.22 83.82 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 238.76 81.28 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c58-0000-4000-8000-000000001c58")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H56") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3733,32 +4853,52 @@
 	(wire
 		(pts (xy 269.24 274.32) (xy 264.16 274.32))
 		(stroke (width 0) (type default))
-		(uuid "ba1114d9-0000-4000-8000-0000000014d9")
+		(uuid "ba111469-0000-4000-8000-000000001469")
 	)
 	(label "CH_PWR"
 		(at 264.16 274.32 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114da-0000-4000-8000-0000000014da")
-	)
-	(wire
-		(pts (xy 269.24 276.86) (xy 264.16 276.86))
-		(stroke (width 0) (type default))
-		(uuid "ba1114db-0000-4000-8000-0000000014db")
-	)
-	(label "GND"
-		(at 264.16 276.86 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114dc-0000-4000-8000-0000000014dc")
+		(uuid "ba11146a-0000-4000-8000-00000000146a")
 	)
 	(wire
 		(pts (xy 269.24 279.4) (xy 264.16 279.4))
 		(stroke (width 0) (type default))
-		(uuid "ba1114dd-0000-4000-8000-0000000014dd")
+		(uuid "ba11146b-0000-4000-8000-00000000146b")
 	)
 	(label "S0"
 		(at 264.16 279.4 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114de-0000-4000-8000-0000000014de")
+		(uuid "ba11146c-0000-4000-8000-00000000146c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 276.86 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b91-0000-4000-8000-000000001b91")
+		(property "Reference" "#PWR_H57"
+			(at 266.7 274.32 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 266.7 279.4 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 269.24 276.86 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c59-0000-4000-8000-000000001c59")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H57") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3799,32 +4939,52 @@
 	(wire
 		(pts (xy 269.24 246.38) (xy 264.16 246.38))
 		(stroke (width 0) (type default))
-		(uuid "ba1114df-0000-4000-8000-0000000014df")
+		(uuid "ba11146d-0000-4000-8000-00000000146d")
 	)
 	(label "CH_PWR"
 		(at 264.16 246.38 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114e0-0000-4000-8000-0000000014e0")
-	)
-	(wire
-		(pts (xy 269.24 248.92) (xy 264.16 248.92))
-		(stroke (width 0) (type default))
-		(uuid "ba1114e1-0000-4000-8000-0000000014e1")
-	)
-	(label "GND"
-		(at 264.16 248.92 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114e2-0000-4000-8000-0000000014e2")
+		(uuid "ba11146e-0000-4000-8000-00000000146e")
 	)
 	(wire
 		(pts (xy 269.24 251.46) (xy 264.16 251.46))
 		(stroke (width 0) (type default))
-		(uuid "ba1114e3-0000-4000-8000-0000000014e3")
+		(uuid "ba11146f-0000-4000-8000-00000000146f")
 	)
 	(label "S1"
 		(at 264.16 251.46 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114e4-0000-4000-8000-0000000014e4")
+		(uuid "ba111470-0000-4000-8000-000000001470")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 248.92 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b92-0000-4000-8000-000000001b92")
+		(property "Reference" "#PWR_H58"
+			(at 266.7 246.38 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 266.7 251.46 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 269.24 248.92 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c5a-0000-4000-8000-000000001c5a")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H58") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3865,32 +5025,52 @@
 	(wire
 		(pts (xy 269.24 218.44) (xy 264.16 218.44))
 		(stroke (width 0) (type default))
-		(uuid "ba1114e5-0000-4000-8000-0000000014e5")
+		(uuid "ba111471-0000-4000-8000-000000001471")
 	)
 	(label "CH_PWR"
 		(at 264.16 218.44 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114e6-0000-4000-8000-0000000014e6")
-	)
-	(wire
-		(pts (xy 269.24 220.98) (xy 264.16 220.98))
-		(stroke (width 0) (type default))
-		(uuid "ba1114e7-0000-4000-8000-0000000014e7")
-	)
-	(label "GND"
-		(at 264.16 220.98 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114e8-0000-4000-8000-0000000014e8")
+		(uuid "ba111472-0000-4000-8000-000000001472")
 	)
 	(wire
 		(pts (xy 269.24 223.52) (xy 264.16 223.52))
 		(stroke (width 0) (type default))
-		(uuid "ba1114e9-0000-4000-8000-0000000014e9")
+		(uuid "ba111473-0000-4000-8000-000000001473")
 	)
 	(label "S2"
 		(at 264.16 223.52 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114ea-0000-4000-8000-0000000014ea")
+		(uuid "ba111474-0000-4000-8000-000000001474")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 220.98 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b93-0000-4000-8000-000000001b93")
+		(property "Reference" "#PWR_H59"
+			(at 266.7 218.44 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 266.7 223.52 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 269.24 220.98 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c5b-0000-4000-8000-000000001c5b")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H59") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3931,32 +5111,52 @@
 	(wire
 		(pts (xy 269.24 190.5) (xy 264.16 190.5))
 		(stroke (width 0) (type default))
-		(uuid "ba1114eb-0000-4000-8000-0000000014eb")
+		(uuid "ba111475-0000-4000-8000-000000001475")
 	)
 	(label "CH_PWR"
 		(at 264.16 190.5 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114ec-0000-4000-8000-0000000014ec")
-	)
-	(wire
-		(pts (xy 269.24 193.04) (xy 264.16 193.04))
-		(stroke (width 0) (type default))
-		(uuid "ba1114ed-0000-4000-8000-0000000014ed")
-	)
-	(label "GND"
-		(at 264.16 193.04 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114ee-0000-4000-8000-0000000014ee")
+		(uuid "ba111476-0000-4000-8000-000000001476")
 	)
 	(wire
 		(pts (xy 269.24 195.58) (xy 264.16 195.58))
 		(stroke (width 0) (type default))
-		(uuid "ba1114ef-0000-4000-8000-0000000014ef")
+		(uuid "ba111477-0000-4000-8000-000000001477")
 	)
 	(label "S3"
 		(at 264.16 195.58 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114f0-0000-4000-8000-0000000014f0")
+		(uuid "ba111478-0000-4000-8000-000000001478")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 193.04 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b94-0000-4000-8000-000000001b94")
+		(property "Reference" "#PWR_H60"
+			(at 266.7 190.5 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 266.7 195.58 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 269.24 193.04 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c5c-0000-4000-8000-000000001c5c")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H60") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -3997,32 +5197,52 @@
 	(wire
 		(pts (xy 269.24 162.56) (xy 264.16 162.56))
 		(stroke (width 0) (type default))
-		(uuid "ba1114f1-0000-4000-8000-0000000014f1")
+		(uuid "ba111479-0000-4000-8000-000000001479")
 	)
 	(label "CH_PWR"
 		(at 264.16 162.56 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114f2-0000-4000-8000-0000000014f2")
-	)
-	(wire
-		(pts (xy 269.24 165.1) (xy 264.16 165.1))
-		(stroke (width 0) (type default))
-		(uuid "ba1114f3-0000-4000-8000-0000000014f3")
-	)
-	(label "GND"
-		(at 264.16 165.1 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114f4-0000-4000-8000-0000000014f4")
+		(uuid "ba11147a-0000-4000-8000-00000000147a")
 	)
 	(wire
 		(pts (xy 269.24 167.64) (xy 264.16 167.64))
 		(stroke (width 0) (type default))
-		(uuid "ba1114f5-0000-4000-8000-0000000014f5")
+		(uuid "ba11147b-0000-4000-8000-00000000147b")
 	)
 	(label "S4"
 		(at 264.16 167.64 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114f6-0000-4000-8000-0000000014f6")
+		(uuid "ba11147c-0000-4000-8000-00000000147c")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 165.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b95-0000-4000-8000-000000001b95")
+		(property "Reference" "#PWR_H61"
+			(at 266.7 162.56 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 266.7 167.64 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 269.24 165.1 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c5d-0000-4000-8000-000000001c5d")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H61") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -4063,32 +5283,52 @@
 	(wire
 		(pts (xy 269.24 134.62) (xy 264.16 134.62))
 		(stroke (width 0) (type default))
-		(uuid "ba1114f7-0000-4000-8000-0000000014f7")
+		(uuid "ba11147d-0000-4000-8000-00000000147d")
 	)
 	(label "CH_PWR"
 		(at 264.16 134.62 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114f8-0000-4000-8000-0000000014f8")
-	)
-	(wire
-		(pts (xy 269.24 137.16) (xy 264.16 137.16))
-		(stroke (width 0) (type default))
-		(uuid "ba1114f9-0000-4000-8000-0000000014f9")
-	)
-	(label "GND"
-		(at 264.16 137.16 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114fa-0000-4000-8000-0000000014fa")
+		(uuid "ba11147e-0000-4000-8000-00000000147e")
 	)
 	(wire
 		(pts (xy 269.24 139.7) (xy 264.16 139.7))
 		(stroke (width 0) (type default))
-		(uuid "ba1114fb-0000-4000-8000-0000000014fb")
+		(uuid "ba11147f-0000-4000-8000-00000000147f")
 	)
 	(label "S5"
 		(at 264.16 139.7 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114fc-0000-4000-8000-0000000014fc")
+		(uuid "ba111480-0000-4000-8000-000000001480")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 137.16 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b96-0000-4000-8000-000000001b96")
+		(property "Reference" "#PWR_H62"
+			(at 266.7 134.62 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 266.7 139.7 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 269.24 137.16 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c5e-0000-4000-8000-000000001c5e")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H62") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -4129,32 +5369,52 @@
 	(wire
 		(pts (xy 269.24 106.68) (xy 264.16 106.68))
 		(stroke (width 0) (type default))
-		(uuid "ba1114fd-0000-4000-8000-0000000014fd")
+		(uuid "ba111481-0000-4000-8000-000000001481")
 	)
 	(label "CH_PWR"
 		(at 264.16 106.68 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba1114fe-0000-4000-8000-0000000014fe")
-	)
-	(wire
-		(pts (xy 269.24 109.22) (xy 264.16 109.22))
-		(stroke (width 0) (type default))
-		(uuid "ba1114ff-0000-4000-8000-0000000014ff")
-	)
-	(label "GND"
-		(at 264.16 109.22 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111500-0000-4000-8000-000000001500")
+		(uuid "ba111482-0000-4000-8000-000000001482")
 	)
 	(wire
 		(pts (xy 269.24 111.76) (xy 264.16 111.76))
 		(stroke (width 0) (type default))
-		(uuid "ba111501-0000-4000-8000-000000001501")
+		(uuid "ba111483-0000-4000-8000-000000001483")
 	)
 	(label "S6"
 		(at 264.16 111.76 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111502-0000-4000-8000-000000001502")
+		(uuid "ba111484-0000-4000-8000-000000001484")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 109.22 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b97-0000-4000-8000-000000001b97")
+		(property "Reference" "#PWR_H63"
+			(at 266.7 106.68 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 266.7 111.76 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 269.24 109.22 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c5f-0000-4000-8000-000000001c5f")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H63") (unit 1))
+			)
+		)
 	)
 	(symbol
 		(lib_id "openchess:A3144")
@@ -4195,30 +5455,50 @@
 	(wire
 		(pts (xy 269.24 78.74) (xy 264.16 78.74))
 		(stroke (width 0) (type default))
-		(uuid "ba111503-0000-4000-8000-000000001503")
+		(uuid "ba111485-0000-4000-8000-000000001485")
 	)
 	(label "CH_PWR"
 		(at 264.16 78.74 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111504-0000-4000-8000-000000001504")
-	)
-	(wire
-		(pts (xy 269.24 81.28) (xy 264.16 81.28))
-		(stroke (width 0) (type default))
-		(uuid "ba111505-0000-4000-8000-000000001505")
-	)
-	(label "GND"
-		(at 264.16 81.28 180)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111506-0000-4000-8000-000000001506")
+		(uuid "ba111486-0000-4000-8000-000000001486")
 	)
 	(wire
 		(pts (xy 269.24 83.82) (xy 264.16 83.82))
 		(stroke (width 0) (type default))
-		(uuid "ba111507-0000-4000-8000-000000001507")
+		(uuid "ba111487-0000-4000-8000-000000001487")
 	)
 	(label "S7"
 		(at 264.16 83.82 180)
 		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "ba111508-0000-4000-8000-000000001508")
+		(uuid "ba111488-0000-4000-8000-000000001488")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 269.24 81.28 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ba111b98-0000-4000-8000-000000001b98")
+		(property "Reference" "#PWR_H64"
+			(at 266.7 78.74 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Value" "GND"
+			(at 266.7 83.82 0)
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
+		)
+		(property "Footprint" ""
+			(at 269.24 81.28 0)
+			(effects (font (size 1.27 1.27)) (hide yes))
+		)
+		(pin "1"
+			(uuid "ba111c60-0000-4000-8000-000000001c60")
+		)
+		(instances
+			(project "openchess-board"
+				(path "/" (reference "#PWR_H64") (unit 1))
+			)
+		)
 	)

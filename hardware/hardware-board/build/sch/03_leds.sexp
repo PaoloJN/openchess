@@ -82,7 +82,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 325.12 82.55 180)
+		(at 325.12 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -91,10 +91,10 @@
 		(uuid "1ed51b59-0000-4000-8000-000000001b59")
 		(property "Reference" "#PWR_L1"
 			(at 327.66 85.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 327.66 80.01 0)
+			(at 327.66 85.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -224,7 +224,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 353.06 82.55 180)
+		(at 353.06 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -233,10 +233,10 @@
 		(uuid "1ed51b5a-0000-4000-8000-000000001b5a")
 		(property "Reference" "#PWR_L2"
 			(at 355.6 85.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 355.6 80.01 0)
+			(at 355.6 85.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -361,7 +361,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 381 82.55 180)
+		(at 381 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -370,10 +370,10 @@
 		(uuid "1ed51b5b-0000-4000-8000-000000001b5b")
 		(property "Reference" "#PWR_L3"
 			(at 383.54 85.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 383.54 80.01 0)
+			(at 383.54 85.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -498,7 +498,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 408.94 82.55 180)
+		(at 408.94 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -507,10 +507,10 @@
 		(uuid "1ed51b5c-0000-4000-8000-000000001b5c")
 		(property "Reference" "#PWR_L4"
 			(at 411.48 85.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 411.48 80.01 0)
+			(at 411.48 85.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -635,7 +635,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 436.88 82.55 180)
+		(at 436.88 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -644,10 +644,10 @@
 		(uuid "1ed51b5d-0000-4000-8000-000000001b5d")
 		(property "Reference" "#PWR_L5"
 			(at 439.42 85.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 439.42 80.01 0)
+			(at 439.42 85.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -772,7 +772,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 464.82 82.55 180)
+		(at 464.82 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -781,10 +781,10 @@
 		(uuid "1ed51b5e-0000-4000-8000-000000001b5e")
 		(property "Reference" "#PWR_L6"
 			(at 467.36 85.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 467.36 80.01 0)
+			(at 467.36 85.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -909,7 +909,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 492.76 82.55 180)
+		(at 492.76 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -918,10 +918,10 @@
 		(uuid "1ed51b5f-0000-4000-8000-000000001b5f")
 		(property "Reference" "#PWR_L7"
 			(at 495.3 85.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 495.3 80.01 0)
+			(at 495.3 85.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -1046,7 +1046,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 520.7 82.55 180)
+		(at 520.7 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1055,10 +1055,10 @@
 		(uuid "1ed51b60-0000-4000-8000-000000001b60")
 		(property "Reference" "#PWR_L8"
 			(at 523.24 85.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 523.24 80.01 0)
+			(at 523.24 85.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -1183,7 +1183,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 548.64 82.55 180)
+		(at 548.64 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1192,10 +1192,10 @@
 		(uuid "1ed51b61-0000-4000-8000-000000001b61")
 		(property "Reference" "#PWR_L9"
 			(at 551.18 85.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 551.18 80.01 0)
+			(at 551.18 85.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -1320,7 +1320,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 325.12 107.95 180)
+		(at 325.12 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1329,10 +1329,10 @@
 		(uuid "1ed51b62-0000-4000-8000-000000001b62")
 		(property "Reference" "#PWR_L10"
 			(at 327.66 110.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 327.66 105.41 0)
+			(at 327.66 110.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -1462,7 +1462,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 353.06 107.95 180)
+		(at 353.06 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1471,10 +1471,10 @@
 		(uuid "1ed51b63-0000-4000-8000-000000001b63")
 		(property "Reference" "#PWR_L11"
 			(at 355.6 110.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 355.6 105.41 0)
+			(at 355.6 110.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -1599,7 +1599,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 381 107.95 180)
+		(at 381 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1608,10 +1608,10 @@
 		(uuid "1ed51b64-0000-4000-8000-000000001b64")
 		(property "Reference" "#PWR_L12"
 			(at 383.54 110.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 383.54 105.41 0)
+			(at 383.54 110.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -1736,7 +1736,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 408.94 107.95 180)
+		(at 408.94 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1745,10 +1745,10 @@
 		(uuid "1ed51b65-0000-4000-8000-000000001b65")
 		(property "Reference" "#PWR_L13"
 			(at 411.48 110.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 411.48 105.41 0)
+			(at 411.48 110.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -1873,7 +1873,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 436.88 107.95 180)
+		(at 436.88 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -1882,10 +1882,10 @@
 		(uuid "1ed51b66-0000-4000-8000-000000001b66")
 		(property "Reference" "#PWR_L14"
 			(at 439.42 110.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 439.42 105.41 0)
+			(at 439.42 110.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -2010,7 +2010,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 464.82 107.95 180)
+		(at 464.82 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2019,10 +2019,10 @@
 		(uuid "1ed51b67-0000-4000-8000-000000001b67")
 		(property "Reference" "#PWR_L15"
 			(at 467.36 110.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 467.36 105.41 0)
+			(at 467.36 110.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -2147,7 +2147,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 492.76 107.95 180)
+		(at 492.76 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2156,10 +2156,10 @@
 		(uuid "1ed51b68-0000-4000-8000-000000001b68")
 		(property "Reference" "#PWR_L16"
 			(at 495.3 110.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 495.3 105.41 0)
+			(at 495.3 110.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -2284,7 +2284,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 520.7 107.95 180)
+		(at 520.7 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2293,10 +2293,10 @@
 		(uuid "1ed51b69-0000-4000-8000-000000001b69")
 		(property "Reference" "#PWR_L17"
 			(at 523.24 110.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 523.24 105.41 0)
+			(at 523.24 110.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -2421,7 +2421,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 548.64 107.95 180)
+		(at 548.64 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2430,10 +2430,10 @@
 		(uuid "1ed51b6a-0000-4000-8000-000000001b6a")
 		(property "Reference" "#PWR_L18"
 			(at 551.18 110.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 551.18 105.41 0)
+			(at 551.18 110.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -2558,7 +2558,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 325.12 133.35 180)
+		(at 325.12 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2567,10 +2567,10 @@
 		(uuid "1ed51b6b-0000-4000-8000-000000001b6b")
 		(property "Reference" "#PWR_L19"
 			(at 327.66 135.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 327.66 130.81 0)
+			(at 327.66 135.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -2700,7 +2700,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 353.06 133.35 180)
+		(at 353.06 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2709,10 +2709,10 @@
 		(uuid "1ed51b6c-0000-4000-8000-000000001b6c")
 		(property "Reference" "#PWR_L20"
 			(at 355.6 135.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 355.6 130.81 0)
+			(at 355.6 135.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -2837,7 +2837,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 381 133.35 180)
+		(at 381 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2846,10 +2846,10 @@
 		(uuid "1ed51b6d-0000-4000-8000-000000001b6d")
 		(property "Reference" "#PWR_L21"
 			(at 383.54 135.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 383.54 130.81 0)
+			(at 383.54 135.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -2974,7 +2974,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 408.94 133.35 180)
+		(at 408.94 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2983,10 +2983,10 @@
 		(uuid "1ed51b6e-0000-4000-8000-000000001b6e")
 		(property "Reference" "#PWR_L22"
 			(at 411.48 135.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 411.48 130.81 0)
+			(at 411.48 135.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -3111,7 +3111,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 436.88 133.35 180)
+		(at 436.88 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3120,10 +3120,10 @@
 		(uuid "1ed51b6f-0000-4000-8000-000000001b6f")
 		(property "Reference" "#PWR_L23"
 			(at 439.42 135.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 439.42 130.81 0)
+			(at 439.42 135.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -3248,7 +3248,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 464.82 133.35 180)
+		(at 464.82 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3257,10 +3257,10 @@
 		(uuid "1ed51b70-0000-4000-8000-000000001b70")
 		(property "Reference" "#PWR_L24"
 			(at 467.36 135.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 467.36 130.81 0)
+			(at 467.36 135.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -3385,7 +3385,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 492.76 133.35 180)
+		(at 492.76 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3394,10 +3394,10 @@
 		(uuid "1ed51b71-0000-4000-8000-000000001b71")
 		(property "Reference" "#PWR_L25"
 			(at 495.3 135.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 495.3 130.81 0)
+			(at 495.3 135.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -3522,7 +3522,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 520.7 133.35 180)
+		(at 520.7 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3531,10 +3531,10 @@
 		(uuid "1ed51b72-0000-4000-8000-000000001b72")
 		(property "Reference" "#PWR_L26"
 			(at 523.24 135.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 523.24 130.81 0)
+			(at 523.24 135.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -3659,7 +3659,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 548.64 133.35 180)
+		(at 548.64 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3668,10 +3668,10 @@
 		(uuid "1ed51b73-0000-4000-8000-000000001b73")
 		(property "Reference" "#PWR_L27"
 			(at 551.18 135.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 551.18 130.81 0)
+			(at 551.18 135.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -3796,7 +3796,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 325.12 158.75 180)
+		(at 325.12 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3805,10 +3805,10 @@
 		(uuid "1ed51b74-0000-4000-8000-000000001b74")
 		(property "Reference" "#PWR_L28"
 			(at 327.66 161.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 327.66 156.21 0)
+			(at 327.66 161.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -3938,7 +3938,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 353.06 158.75 180)
+		(at 353.06 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3947,10 +3947,10 @@
 		(uuid "1ed51b75-0000-4000-8000-000000001b75")
 		(property "Reference" "#PWR_L29"
 			(at 355.6 161.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 355.6 156.21 0)
+			(at 355.6 161.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -4075,7 +4075,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 381 158.75 180)
+		(at 381 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4084,10 +4084,10 @@
 		(uuid "1ed51b76-0000-4000-8000-000000001b76")
 		(property "Reference" "#PWR_L30"
 			(at 383.54 161.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 383.54 156.21 0)
+			(at 383.54 161.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -4212,7 +4212,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 408.94 158.75 180)
+		(at 408.94 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4221,10 +4221,10 @@
 		(uuid "1ed51b77-0000-4000-8000-000000001b77")
 		(property "Reference" "#PWR_L31"
 			(at 411.48 161.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 411.48 156.21 0)
+			(at 411.48 161.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -4349,7 +4349,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 436.88 158.75 180)
+		(at 436.88 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4358,10 +4358,10 @@
 		(uuid "1ed51b78-0000-4000-8000-000000001b78")
 		(property "Reference" "#PWR_L32"
 			(at 439.42 161.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 439.42 156.21 0)
+			(at 439.42 161.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -4486,7 +4486,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 464.82 158.75 180)
+		(at 464.82 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4495,10 +4495,10 @@
 		(uuid "1ed51b79-0000-4000-8000-000000001b79")
 		(property "Reference" "#PWR_L33"
 			(at 467.36 161.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 467.36 156.21 0)
+			(at 467.36 161.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -4623,7 +4623,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 492.76 158.75 180)
+		(at 492.76 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4632,10 +4632,10 @@
 		(uuid "1ed51b7a-0000-4000-8000-000000001b7a")
 		(property "Reference" "#PWR_L34"
 			(at 495.3 161.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 495.3 156.21 0)
+			(at 495.3 161.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -4760,7 +4760,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 520.7 158.75 180)
+		(at 520.7 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4769,10 +4769,10 @@
 		(uuid "1ed51b7b-0000-4000-8000-000000001b7b")
 		(property "Reference" "#PWR_L35"
 			(at 523.24 161.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 523.24 156.21 0)
+			(at 523.24 161.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -4897,7 +4897,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 548.64 158.75 180)
+		(at 548.64 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4906,10 +4906,10 @@
 		(uuid "1ed51b7c-0000-4000-8000-000000001b7c")
 		(property "Reference" "#PWR_L36"
 			(at 551.18 161.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 551.18 156.21 0)
+			(at 551.18 161.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -5034,7 +5034,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 325.12 184.15 180)
+		(at 325.12 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5043,10 +5043,10 @@
 		(uuid "1ed51b7d-0000-4000-8000-000000001b7d")
 		(property "Reference" "#PWR_L37"
 			(at 327.66 186.69 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 327.66 181.61 0)
+			(at 327.66 186.69 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -5176,7 +5176,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 353.06 184.15 180)
+		(at 353.06 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5185,10 +5185,10 @@
 		(uuid "1ed51b7e-0000-4000-8000-000000001b7e")
 		(property "Reference" "#PWR_L38"
 			(at 355.6 186.69 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 355.6 181.61 0)
+			(at 355.6 186.69 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -5313,7 +5313,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 381 184.15 180)
+		(at 381 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5322,10 +5322,10 @@
 		(uuid "1ed51b7f-0000-4000-8000-000000001b7f")
 		(property "Reference" "#PWR_L39"
 			(at 383.54 186.69 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 383.54 181.61 0)
+			(at 383.54 186.69 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -5450,7 +5450,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 408.94 184.15 180)
+		(at 408.94 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5459,10 +5459,10 @@
 		(uuid "1ed51b80-0000-4000-8000-000000001b80")
 		(property "Reference" "#PWR_L40"
 			(at 411.48 186.69 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 411.48 181.61 0)
+			(at 411.48 186.69 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -5587,7 +5587,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 436.88 184.15 180)
+		(at 436.88 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5596,10 +5596,10 @@
 		(uuid "1ed51b81-0000-4000-8000-000000001b81")
 		(property "Reference" "#PWR_L41"
 			(at 439.42 186.69 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 439.42 181.61 0)
+			(at 439.42 186.69 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -5724,7 +5724,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 464.82 184.15 180)
+		(at 464.82 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5733,10 +5733,10 @@
 		(uuid "1ed51b82-0000-4000-8000-000000001b82")
 		(property "Reference" "#PWR_L42"
 			(at 467.36 186.69 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 467.36 181.61 0)
+			(at 467.36 186.69 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -5861,7 +5861,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 492.76 184.15 180)
+		(at 492.76 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5870,10 +5870,10 @@
 		(uuid "1ed51b83-0000-4000-8000-000000001b83")
 		(property "Reference" "#PWR_L43"
 			(at 495.3 186.69 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 495.3 181.61 0)
+			(at 495.3 186.69 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -5998,7 +5998,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 520.7 184.15 180)
+		(at 520.7 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -6007,10 +6007,10 @@
 		(uuid "1ed51b84-0000-4000-8000-000000001b84")
 		(property "Reference" "#PWR_L44"
 			(at 523.24 186.69 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 523.24 181.61 0)
+			(at 523.24 186.69 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -6135,7 +6135,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 548.64 184.15 180)
+		(at 548.64 184.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -6144,10 +6144,10 @@
 		(uuid "1ed51b85-0000-4000-8000-000000001b85")
 		(property "Reference" "#PWR_L45"
 			(at 551.18 186.69 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 551.18 181.61 0)
+			(at 551.18 186.69 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -6272,7 +6272,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 325.12 209.55 180)
+		(at 325.12 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -6281,10 +6281,10 @@
 		(uuid "1ed51b86-0000-4000-8000-000000001b86")
 		(property "Reference" "#PWR_L46"
 			(at 327.66 212.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 327.66 207.01 0)
+			(at 327.66 212.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -6414,7 +6414,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 353.06 209.55 180)
+		(at 353.06 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -6423,10 +6423,10 @@
 		(uuid "1ed51b87-0000-4000-8000-000000001b87")
 		(property "Reference" "#PWR_L47"
 			(at 355.6 212.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 355.6 207.01 0)
+			(at 355.6 212.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -6551,7 +6551,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 381 209.55 180)
+		(at 381 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -6560,10 +6560,10 @@
 		(uuid "1ed51b88-0000-4000-8000-000000001b88")
 		(property "Reference" "#PWR_L48"
 			(at 383.54 212.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 383.54 207.01 0)
+			(at 383.54 212.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -6688,7 +6688,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 408.94 209.55 180)
+		(at 408.94 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -6697,10 +6697,10 @@
 		(uuid "1ed51b89-0000-4000-8000-000000001b89")
 		(property "Reference" "#PWR_L49"
 			(at 411.48 212.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 411.48 207.01 0)
+			(at 411.48 212.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -6825,7 +6825,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 436.88 209.55 180)
+		(at 436.88 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -6834,10 +6834,10 @@
 		(uuid "1ed51b8a-0000-4000-8000-000000001b8a")
 		(property "Reference" "#PWR_L50"
 			(at 439.42 212.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 439.42 207.01 0)
+			(at 439.42 212.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -6962,7 +6962,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 464.82 209.55 180)
+		(at 464.82 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -6971,10 +6971,10 @@
 		(uuid "1ed51b8b-0000-4000-8000-000000001b8b")
 		(property "Reference" "#PWR_L51"
 			(at 467.36 212.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 467.36 207.01 0)
+			(at 467.36 212.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -7099,7 +7099,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 492.76 209.55 180)
+		(at 492.76 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -7108,10 +7108,10 @@
 		(uuid "1ed51b8c-0000-4000-8000-000000001b8c")
 		(property "Reference" "#PWR_L52"
 			(at 495.3 212.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 495.3 207.01 0)
+			(at 495.3 212.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -7236,7 +7236,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 520.7 209.55 180)
+		(at 520.7 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -7245,10 +7245,10 @@
 		(uuid "1ed51b8d-0000-4000-8000-000000001b8d")
 		(property "Reference" "#PWR_L53"
 			(at 523.24 212.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 523.24 207.01 0)
+			(at 523.24 212.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -7373,7 +7373,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 548.64 209.55 180)
+		(at 548.64 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -7382,10 +7382,10 @@
 		(uuid "1ed51b8e-0000-4000-8000-000000001b8e")
 		(property "Reference" "#PWR_L54"
 			(at 551.18 212.09 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 551.18 207.01 0)
+			(at 551.18 212.09 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -7510,7 +7510,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 325.12 234.95 180)
+		(at 325.12 234.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -7519,10 +7519,10 @@
 		(uuid "1ed51b8f-0000-4000-8000-000000001b8f")
 		(property "Reference" "#PWR_L55"
 			(at 327.66 237.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 327.66 232.41 0)
+			(at 327.66 237.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -7652,7 +7652,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 353.06 234.95 180)
+		(at 353.06 234.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -7661,10 +7661,10 @@
 		(uuid "1ed51b90-0000-4000-8000-000000001b90")
 		(property "Reference" "#PWR_L56"
 			(at 355.6 237.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 355.6 232.41 0)
+			(at 355.6 237.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -7789,7 +7789,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 381 234.95 180)
+		(at 381 234.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -7798,10 +7798,10 @@
 		(uuid "1ed51b91-0000-4000-8000-000000001b91")
 		(property "Reference" "#PWR_L57"
 			(at 383.54 237.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 383.54 232.41 0)
+			(at 383.54 237.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -7926,7 +7926,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 408.94 234.95 180)
+		(at 408.94 234.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -7935,10 +7935,10 @@
 		(uuid "1ed51b92-0000-4000-8000-000000001b92")
 		(property "Reference" "#PWR_L58"
 			(at 411.48 237.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 411.48 232.41 0)
+			(at 411.48 237.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -8063,7 +8063,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 436.88 234.95 180)
+		(at 436.88 234.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -8072,10 +8072,10 @@
 		(uuid "1ed51b93-0000-4000-8000-000000001b93")
 		(property "Reference" "#PWR_L59"
 			(at 439.42 237.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 439.42 232.41 0)
+			(at 439.42 237.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -8200,7 +8200,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 464.82 234.95 180)
+		(at 464.82 234.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -8209,10 +8209,10 @@
 		(uuid "1ed51b94-0000-4000-8000-000000001b94")
 		(property "Reference" "#PWR_L60"
 			(at 467.36 237.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 467.36 232.41 0)
+			(at 467.36 237.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -8337,7 +8337,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 492.76 234.95 180)
+		(at 492.76 234.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -8346,10 +8346,10 @@
 		(uuid "1ed51b95-0000-4000-8000-000000001b95")
 		(property "Reference" "#PWR_L61"
 			(at 495.3 237.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 495.3 232.41 0)
+			(at 495.3 237.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -8474,7 +8474,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 520.7 234.95 180)
+		(at 520.7 234.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -8483,10 +8483,10 @@
 		(uuid "1ed51b96-0000-4000-8000-000000001b96")
 		(property "Reference" "#PWR_L62"
 			(at 523.24 237.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 523.24 232.41 0)
+			(at 523.24 237.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -8611,7 +8611,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 548.64 234.95 180)
+		(at 548.64 234.95 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -8620,10 +8620,10 @@
 		(uuid "1ed51b97-0000-4000-8000-000000001b97")
 		(property "Reference" "#PWR_L63"
 			(at 551.18 237.49 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 551.18 232.41 0)
+			(at 551.18 237.49 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -8748,7 +8748,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 325.12 260.35 180)
+		(at 325.12 260.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -8757,10 +8757,10 @@
 		(uuid "1ed51b98-0000-4000-8000-000000001b98")
 		(property "Reference" "#PWR_L64"
 			(at 327.66 262.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 327.66 257.81 0)
+			(at 327.66 262.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -8890,7 +8890,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 353.06 260.35 180)
+		(at 353.06 260.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -8899,10 +8899,10 @@
 		(uuid "1ed51b99-0000-4000-8000-000000001b99")
 		(property "Reference" "#PWR_L65"
 			(at 355.6 262.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 355.6 257.81 0)
+			(at 355.6 262.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -9027,7 +9027,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 381 260.35 180)
+		(at 381 260.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -9036,10 +9036,10 @@
 		(uuid "1ed51b9a-0000-4000-8000-000000001b9a")
 		(property "Reference" "#PWR_L66"
 			(at 383.54 262.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 383.54 257.81 0)
+			(at 383.54 262.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -9164,7 +9164,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 408.94 260.35 180)
+		(at 408.94 260.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -9173,10 +9173,10 @@
 		(uuid "1ed51b9b-0000-4000-8000-000000001b9b")
 		(property "Reference" "#PWR_L67"
 			(at 411.48 262.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 411.48 257.81 0)
+			(at 411.48 262.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -9301,7 +9301,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 436.88 260.35 180)
+		(at 436.88 260.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -9310,10 +9310,10 @@
 		(uuid "1ed51b9c-0000-4000-8000-000000001b9c")
 		(property "Reference" "#PWR_L68"
 			(at 439.42 262.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 439.42 257.81 0)
+			(at 439.42 262.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -9438,7 +9438,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 464.82 260.35 180)
+		(at 464.82 260.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -9447,10 +9447,10 @@
 		(uuid "1ed51b9d-0000-4000-8000-000000001b9d")
 		(property "Reference" "#PWR_L69"
 			(at 467.36 262.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 467.36 257.81 0)
+			(at 467.36 262.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -9575,7 +9575,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 492.76 260.35 180)
+		(at 492.76 260.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -9584,10 +9584,10 @@
 		(uuid "1ed51b9e-0000-4000-8000-000000001b9e")
 		(property "Reference" "#PWR_L70"
 			(at 495.3 262.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 495.3 257.81 0)
+			(at 495.3 262.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -9712,7 +9712,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 520.7 260.35 180)
+		(at 520.7 260.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -9721,10 +9721,10 @@
 		(uuid "1ed51b9f-0000-4000-8000-000000001b9f")
 		(property "Reference" "#PWR_L71"
 			(at 523.24 262.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 523.24 257.81 0)
+			(at 523.24 262.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -9849,7 +9849,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 548.64 260.35 180)
+		(at 548.64 260.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -9858,10 +9858,10 @@
 		(uuid "1ed51ba0-0000-4000-8000-000000001ba0")
 		(property "Reference" "#PWR_L72"
 			(at 551.18 262.89 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 551.18 257.81 0)
+			(at 551.18 262.89 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -9986,7 +9986,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 325.12 285.75 180)
+		(at 325.12 285.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -9995,10 +9995,10 @@
 		(uuid "1ed51ba1-0000-4000-8000-000000001ba1")
 		(property "Reference" "#PWR_L73"
 			(at 327.66 288.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 327.66 283.21 0)
+			(at 327.66 288.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -10128,7 +10128,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 353.06 285.75 180)
+		(at 353.06 285.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -10137,10 +10137,10 @@
 		(uuid "1ed51ba2-0000-4000-8000-000000001ba2")
 		(property "Reference" "#PWR_L74"
 			(at 355.6 288.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 355.6 283.21 0)
+			(at 355.6 288.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -10265,7 +10265,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 381 285.75 180)
+		(at 381 285.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -10274,10 +10274,10 @@
 		(uuid "1ed51ba3-0000-4000-8000-000000001ba3")
 		(property "Reference" "#PWR_L75"
 			(at 383.54 288.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 383.54 283.21 0)
+			(at 383.54 288.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -10402,7 +10402,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 408.94 285.75 180)
+		(at 408.94 285.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -10411,10 +10411,10 @@
 		(uuid "1ed51ba4-0000-4000-8000-000000001ba4")
 		(property "Reference" "#PWR_L76"
 			(at 411.48 288.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 411.48 283.21 0)
+			(at 411.48 288.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -10539,7 +10539,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 436.88 285.75 180)
+		(at 436.88 285.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -10548,10 +10548,10 @@
 		(uuid "1ed51ba5-0000-4000-8000-000000001ba5")
 		(property "Reference" "#PWR_L77"
 			(at 439.42 288.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 439.42 283.21 0)
+			(at 439.42 288.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -10676,7 +10676,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 464.82 285.75 180)
+		(at 464.82 285.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -10685,10 +10685,10 @@
 		(uuid "1ed51ba6-0000-4000-8000-000000001ba6")
 		(property "Reference" "#PWR_L78"
 			(at 467.36 288.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 467.36 283.21 0)
+			(at 467.36 288.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -10813,7 +10813,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 492.76 285.75 180)
+		(at 492.76 285.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -10822,10 +10822,10 @@
 		(uuid "1ed51ba7-0000-4000-8000-000000001ba7")
 		(property "Reference" "#PWR_L79"
 			(at 495.3 288.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 495.3 283.21 0)
+			(at 495.3 288.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -10950,7 +10950,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 520.7 285.75 180)
+		(at 520.7 285.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -10959,10 +10959,10 @@
 		(uuid "1ed51ba8-0000-4000-8000-000000001ba8")
 		(property "Reference" "#PWR_L80"
 			(at 523.24 288.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 523.24 283.21 0)
+			(at 523.24 288.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
@@ -11087,7 +11087,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 548.64 285.75 180)
+		(at 548.64 285.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -11096,10 +11096,10 @@
 		(uuid "1ed51ba9-0000-4000-8000-000000001ba9")
 		(property "Reference" "#PWR_L81"
 			(at 551.18 288.29 0)
-			(effects (font (size 1.27 1.27)) (justify left))
+			(effects (font (size 1.27 1.27)) (justify left) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 551.18 283.21 0)
+			(at 551.18 288.29 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
 		(property "Footprint" ""
