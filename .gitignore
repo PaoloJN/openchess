@@ -34,3 +34,13 @@ Thumbs.db
 
 # Generated archives (gerbers zip is re-exportable)
 hardware/fab/gerbers/*.zip
+
+# Ignore node_modules if present in the project
+node_modules/
+
+# generated schematic chunks
+hardware-2.0/*/build/
+
+delete
+web
+firmware

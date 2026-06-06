@@ -1,54 +1,45 @@
 # Project Status
 
-Quick "where are we" snapshot. Update this when major milestones complete.
+Last updated: 2026-06-05
 
-Last updated: 2026-06-03
+## Current Direction
 
-## Phase progress
+The old integrated hardware project has been archived. Active hardware now
+lives under `hardware/` as three separate KiCad projects:
 
-| Phase | Status | Notes |
+| Board | Status | Notes |
 |---|---|---|
-| Schematic (root + LED_Chain sub-sheet) | ✅ DONE | ERC clean except for footprint library warning |
-| Footprint assignment | ✅ DONE | All ~200 components have valid footprints |
-| Grid placement (sensors + LEDs + board outline) | ✅ DONE | Via `hardware/scripts/grid_placement.py`, idempotent |
-| Silkscreen decorations (labels, grid, title, mounting markers) | ✅ DONE | All toggleable in `grid_placement.py` config section |
-| Repo restructure (CERN-OHL-S licensing, fab/lib/datasheets dirs, references/, .backups/) | ✅ DONE | See README.md for new layout |
-| Claude Code project config (`.claude/` commands + agents + WORKSPACE.md) | ✅ DONE | Slash commands: /backup /restore /run-script /sync-gpio /status |
-| Back-side component placement | 🟡 IN PROGRESS | Manual layout in KiCad. The old `02_back_side_placement.py` lives in `hardware/scripts/experimental/` — output was too cramped |
-| Mounting holes (actual drilled holes, not just silk markers) | ⬜ TODO | Markers added on silk; convert to KiCad MountingHole footprints |
-| Trace routing | ⬜ TODO | Plan: Freerouting plugin for most + manual cleanup |
-| Power planes (+5V on F.Cu, GND on B.Cu) | ⬜ TODO | Add LAST, after routing is complete, so pours flow around traces |
-| DRC pass | ⬜ TODO | After routing |
-| `pcb-reviewer` agent pass | ⬜ TODO | Before Gerber export |
-| Gerber export | ⬜ TODO | Via `hardware/scripts/export_gerbers.py` → outputs to `hardware/fab/` |
-| PCB fab order (JLCPCB or PCBWay) | ⬜ TODO | With PCBA service for WS2812 + SMD parts |
-| Firmware fork from joojoooo | ⬜ TODO | Clone into `firmware/`, adapt LED layout for 9×9 corners |
-| Wooden enclosure CAD (`mechanical/case/`) | ⬜ TODO | Phase 3 |
-| 3D-printed chess pieces with magnets (`mechanical/pieces/`) | ⬜ TODO | Phase 3 |
-| Assembly + first power-on | ⬜ TODO | After PCB arrives |
+| `hardware-board` | Schematic scripted, ERC clean | Matrix board: 64 Hall sensors, 81 WS2812B LEDs, caps, `J_CTRL`, test/mech |
+| `hardware-controller` | Power chunk (USB-C + LDO) scripted, pending KiCad verification | Skeleton, `J_MAIN`, row pullups, power flags, test/mech done. ESP32 socket / level shifter / column drivers / `J_PANEL` designed but not yet scripted. |
+| `hardware-control-panel` | Schematic scripted, ERC clean | `J_PANEL`, 3 status LEDs, 3 buttons, test/mech done |
 
-## Latest snapshot
+## Done Recently
 
-- KiCad shows clean 8×8 hall sensor grid + 9×9 LED grid + 280×280mm outline + full silkscreen decorations (chess grid, A1-H8 labels, file/rank labels, title block, WHITE/BLACK markers, mounting hole markers)
-- Support components (ESP32, 74HC595, transistors, etc.) still in their default placement near the bottom-left of the board — need manual back-side placement next
-- Project restructured into proper hardware-project layout (`hardware/fab/`, `hardware/lib/`, `hardware/datasheets/`, `references/`, `.backups/`, `mechanical/`)
-- Master backup of everything: `.backups/master/*.20260603_074909` (or use `/backup` to make a fresh one)
-- Claude Code project config in place: `.claude/commands/` + `.claude/agents/pcb-reviewer.md` + `WORKSPACE.md` at root
+- Archived old top-level `hardware/` and `hardware-controller/` into `delete/old-hardware-2026-06-04/`.
+- Renamed the clean split-board workspace to `hardware/`.
+- Created scripted schematic pipelines for all three boards.
+- Updated active docs to remove the old single-PCB assumptions.
+- Archived old rev0.1 schematic review/walkthrough docs under `docs/archive/rev0.1/`.
+- Locked controller design decisions (2026-06-05): USB-C 5V only with AP2112K-3.3 LDO, ESP32-DevKitC v4 on 2x 1x19 sockets, 74AHCT125 WS2812 level shifter, AO3401A PMOS + MMBT3904 NPN column drivers, finalized GPIO map.
+- Revised controller decisions (2026-06-05, later same session): switched to battery-backed power architecture — added BQ24074RGT USB-C charger + power-path, MT3608 boost converter, 1S LiPo via JST PH; AP2112K LDO now derives from boost output. Column drivers consolidated from 40 discrete parts to a single TBD62783A 8-channel high-side driver IC. Added `VBAT_MON` ADC monitor on GPIO34. Hand-drawing the controller in KiCad GUI; scripts archived.
 
-## Active sessions to keep open
+## Next Hardware Work
 
-Per `WORKSPACE.md`:
-- **PCB** — KiCad work, scripts (the main session right now)
-- **Planning** — chatty, doc updates, "should I X or Y" questions
+1. Verify the scripted controller power chunk (USB-C + LDO) generates and passes ERC.
+2. Script and verify the ESP32-DevKitC socket chunk with finalized GPIO assignments.
+3. Script and verify the 74AHCT125 LED level-shifter chunk.
+4. Script and verify the 8-channel PMOS/NPN column driver chunk.
+5. Script and verify the controller-side `J_PANEL` connector chunk.
+6. Create a 4x4 matrix prototype variant before paying for the full 8x8 board.
 
-## Open questions to resolve before fabbing
+## Firmware Status
 
-1. **2-layer vs 4-layer PCB?** 2-layer is cheaper (~$30 vs $80 for ~280mm board). 4-layer makes routing easier (dedicated power + GND inner layers). **Pending decision** — likely 2-layer for v1 to keep cost low.
-2. **Hand-solder vs PCBA service?** All resistors/caps are `HandSolder` footprints (slightly larger pads, both work). The 81 WS2812 LEDs are SMD — would benefit greatly from PCBA. Hall sensors are TO-92 through-hole, definitely hand-solder. **Likely:** PCBA for the LEDs + 74HC595 + transistors, hand-solder the rest.
-3. **Which edge gets the USB-C / power switch / BATT_LED?** Affects back-side component layout. **Default plan:** bottom edge (closer to user when sitting).
-4. **Mounting hole positions** — current silk markers are at 6mm inset from each corner. Verify against the wooden enclosure design (which doesn't exist yet — so the silk markers ARE the constraint right now; the enclosure will design around them).
-5. **Battery placement & connector** — JST-PH 2-pin from the TP4056 module to J1. Where does the battery physically sit? Recessed in the wood under the board? In a separate compartment? TBD.
+Firmware Phase A foundations exist from earlier work, but hardware pin names and
+LED indexing need to be rechecked against the new split-board connector contracts
+before any real-board validation.
 
-## Next concrete step
+## Open Questions
 
-Manually place the 28 support components on the back side (B.Cu) in KiCad. Use `WORKSPACE.md`'s shortcut list (M for move, F for flip, R for rotate) and the proximity rules from the planning discussion (decoupling caps near their chips, etc.).
+- How many physical controls should stay on the control panel beyond POWER,
+  MODE, and RESET?
+- Should controller-to-panel be a pin header, JST cable, or FFC in PCB layout?

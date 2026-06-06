@@ -1,53 +1,44 @@
-# /run-script — Safely run a PCB automation script
+# /run-script — Run Hardware Automation Scripts
 
-Safely executes one of the scripts in `hardware/scripts/` with the right preconditions and verification.
+Use this for the current split-board scripts under `hardware/<board>/scripts/`.
 
-## What to do
+## What To Do
 
-1. **Confirm which script** the user wants to run. If they said `/run-script grid_placement`, look for `hardware/scripts/grid_placement.py`. If unclear, list available scripts:
+1. Identify the board and script. Boards are:
+   - `hardware-board`
+   - `hardware-controller`
+   - `hardware-control-panel`
 
-```bash
-ls ~/Projects/openchess/hardware/scripts/*.py
-```
-
-2. **Check KiCad is closed.** Look for lock files:
-
-```bash
-ls ~/Projects/openchess/hardware/*.lck 2>/dev/null
-```
-
-If any lock file exists, STOP and tell the user to close KiCad first. Do not proceed — scripts will silently fight KiCad for file ownership and the user will lose work.
-
-3. **Auto-create a master backup before running** (call the `/backup` workflow first — see `backup.md`).
-
-4. **Run the script:**
+2. If unclear, list scripts:
 
 ```bash
-cd ~/Projects/openchess/hardware/scripts && python3 <script_name>.py
+find ~/Projects/openchess/hardware -path '*/scripts/*.py' -o -path '*/scripts/sch/*.py' | sort
 ```
 
-5. **Validate the output**. Confirm the PCB file is still well-formed:
+3. Check KiCad is closed for the target board:
 
 ```bash
-python3 -c "
-with open('/Users/paolonessim/Projects/openchess/hardware/openchess.kicad_pcb') as f: text = f.read()
-depth = 0; in_str = False; esc = False
-for c in text:
-    if esc: esc=False; continue
-    if c=='\\\\': esc=True; continue
-    if c=='\"': in_str = not in_str; continue
-    if in_str: continue
-    if c=='(': depth+=1
-    elif c==')': depth-=1
-print(f'PCB depth={depth} (must be 0)')
-"
+find ~/Projects/openchess/hardware/<board> -name '*~*.lck' -o -name '*.lck'
 ```
 
-If depth != 0, the file is broken — restore from the backup created in step 3 and report the issue.
+If a lock exists, stop and ask the user to close KiCad or verify the lock is stale with `lsof`.
 
-6. **Tell the user** what changed (script's stdout output is the source of truth here) and remind them to open KiCad to visually verify.
+4. Run the script from `hardware/`:
+
+```bash
+cd ~/Projects/openchess/hardware
+python3 <board>/scripts/sch/<script>.py
+```
+
+5. For schematic generation, run ERC:
+
+```bash
+/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli sch erc --severity-all <board>/<schematic>.kicad_sch
+```
+
+6. Report what changed and the ERC result.
 
 ## Notes
 
-- The scripts in `hardware/scripts/experimental/` are known-messy. Warn the user before running anything from that subfolder.
-- `grid_placement.py` is idempotent (safe to re-run). Other scripts may not be — check the script's docstring.
+- The active schematic generators are chunk-based and live under each board's `scripts/sch/` folder.
+- Old integrated-board scripts under archived folders are historical only.

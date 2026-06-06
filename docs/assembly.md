@@ -1,56 +1,47 @@
 # Assembly Guide
 
-How to build a openchess from the files in this repo.
+Status: early prototype guide. Update after the 4x4 and full-board prototypes
+are physically built.
 
-> **Status: stub.** This guide will be fleshed out after the first board is fabricated, populated, and tested. Today it captures the intended flow.
+## Build Order
 
-## 1. Order the PCB
+1. Generate and review schematics for all active boards.
+2. Build a 4x4 matrix prototype variant before ordering the full 8x8 matrix.
+3. Confirm Hall sensor orientation, magnet strength, LED chain behavior, and
+   connector pinout on the small prototype.
+4. Layout/order the full matrix board.
+5. Layout/order the controller board.
+6. Layout/order or hand-build the control panel.
+7. Integrate firmware against real hardware.
+8. Design the enclosure around the boards and cable exits.
 
-See `hardware/fab/README.md` for the JLCPCB ordering recipe.
+## Matrix Board Notes
 
-What you upload:
-- `hardware/fab/gerbers/openchess-gerbers.zip`
-- `hardware/fab/bom.csv`
-- `hardware/fab/cpl.csv`
+- Hand-solder A3144 TO-92 sensors for prototype boards.
+- Prefer PCBA for WS2812B LEDs and their 100nF caps.
+- Test LED continuity by row; one bad WS2812B can break all downstream LEDs.
+- Confirm `+5V_LED`, `GND`, `LED_DATA_5V`, `S0..S7`, and `CA_PWR..CH_PWR` at
+  `J_CTRL` before connecting the controller.
 
-Suggested fab options: 2 layers, ~280×280 mm, 1.6 mm thickness, HASL lead-free, PCBA on back side only.
+## Controller Board Notes
 
-## 2. Source the through-hole parts
+- Do not connect to the matrix until `J_MAIN` pinout has been checked against
+  `docs/inter-board-connector.md`.
+- Verify row pullups are to `+3V3`, not `+5V_LED`.
+- Verify LED data is level-shifted before it leaves the controller.
+- Power approach is still pending, so power-on steps must be updated once that
+  circuit is chosen.
 
-The 64 hall sensors and 81 WS2812 LEDs are best hand-soldered on the
-front side for prototypes (cheaper than PCBA for this density of
-identical small parts). See `docs/bom.md` for vendors.
+## Control Panel Notes
 
-## 3. Populate & solder
+- LEDs are active-low: controller sinks `LED_*_N` nets.
+- Buttons short `BTN_*` nets to `GND`; controller provides pullups.
+- Cable orientation matters; mark pin 1 clearly on PCB and enclosure.
 
-1. Back side first (PCBA from fab, or hand-solder support components).
-2. Front side: 81 WS2812B LEDs, then 64 A3144 hall sensors. Test the
-   LED chain after every row — one bad LED kills the chain downstream.
-3. Solder the ESP32-WROOM-32 dev board onto its 2×19 pin header.
+## Firmware Bring-Up
 
-## 4. Flash firmware
-
-```bash
-cd firmware/
-# pio run --target upload   (once the firmware fork is set up)
-```
-
-## 5. First boot & web setup
-
-1. Power on. The board exposes a WiFi captive portal.
-2. Connect with your phone, join your home WiFi.
-3. Open the board's web UI (mDNS or shown IP).
-4. Configure GPIO pins to match `docs/gpio-map.md` (the firmware allows runtime pin config).
-5. Pair with Lichess via OAuth.
-
-## 6. Mechanical assembly
-
-1. Mount the PCB into the wooden case (`mechanical/case/`).
-2. Place the wooden chess board overlay on top.
-3. Print chess pieces with embedded magnets (`mechanical/pieces/`).
-
-## Troubleshooting (to be populated)
-
-- LED chain stops at LED N → bad solder on LED N+1 (most common)
-- Hall sensor not detecting a piece → check magnet polarity
-- USB upload fails → C2 (2.2µF on EN pin) may not be populated
+1. Flash ESP32 with a minimal board-test firmware.
+2. Verify control-panel buttons and LEDs first.
+3. Verify row sense pullups and column drive sequencing without the full matrix.
+4. Connect the 4x4 matrix prototype.
+5. Only then test the full 8x8 matrix.

@@ -1,58 +1,62 @@
-# Bill of Materials
+# Prototype BOM
 
-## Sensors & LEDs
-| Qty | Part | Notes |
-|---|---|---|
-| 64 | A3144 hall effect sensor (TO-92 or SOT-23 SMD) | One per square |
-| 81 | WS2812B 5050 SMD LED | At each corner of 9×9 grid |
+This is a human-readable planning BOM for the current split-board prototype.
+The schematic remains the source of truth for exact refs and machine exports.
 
-## Microcontroller & matrix scan
-| Qty | Part | Notes |
-|---|---|---|
-| 1 | ESP32-WROOM-32 dev board (38-pin) | Or bare module with USB-UART |
-| 1 | 74HC595 shift register (DIP-16 or SOIC-16) | Drives 8 column-power lines |
-| 8 | 2N3906 PNP transistor (TO-92 or SOT-23) | High-side switch for each column |
-| 1 | 4-channel level shifter (3.3V ↔ 5V) | TXS0104E or similar |
+Last refreshed: 2026-06-05.
 
-## Resistors
-| Qty | Value | Purpose |
-|---|---|---|
-| 8 | 1 kΩ | PNP base resistors |
-| 8 | 10 kΩ | Row sense pull-ups |
+## Matrix Board (`hardware-board`)
 
-## Power management
-| Qty | Part | Notes |
-|---|---|---|
-| 1 | USB-C receptacle (USB 2.0) | Charging + serial debug |
-| 1 | TP4056 charger IC | Li-Po charging with USB input |
-| 1 | DW01A + 8205A protection IC | Over/under-voltage + short protection |
-| 1 | MT3608 boost converter | 3.7V → 5V for LEDs + hall sensors |
-| 1 | Li-Po battery 4000mAh, 3.7V | With JST connector (replaceable) |
-| 1 | Latching push button | Power on/off |
-| 1 | WS2812 mini (or similar RGB) | Battery indicator LED |
+| Part | Qty | Refs / Notes |
+|---|---:|---|
+| A3144 Hall sensor, TO-92 | 64 | `U1..U64`; cheap prototype choice |
+| WS2812B 5050 LED | 81 | `D1..D81`; PCBA strongly preferred |
+| 100nF capacitor, 0805 | 81 | `C10..C90`; one per WS2812B |
+| 47uF capacitor, 1206 | 9 | `C1..C9`; one per LED row |
+| 470uF electrolytic, 10V | 1 | `C91`; `+5V_LED` entry cap |
+| 2x13 connector | 1 | `J_CTRL`; mates to controller `J_MAIN` |
+| Test pads, fiducials, M3 holes | as scripted | For bring-up, assembly, mounting |
 
-## Decoupling & misc
-| Qty | Value | Notes |
-|---|---|---|
-| ~10 | 100 nF ceramic | Decoupling caps, one per IC near VCC |
-| 2 | 10 µF tantalum/ceramic | Bulk decoupling on 5V and 3.3V rails |
-| 1 | 1000 µF electrolytic | WS2812 inrush protection |
+## Controller Board (`hardware-controller`)
 
-## Pieces & accessories
-| Qty | Part |
+Already scripted:
+
+| Part | Qty | Refs / Notes |
+|---|---:|---|
+| 2x13 connector | 1 | `J_MAIN`; matrix connector |
+| 10k resistor, 0805 | 8 | `R1..R8`; row pullups to `+3V3` |
+| Test pads, fiducials, M3 holes | as scripted | Current schematic chunk |
+
+Still to decide/script:
+
+| Block | Likely Parts |
 |---|---|
-| 32 | 8×2mm neodymium magnets (for chess pieces) |
-| 32 | Optional iron disks for piece weight |
+| ESP32 | Devkit/socket for prototype, or bare ESP32-WROOM module |
+| Power | USB/5V input first, or LiPo charger/boost immediately |
+| Column drivers | Direct GPIOs if possible, or 74HC595 + transistor switches |
+| LED data level shifter | Single-channel 3.3V -> 5V shifter preferred |
+| Control-panel connector | Matching `J_PANEL` connector |
 
-## Estimated cost
+## Control Panel (`hardware-control-panel`)
 
-| Category | Cost |
-|---|---|
-| PCB fab (4-layer, 30×30cm) | $80 |
-| PCBA service (SMD assembly) | $60 |
-| Active components | $25 |
-| Passives + connectors | $10 |
-| Battery + charging | $18 |
-| Magnets + pieces | $15 |
-| Enclosure (wood/3D print) | $30 |
-| **Total** | **~$240** |
+| Part | Qty | Refs / Notes |
+|---|---:|---|
+| 1x10 connector | 1 | `J_PANEL`; cable to controller |
+| Normal LED, 0805 | 3 | `D1..D3`: PWR, CONN, BATT |
+| 1k resistor, 0805 | 3 | `R1..R3`; LED current limit |
+| Momentary pushbutton | 3 | `SW1..SW3`: POWER, MODE, RESET |
+| Test pads, fiducials, M3 holes | as scripted | Bring-up and mounting |
+
+## Buying Notes
+
+- Buy 100 A3144 sensors if using AliExpress; test a sample before soldering all 64.
+- Buy WS2812B from LCSC/Worldsemi or another reputable source for the real board.
+- Use JLCPCB/LCSC basic passives where possible for PCBA.
+- Keep through-hole A3144 hand-soldered for the first prototype.
+- Use PCBA for WS2812B LEDs, LED caps, and small passives where practical.
+
+## Not Current
+
+Old BOM lines for `BATT_LED1`, `D2..D82`, `led_chain.kicad_sch`, TP4056/MT3608
+module headers, and one integrated PCB belong to the archived rev0.1 design and
+should not be used as current ordering guidance.
