@@ -11,11 +11,11 @@
 			(at 63.5 274.32 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 281.94 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 276.86 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -97,11 +97,11 @@
 			(at 63.5 246.38 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 254 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 248.92 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -183,11 +183,11 @@
 			(at 63.5 218.44 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 226.06 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 220.98 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -269,11 +269,11 @@
 			(at 63.5 190.5 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 198.12 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 193.04 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -355,11 +355,11 @@
 			(at 63.5 162.56 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 170.18 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 165.1 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -441,11 +441,11 @@
 			(at 63.5 134.62 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 142.24 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 137.16 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -527,11 +527,11 @@
 			(at 63.5 106.68 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 114.3 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 109.22 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -613,11 +613,11 @@
 			(at 63.5 78.74 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 86.36 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 81.28 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -699,11 +699,11 @@
 			(at 93.98 274.32 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 281.94 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 276.86 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -785,11 +785,11 @@
 			(at 93.98 246.38 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 254 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 248.92 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -871,11 +871,11 @@
 			(at 93.98 218.44 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 226.06 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 220.98 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -957,11 +957,11 @@
 			(at 93.98 190.5 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 198.12 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 193.04 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1043,11 +1043,11 @@
 			(at 93.98 162.56 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 170.18 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 165.1 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1129,11 +1129,11 @@
 			(at 93.98 134.62 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 142.24 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 137.16 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1215,11 +1215,11 @@
 			(at 93.98 106.68 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 114.3 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 109.22 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1301,11 +1301,11 @@
 			(at 93.98 78.74 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 86.36 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 81.28 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1387,11 +1387,11 @@
 			(at 124.46 274.32 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 281.94 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 276.86 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1473,11 +1473,11 @@
 			(at 124.46 246.38 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 254 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 248.92 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1559,11 +1559,11 @@
 			(at 124.46 218.44 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 226.06 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 220.98 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1645,11 +1645,11 @@
 			(at 124.46 190.5 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 198.12 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 193.04 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1731,11 +1731,11 @@
 			(at 124.46 162.56 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 170.18 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 165.1 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1817,11 +1817,11 @@
 			(at 124.46 134.62 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 142.24 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 137.16 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1903,11 +1903,11 @@
 			(at 124.46 106.68 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 114.3 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 109.22 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -1989,11 +1989,11 @@
 			(at 124.46 78.74 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 86.36 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 81.28 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2075,11 +2075,11 @@
 			(at 154.94 274.32 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 281.94 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 276.86 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2161,11 +2161,11 @@
 			(at 154.94 246.38 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 254 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 248.92 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2247,11 +2247,11 @@
 			(at 154.94 218.44 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 226.06 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 220.98 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2333,11 +2333,11 @@
 			(at 154.94 190.5 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 198.12 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 193.04 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2419,11 +2419,11 @@
 			(at 154.94 162.56 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 170.18 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 165.1 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2505,11 +2505,11 @@
 			(at 154.94 134.62 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 142.24 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 137.16 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2591,11 +2591,11 @@
 			(at 154.94 106.68 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 114.3 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 109.22 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2677,11 +2677,11 @@
 			(at 154.94 78.74 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 86.36 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 81.28 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2763,11 +2763,11 @@
 			(at 185.42 274.32 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 281.94 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 276.86 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2849,11 +2849,11 @@
 			(at 185.42 246.38 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 254 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 248.92 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -2935,11 +2935,11 @@
 			(at 185.42 218.44 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 226.06 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 220.98 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3021,11 +3021,11 @@
 			(at 185.42 190.5 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 198.12 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 193.04 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3107,11 +3107,11 @@
 			(at 185.42 162.56 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 170.18 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 165.1 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3193,11 +3193,11 @@
 			(at 185.42 134.62 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 142.24 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 137.16 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3279,11 +3279,11 @@
 			(at 185.42 106.68 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 114.3 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 109.22 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3365,11 +3365,11 @@
 			(at 185.42 78.74 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 86.36 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 81.28 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3451,11 +3451,11 @@
 			(at 215.9 274.32 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 281.94 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 276.86 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3537,11 +3537,11 @@
 			(at 215.9 246.38 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 254 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 248.92 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3623,11 +3623,11 @@
 			(at 215.9 218.44 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 226.06 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 220.98 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3709,11 +3709,11 @@
 			(at 215.9 190.5 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 198.12 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 193.04 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3795,11 +3795,11 @@
 			(at 215.9 162.56 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 170.18 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 165.1 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3881,11 +3881,11 @@
 			(at 215.9 134.62 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 142.24 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 137.16 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -3967,11 +3967,11 @@
 			(at 215.9 106.68 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 114.3 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 109.22 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4053,11 +4053,11 @@
 			(at 215.9 78.74 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 86.36 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 81.28 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4139,11 +4139,11 @@
 			(at 246.38 274.32 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 281.94 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 276.86 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4225,11 +4225,11 @@
 			(at 246.38 246.38 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 254 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 248.92 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4311,11 +4311,11 @@
 			(at 246.38 218.44 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 226.06 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 220.98 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4397,11 +4397,11 @@
 			(at 246.38 190.5 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 198.12 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 193.04 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4483,11 +4483,11 @@
 			(at 246.38 162.56 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 170.18 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 165.1 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4569,11 +4569,11 @@
 			(at 246.38 134.62 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 142.24 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 137.16 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4655,11 +4655,11 @@
 			(at 246.38 106.68 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 114.3 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 109.22 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4741,11 +4741,11 @@
 			(at 246.38 78.74 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 86.36 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 81.28 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4827,11 +4827,11 @@
 			(at 276.86 274.32 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 281.94 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 276.86 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4913,11 +4913,11 @@
 			(at 276.86 246.38 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 254 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 248.92 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -4999,11 +4999,11 @@
 			(at 276.86 218.44 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 226.06 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 220.98 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -5085,11 +5085,11 @@
 			(at 276.86 190.5 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 198.12 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 193.04 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -5171,11 +5171,11 @@
 			(at 276.86 162.56 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 170.18 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 165.1 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -5257,11 +5257,11 @@
 			(at 276.86 134.62 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 142.24 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 137.16 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -5343,11 +5343,11 @@
 			(at 276.86 106.68 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 114.3 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 109.22 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
@@ -5429,11 +5429,11 @@
 			(at 276.86 78.74 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 86.36 0)
 			(effects (font (size 1.27 1.27)) (justify left))
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 81.28 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)

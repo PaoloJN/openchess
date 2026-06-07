@@ -11294,85 +11294,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 68.58 353.06 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "1ec00001-0000-4000-8000-000000000001")
-		(property "Reference" "C91"
-			(at 71.12 350.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "470uF"
-			(at 71.12 355.6 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
-			(at 68.58 353.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 68.58 353.06 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 68.58 353.06 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1ec00066-0000-4000-8000-000000000066")
-		)
-		(pin "2"
-			(uuid "1ec00067-0000-4000-8000-000000000067")
-		)
-		(instances
-			(project "openchess-board"
-				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "C91")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "LED:WS2812B")
 		(at 312.42 78.74 0)
 		(unit 1)
@@ -32125,7 +32046,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32136,7 +32057,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -32207,7 +32128,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32218,7 +32139,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 248.92 0)
 			(hide yes)
 			(show_name no)
@@ -32289,7 +32210,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 226.06 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32300,7 +32221,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -32371,7 +32292,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 198.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32382,7 +32303,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -32453,7 +32374,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32464,7 +32385,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -32535,7 +32456,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32546,7 +32467,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -32617,7 +32538,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32628,7 +32549,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -32699,7 +32620,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 63.5 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32710,7 +32631,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 60.96 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -32781,7 +32702,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32792,7 +32713,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -32863,7 +32784,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32874,7 +32795,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 248.92 0)
 			(hide yes)
 			(show_name no)
@@ -32945,7 +32866,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 226.06 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32956,7 +32877,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -33027,7 +32948,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 198.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33038,7 +32959,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -33109,7 +33030,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33120,7 +33041,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -33191,7 +33112,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33202,7 +33123,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -33273,7 +33194,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33284,7 +33205,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -33355,7 +33276,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 93.98 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33366,7 +33287,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 91.44 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -33437,7 +33358,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33448,7 +33369,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -33519,7 +33440,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33530,7 +33451,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 248.92 0)
 			(hide yes)
 			(show_name no)
@@ -33601,7 +33522,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 226.06 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33612,7 +33533,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -33683,7 +33604,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 198.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33694,7 +33615,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -33765,7 +33686,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33776,7 +33697,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -33847,7 +33768,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33858,7 +33779,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -33929,7 +33850,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33940,7 +33861,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -34011,7 +33932,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 124.46 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34022,7 +33943,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 121.92 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -34093,7 +34014,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34104,7 +34025,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -34175,7 +34096,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34186,7 +34107,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 248.92 0)
 			(hide yes)
 			(show_name no)
@@ -34257,7 +34178,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 226.06 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34268,7 +34189,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -34339,7 +34260,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 198.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34350,7 +34271,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -34421,7 +34342,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34432,7 +34353,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -34503,7 +34424,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34514,7 +34435,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -34585,7 +34506,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34596,7 +34517,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -34667,7 +34588,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 154.94 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34678,7 +34599,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 152.4 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -34749,7 +34670,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34760,7 +34681,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -34831,7 +34752,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34842,7 +34763,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 248.92 0)
 			(hide yes)
 			(show_name no)
@@ -34913,7 +34834,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 226.06 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34924,7 +34845,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -34995,7 +34916,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 198.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35006,7 +34927,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -35077,7 +34998,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35088,7 +35009,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -35159,7 +35080,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35170,7 +35091,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -35241,7 +35162,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35252,7 +35173,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -35323,7 +35244,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 185.42 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35334,7 +35255,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 182.88 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -35405,7 +35326,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35416,7 +35337,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -35487,7 +35408,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35498,7 +35419,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 248.92 0)
 			(hide yes)
 			(show_name no)
@@ -35569,7 +35490,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 226.06 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35580,7 +35501,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -35651,7 +35572,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 198.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35662,7 +35583,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -35733,7 +35654,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35744,7 +35665,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -35815,7 +35736,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35826,7 +35747,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -35897,7 +35818,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35908,7 +35829,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -35979,7 +35900,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 215.9 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35990,7 +35911,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 213.36 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -36061,7 +35982,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36072,7 +35993,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -36143,7 +36064,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36154,7 +36075,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 248.92 0)
 			(hide yes)
 			(show_name no)
@@ -36225,7 +36146,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 226.06 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36236,7 +36157,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -36307,7 +36228,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 198.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36318,7 +36239,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -36389,7 +36310,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36400,7 +36321,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -36471,7 +36392,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36482,7 +36403,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -36553,7 +36474,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36564,7 +36485,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -36635,7 +36556,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 246.38 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36646,7 +36567,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 243.84 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -36717,7 +36638,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36728,7 +36649,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -36799,7 +36720,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 254 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36810,7 +36731,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 248.92 0)
 			(hide yes)
 			(show_name no)
@@ -36881,7 +36802,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 226.06 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36892,7 +36813,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 220.98 0)
 			(hide yes)
 			(show_name no)
@@ -36963,7 +36884,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 198.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36974,7 +36895,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -37045,7 +36966,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -37056,7 +36977,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 165.1 0)
 			(hide yes)
 			(show_name no)
@@ -37127,7 +37048,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -37138,7 +37059,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -37209,7 +37130,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -37220,7 +37141,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -37291,7 +37212,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "A3144"
+		(property "Value" "DRV5032FC"
 			(at 276.86 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -37302,7 +37223,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 274.32 81.28 0)
 			(hide yes)
 			(show_name no)

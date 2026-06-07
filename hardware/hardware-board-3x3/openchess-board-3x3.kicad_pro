@@ -490,7 +490,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "openchess-board.kicad_pro",
+    "filename": "openchess-board-3x3.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -513,6 +513,15 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "clearance": 0.2,
+        "name": "Power",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "tuning_profile": ""
       }
     ],
     "meta": {
@@ -520,7 +529,24 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "Power",
+        "pattern": "+5V_LED"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "CA_PWR"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "CB_PWR"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "CC_PWR"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -656,8 +682,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "openchess-board.kicad_sch",
-        "name": "openchess-board",
+        "filename": "openchess-board-3x3.kicad_sch",
+        "name": "openchess-board-3x3",
         "uuid": "ab0a4d00-0000-4000-8000-000000000001"
       }
     ],
@@ -667,7 +693,7 @@
   "sheets": [
     [
       "ab0a4d00-0000-4000-8000-000000000001",
-      "openchess-board"
+      "openchess-board-3x3"
     ]
   ],
   "text_variables": {},

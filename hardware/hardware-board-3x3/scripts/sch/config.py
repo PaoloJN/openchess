@@ -6,11 +6,11 @@ footprints, and connector maps.
 """
 from __future__ import annotations
 
-FILES = tuple("ABCDEFGH")
-MATRIX_COLS = 8
-MATRIX_ROWS = 8
-LED_COLS = MATRIX_COLS + 1
-LED_ROWS = MATRIX_ROWS + 1
+FILES = tuple("ABC")          # 3 files (was ABCDEFGH for 8x8)
+MATRIX_COLS = 3               # was 8
+MATRIX_ROWS = 3               # was 8
+LED_COLS = MATRIX_COLS + 1    # 4 (was 9)
+LED_ROWS = MATRIX_ROWS + 1    # 4 (was 9)
 
 GND_NET = "GND"
 LED_POWER_NET = "+5V_LED"
