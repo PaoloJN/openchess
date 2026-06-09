@@ -2237,7 +2237,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 355.6) (xy 389.89 355.6)
+			(xy 384.81 355.6) (xy 391.16 355.6)
 		)
 		(stroke
 			(width 0)
@@ -2267,7 +2267,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 365.76) (xy 389.89 365.76)
+			(xy 384.81 365.76) (xy 391.16 365.76)
 		)
 		(stroke
 			(width 0)
@@ -3047,7 +3047,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 340.36) (xy 392.43 340.36)
+			(xy 384.81 340.36) (xy 391.16 340.36)
 		)
 		(stroke
 			(width 0)
@@ -3067,7 +3067,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 363.22) (xy 389.89 363.22)
+			(xy 384.81 363.22) (xy 391.16 363.22)
 		)
 		(stroke
 			(width 0)
@@ -3107,7 +3107,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 347.98) (xy 389.89 347.98)
+			(xy 384.81 347.98) (xy 391.16 347.98)
 		)
 		(stroke
 			(width 0)
@@ -3177,7 +3177,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 337.82) (xy 392.43 337.82)
+			(xy 384.81 337.82) (xy 391.16 337.82)
 		)
 		(stroke
 			(width 0)
@@ -3187,7 +3187,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 368.3) (xy 392.43 368.3)
+			(xy 384.81 368.3) (xy 391.16 368.3)
 		)
 		(stroke
 			(width 0)
@@ -3257,7 +3257,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 358.14) (xy 389.89 358.14)
+			(xy 384.81 358.14) (xy 391.16 358.14)
 		)
 		(stroke
 			(width 0)
@@ -3447,7 +3447,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 350.52) (xy 389.89 350.52)
+			(xy 384.81 350.52) (xy 391.16 350.52)
 		)
 		(stroke
 			(width 0)
@@ -3457,7 +3457,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 345.44) (xy 392.43 345.44)
+			(xy 384.81 345.44) (xy 391.16 345.44)
 		)
 		(stroke
 			(width 0)
@@ -3477,7 +3477,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 342.9) (xy 392.43 342.9)
+			(xy 384.81 342.9) (xy 391.16 342.9)
 		)
 		(stroke
 			(width 0)
@@ -3487,7 +3487,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 360.68) (xy 389.89 360.68)
+			(xy 384.81 360.68) (xy 391.16 360.68)
 		)
 		(stroke
 			(width 0)
@@ -3507,7 +3507,7 @@
 	)
 	(wire
 		(pts
-			(xy 384.81 353.06) (xy 389.89 353.06)
+			(xy 384.81 353.06) (xy 391.16 353.06)
 		)
 		(stroke
 			(width 0)
@@ -3525,15 +3525,15 @@
 		)
 		(uuid "e9f05983-1f9b-4eef-b584-f9ebc3bd0621")
 	)
-	(label "LED_DATA_5V"
-		(at 367.03 345.44 180)
+	(label "S5"
+		(at 367.03 353.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "0c05f2ac-d83f-43f7-9a9b-cab95c8092c8")
+		(uuid "1cb7c497-dc1e-4504-8ede-7ca7706e3a04")
 	)
 	(label "LED_DATA_5V"
 		(at 304.8 78.74 180)
@@ -3775,16 +3775,6 @@
 		)
 		(uuid "1ed513a8-0000-4000-8000-0000000013a8")
 	)
-	(label "S2"
-		(at 367.03 350.52 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "213fc014-fc30-4baa-9c75-8948503382a6")
-	)
 	(label "+5V_LED"
 		(at 180.34 341.63 90)
 		(effects
@@ -3795,15 +3785,25 @@
 		)
 		(uuid "239280d8-195e-435a-a986-dacde807c516")
 	)
-	(label "CC_PWR"
-		(at 367.03 360.68 180)
+	(label "CF_PWR"
+		(at 367.03 363.22 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "2be54b3a-d3e7-4354-9804-9a881f04ae04")
+		(uuid "24e49c56-28fa-45a2-a67a-f1588ee05026")
+	)
+	(label "CB_PWR"
+		(at 367.03 358.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "272b8a5d-2b38-465a-b21a-d0cf4f9ebd7b")
 	)
 	(label "GND"
 		(at 162.56 354.33 90)
@@ -3815,15 +3815,25 @@
 		)
 		(uuid "30f26ba3-bf04-4e56-8160-8a100be45c81")
 	)
-	(label "S7"
-		(at 389.89 355.6 0)
+	(label "LED_DATA_5V"
+		(at 391.16 345.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "396d7437-17d9-4779-b8fc-fc7177c626bf")
+		(uuid "46bc9a07-1105-4b69-b411-2e8cf9d0b3e4")
+	)
+	(label "S1"
+		(at 367.03 347.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "47fcdef8-8d13-4d83-98fb-ccd67ccefe5a")
 	)
 	(label "+5V_LED"
 		(at 162.56 341.63 90)
@@ -3834,16 +3844,6 @@
 			(justify left bottom)
 		)
 		(uuid "4c3e5730-c774-4592-97dc-90ef6a90bd91")
-	)
-	(label "CE_PWR"
-		(at 367.03 363.22 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "505d95fe-3f0e-415b-9031-271ca2e5cd13")
 	)
 	(label "GND"
 		(at 127 354.33 90)
@@ -3875,7 +3875,27 @@
 		)
 		(uuid "5ceb226d-ee81-4a0a-bb1d-9236294172fe")
 	)
+	(label "S2"
+		(at 391.16 350.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "69e3b268-4baf-42fb-a7d2-ff20ff1b8706")
+	)
 	(label "S6"
+		(at 391.16 355.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "85978a90-9f96-4eea-ae97-100819190b8a")
+	)
+	(label "S7"
 		(at 367.03 355.6 180)
 		(effects
 			(font
@@ -3883,67 +3903,37 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "75afb7e4-d655-439c-a377-cbbb929cd43c")
-	)
-	(label "CF_PWR"
-		(at 389.89 363.22 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7957ccd7-6a7a-4345-a765-d5ee3e75dab3")
-	)
-	(label "CB_PWR"
-		(at 389.89 358.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7bca6f4e-fd74-4446-87e8-ac788d4ccf6f")
+		(uuid "8c44bcb5-adf1-4743-9ba3-4fa662de9b96")
 	)
 	(label "CD_PWR"
-		(at 389.89 360.68 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8a175273-48f3-4308-980e-8c233fe2458d")
-	)
-	(label "S1"
-		(at 389.89 347.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9fda724e-7256-471d-89eb-95c6ba6897a7")
-	)
-	(label "S4"
-		(at 367.03 353.06 180)
+		(at 367.03 360.68 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "b2735dd1-c5d4-475a-b478-ed5c83f40990")
+		(uuid "97156daa-4d36-4c17-b002-a7350760d08f")
 	)
-	(label "S3"
-		(at 389.89 350.52 0)
+	(label "CC_PWR"
+		(at 391.16 360.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "b9282114-a426-4bad-a9d4-959d4680487c")
+		(uuid "a55a112f-f08e-4ec8-ad0f-a487714df6f1")
+	)
+	(label "CA_PWR"
+		(at 391.16 358.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "aca5bae4-47f0-40d1-9c6d-b16c7a570813")
 	)
 	(label "CA_PWR"
 		(at 50.8 134.62 180)
@@ -4125,15 +4115,15 @@
 		)
 		(uuid "ba1113ac-0000-4000-8000-0000000013ac")
 	)
-	(label "CA_PWR"
-		(at 367.03 358.14 180)
+	(label "S3"
+		(at 367.03 350.52 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "c2a27650-7af6-4984-a4be-73cc3269a2a3")
+		(uuid "ba9d182a-a7ac-48c6-8263-c469fa8f1867")
 	)
 	(label "GND"
 		(at 180.34 354.33 90)
@@ -4146,26 +4136,6 @@
 		(uuid "c2de05ec-9a72-4586-9ec8-0abe6da1e126")
 	)
 	(label "CH_PWR"
-		(at 389.89 365.76 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c8d2a110-5312-4f07-8137-7d83d39a5385")
-	)
-	(label "S0"
-		(at 367.03 347.98 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d4db6620-c2ac-4786-a0fe-bc197771769e")
-	)
-	(label "CG_PWR"
 		(at 367.03 365.76 180)
 		(effects
 			(font
@@ -4173,7 +4143,17 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d9398088-42ba-4927-9c5c-0d1af1abeb3f")
+		(uuid "cd3ddd1b-c80b-4112-87f7-c9104407ee40")
+	)
+	(label "CG_PWR"
+		(at 391.16 365.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d22f7636-bb9b-4277-86b4-eae443c26e22")
 	)
 	(label "+5V_LED"
 		(at 127 341.63 90)
@@ -4185,94 +4165,35 @@
 		)
 		(uuid "d9f9e680-7d8d-4c7f-9035-151fdf85fa9e")
 	)
-	(label "S5"
-		(at 389.89 353.06 0)
+	(label "S0"
+		(at 391.16 347.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "e4ef66b3-d698-4488-9e66-9a4e12d0fc8b")
+		(uuid "d9ff62c8-e4b4-4047-bba3-406708e0f72d")
 	)
-	(symbol
-		(lib_id "power:GND")
-		(at 392.43 368.3 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0684a991-2bfd-4773-8382-c92984793975")
-		(property "Reference" "#PWR012"
-			(at 398.78 368.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(label "S4"
+		(at 391.16 353.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Value" "GND"
-			(at 396.24 368.2999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
+		(uuid "dae74a6f-c95a-4df2-9b05-184f0babfab9")
+	)
+	(label "CE_PWR"
+		(at 391.16 363.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left bottom)
 		)
-		(property "Footprint" ""
-			(at 392.43 368.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 392.43 368.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 392.43 368.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bec7a83a-9531-429d-9603-da2e9ccfed2c")
-		)
-		(instances
-			(project "openchess-board-3x3"
-				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "e9045797-90dc-437d-b207-aff53ee08565")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -4348,6 +4269,86 @@
 			(project "openchess-board-3x3"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 391.16 368.3 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "11c41fb5-dc7b-472b-ab9b-7fe6807441ab")
+		(property "Reference" "#PWR056"
+			(at 387.35 368.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_LED"
+			(at 394.97 368.2999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 391.16 368.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 391.16 368.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 391.16 368.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f952070e-cffc-4ddd-85d9-497a6c232eef")
+		)
+		(instances
+			(project "openchess-board-3x3"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -8210,85 +8211,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 367.03 342.9 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "301b90fd-185f-434b-b808-48b13f9496ab")
-		(property "Reference" "#PWR050"
-			(at 370.84 342.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_LED"
-			(at 363.22 342.8999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 367.03 342.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 367.03 342.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 367.03 342.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "152de327-67b3-45b9-8ad8-04aa1c416a06")
-		)
-		(instances
-			(project "openchess-board-3x3"
-				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR050")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 180.34 347.98 0)
 		(unit 1)
@@ -8368,8 +8290,9 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 392.43 340.36 90)
+		(lib_id "power:+5V")
+		(at 391.16 337.82 270)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8378,9 +8301,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "4dae1ffe-92a6-4301-b0f1-dea6a9de15b2")
-		(property "Reference" "#PWR010"
-			(at 398.78 340.36 0)
+		(uuid "408dca48-391d-47ee-93f1-4e66c939bf15")
+		(property "Reference" "#PWR053"
+			(at 387.35 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8390,19 +8313,19 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 396.24 340.3599 90)
+		(property "Value" "+5V_LED"
+			(at 394.97 337.8199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 392.43 340.36 0)
+			(at 391.16 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8413,7 +8336,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 392.43 340.36 0)
+			(at 391.16 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8423,8 +8346,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 392.43 340.36 0)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 391.16 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8435,12 +8358,92 @@
 			)
 		)
 		(pin "1"
-			(uuid "e1603021-c9be-44ab-9e92-f21a35a9116f")
+			(uuid "dbdc5e4b-89e6-47ab-8725-1861b65d846a")
 		)
 		(instances
 			(project "openchess-board-3x3"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR010")
+					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 391.16 340.36 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "552f678c-e7d2-403f-b083-0e6e5551c8a7")
+		(property "Reference" "#PWR054"
+			(at 387.35 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_LED"
+			(at 394.97 340.3599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 391.16 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 391.16 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 391.16 340.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "379619d5-fb15-4f5e-9622-46da8c0b8113")
+		)
+		(instances
+			(project "openchess-board-3x3"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -8448,7 +8451,8 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 392.43 342.9 90)
+		(at 367.03 342.9 270)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8457,9 +8461,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "6acaf42d-333f-4f9a-872e-8546eb95153f")
-		(property "Reference" "#PWR014"
-			(at 398.78 342.9 0)
+		(uuid "675b5791-6dec-406c-aeba-133ab910ca64")
+		(property "Reference" "#PWR015"
+			(at 360.68 342.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8470,7 +8474,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 396.24 342.8999 90)
+			(at 363.22 342.8999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8481,7 +8485,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 392.43 342.9 0)
+			(at 367.03 342.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8492,7 +8496,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 392.43 342.9 0)
+			(at 367.03 342.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8503,7 +8507,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 392.43 342.9 0)
+			(at 367.03 342.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8514,12 +8518,92 @@
 			)
 		)
 		(pin "1"
-			(uuid "8a71d171-0890-4a8f-8257-8da39d970faa")
+			(uuid "fc7f540d-b710-4712-acd0-d451bdb61b30")
 		)
 		(instances
 			(project "openchess-board-3x3"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR014")
+					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 391.16 342.9 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "77c150b6-2b6e-47ba-9f11-f1a3231ea57a")
+		(property "Reference" "#PWR055"
+			(at 387.35 342.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V_LED"
+			(at 394.97 342.8999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 391.16 342.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 391.16 342.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 391.16 342.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "224825b7-eec5-45ac-89f2-849139a354cb")
+		)
+		(instances
+			(project "openchess-board-3x3"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -8672,6 +8756,86 @@
 			(project "openchess-board-3x3"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
 					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 367.03 368.3 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "89862fe9-de5b-421c-b4ed-173f7536bcd4")
+		(property "Reference" "#PWR017"
+			(at 360.68 368.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 363.22 368.2999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 367.03 368.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 367.03 368.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 367.03 368.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "98da409c-ab00-491f-9409-8da9e3ca5dc3")
+		)
+		(instances
+			(project "openchess-board-3x3"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -10189,7 +10353,8 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 392.43 337.82 90)
+		(at 367.03 337.82 270)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10198,9 +10363,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c903a08a-3e3e-40f3-a1ca-64836c2e7e25")
-		(property "Reference" "#PWR04"
-			(at 398.78 337.82 0)
+		(uuid "d64d5c51-849c-4ec8-a400-f8f87f798336")
+		(property "Reference" "#PWR05"
+			(at 360.68 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10211,85 +10376,6 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 396.24 337.8199 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 392.43 337.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 392.43 337.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 392.43 337.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "71d01912-ffc6-4052-b93d-853761de49b5")
-		)
-		(instances
-			(project "openchess-board-3x3"
-				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 367.03 337.82 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ccb17d7f-3124-478e-96f0-0eb9dfacafdb")
-		(property "Reference" "#PWR052"
-			(at 370.84 337.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V_LED"
 			(at 363.22 337.8199 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10297,90 +10383,11 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 367.03 337.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 367.03 337.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 367.03 337.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b1b71d8f-8ab9-47c2-9b98-160c0164af8e")
-		)
-		(instances
-			(project "openchess-board-3x3"
-				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR052")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 392.43 345.44 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "deedfa4b-76a6-453f-a789-ed0db696983c")
-		(property "Reference" "#PWR013"
-			(at 398.78 345.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 396.24 345.4399 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 392.43 345.44 0)
+			(at 367.03 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10391,7 +10398,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 392.43 345.44 0)
+			(at 367.03 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10402,7 +10409,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 392.43 345.44 0)
+			(at 367.03 337.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10413,20 +10420,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "2f9d552c-85f9-4dbc-ab9a-10589535004e")
+			(uuid "df2dbf01-86d1-4705-b7a7-4bd272b457fd")
 		)
 		(instances
 			(project "openchess-board-3x3"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR013")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 367.03 340.36 90)
+		(lib_id "power:GND")
+		(at 367.03 340.36 270)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10435,9 +10443,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ec25f6b4-f7e0-453b-867c-115ea2d6e567")
-		(property "Reference" "#PWR051"
-			(at 370.84 340.36 0)
+		(uuid "f09f945f-bf0c-4e5a-b154-35e75865d15c")
+		(property "Reference" "#PWR011"
+			(at 360.68 340.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10447,7 +10455,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V_LED"
+		(property "Value" "GND"
 			(at 363.22 340.3599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10455,7 +10463,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
@@ -10480,7 +10488,7 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 367.03 340.36 0)
 			(hide yes)
 			(show_name no)
@@ -10492,20 +10500,21 @@
 			)
 		)
 		(pin "1"
-			(uuid "4a8dac5d-d7be-4954-a20e-99c6a7251e40")
+			(uuid "da708a8a-4f42-40b5-ae69-c13378f913e1")
 		)
 		(instances
 			(project "openchess-board-3x3"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR051")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 367.03 368.3 90)
+		(lib_id "power:GND")
+		(at 367.03 345.44 270)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10514,9 +10523,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ef5494ec-5eb7-417d-babf-c3c37e06ee55")
-		(property "Reference" "#PWR049"
-			(at 370.84 368.3 0)
+		(uuid "f56d54da-72c2-404a-83c8-327f69f31b75")
+		(property "Reference" "#PWR016"
+			(at 360.68 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10526,19 +10535,19 @@
 				)
 			)
 		)
-		(property "Value" "+5V_LED"
-			(at 363.22 368.2999 90)
+		(property "Value" "GND"
+			(at 363.22 345.4399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 367.03 368.3 0)
+			(at 367.03 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10549,7 +10558,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 367.03 368.3 0)
+			(at 367.03 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10559,8 +10568,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 367.03 368.3 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 367.03 345.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10571,12 +10580,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "09e01992-42f9-48c0-9080-0e1212711363")
+			(uuid "ddc4af44-7412-46c0-a373-7ce31855246c")
 		)
 		(instances
 			(project "openchess-board-3x3"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR049")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)

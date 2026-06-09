@@ -92,17 +92,22 @@ MOUNTING_HOLE_DIAMETER = 3.2  # M3
 
 # Per-LED 100 nF decoupling cap offset from its LED center, in mm.
 # WS2812B PLCC4 footprint extends ~2.5 mm in each direction (pads ~2.2 mm out).
-# 0805 cap is ~3.2 mm wide (incl. pads). Offset 6 mm puts cap with ~1.5 mm
-# clearance from the LED's nearest pad — no DRC violation, no body overlap.
-LED_CAP_OFFSET_MM = (6.0, 0.0)
-LED_CAP_ROTATION  = 0.0   # pin 1 (+5V_LED) on left side, facing the LED
+# 0805 cap is ~3.2 mm wide (incl. pads). Rotated 270° here so the cap sits
+# vertically next to its LED with GND (pin 2) at the BOTTOM and +5V_LED
+# (pin 1) at the TOP — flipped from the earlier 90° default per the
+# 2026-06-09 layout tweak. Offset bumped 6→7.5 mm so the rotated cap body
+# still clears the LED's nearest pad by ~1.5 mm.
+LED_CAP_OFFSET_MM = (7.5, 0.0)
+LED_CAP_ROTATION  = 270.0  # pin 1 (+5V_LED) on top, pin 2 (GND) on bottom
 
 # Row bulk caps (47 µF, 1206 SMD). One per LED row, placed in the LEFT
 # margin and Y-aligned with each LED row — so each bulk physically sits
 # right next to the LED row it decouples. Cleanest topology for routing
 # +5V_LED into each row of LEDs.
 ROW_BULK_X_OFFSET_FROM_GRID = 8.0   # mm left of CHESS_X_LEFT
-ROW_BULK_ROTATION           = 0.0   # pin 1 (+5V_LED) on left
+ROW_BULK_ROTATION           = 180.0 # pin 1 (+5V_LED) on RIGHT, pin 2 (GND) on LEFT
+                                    # (was 0° — flipped 2026-06-09 per Paolo's
+                                    # request to put GND on the other side)
 
 # J1 (= J_CTRL) — 2×13 female socket on B.Cu (matrix back face).
 # Placed at the center of the bottom edge so the controller PCB mounts
@@ -117,11 +122,18 @@ ROW_BULK_ROTATION           = 0.0   # pin 1 (+5V_LED) on left
 #      the bottom edge, we rotate 90° so the long axis lies along X
 #      (~33 mm wide × ~5 mm tall — fits cleanly in the 18 mm bottom margin).
 #
-# For mating with the controller's J_MAIN (on F.Cu): when the boards are
+# For mating with the controller's J_MAIN (on B.Cu): when the boards are
 # stacked, pin 1 of the matrix's J_CTRL sits on the LEFT end when viewed
 # from above (looking through the matrix at the B.Cu connector). The
 # controller's J_MAIN must be placed with its pin 1 at the matching position
 # — if it's flipped, increase this rotation to 270° instead.
+#
+# Note (2026-06-09): the paper-fit test showed that the rows on this
+# script-placed J1 are swapped vs the controller's after-flip view.
+# Fix is to manually MIRROR J1 in KiCad's PCB editor (right-click → Mirror
+# → Around X Axis) once after placement. The script intentionally leaves
+# the auto-placement at its centered/un-mirrored state; the manual mirror
+# persists in the .kicad_pcb between script runs.
 J1_REF                  = "J1"
 J1_LAYER                = "B.Cu"   # back face → controller goes underneath
 J1_Y_FROM_BOTTOM_EDGE   = 9.0      # mm from board bottom edge to connector center

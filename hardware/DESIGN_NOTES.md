@@ -7,9 +7,10 @@ board's `SCHEMATIC_GUIDE.md`; pin-level assignments live in
 `docs/inter-board-connector.md`. This file is the index and the
 authoritative reference for the *design itself*.
 
-Last meaningful revision: **2026-06-07** (controller mounts inverted —
-J_MAIN on B.Cu; Hall sensors switched to DRV5032FC; controller
-mounting holes dropped).
+Last meaningful revision: **2026-06-09** (paper-fit test surfaced three
+issues that need addressing: 8×8 board oversized vs enclosure inner
+frame, J_MAIN/J_CTRL pin-1 mirroring under board-flip, and ESP32
+footprint mismatch — see §11 items 12–14).
 
 ---
 
@@ -125,6 +126,24 @@ to-back:
 The two connectors mate naturally — different connector types prevent
 mis-orientation. Still mark pin 1 with a silkscreen dot on both boards
 for assembly clarity.
+
+> **Matrix-side J1 pin numbering is mirrored relative to the controller's
+> J1 contract.** The controller mounts **inverted** under the matrix
+> (B.Cu-to-B.Cu mating), which mirrors each board's coordinate frame
+> relative to the other. To keep electrical mating correct, the matrix's
+> J1 footprint was manually mirrored in KiCad's PCB editor after the
+> 3×3 layout script placed it (right-click J1 → Mirror → Mirror Around
+> X Axis). The result: matrix J1's *pad numbers* are swapped within
+> each odd-even pair vs the contract table below — e.g. matrix pin 2
+> physically carries `+5V_LED`, matrix pin 1 carries `GND`, etc. The
+> **nets at each physical pad position still mate correctly** with the
+> controller's pin contract (controller pin 1 = `+5V_LED` after the
+> flip lands on matrix pin 2 = `+5V_LED`, etc.).
+>
+> When reading the contract below, treat pin numbers as the controller's
+> J_MAIN numbering. The matrix's J_CTRL pads carry the same nets but
+> under swapped pin numbers; verify against the physical net at each
+> pad in KiCad, not the pin number printed on the silkscreen.
 
 Mechanical: **no mounting holes on either PCB and no corner standoffs**.
 The board-to-board connector pair carries both signal and mechanical
@@ -702,6 +721,79 @@ fab, but they need attention during bring-up:
     → columns G/H are briefly powered ~10 ms during boot. Electrically
     harmless (no firmware scanning yet). Plan for a ~50 mA boot blip.
 
+### Paper-fit test findings (2026-06-09)
+
+Discovered when printing the controller, 3×3, and 8×8 PCBs at 1:1 on
+paper and physically checking fit + alignment against real parts and
+the target folding chess board.
+
+12. **8×8 matrix doesn't fit the chess board's inner frame.** At
+    292 × 292 mm (8 × SQUARE_SIZE 32 mm + 2 × BOARD_MARGIN 18 mm)
+    the printed outline overhangs the inner cavity of Paolo's
+    physical folding board. **Fix later** (before ordering the 8×8
+    fab): either (a) shrink SQUARE_SIZE to fit, (b) shrink
+    BOARD_MARGIN below 18 mm, or (c) re-measure the inner frame and
+    confirm exact cavity dimensions, then re-derive board size in
+    `scripts/lib_layout.py`. The 3×3 (132 × 132 mm) is unaffected —
+    it fits inside the cavity with room to spare and is fine to fab
+    as-is. Update STATUS.md §"Matrix board dimensions" once
+    re-measured.
+
+13. ~~J_MAIN/J_CTRL pin-1 mirroring under board-flip.~~ **Resolved
+    2026-06-09.** When the controller mounts inverted (B.Cu facing up)
+    to mate with the matrix's B.Cu, each board's coordinate frame is
+    mirrored relative to the other — pin 1 of the controller J1 lands
+    on the opposite corner from pin 1 of the matrix J1, scrambling
+    net assignments per physical pad. **Fix applied:** the matrix's
+    J1 footprint was manually mirrored in KiCad PCB editor (select J1
+    → right-click → Mirror → Mirror Around X Axis). This swaps the
+    row assignment so each net flows to the physically-correct pad
+    after the controller flip. Side effect: matrix J1 pad numbering
+    is now swapped within each odd-even pair vs the contract in §3.1
+    (matrix pin 1 = GND, matrix pin 2 = +5V_LED, etc.) — but nets at
+    each physical pad position match the controller correctly.
+    Documented in §3.1. Same fix must be re-applied to the 8×8 matrix
+    after its layout script runs (the script doesn't auto-mirror J1).
+
+14. **ESP32 footprint doesn't match the physical DevKitC on hand.**
+    The `Espressif:ESP32-DevKitC` footprint used on the controller
+    PCB does not line up with the actual ESP32 module Paolo bought.
+    Two paths forward, neither great:
+    - **(a) Buy a different ESP32-DevKitC** whose pinout/dimensions
+      match the existing footprint. Cheap (~$8), no PCB rework.
+    - **(b) Swap the footprint** in KiCad to one matching the
+      module Paolo has. Free in BOM but **requires re-routing every
+      trace into U2** — a lot of unwanted rework.
+    **Preferred:** path (a). Document the exact DevKitC variant
+    (manufacturer + version) that fits the current footprint in the
+    controller's `SCHEMATIC_GUIDE.md` so a future order can't get it
+    wrong again. Re-verify against the printed footprint before
+    ordering.
+
+15. **DRV5032FC SOT-23 package looks tiny — is that a problem?**
+    Short answer: **no, not for sensing.** Hall-sensitivity is set
+    by the silicon die's specified Bop/Brp thresholds (per the
+    DRV5032FC datasheet), **not by the physical package size**. A
+    SOT-23 with the same die as a larger package detects magnets
+    the same way over the same range. The bigger A3144 TO-92 we
+    originally specced wasn't more sensitive — just more
+    hand-handleable.
+    What the small package **does** mean in practice:
+    - **Easy to lose / hard to place by hand.** Buy 2× the quantity
+      you need (~$10 extra on AliExpress) so a dropped part isn't a
+      blocker. Already on the 3×3 PCBA so JLC handles placement —
+      this only matters for any future hand-builds.
+    - **Tighter placement tolerance.** The sensor's active area is
+      smaller than the chess square. If JLC's pick-and-place drifts
+      by 1–2 mm relative to the silkscreen, the sensor still ends
+      up well inside the square's footprint. Not a concern.
+    - **The real sensing question** is whether the magnet you pick
+      generates enough field at the board-to-piece distance to clear
+      the DRV5032FC threshold. This is the open question in §13 —
+      will be answered empirically once the 3×3 is in hand and Paolo
+      can test magnets against actual sensors. **Don't pre-commit to
+      a magnet size before that test.**
+
 ---
 
 ## 12. Firmware-side caveats (heads-up for the firmware author)
@@ -789,6 +881,8 @@ fab, but they need attention during bring-up:
 | 2026-06-05 (assembly layout) | **Switched J_MAIN ↔ J_CTRL from shrouded IDC + ribbon to board-to-board stacking** based on the user's enclosure mockup. Controller PCB now stacks directly underneath the matrix PCB via mating 2×13 pin header (controller J_MAIN, male, vertical) + 2×13 socket (matrix J_CTRL, female, vertical), with 4× M3 corner standoffs (~11 mm tall) for mechanical support. No ribbon cable. Battery sits alongside the controller PCB in the space between the matrix's back and the enclosure floor. Panel components (OLED + 3 buttons + USB-C panel-mount) mount on one side wall of the enclosure. Updated DESIGN_NOTES §2, §3.1, §10.1, §10.2, §10.3. |
 | 2026-06-07 (Hall sensor swap) | **Replaced A3144 (TO-92, unipolar, open-collector) with DRV5032FC (SOT-23, omnipolar, push-pull).** Identical pinout (1=VDD, 2=GND, 3=OUT), so matrix routing is unchanged. Drivers: (a) omnipolar removes the magnet-orientation constraint in chess pieces; (b) SOT-23 is JLCPCBA-assembleable, A3144 TO-92 isn't. Controller-side row pullups (R1–R8) are now electrically redundant but kept as-is. The 3×3 prototype PCB is built around this part. Updated §4.1, §4.2, §9, §11, §13. |
 | 2026-06-07 (inverted controller) | **Controller PCB mounts inverted under the matrix.** J_MAIN is on the controller's **B.Cu** face, not F.Cu — components (M1, U2, U3, U6, J3, etc.) face the enclosure floor, the bare B.Cu face mates with the matrix's B.Cu. No mounting holes on the controller and no corner standoffs: the J_MAIN/J_CTRL connector pair is the only mechanical join, with the matrix's enclosure-frame mount carrying the assembled weight. Test points on the controller schematic were also dropped (probe component pads/pin headers directly during bringup). Updated §2, §3.1, §5.1, §10.1, §10.3. |
+| 2026-06-09 (paper-fit test) | Printed all three PCBs at 1:1 and physically checked fit. Four observations logged in §11 items 12–15: **(12)** 8×8 outline at 292 × 292 mm overhangs Paolo's folding board's inner cavity — needs SQUARE_SIZE / BOARD_MARGIN re-derivation before fab. 3×3 (132 × 132 mm) is unaffected. **(13)** J_MAIN/J_CTRL pin-1 mirrors across the board-flip — pins line up mechanically but nets don't match per-pin between the two boards as soldered. Fix by rotating/renumbering J1 on one side before the 8×8 fab. **(14)** ESP32 footprint on the controller PCB doesn't match Paolo's physical DevKitC — preferred fix is to buy a matching DevKitC variant rather than re-route U2. **(15)** DRV5032FC SOT-23 visually small — verified not a sensing concern (die threshold sets sensitivity, not package), only a handling concern. None of the four blocks the **3×3 + controller** order that's already in flight. |
+| 2026-06-09 (J1 mirror fix) | **Resolved §11 item 13** (J_MAIN/J_CTRL pin-1 mirror under board-flip). The matrix's J1 footprint was manually mirrored in KiCad's PCB editor (select J1 → right-click → Mirror → Mirror Around X Axis). Rows swap, nets at each physical pad position now match the controller's flipped pin contract. Side effect: matrix J1 pad numbering is now swapped within each odd-even pair vs the §3.1 contract table (matrix pin 1 = GND, pin 2 = +5V_LED, etc.) — see the callout in §3.1 explaining how to read the contract correctly. Same mirror needs to be re-applied to the 8×8 matrix J1 after its layout script runs. |
 | 2026-06-08 (matrix board dimensions) | **Matrix board outline sized to fit Paolo's folding chess board model.** `SQUARE_SIZE = 32 mm` (matches the model's chess squares); `BOARD_MARGIN = 18 mm` from outermost chess square corner to PCB edge. Total PCB outlines: **3×3 = 132×132 mm**, **8×8 = 292×292 mm**. The physical model has a 20 mm inner-frame margin (the notation A–H / 1–8 strip), so 18 mm leaves ~2 mm wiggle per side for the PCB to slide inside the cavity. Both PCBs sit INSIDE the folding board's inner frame (not replacing the wood); the model's 10 mm outer fold/decorative edge is not part of the PCB. 8×8 stays comfortably in JLC's ≤300 mm pricing tier. |
 | 2026-06-08 (DRV5032FC swap finalized) | **Swapped A3144 (TO-92, hand-solder) → DRV5032FC (SOT-23, JLC Basic Part C527532) in both matrix boards' schematic generators.** Open-drain output (compatible with controller R1..R8 pull-ups to +3V3 — sensor's 1 mA sink rating handles 3.3 V / 10 kΩ = 330 µA), omnipolar (no magnet orientation worries), VCC 1.65–5.5 V (works at 5 V or 3.3 V), B_OP threshold ±4.8 mT (proven safe for 32 mm chess pitch with N35 magnets). `openchess:A3144` symbol kept by name for backwards compatibility (pin 1=VCC, 2=GND, 3=OUT is identical between A3144 and DRV5032FC). 64× hall instances in 8×8 and 9× in 3×3 now use the SMD footprint — both boards fully JLC-PCBA-assemblable. Controller schematic unchanged (R1..R8 pull-ups still match the new sensor's open-drain output). |
 | 2026-06-08 (C91 entry cap dropped) | **Removed C91 (470 µF THT polarized electrolytic).** Distributed row bulks (9× 47 µF in 8×8, 4× 47 µF in 3×3) provide 423 µF and 188 µF respectively — comfortably enough for the +5V_LED rail. C91 was the only through-hole part on the matrix board; removing it makes both boards fully JLC-SMT-assemblable. |
