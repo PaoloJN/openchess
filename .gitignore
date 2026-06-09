@@ -44,3 +44,5 @@ hardware-2.0/*/build/
 delete
 web
 firmware
+
+hardware/orders

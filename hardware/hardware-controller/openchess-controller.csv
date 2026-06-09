@@ -1,0 +1,17 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"C1, C2";"C_0805_2012Metric";2;"10µF";;;
+2;"C5";"C_0805_2012Metric";1;"100nF";;;
+3;"C11, C12";"C_0603_1608Metric";2;"100nF";;;
+4;"D2";"D_SMA";1;"SS14 (or BAT60A)";;;
+5;"FID1, FID2, FID3";"Fiducial_1mm_Mask2mm";3;"Fiducial";;;
+6;"J1";"PinHeader_2x13_P2.54mm_Vertical";1;"Conn_02x13";;;
+7;"J3";"PinHeader_1x10_P2.54mm_Vertical";1;"J_PANEL XH-10";;;
+8;"M1";"PinSocket_1x08_P2.54mm_Vertical";1;"Lipo Rider Plus";;;
+9;"R1, R2, R3, R4, R5, R6, R7, R8";"R_0805_2012Metric";8;"10k";;;
+10;"R11";"R_0603_1608Metric";1;"33Ω";;;
+11;"R14";"R_0603_1608Metric";1;"220k";;;
+12;"R15";"R_0603_1608Metric";1;"100k";;;
+13;"R36, R37";"R_0603_1608Metric";2;"10k";;;
+14;"U2";"ESP32-DevKitC";1;"ESP32-DevKitC";;;
+15;"U3";"SOIC-14_3.9x8.7mm_P1.27mm";1;"74AHCT125";;;
+16;"U6";"DIP-18_W7.62mm";1;"TBD62783A";;;
