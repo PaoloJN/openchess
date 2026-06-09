@@ -8,14 +8,15 @@ This is a **one-off personal learning project**, not for sale. Goal:
 build one board that works first try. When it works on Paolo's desk,
 the project is done.
 
-Last updated: 2026-06-05
+Last updated: 2026-06-08
 
 ## Canonical references
 
 | Document | What lives there |
 |---|---|
 | `hardware/DESIGN_NOTES.md` | **Source of truth** — full design, connector contracts, BOM, known issues, change log |
-| `hardware/hardware-board/SCHEMATIC_GUIDE.md` | Matrix board build sheet |
+| `hardware/hardware-board/SCHEMATIC_GUIDE.md` | Matrix board build sheet (8×8) |
+| `hardware/hardware-board-3x3/` | 3×3 test board (cloned from 8×8 with `MATRIX_COLS=MATRIX_ROWS=3`) |
 | `hardware/hardware-controller/SCHEMATIC_GUIDE.md` | Controller hand-draw build sheet |
 | `docs/gpio-map.md` | ESP32 GPIO assignments |
 | `docs/inter-board-connector.md` | Formal cable contracts |
@@ -25,34 +26,54 @@ Last updated: 2026-06-05
 
 | Subsystem | Schematic | PCB layout | Notes |
 |---|---|---|---|
-| `hardware-board` (matrix) | Script-generated, ERC clean | Not started | 236 components; keep using scripts. Need to verify J_CTRL footprint is the shrouded/keyed IDC variant. |
-| `hardware-controller` | **Hand-drawing in progress** (KiCad GUI) | Not started | Migrating to PowerBoost module + TBD62783A + OLED panel labels. See `SCHEMATIC_GUIDE.md` for the deltas. |
-| Panel components (no PCB) | N/A — discrete OLED module + 3 panel-mount buttons on flying leads | N/A | Plugged into controller `J3` via JST XH 10-pin harness. See DESIGN_NOTES §6. |
+| `hardware-board-3x3` (3×3 test) | Script-generated halls + LEDs + caps; J1/MH/FID/TP manual | **132×132 mm**, layout script run | DRV5032FC SOT-23, fully JLC-assemblable. Built to validate before ordering 8×8. |
+| `hardware-board` (8×8 full matrix) | Script-generated halls + LEDs + caps; J1/MH/FID/TP manual | **292×292 mm**, layout script ready | DRV5032FC SOT-23, fully JLC-assemblable. Order AFTER 3×3 validates. |
+| `hardware-controller` | Hand-drawn, complete | Hand-routed power; autoroute + GND pour done | DRC clean (only cosmetic silk warnings). PCBA BOM (`assembly/openchess-controller-jlc-*.csv`) ready for JLC. |
+| Panel components (no PCB) | N/A — discrete OLED + 3 panel-mount buttons on flying leads | N/A | Plugged into controller `J3` via JST XH 10-pin harness. See DESIGN_NOTES §6. |
+
+## Matrix board dimensions (matches Paolo's folding chess board model)
+
+- **`SQUARE_SIZE = 32 mm`** (matches model's wood squares)
+- **`BOARD_MARGIN = 18 mm`** (model has 20 mm inner-frame cavity; 18 mm leaves ~2 mm wiggle per side)
+- **3×3 = 132×132 mm** (≤150 mm tier at JLC, ~$10 fab)
+- **8×8 = 292×292 mm** (≤300 mm tier at JLC, ~$30 fab)
+- The folding board's 10 mm outer fold/decorative edge is NOT part of the PCB
 
 ## Next actions
 
-1. **Controller — finish the hand-drawn schematic**. Pending deltas:
-   delete the old discrete power chain (BQ24074, TPS63060, etc.) AND
-   the brief AP2112K LDO; add M1 Lipo Rider Plus as a 1×8 header; add
-   D2 Schottky (SS14) between `+5V_LED` and DevKit pin 19; add U6
-   TBD62783A column driver; relabel ESP32 module pins for I²C/BTN_SELECT;
-   place NC flags (including the now-unused GPIO34 pin); add PWR_FLAG
-   symbols; change J3 footprint to JST XH 10-pin. Run ERC, commit.
-2. **Matrix — verify J_CTRL footprint is shrouded/keyed IDC** (not
-   plain 1×10 pin header). Trivial edit if it isn't.
-3. **Source the parts**. Key items: Seeed Lipo Rider Plus ($4 DigiKey),
-   protected 1S LiPo, ESP32-DevKitC v4, SSD1306 OLED module, 3×
-   12mm panel-mount pushbuttons, TBD62783A, 74AHCT125, SS14 Schottky,
-   A3144 (×64), WS2812B (×81), USB-C panel-mount extension cable
-   (~$5, routes M1's USB-C to the enclosure wall). JST XH connectors +
-   crimp tool already on hand. See `DESIGN_NOTES.md` §9 for the full BOM.
-4. **Build a 4×4 mini matrix prototype** before paying for the full
-   8×8 fab. Use the same controller; just a smaller matrix PCB.
-   Validates magnet selection, Hall behavior, and firmware
-   scan/timing on real hardware.
-5. **Lay out the PCBs** once both schematics are ERC-clean. Consider
-   panelizing matrix + controller onto one JLCPCB order to share fab
-   cost.
+1. **Order the 3×3 test board first** — JLC PCBA on `hardware-board-3x3`,
+   ~$15-25, validates the entire design (DRV5032FC sensing, WS2812 chain,
+   J_CTRL stack mating with controller) before paying for the 8×8 fab.
+2. **Order the controller PCB** alongside the 3×3 (same JLC order, one
+   shipping fee). PCBA includes everything except the modules (M1, ESP32-DevKitC).
+3. **Source the modules from DigiKey** (minimum verification list):
+   - Seeed Lipo Rider Plus (M1)
+   - ESP32-DevKitC v4 (U2)
+   - 2× 1×19 female sockets for ESP32 mount
+   - 5 N35 magnets for sensor testing
+   - Total ~$20.
+4. **Bench-test the 3×3 + controller**: power-up, OLED hello, WS2812 chain,
+   magnet detection on a single Hall, full matrix scan. If clean → order
+   the 8×8 fab. If broken → spin a controller v2 without losing the 8×8
+   fab cost.
+5. **Build the panel harness** (OLED + 3 buttons + USB-C extension cable)
+   once the 3×3 validates the controller.
+
+## Schematic script architecture (matrix boards)
+
+Updated 2026-06-08 to be a **merger, not a replacer** — the assembler
+preserves anything the user adds in KiCad GUI:
+
+- Active chunk scripts: `02_halls.py`, `03_leds.py`
+- Archived (user does these by hand): `01_skeleton.py`, `04_bulks.py` → `scripts/sch/_archived/`
+- `99_assemble.py` reads the existing `.kicad_sch`, removes only items
+  whose UUID prefix matches a script-owned prefix (`ba11` halls, `1ed0`
+  LEDs, `1ed5` LED decoupling), then inserts fresh chunk content.
+  Manual additions (J1 connector, MH, FID, TP, row bulks, PWR_FLAGs)
+  are preserved untouched.
+- PCB layout script (`01_chess_grid.py`) positions halls, LEDs, LED caps,
+  row bulks, AND J1 on B.Cu at the center of the bottom edge (with
+  anchor offset for body centering).
 
 ## Firmware status
 
@@ -78,7 +99,32 @@ Plus, etc.) are documented in `hardware/DESIGN_NOTES.md` §12.
 ## Recent activity
 
 For the full change log (design-affecting decisions with dates), see
-`hardware/DESIGN_NOTES.md` §15. The TL;DR of 2026-06-05:
+`hardware/DESIGN_NOTES.md` §15.
+
+### 2026-06-08 (matrix boards finalised for fab)
+
+- **Board dimensions locked to Paolo's folding chess board model**:
+  SQUARE_SIZE = 32 mm, BOARD_MARGIN = 18 mm. 3×3 = 132×132 mm, 8×8 = 292×292 mm.
+- **DRV5032FC SOT-23** confirmed as the Hall sensor across both matrix
+  schematics — JLC Basic Part C527532, omnipolar, open-drain, compatible
+  with the controller's R1..R8 pull-ups. A3144 (TO-92) fully retired.
+- **C91 (470 µF entry cap) dropped.** Row bulks (47 µF × N) cover the rail.
+  Matrix boards are now fully JLC-SMT-assemblable — no through-hole parts.
+- **3×3 test board** (`hardware-board-3x3/`) created with full schematic +
+  PCB pipeline. Identical design to 8×8, just scaled. Purpose: fab the
+  3×3 first (~$15) to validate before committing to the 8×8 (~$30+).
+- **Script architecture overhaul**: `99_assemble.py` is now a merger —
+  preserves user-added components by UUID prefix instead of overwriting
+  the whole schematic on every run. `01_skeleton.py` and `04_bulks.py`
+  archived; only halls + LEDs regenerated by scripts now.
+- **PCB layout script updated**: row bulks placed in the LEFT margin
+  Y-aligned with each LED row; J1 (J_CTRL) placed at center bottom edge
+  on B.Cu, rotated 90°, with anchor shifted left 15.24 mm so the
+  connector BODY (not pin 1) is centered.
+
+### 2026-06-05
+
+The TL;DR of 2026-06-05:
 
 - Switched from monolithic single-PCB to a 2-PCB + flying-leads layout
   (matrix board + controller; panel components in the enclosure).
@@ -96,13 +142,15 @@ For the full change log (design-affecting decisions with dates), see
   shows battery percentage on the OLED. Cleaned up the leftover
   PowerBoost 1000C lib files from `hardware-controller/lib/`.
 - **Locked the assembly layout** based on the user's enclosure mockup:
-  controller PCB stacks directly underneath the matrix PCB via mating
-  2×13 pin header (controller J_MAIN, male) + 2×13 socket (matrix J_CTRL,
-  female), held at ~11 mm spacing by M3 corner standoffs. **No ribbon
-  cable** between matrix and controller. LiPo battery sits alongside the
-  controller PCB in the space between the matrix back and the enclosure
-  floor. Side-mounted panel (OLED + 3 buttons + USB-C panel-mount) on
-  one wall of the enclosure.
+  controller PCB mounts **inverted** directly underneath the matrix PCB
+  (components face the enclosure floor, bare B.Cu face up). J_MAIN
+  (controller B.Cu, male) mates back-to-back with J_CTRL (matrix B.Cu,
+  female). **No standoffs, no controller-side mounting holes, no ribbon
+  cable** — the connector pair is the only mechanical join, and the
+  matrix's bolting to the enclosure top frame carries the weight.
+  LiPo battery sits alongside the controller PCB in the space between
+  the matrix back and the enclosure floor. Side-mounted panel (OLED +
+  3 buttons + USB-C panel-mount) on one wall of the enclosure.
 - **Dropped the panel PCB entirely** — OLED + 3 panel-mount buttons
   on flying leads to the controller's `J3` (JST XH 10-pin).
 - Kept the shrouded/keyed IDC footprint for the matrix cable.

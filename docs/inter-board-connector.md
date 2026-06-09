@@ -10,16 +10,20 @@ Current hardware has three boards:
 
 The matrix board connector is `J_CTRL`; the controller-side mate is `J_MAIN`.
 Both share the same 2×13 pinout below, but use different **footprints**
-because the boards stack directly (no ribbon cable):
+because the boards stack directly (no ribbon cable). The controller
+mounts **inverted** under the matrix — components face the enclosure
+floor and the bare B.Cu side faces up toward the matrix's B.Cu, so
+both connectors sit on each board's **B.Cu** face and meet back-to-back:
 
 - **Matrix `J_CTRL`**: 2×13 **female socket**, vertical, on the matrix
-  PCB's back side (`Connector_PinSocket_2.54mm:PinSocket_2x13_P2.54mm_Vertical`)
+  PCB's **B.Cu** (back) side (`Connector_PinSocket_2.54mm:PinSocket_2x13_P2.54mm_Vertical`)
 - **Controller `J_MAIN`**: 2×13 **male pin header**, vertical, on the
-  controller PCB's top side (`Connector_PinHeader_2.54mm:PinHeader_2x13_P2.54mm_Vertical`)
+  controller PCB's **B.Cu** (back) side (`Connector_PinHeader_2.54mm:PinHeader_2x13_P2.54mm_Vertical`). When the controller is mounted inverted under the matrix, B.Cu faces up and the pins point into J_CTRL's socket above.
 
-The two boards mate via the pin-header-into-socket connection. M3
-brass standoffs (~11 mm) at the controller's corners provide
-mechanical support.
+The two boards mate via the pin-header-into-socket connection. **No
+standoffs or mounting holes on the controller** — the mating connector
+pair is the only mechanical join. The matrix PCB itself is bolted to
+the enclosure top frame and supports the assembled weight.
 
 | Pin | Net | Direction |
 |----:|-----|-----------|

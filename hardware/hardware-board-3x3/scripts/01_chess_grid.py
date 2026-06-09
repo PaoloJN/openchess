@@ -46,8 +46,11 @@ import lib_layout as ll  # noqa: E402
 # ──────────────────────────────────────────────────────────────────────────────
 # Geometry — change these to resize the board
 # ──────────────────────────────────────────────────────────────────────────────
-SQUARE_SIZE  = 32        # mm per chess square
-BOARD_MARGIN = 12        # mm extra around the LED grid for the board edge
+SQUARE_SIZE  = 32        # mm per chess square (matches Paolo's folding board model)
+BOARD_MARGIN = 18        # mm from outermost chess square corner to PCB edge.
+                         # The physical model has a 20 mm inner-frame margin
+                         # (notation area). Using 18 mm leaves ~2 mm wiggle
+                         # per side so the PCB can slide inside the 20 mm cavity.
 
 # Matrix dimensions — 3×3 test board. Locked by scripts/sch/config.py.
 MATRIX_COLS = 3
@@ -94,13 +97,38 @@ MOUNTING_HOLE_DIAMETER = 3.2  # M3
 LED_CAP_OFFSET_MM = (6.0, 0.0)
 LED_CAP_ROTATION  = 0.0   # pin 1 (+5V_LED) on left side, facing the LED
 
-# Row bulk caps (47 µF, 1206 SMD). One per LED row, placed in a horizontal
-# row BELOW the chess grid (in the bottom margin). Refs: C1..C{LED_ROWS}.
-# X positions are aligned with LED column centers for a clean grid look.
-# The right-side margin was too tight for bulks (collided with rightmost LED
-# decoupling caps), so we use the more spacious bottom margin instead.
-ROW_BULK_Y_OFFSET_FROM_GRID = 7.0   # mm below CHESS_Y_BOTTOM
+# Row bulk caps (47 µF, 1206 SMD). One per LED row, placed in the LEFT
+# margin and Y-aligned with each LED row — so each bulk physically sits
+# right next to the LED row it decouples. Cleanest topology for routing
+# +5V_LED into each row of LEDs.
+ROW_BULK_X_OFFSET_FROM_GRID = 8.0   # mm left of CHESS_X_LEFT
 ROW_BULK_ROTATION           = 0.0   # pin 1 (+5V_LED) on left
+
+# J1 (= J_CTRL) — 2×13 female socket on B.Cu (matrix back face).
+# Placed at the center of the bottom edge so the controller PCB mounts
+# directly beneath the matrix.
+#
+# Two transforms applied:
+#   1. FLIP — layer = "B.Cu" puts the connector on the back face. KiCad
+#      auto-mirrors the footprint horizontally (L↔R) when on B.Cu, so pin 1
+#      ends up on the opposite physical side from where 0°/F.Cu would put it.
+#   2. ROTATE — the KiCad PinSocket_2x13 footprint has its LONG AXIS along Y
+#      at 0° rotation (i.e. "tall and skinny"). For a horizontal placement at
+#      the bottom edge, we rotate 90° so the long axis lies along X
+#      (~33 mm wide × ~5 mm tall — fits cleanly in the 18 mm bottom margin).
+#
+# For mating with the controller's J_MAIN (on F.Cu): when the boards are
+# stacked, pin 1 of the matrix's J_CTRL sits on the LEFT end when viewed
+# from above (looking through the matrix at the B.Cu connector). The
+# controller's J_MAIN must be placed with its pin 1 at the matching position
+# — if it's flipped, increase this rotation to 270° instead.
+J1_REF                  = "J1"
+J1_LAYER                = "B.Cu"   # back face → controller goes underneath
+J1_Y_FROM_BOTTOM_EDGE   = 9.0      # mm from board bottom edge to connector center
+                                   # (2x13 horizontal is ~5 mm tall; 9 mm = ~5 mm
+                                   # clearance from edge + half connector body)
+J1_ROTATION             = 90.0     # 90° = horizontal (long axis along X);
+                                   # try 270° if pin 1 ends up on the wrong end
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -175,11 +203,30 @@ def row_bulk_ref(row_idx: int) -> str:
 
 
 def row_bulk_position(row_idx: int) -> tuple[float, float]:
-    """Place each row bulk in the bottom margin, spread horizontally across
-    the chess grid width. X = LED column position (same X as the LEDs in
-    that column above), Y = constant offset below the chess grid."""
-    x = LED_ORIGIN_X + row_idx * SQUARE_SIZE
-    y = CHESS_Y_BOTTOM + ROW_BULK_Y_OFFSET_FROM_GRID
+    """Place each row bulk in the LEFT margin, Y-aligned with its LED row.
+    X = constant offset LEFT of chess area, Y = LED row's Y coordinate.
+    Result: each bulk physically next to the LED row it decouples."""
+    x = CHESS_X_LEFT - ROW_BULK_X_OFFSET_FROM_GRID
+    y = LED_ORIGIN_Y + row_idx * SQUARE_SIZE
+    return x, y
+
+
+def j1_position() -> tuple[float, float]:
+    """J1 (J_CTRL) at the center of the bottom edge of the matrix board.
+
+    KiCad's PinSocket_2x13_P2.54mm_Vertical footprint anchor sits AT pin 1
+    (not at the body center). At rotation=90°, pin 1 lands at the anchor X
+    and the rest of the 30.48 mm body extends in +X. So if we placed the
+    anchor at the true board center, the BODY would end up offset to the
+    right by half its length. Compensate by shifting the anchor LEFT by
+    half the body length so the geometric center of the body lands at the
+    board's X center.
+    """
+    board_center_x = BOARD_ORIGIN_X + BOARD_SIZE / 2.0
+    # 2×13 body length = 12 pitches × 2.54 mm = 30.48 mm; half = 15.24 mm
+    body_half_length = 12 * 2.54 / 2.0
+    x = board_center_x - body_half_length
+    y = BOARD_ORIGIN_Y + BOARD_SIZE - J1_Y_FROM_BOTTOM_EDGE
     return x, y
 
 
@@ -417,6 +464,17 @@ def main() -> int:
     print(f"Placed {placed_bulks}/{LED_ROWS} row bulk caps (47 µF)"
           + (f"  (missing: {', '.join(missing_bulks)})" if missing_bulks else ""))
 
+    # 3d. Place J1 (J_CTRL matrix connector) at the center of the bottom edge,
+    # on B.Cu so the controller PCB can mount underneath.
+    j1_x, j1_y = j1_position()
+    text, j1_ok = ll.place_footprint(text, J1_REF, j1_x, j1_y,
+                                     rot=J1_ROTATION, layer=J1_LAYER)
+    if j1_ok:
+        print(f"Placed J1 at ({j1_x}, {j1_y}) on {J1_LAYER} "
+              f"(rotation {J1_ROTATION}°, center of bottom edge)")
+    else:
+        print(f"WARNING: J1 not found in PCB — add it in KiCad first")
+
     # 4. Build all additions (outline + silkscreen).
     additions: list[str] = [
         make_board_outline(BOARD_ORIGIN_X, BOARD_ORIGIN_Y, BOARD_SIZE, BOARD_SIZE)
@@ -488,11 +546,15 @@ def main() -> int:
         print(f"  {tag:14s} {led_ref(col, row):>4s} at ({x}, {y});  "
               f"cap {led_cap_ref(col, row):>4s} at ({cx}, {cy})")
     print()
-    print("Row bulks (47 µF, one per LED row, below chess grid in bottom margin):")
+    print("Row bulks (47 µF, one per LED row, in LEFT margin Y-aligned with each row):")
     for row_idx in range(LED_ROWS):
         ref = row_bulk_ref(row_idx)
         x, y = row_bulk_position(row_idx)
         print(f"  {ref} at ({x}, {y})")
+    print()
+    j1_x, j1_y = j1_position()
+    print(f"J1 (matrix connector to controller, B.Cu): ({j1_x}, {j1_y})")
+    print(f"  → controller mounts beneath, centered on this connector position")
     print()
     print(f"Backup: openchess-board.kicad_pcb{BACKUP_SUFFIX}")
     print("Open KiCad PCB editor and press Home to zoom-to-fit.")

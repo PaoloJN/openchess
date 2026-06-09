@@ -4,13 +4,13 @@ This is a provisional controller-board GPIO plan. It must be finalized when the
 ESP32 footprint and column-driver approach are chosen, then kept in sync with
 firmware and controller schematic scripts.
 
-Last updated: 2026-06-05.
+Last updated: 2026-06-07.
 
 ## Current Nets To Support
 
 | Group | Nets | Notes |
 |---|---|---|
-| Matrix row sense | `S0..S7` | Inputs with `+3V3` pullups on controller |
+| Matrix row sense | `S0..S7` | ESP32 inputs. Row pullups (R1–R8, 10 k to `+3.3V`) on the controller are kept for safety, but DRV5032FC Halls have push-pull outputs so the pullups are electrically redundant. |
 | Column drive (internal) | `COL_DRV_A..COL_DRV_H` | ESP32 active-high inputs to TBD62783A 8-ch high-side driver IC |
 | Matrix columns (connector) | `CA_PWR..CH_PWR` | TBD62783A outputs — switched 5V column rails |
 | LEDs | `LED_DATA` (3V3), `LED_DATA_5V` (post-shift) | ESP32 data level-shifted to 5V via 74AHCT125 |
@@ -24,7 +24,7 @@ Last updated: 2026-06-05.
 | Signal | GPIO | DevKitC physical pin | Type | Notes |
 |---|---:|---:|---|---|
 | `LED_DATA` (pre-level-shift) | 32 | 7 | Output | Feeds 74AHCT125 gate A input |
-| `S0` | 4 | 26 | Input | Row sense (open-collector) |
+| `S0` | 4 | 26 | Input | Row sense (push-pull from DRV5032FC; R1–R8 pullups on controller redundant but present) |
 | `S1` | 16 | 27 | Input | Row sense |
 | `S2` | 17 | 28 | Input | Row sense |
 | `S3` | 18 | 30 | Input | Row sense |

@@ -35,8 +35,8 @@ LiPo battery powered with USB-C charging.
 
 Two KiCad PCBs and one cable-mounted component group:
 
-- **`hardware-board/`** — passive matrix board: 64× A3144 Hall sensors,
-  81× WS2812B corner LEDs. Big PCB, all passive.
+- **`hardware-board/`** — passive matrix board: 64× DRV5032FC Hall sensors
+  (SOT-23, omnipolar), 81× WS2812B corner LEDs. Big PCB, all passive.
 - **`hardware-controller/`** — ESP32 socket, level shifter, column
   driver IC, Lipo Rider Plus power daughterboard, connectors. Brain
   of the board.
@@ -55,10 +55,13 @@ guidance.
 ## Current Connector Contracts
 
 **Matrix connector** (board-to-board stacking, no ribbon):
-- Matrix side: `J_CTRL` (2×13 female socket on the matrix back face)
-- Controller side: `J_MAIN` (2×13 male pin header on the controller top face)
-- Assembly: controller PCB stacks directly under matrix PCB; 4× M3
-  standoffs (~11 mm) hold the stack at the right spacing
+- Matrix side: `J_CTRL` (2×13 female socket on the matrix B.Cu / back face)
+- Controller side: `J_MAIN` (2×13 male pin header on the controller B.Cu / back face)
+- Assembly: controller PCB mounts **inverted** directly under matrix PCB
+  (components face the enclosure floor; bare B.Cu faces up toward the
+  matrix's B.Cu). J_MAIN/J_CTRL mate back-to-back. **No standoffs and
+  no mounting holes on the controller** — the matrix's enclosure-frame
+  mount carries the assembled weight.
 - Contract: `docs/inter-board-connector.md`
 - Nets: `+5V_LED`, `GND`, `LED_DATA_5V`, `S0..S7`, `CA_PWR..CH_PWR`
 
@@ -99,7 +102,7 @@ components):
 
 ## Hardware Gotchas
 
-- A3144 outputs are open-collector; pullups belong on the controller at `+3V3`.
+- DRV5032FC outputs are push-pull (1.65–5.5 V VCC). The controller's row pullups R1–R8 (10 k to `+3.3V`) are kept as belt-and-suspenders but are electrically redundant.
 - WS2812B data is level-shifted to 5V via 74AHCT125 before entering the matrix board cable.
 - Matrix `+5V_LED` is the only 5V rail; comes from the PowerBoost module.
 - Panel buttons short signal nets to GND; pullups on the controller for input-only ESP32 pins (BTN_POWER, BTN_MODE).

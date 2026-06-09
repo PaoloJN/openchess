@@ -7,8 +7,9 @@ board's `SCHEMATIC_GUIDE.md`; pin-level assignments live in
 `docs/inter-board-connector.md`. This file is the index and the
 authoritative reference for the *design itself*.
 
-Last meaningful revision: **2026-06-05** (panel PCB dropped; panel
-components now on flying leads).
+Last meaningful revision: **2026-06-07** (controller mounts inverted —
+J_MAIN on B.Cu; Hall sensors switched to DRV5032FC; controller
+mounting holes dropped).
 
 ---
 
@@ -33,8 +34,9 @@ exchange for lower risk, and skip "production" concerns like
 manufacturability for volume, certification, or supply-chain
 resilience.
 
-**Core sensing**: 8×8 grid of A3144 Hall-effect sensors detects which
-squares have a magnet under them (every chess piece carries one).
+**Core sensing**: 8×8 grid of DRV5032FC Hall-effect switches
+(SOT-23, omnipolar) detects which squares have a magnet under them
+(every chess piece carries one).
 
 **Core display**: 9×9 grid of WS2812B RGB LEDs at the corners of the
 squares; firmware lights them to indicate legal moves, threats, last
@@ -63,9 +65,15 @@ hardware/
 
 - Matrix PCB is the entire chessboard. Halls + LEDs on the **top face**;
   the back face is clean except for the J_CTRL stacking socket.
-- Controller PCB **mounts directly underneath the matrix board** via
-  board-to-board stacking pin headers (J_MAIN ↔ J_CTRL) and 4× M3 corner
-  standoffs (~11 mm tall). No ribbon cable between them.
+- Controller PCB **mounts inverted directly underneath the matrix board**
+  via board-to-board stacking pin headers (J_MAIN ↔ J_CTRL). The
+  controller's components (M1, U2 DevKit, U3, U6, etc.) face the
+  enclosure floor; its **bare B.Cu back face faces up toward the
+  matrix's B.Cu back face**. J_MAIN sits on the controller's B.Cu so
+  its pins point up into the matrix's J_CTRL socket. No ribbon cable
+  between them, and **no corner standoffs** — the controller hangs from
+  the J_MAIN/J_CTRL mating alone, and the matrix's own mounting to the
+  enclosure top frame carries the assembled weight.
 - The LiPo battery sits **alongside the controller**, in the space
   between the matrix PCB's back and the enclosure floor.
 - The panel components (OLED + 3 buttons + panel-mount USB-C) mount on
@@ -101,25 +109,31 @@ The older monolithic single-PCB design was archived to
 ### 3.1 Matrix ↔ Controller — `J_CTRL` (matrix) ↔ `J_MAIN` (controller)
 
 **Board-to-board stacking, 2×13 at 2.54 mm pitch. No ribbon cable.**
-The controller PCB mounts directly below the matrix PCB via mating
-pin header + socket:
+The controller PCB mounts **inverted** below the matrix PCB (components
+facing the enclosure floor, bare B.Cu facing up). J_MAIN sits on the
+controller's B.Cu, J_CTRL on the matrix's B.Cu, and they mate back-
+to-back:
 
 - **Controller side (`J_MAIN`)**: 2×13 **male pin header** on the
-  controller PCB's top face, pointing up toward the matrix.
+  controller PCB's **B.Cu (back)** face. When the controller is mounted
+  upside-down under the matrix, those pins point up toward the matrix.
   Footprint: `Connector_PinHeader_2.54mm:PinHeader_2x13_P2.54mm_Vertical`
 - **Matrix side (`J_CTRL`)**: 2×13 **female socket** on the matrix
-  PCB's back face, pointing down toward the controller.
+  PCB's back face (B.Cu), pointing down toward the controller.
   Footprint: `Connector_PinSocket_2.54mm:PinSocket_2x13_P2.54mm_Vertical`
 
 The two connectors mate naturally — different connector types prevent
 mis-orientation. Still mark pin 1 with a silkscreen dot on both boards
 for assembly clarity.
 
-Mechanical: 4× M3 brass standoffs (~11 mm tall — matches the mating
-depth of the pin+socket combo) at the controller PCB's corners hold
-it rigidly to the matrix PCB's back side. The board-to-board connector
-provides electrical connection; the standoffs provide mechanical
-support.
+Mechanical: **no mounting holes on either PCB and no corner standoffs**.
+The board-to-board connector pair carries both signal and mechanical
+load — the controller hangs from J_MAIN/J_CTRL alone. The matrix PCB
+is what's actually bolted to the enclosure top frame; it supports the
+controller's weight through the connector. This is acceptable because
+the board pair is mated once and never unplugged in normal use, and
+the controller weighs essentially nothing once the LiPo is moved
+alongside it.
 
 | Pin | Net | Direction |
 |----:|-----|-----------|
@@ -190,25 +204,48 @@ Reset is via the DevKitC's onboard EN button — no panel reset.
 
 ## 4. Matrix board (`hardware-board/`)
 
-### 4.1 Scope (236 components total)
+### 4.1 Scope (244 components total — 8×8; smaller scaled variant is 3×3)
 
-| Group | Refdes range | Notes |
-|---|---|---|
-| Hall sensors | `U1..U64` | A3144 TO-92, file-major: U1=A1, U64=H8 |
-| WS2812B LEDs | `D1..D81` | Row-major top-down: D1=top-left, D81=bottom-right |
-| Per-LED decoupling caps (100 nF) | `C10..C90` | Number-matched to LEDs |
-| Row bulk caps (47 µF) | `C1..C9` | One per row of LEDs |
-| `+5V_LED` entry cap (470 µF) | `C91` | Polarized electrolytic at J_CTRL |
-| Matrix connector | `J1` (= J_CTRL) | 2×13 keyed IDC box header |
-| Test points | `TP1..TP4` | `+5V_LED`, `GND`, `LED_DATA_5V`, `LED_DOUT_END` |
-| Mounting holes | `MH1..MH4` | M3 |
-| Fiducials | `FID1..FID3` | |
+| Group | Refdes range (8×8) | Refdes range (3×3) | Notes |
+|---|---|---|---|
+| Hall sensors | `U1..U64` | `U1..U9` | **DRV5032FC SOT-23** (TI, JLC Basic C527532). File-major: U1=A1, U_max=top-right corner. |
+| WS2812B LEDs | `D1..D81` | `D1..D16` | Row-major top-down: D1=top-left, D_max=bottom-right |
+| Per-LED decoupling caps (100 nF) | `C10..C90` | `C10..C25` | Number-matched to LEDs (D1↔C10, etc.) |
+| Row bulk caps (47 µF) | `C1..C9` | `C1..C4` | One per row of LEDs, placed in **left margin** Y-aligned with each LED row |
+| Matrix connector | `J1` (= J_CTRL) | `J1` | 2×13 female socket, board-to-board stacking on B.Cu; pin contract in §3.1 |
+| Test points | `TP1..TP4` | `TP1..TP4` | `+5V_LED`, `GND`, `LED_DATA_5V`, `LED_DOUT_END` (manually placed) |
+| Mounting holes | `MH1..MH4` | `MH1..MH4` | M3, four corners (manually placed) |
+| Fiducials | `FID1..FID3` | `FID1..FID3` | Manually placed |
 
-### 4.2 Key decisions
+**C91 entry cap (470 µF) dropped 2026-06-08.** Row bulks provide enough capacitance — no more THT parts on the matrix board.
 
-- **A3144 over Hall ICs in SOT-23**: cheaper, hand-solderable, known to
-  work in similar projects. Open-collector outputs; pullups live on the
-  controller, not on this board.
+### 4.2 Board dimensions
+
+`SQUARE_SIZE = 32 mm` (matches Paolo's folding chess board model — the
+inner-frame cavity has 32 mm wood squares). `BOARD_MARGIN = 18 mm` from
+the outermost chess-square corner to the PCB edge, intentionally 2 mm
+under the model's 20 mm inner-frame margin so the PCB slides freely
+inside the cavity with ~2 mm wiggle per side.
+
+| Variant | Chess area | + 2× 18 mm margin | **Total PCB outline** | JLC tier |
+|---|---|---|---|---|
+| 3×3 test | 96 mm | + 36 mm | **132 × 132 mm** | ≤150×150 (~$10) |
+| 8×8 full | 256 mm | + 36 mm | **292 × 292 mm** | ≤300×300 (~$30) |
+
+The 10 mm outer fold/decorative edge of the folding board model is NOT
+part of the PCB — the PCB sits inside the inner frame only.
+
+### 4.3 Key decisions
+
+- **DRV5032FC Hall switches** (TI, SOT-23, omnipolar, **open-drain**, 1.65–5.5 V):
+  selected over the originally-planned A3144 because (a) omnipolar means
+  the magnet orientation in chess pieces doesn't matter — either pole
+  triggers the sensor; (b) SOT-23 is small and JLCPCBA-assembleable
+  whereas A3144 in TO-92 is through-hole; (c) the pinout
+  (1=VDD, 2=GND, 3=OUT) is identical to A3144, so the rest of the
+  matrix routing is unchanged. The open-drain output mates correctly
+  with the controller's R1..R8 pull-ups to +3V3 — sensor's 1 mA sink
+  rating handles 3.3 V / 10 kΩ = 330 µA load.
 - **WS2812B 5050 in row-major chain**: standard part, well-supported
   firmware libraries. Spec the exact variant (`WS2812B-2020` etc.)
   in the BOM — color order varies between sub-types (most are GRB).
@@ -218,13 +255,30 @@ Reset is via the DevKitC's onboard EN button — no panel reset.
 - **Mechanical mounting**: 4× M3 holes for chassis attach; 3× fiducials
   for assembly machine alignment if going JLCPCBA.
 
-### 4.3 Maintenance approach
+### 4.4 Layout conventions (PCB)
 
-The matrix board's schematic is currently **script-generated** (see
-`hardware-board/scripts/sch/`). Hand-drawing 236 components is
-impractical and the scripts are ERC-clean. **Keep using the scripts
-for this board.** The `hardware-board/SCHEMATIC_GUIDE.md` documents
-every component for reference or as a hand-draw fallback.
+Set by `scripts/01_chess_grid.py`:
+
+- **Hall sensors** (DRV5032FC SOT-23): at chess square centers (file × rank × 32 mm)
+- **LEDs** (WS2812B): at the corners of the chess squares (LED_COLS × LED_ROWS grid)
+- **LED decoupling caps** (100 nF 0805): 6 mm to the RIGHT of each LED's center (no overlap with the 5×5 mm WS2812B body)
+- **Row bulks** (47 µF 1206): in the **LEFT margin**, 8 mm left of the chess area, Y-aligned with each LED row
+- **J1 (J_CTRL)**: on **B.Cu** (back face), center of the bottom edge, rotated 90° (~33 mm wide × 5 mm tall), anchor shifted left by 15.24 mm so the BODY's geometric center lands at the board's X centerline
+
+### 4.5 Maintenance approach
+
+The matrix board's schematic is **script-generated** for halls + LEDs
++ LED decoupling caps only (see `hardware-board/scripts/sch/02_halls.py`
+and `03_leds.py`). The `99_assemble.py` is a **merger** that preserves
+manual additions (J1 connector, MH, FID, TP, PWR_FLAGs, row bulks) by
+UUID prefix — so running scripts after editing in KiCad GUI is safe.
+The PCB layout (`scripts/01_chess_grid.py`) positions halls, LEDs,
+LED decoupling caps, row bulks, and J1; everything else stays where
+the user dragged it.
+
+The 3×3 test board (`hardware-board-3x3/`) is a parameterised clone
+of the 8×8 with `MATRIX_COLS = MATRIX_ROWS = 3`. Use it as the
+first-fab validation board before committing to the 8×8.
 
 ---
 
@@ -243,13 +297,13 @@ every component for reference or as a hand-draw fallback.
 | Column driver IC | `U6` | **TBD62783A** 8-channel high-side P-MOSFET array, DIP-18 or SOIC-18W |
 | Column driver bypass | `C11` | 100 nF |
 | **Power module** | **M1** | **Seeed Lipo Rider Plus (Charger/Booster) — product 106990290** ($4 on DigiKey/Mouser). USB-C input, charges 1S LiPo, outputs 5V/2.4A and 3.3V/250mA simultaneously. Mounted as a daughterboard via 1×8 pin header on the controller PCB. Symbol: stock `Connector_Generic:Conn_01x08` with manually-labeled pin nets per the silkscreen (1=3V3, 2=EN, 3=GND, 4=5V, 5=GND, 6=BAT, 7=GND, 8=USB). Footprint: `LipoRiderPlus:MODULE_106990290` (SnapEDA model installed locally at `hardware-controller/lib/LipoRiderPlus.pretty/`). The SnapEDA symbol file is intentionally NOT installed because its pin-number-to-name mapping is reversed from the silkscreen. LiPo plugs into M1's onboard JST 2.0; USB-C charges via M1's USB-C jack. |
-| ESP32 power path | `D2` | **Schottky diode (SS14 or BAT60A)** between `+5V_LED` and DevKit pin 19 — lets the battery power the DevKit's onboard AMS1117 → ESP32 internal 3V3. Anode on `+5V_LED`, cathode on DevKit pin 19 (forward direction). Protects against backfeed when both USB-C and DevKit USB are plugged in simultaneously. |
+| ESP32 power path | `D2` | **Schottky diode (SS14)** in `D_SMA` between `+5V_LED` and DevKit pin 19 — lets the battery power the DevKit's onboard AMS1117 → ESP32 internal 3V3. Pad 2 (anode) on `+5V_LED`, pad 1 (cathode, stripe) on DevKit pin 19 (forward direction). Protects against backfeed when both USB-C and DevKit USB are plugged in simultaneously. |
 | Battery monitor | `R14` (220 k), `R15` (100 k), `C12` (100 nF) | Voltage divider on M1 pin 6 (`BAT` raw battery pad). Junction at ~0.94 V (empty) to 1.31 V (full) → `VBAT_MON` → ESP32 GPIO34 (ADC1_CH6). |
 | +5V_LED bulk caps | `C1, C2` | 10 µF each — at M1's 5V output entering our `+5V_LED` rail |
 | Panel connector | `J3` (= J_PANEL) | 1×10 JST XH |
 | Panel button pullups | `R36, R37` | 10 k for BTN_POWER, BTN_MODE (input-only GPIOs) |
-| Test points | `TP1..TPn` | See `hardware-controller/SCHEMATIC_GUIDE.md` §H |
-| Mounting + fiducials | `MH1..MH4`, `FID1..FID3` | |
+| Test points | _(none placed)_ | Probe the controller's component pads or pin headers directly for bringup. M1 itself exposes 3V3/5V/GND/BAT/USB/EN on its silkscreen-labeled pads. |
+| Fiducials | `FID1..FID3` | For JLCPCBA. **No mounting holes** — controller is held by J_MAIN/J_CTRL mating + matrix's enclosure mount; see §3.1 and §10.3. |
 
 **Parts dropped** from earlier discrete power designs (BQ24074, TPS63060,
 F1/D1/Q1, USB-C connector, LiPo connector, all their passives) AND from
@@ -478,7 +532,7 @@ truth for pin assignments. Highlights:
 | SSD1306 0.96" OLED module | Panel display | $2.00 |
 | Protected LiPo 1500 mAh | Battery | $6.00 |
 | ESP32-DevKitC v4 | Main compute | $8.00 |
-| A3144 Hall × 64 | Matrix sensing | $0.20 each, $13 total |
+| DRV5032FC Hall × 64 (SOT-23, omnipolar) | Matrix sensing | $0.50 each, ~$32 total |
 | WS2812B × 81 | Matrix display | $0.05 each, $4 total |
 | Female headers (controller sockets + module sockets) | Module + DevKit mounting | ~$3 total |
 | **USB-C panel-mount extension cable** | Routes M1's onboard USB-C jack to the enclosure wall — plug into M1, screw the panel-mount end into the enclosure | $3–8 (AliExpress/Amazon) |
@@ -500,7 +554,7 @@ fab cost.
 
 | Connector | Function | Pick |
 |---|---|---|
-| J1 (controller J_MAIN) | Board-to-board to matrix (mating face up) | 2×13 **male pin header**, vertical (`PinHeader_2x13_P2.54mm_Vertical`) |
+| J1 (controller J_MAIN) | Board-to-board to matrix (placed on controller B.Cu; mating face points up because the controller mounts inverted) | 2×13 **male pin header**, vertical (`PinHeader_2x13_P2.54mm_Vertical`) |
 | J1 (matrix J_CTRL) | Board-to-board to controller (back side of matrix, mating face down) | 2×13 **female socket**, vertical (`PinSocket_2x13_P2.54mm_Vertical`) |
 | J3 (controller J_PANEL) | 10-wire harness to panel components | **JST XH 10-pin** receptacle |
 | M1 (Lipo Rider Plus module header on controller) | Mounts the Seeed Lipo Rider Plus | 1×8 female header, 2.54 mm pitch (matches module's edge pads) |
@@ -537,11 +591,12 @@ via the panel-mount extension cable.
 - The matrix PCB is the chessboard top surface. The enclosure has a
   frame around the matrix PCB edges; the matrix PCB itself is exposed
   on the top face for the chess pieces to sit on.
-- The controller PCB mounts directly underneath the matrix, offset
-  toward one edge (the same edge as the side panel). Held by 4× M3
-  brass standoffs (~11 mm tall) between the matrix's back and the
-  controller, plus the J_MAIN/J_CTRL stacking connector providing both
-  electrical connection and additional mechanical support.
+- The controller PCB mounts **inverted** directly underneath the matrix
+  (components facing the enclosure floor; bare B.Cu facing up toward
+  the matrix's B.Cu), offset toward one edge (the same edge as the
+  side panel). It is held in place **only** by the J_MAIN/J_CTRL
+  stacking connector — no standoffs, no mounting holes. The matrix's
+  enclosure-frame mount carries the assembled weight.
 - The LiPo battery sits **alongside the controller** in the empty
   space between the matrix PCB's back and the enclosure floor. Reserve
   ~50 × 50 mm × 8 mm floor area, attached via double-sided tape or a
@@ -568,23 +623,31 @@ via the panel-mount extension cable.
 - **3 button holes**: 12 mm clearance each (for the panel-mount
   pushbuttons' threaded shafts), evenly spaced on the side panel
   alongside the OLED.
-- **Matrix PCB**: 4 M3 mounting holes at its corners attach to
+- **Matrix PCB**: planned 4 M3 mounting holes at its corners attach to
   enclosure standoffs holding it flush with the enclosure top frame.
-- **Controller PCB**: 4 M3 mounting holes at its corners attach to
-  M3 brass standoffs reaching up to the matrix PCB's back.
+  _(Not yet present on the 3×3 prototype PCB; required on the full 8×8.)_
+- **Controller PCB**: **no mounting holes by design**. It hangs from
+  J_MAIN/J_CTRL onto the matrix's B.Cu side. The matrix is what's
+  bolted to the enclosure; the controller comes along for the ride.
 
 **Vertical stack from bottom to top of enclosure**:
 
 ```
 Enclosure floor
     ↑ (any vertical space for cable routing)
-LiPo battery (8 mm thick, alongside controller)        Controller PCB
-                                                            ↑ (~11 mm standoffs)
+LiPo battery (8 mm thick, alongside controller)
+                                                       Controller PCB (inverted)
+                                                       components face DOWN
+                                                       bare B.Cu face UP
+                                                            ↑
                                                        J_MAIN ↔ J_CTRL mating
+                                                       (only point of contact)
                                                             ↑
                                                        Matrix PCB (chessboard)
+                                                       components face UP
                                                             ↑
                                                        Enclosure top frame
+                                                       (matrix bolts here)
 ```
 
 ---
@@ -594,12 +657,15 @@ LiPo battery (8 mm thick, alongside controller)        Controller PCB
 These are things we know about but haven't fully resolved. None block
 fab, but they need attention during bring-up:
 
-1. **A3144 Hall settling delay**: After a column is energized, the
-   sensor output takes ~5 µs to stabilize. Firmware must wait between
-   "set column HIGH" and "read row" — ~10 µs is safe.
-2. **A3144 unidirectional sensitivity**: Senses only one magnet
-   polarity. Spec the magnet orientation in piece assembly. Test a
-   small 4×4 board before committing the full 8×8.
+1. **DRV5032FC Hall settling delay**: After a column is energized, the
+   sensor output needs a few µs to stabilize. Firmware must wait between
+   "set column HIGH" and "read row" — ~10 µs is safe (DRV5032FC's
+   typical output response time is ≤ 1 µs at 5 V; 10 µs gives slack
+   for column-rail charging through the TBD62783A).
+2. ~~A3144 unidirectional sensitivity~~ — **no longer an issue.**
+   DRV5032FC is omnipolar, so chess pieces can carry either magnet
+   pole and they trigger the same way. No need to spec piece magnet
+   orientation.
 3. **WS2812B variant**: BOM must say `WS2812B-2020` (or whichever
    exact part). Color order varies (most are GRB). Firmware must
    match.
@@ -680,9 +746,12 @@ fab, but they need attention during bring-up:
   us from needing DevKitC USB access in the final enclosure.
 - **EMI testing**: scope WiFi RSSI vs LED activity. May need ferrite
   on `+5V_LED` cable.
-- **Magnet selection**: pick a magnet strength that triggers A3144
-  reliably across the full 8 mm board-to-piece distance. Test with the
-  4×4 prototype before committing the full 8×8.
+- **Magnet selection**: pick a magnet strength that triggers DRV5032FC
+  reliably across the full 8 mm board-to-piece distance. DRV5032FC
+  typ. BOP ≈ 4.9 mT — neodymium discs in 3–6 mm dia × 1–2 mm thick
+  range should comfortably clear that. Omnipolar means either pole
+  works, so press-fit doesn't need orientation control. Test with the
+  3×3 (or a small bench rig) before committing the full 8×8.
 - **Chess piece assembly**: how do magnets attach to standard pieces?
   Drill, press-fit, glue? Affects the magnet form factor we should
   spec.
@@ -718,3 +787,11 @@ fab, but they need attention during bring-up:
 | 2026-06-05 (post-cleanup) | Added analog battery monitor: R14 (220 k) + R15 (100 k) + C12 (100 nF) voltage divider on M1's pin 6 (raw `BAT` pad) → `VBAT_MON` → ESP32 GPIO34 (ADC1_CH6). Firmware reads battery voltage with `esp_adc_cal_*` and shows percentage on the OLED. Wired to M1 pin 6 instead of DevKit pin 19 because DevKit pin 19 is downstream of M1's boost (always ~5 V regardless of battery state) — only the raw battery pin gives real SOC. Cleaned up unused PowerBoost 1000C lib files from `hardware-controller/lib/` and removed the corresponding `sym-lib-table`/`fp-lib-table` entries. |
 | 2026-06-05 (lib install) | Installed SnapEDA's Lipo Rider Plus **footprint only** at `hardware-controller/lib/LipoRiderPlus.pretty/MODULE_106990290.kicad_mod`. Created `fp-lib-table` registering the new library. **Intentionally did NOT install SnapEDA's symbol** (`106990290.kicad_sym`) — its pin-number-to-name mapping is reversed from the module's silkscreen, which would cause the wrong nets to be routed to the wrong physical pads. Schematic uses generic `Connector_Generic:Conn_01x08` with manually-labeled pin nets per the silkscreen instead. |
 | 2026-06-05 (assembly layout) | **Switched J_MAIN ↔ J_CTRL from shrouded IDC + ribbon to board-to-board stacking** based on the user's enclosure mockup. Controller PCB now stacks directly underneath the matrix PCB via mating 2×13 pin header (controller J_MAIN, male, vertical) + 2×13 socket (matrix J_CTRL, female, vertical), with 4× M3 corner standoffs (~11 mm tall) for mechanical support. No ribbon cable. Battery sits alongside the controller PCB in the space between the matrix's back and the enclosure floor. Panel components (OLED + 3 buttons + USB-C panel-mount) mount on one side wall of the enclosure. Updated DESIGN_NOTES §2, §3.1, §10.1, §10.2, §10.3. |
+| 2026-06-07 (Hall sensor swap) | **Replaced A3144 (TO-92, unipolar, open-collector) with DRV5032FC (SOT-23, omnipolar, push-pull).** Identical pinout (1=VDD, 2=GND, 3=OUT), so matrix routing is unchanged. Drivers: (a) omnipolar removes the magnet-orientation constraint in chess pieces; (b) SOT-23 is JLCPCBA-assembleable, A3144 TO-92 isn't. Controller-side row pullups (R1–R8) are now electrically redundant but kept as-is. The 3×3 prototype PCB is built around this part. Updated §4.1, §4.2, §9, §11, §13. |
+| 2026-06-07 (inverted controller) | **Controller PCB mounts inverted under the matrix.** J_MAIN is on the controller's **B.Cu** face, not F.Cu — components (M1, U2, U3, U6, J3, etc.) face the enclosure floor, the bare B.Cu face mates with the matrix's B.Cu. No mounting holes on the controller and no corner standoffs: the J_MAIN/J_CTRL connector pair is the only mechanical join, with the matrix's enclosure-frame mount carrying the assembled weight. Test points on the controller schematic were also dropped (probe component pads/pin headers directly during bringup). Updated §2, §3.1, §5.1, §10.1, §10.3. |
+| 2026-06-08 (matrix board dimensions) | **Matrix board outline sized to fit Paolo's folding chess board model.** `SQUARE_SIZE = 32 mm` (matches the model's chess squares); `BOARD_MARGIN = 18 mm` from outermost chess square corner to PCB edge. Total PCB outlines: **3×3 = 132×132 mm**, **8×8 = 292×292 mm**. The physical model has a 20 mm inner-frame margin (the notation A–H / 1–8 strip), so 18 mm leaves ~2 mm wiggle per side for the PCB to slide inside the cavity. Both PCBs sit INSIDE the folding board's inner frame (not replacing the wood); the model's 10 mm outer fold/decorative edge is not part of the PCB. 8×8 stays comfortably in JLC's ≤300 mm pricing tier. |
+| 2026-06-08 (DRV5032FC swap finalized) | **Swapped A3144 (TO-92, hand-solder) → DRV5032FC (SOT-23, JLC Basic Part C527532) in both matrix boards' schematic generators.** Open-drain output (compatible with controller R1..R8 pull-ups to +3V3 — sensor's 1 mA sink rating handles 3.3 V / 10 kΩ = 330 µA), omnipolar (no magnet orientation worries), VCC 1.65–5.5 V (works at 5 V or 3.3 V), B_OP threshold ±4.8 mT (proven safe for 32 mm chess pitch with N35 magnets). `openchess:A3144` symbol kept by name for backwards compatibility (pin 1=VCC, 2=GND, 3=OUT is identical between A3144 and DRV5032FC). 64× hall instances in 8×8 and 9× in 3×3 now use the SMD footprint — both boards fully JLC-PCBA-assemblable. Controller schematic unchanged (R1..R8 pull-ups still match the new sensor's open-drain output). |
+| 2026-06-08 (C91 entry cap dropped) | **Removed C91 (470 µF THT polarized electrolytic).** Distributed row bulks (9× 47 µF in 8×8, 4× 47 µF in 3×3) provide 423 µF and 188 µF respectively — comfortably enough for the +5V_LED rail. C91 was the only through-hole part on the matrix board; removing it makes both boards fully JLC-SMT-assemblable. |
+| 2026-06-08 (3×3 test board created) | **New `hardware-board-3x3/` directory** with full schematic + PCB layout pipeline, cloned from `hardware-board/` and parameterised for `MATRIX_COLS = MATRIX_ROWS = 3`. Identical design to the 8×8 (DRV5032FC, WS2812B, same connectors/bulks/decoupling); only the matrix dimensions are scaled. Purpose: validate the entire design — power flow, level shifter, column driver, hall scan, LED chain, J_CTRL/J_MAIN mating — on a cheap 132×132 mm board (~$15 JLC fab) before paying for the 292×292 mm 8×8 fab + PCBA. Supersedes the previously-planned 4×4 prototype. |
+| 2026-06-08 (script architecture: merger not replacer) | **`scripts/sch/99_assemble.py` rewritten as a MERGER, not a REPLACER.** It now reads the existing `.kicad_sch`, removes only top-level items whose UUID prefix matches a script-owned prefix (`ba11` halls, `1ed0` LEDs, `1ed5` LED decoupling caps), then inserts fresh chunk content. Everything else — user-added components (J1 connector, MH, FID, TP, row bulks, PWR_FLAGs), manual wires/labels, decorative items — is preserved untouched. Previously the assembler overwrote the whole schematic on every run and wiped manual edits. Side effect: the chunk set was trimmed to only `02_halls.py` + `03_leds.py`; `01_skeleton.py` and `04_bulks.py` were archived under `scripts/sch/_archived/` because the user prefers to add the skeleton box and row bulks by hand in KiCad. |
+| 2026-06-08 (matrix PCB layout: bulks left, J1 bottom) | **Updated `scripts/01_chess_grid.py` placement rules** to match user's chosen topology: row bulk caps (47 µF) live in the **LEFT margin**, Y-aligned with each LED row (so each bulk physically sits next to the row it decouples) — 8 mm left of `CHESS_X_LEFT`, all at the same X. The **J_CTRL connector (J1)** is placed at the **center of the bottom edge on B.Cu**, rotated 90° (long axis along X, ~33 mm wide × 5 mm tall), with the anchor shifted left by half the body length (15.24 mm) so the geometric center of the connector body — not pin 1 — sits at the board's X centerline. Both placements are mirrored between the 3×3 and 8×8 scripts so the design stays test→production identical. |

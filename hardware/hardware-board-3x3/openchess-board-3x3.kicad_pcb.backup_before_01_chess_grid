@@ -130,7 +130,7 @@
 	(footprint "Capacitor_SMD:C_1206_3216Metric"
 		(layer "F.Cu")
 		(uuid "0074b78d-e970-42c8-8577-2972ae91d58c")
-		(at 60 68 0)
+		(at 60 68)
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C1"
@@ -288,7 +288,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "027310a6-9d69-4cde-a23e-d50db15979bd")
-		(at 106 100 0)
+		(at 106 100)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C15"
@@ -446,7 +446,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "029bad75-a744-44e8-874c-719d48c6f4f4")
-		(at 84 116 0)
+		(at 84 116)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U2"
@@ -828,7 +828,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "05ad37d1-868c-4f93-918d-783cd7822a05")
-		(at 84 84 0)
+		(at 84 84)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U3"
@@ -1210,7 +1210,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "0f0b607f-2ed4-4373-9635-05d242aa9812")
-		(at 106 132 0)
+		(at 106 132)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C19"
@@ -1368,7 +1368,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "146c69de-a8e0-475e-b78b-18b76b51a2b8")
-		(at 74 68 0)
+		(at 74 68)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C10"
@@ -1526,7 +1526,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "16871877-2d93-4ed7-911a-0669cae4266c")
-		(at 132 164 0)
+		(at 132 164)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D15"
@@ -1839,7 +1839,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "16f98eca-47c3-4f14-9f98-8ee3da5c2f4a")
-		(at 100 100 0)
+		(at 100 100)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D6"
@@ -2152,7 +2152,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "29d17c64-4280-4f30-9593-34ee373434aa")
-		(at 138 164 0)
+		(at 138 164)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C24"
@@ -2310,7 +2310,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "2a829f44-7eb1-4467-8952-0ded167bf16d")
-		(at 132 68 0)
+		(at 132 68)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D3"
@@ -2623,7 +2623,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "35b695f2-d1fe-4d9a-b081-282bdc1d3218")
-		(at 74 132 0)
+		(at 74 132)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C18"
@@ -2781,7 +2781,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "37b99f41-57b1-4441-b7cc-aa8aac87c242")
-		(at 170 100 0)
+		(at 170 100)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C17"
@@ -2939,7 +2939,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "3a9b1afb-5167-45d3-98fc-08ff5e34a4e7")
-		(at 116 116 0)
+		(at 116 116)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U5"
@@ -3321,7 +3321,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "45003ec7-0036-4351-af77-196770e215f0")
-		(at 138 68 0)
+		(at 138 68)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C12"
@@ -3479,7 +3479,7 @@
 	(footprint "Capacitor_SMD:C_1206_3216Metric"
 		(layer "F.Cu")
 		(uuid "478afe34-ff27-4a1c-b9c7-5049b2d510f0")
-		(at 60 132 0)
+		(at 60 132)
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C3"
@@ -3637,7 +3637,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "54955322-e1d0-414c-b26e-3810bb3a9f99")
-		(at 74 164 0)
+		(at 74 164)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C22"
@@ -3795,7 +3795,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "5e3c9108-f50c-4dfb-ba48-69d13e551ebf")
-		(at 116 84 0)
+		(at 116 84)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U6"
@@ -4177,7 +4177,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "63250b4c-3cda-4000-8752-c0c7076c0e57")
-		(at 68 100 0)
+		(at 68 100)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D5"
@@ -4490,7 +4490,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "68ee66dc-2cbc-4b28-aadf-1cd51fee2c66")
-		(at 148 116 0)
+		(at 148 116)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U8"
@@ -4872,7 +4872,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "6c3fa1bc-0d43-4c92-a59c-aec1cc4bd9bc")
-		(at 170 164 0)
+		(at 170 164)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C25"
@@ -5030,7 +5030,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "718c1fca-fbed-49e3-9486-4e988969c57f")
-		(at 138 100 0)
+		(at 138 100)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C16"
@@ -5188,7 +5188,7 @@
 	(footprint "Capacitor_SMD:C_1206_3216Metric"
 		(layer "F.Cu")
 		(uuid "828e3968-b03f-4446-864d-975d26113cb0")
-		(at 60 164 0)
+		(at 60 164)
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C4"
@@ -5346,7 +5346,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "8498ff1d-e62a-4c56-97ff-b46705dd5fed")
-		(at 84 148 0)
+		(at 84 148)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U1"
@@ -5728,7 +5728,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "8ba60806-f819-4157-b04b-71dc365cbfad")
-		(at 132 132 0)
+		(at 132 132)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D11"
@@ -6041,7 +6041,7 @@
 	(footprint "Capacitor_SMD:C_1206_3216Metric"
 		(layer "F.Cu")
 		(uuid "8bf4f5e8-fa52-4226-8a70-f3b40c0c4eab")
-		(at 60 100 0)
+		(at 60 100)
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C2"
@@ -6199,7 +6199,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "913e5ade-f909-4ad6-8f48-6b3aa6108e4d")
-		(at 106 68 0)
+		(at 106 68)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C11"
@@ -6357,7 +6357,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "9e92a57d-880f-4bf3-b241-8dae3f7c74dc")
-		(at 116 148 0)
+		(at 116 148)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U4"
@@ -6739,7 +6739,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "b5fea62f-cc18-47ae-b6d6-52d1a1e8db6d")
-		(at 164 68 0)
+		(at 164 68)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D4"
@@ -7052,7 +7052,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "b6c66155-2026-46cc-ac09-701105e9ad0d")
-		(at 164 132 0)
+		(at 164 132)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D12"
@@ -7365,7 +7365,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "bdab09b7-536c-4d26-aac2-ad83569a53bc")
-		(at 170 68 0)
+		(at 170 68)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C13"
@@ -7523,7 +7523,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "bef8ef5e-ddc5-4ab0-9e88-b7c28d797043")
-		(at 100 164 0)
+		(at 100 164)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D14"
@@ -7836,7 +7836,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "bf9747fc-c7f1-45f1-bad9-bd4e3b53a591")
-		(at 138 132 0)
+		(at 138 132)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C20"
@@ -7994,7 +7994,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "c12ae045-e67c-4c92-a286-088810101d65")
-		(at 74 100 0)
+		(at 74 100)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C14"
@@ -8152,7 +8152,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "c9ef9e25-c3b3-4d7c-8654-575a4bead95f")
-		(at 100 132 0)
+		(at 100 132)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D10"
@@ -8465,7 +8465,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "d35fc7d4-35ea-444f-803f-89e3be988fb1")
-		(at 164 164 0)
+		(at 164 164)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D16"
@@ -8778,7 +8778,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "d6e8d132-5e46-4cc9-b840-8ca1a7edadfa")
-		(at 68 132 0)
+		(at 68 132)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D9"
@@ -9091,7 +9091,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "d7ee8c63-2b7e-4565-95d7-8992f49be266")
-		(at 68 68 0)
+		(at 68 68)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D1"
@@ -9404,7 +9404,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "dcae8f34-c9ab-4f36-9e6b-41ab599e8db7")
-		(at 100 68 0)
+		(at 100 68)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D2"
@@ -9717,7 +9717,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "e465b612-6d50-416c-872c-f4ec4e3b7d87")
-		(at 68 164 0)
+		(at 68 164)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D13"
@@ -10030,7 +10030,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "e6bec44d-d42b-4dc3-bab7-7182b41551e3")
-		(at 148 148 0)
+		(at 148 148)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U7"
@@ -10412,7 +10412,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "e8e0395d-91ae-4434-bd1f-a5704250da18")
-		(at 132 100 0)
+		(at 132 100)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D7"
@@ -10725,7 +10725,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "e9d83d57-ecda-43e9-9e87-cfb8176f80db")
-		(at 106 164 0)
+		(at 106 164)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C23"
@@ -10883,7 +10883,7 @@
 	(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
 		(layer "F.Cu")
 		(uuid "eb03f18d-a34f-457a-adca-e07fc285891d")
-		(at 164 100 0)
+		(at 164 100)
 		(descr "5.0mm x 5.0mm Addressable RGB LED NeoPixel, https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
 		(tags "LED RGB NeoPixel PLCC-4 5050")
 		(property "Reference" "D8"
@@ -11196,7 +11196,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "f3d32def-50cd-4202-be29-09d6c074fdbe")
-		(at 148 84 0)
+		(at 148 84)
 		(descr "SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236)")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "U9"
@@ -11578,7 +11578,7 @@
 	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "f86c0875-5018-4f25-8b81-45d42b6a4820")
-		(at 170 132 0)
+		(at 170 132)
 		(descr "Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing)")
 		(tags "capacitor handsolder")
 		(property "Reference" "C21"
@@ -11736,7 +11736,7 @@
 	(footprint "Connector_PinSocket_2.54mm:PinSocket_2x13_P2.54mm_Vertical"
 		(layer "B.Cu")
 		(uuid "cb0c79fb-27ae-4910-af6a-cbfd888c6919")
-		(at 100.8 173 90)
+		(at 116 173 90)
 		(descr "Through hole straight socket strip, 2x13, 2.54mm pitch, double rows (from Kicad 4.0.7), script generated")
 		(tags "Through hole socket strip THT 2x13 2.54mm double row")
 		(property "Reference" "J1"
@@ -12289,253 +12289,349 @@
 			)
 		)
 	)
-																																	(embedded_fonts no)
+	(gr_circle
+		(center 56 56)
+		(end 57.6 56)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "40000000-5551-4904-8bd9-1c7fa7165103")
+	)
+	(gr_circle
+		(center 56 176)
+		(end 57.6 176)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "40000000-f25b-493e-8dd3-25d6023a82d6")
+	)
+	(gr_line
+		(start 68 68)
+		(end 68 164)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "30000000-0490-4518-8ea9-ac309deee118")
+	)
+	(gr_line
+		(start 68 68)
+		(end 164 68)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "30000000-977e-4462-a183-66892bd459d0")
+	)
+	(gr_line
+		(start 68 100)
+		(end 164 100)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "30000000-afd2-4219-a06d-b4cb7f254e1b")
+	)
+	(gr_line
+		(start 68 132)
+		(end 164 132)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "30000000-5bc6-43fe-9199-beedce90641f")
+	)
+	(gr_line
+		(start 68 164)
+		(end 164 164)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "30000000-055b-4093-bcb9-bfa98c01d51a")
+	)
+	(gr_line
+		(start 100 68)
+		(end 100 164)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "30000000-a6ee-4af5-a877-e159892be02f")
+	)
+	(gr_line
+		(start 132 68)
+		(end 132 164)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "30000000-a8a2-443e-8226-f8927dab62e7")
+	)
+	(gr_line
+		(start 164 68)
+		(end 164 164)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "30000000-0196-4216-bf5b-588519bfc593")
+	)
+	(gr_circle
+		(center 176 56)
+		(end 177.6 56)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "40000000-12c8-435e-8282-db4383c6464a")
+	)
+	(gr_circle
+		(center 176 176)
+		(end 177.6 176)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "40000000-d30b-456c-a330-3040d3a12704")
+	)
 	(gr_rect
-		(start 50.0 50.0)
-		(end 182.0 182.0)
-		(stroke (width 0.15) (type solid))
+		(start 50 50)
+		(end 182 182)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
 		(fill no)
 		(layer "Edge.Cuts")
-		(uuid "10000000-dbd1-4766-9778-0cebaeef5ca6")
+		(uuid "10000000-09f2-403c-9724-26fc97557be7")
 	)
-	(gr_text "A1"
-		(at 84.0 153.0 0)
+	(gr_text "Paolo Nessim  Rev 0.1"
+		(at 116 60.2 0)
 		(layer "F.SilkS")
-		(uuid "20000000-fde9-4e00-ba81-d6e1cc5e8f92")
+		(uuid "20000000-e35c-4683-bf23-63cc053f6678")
 		(effects
-			(font (size 1.5 1.5) (thickness 0.25))
-		)
-	)
-	(gr_text "A2"
-		(at 84.0 121.0 0)
-		(layer "F.SilkS")
-		(uuid "20000000-2dfc-4556-ac0a-9633f3cbb14e")
-		(effects
-			(font (size 1.5 1.5) (thickness 0.25))
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
 		)
 	)
 	(gr_text "A3"
-		(at 84.0 89.0 0)
+		(at 84 89 0)
 		(layer "F.SilkS")
-		(uuid "20000000-0db3-454e-a099-51a07f242a12")
+		(uuid "20000000-8d3f-4aef-b0ac-c61d46dded87")
 		(effects
-			(font (size 1.5 1.5) (thickness 0.25))
+			(font
+				(size 1.5 1.5)
+				(thickness 0.25)
+			)
 		)
 	)
-	(gr_text "B1"
-		(at 116.0 153.0 0)
+	(gr_text "A2"
+		(at 84 121 0)
 		(layer "F.SilkS")
-		(uuid "20000000-1825-445c-9ed3-6f74b909e205")
+		(uuid "20000000-8907-44ec-b3e8-811ed9124c46")
 		(effects
-			(font (size 1.5 1.5) (thickness 0.25))
+			(font
+				(size 1.5 1.5)
+				(thickness 0.25)
+			)
 		)
 	)
-	(gr_text "B2"
-		(at 116.0 121.0 0)
+	(gr_text "A1"
+		(at 84 153 0)
 		(layer "F.SilkS")
-		(uuid "20000000-ec54-47e7-9d09-9b83866699e5")
+		(uuid "20000000-b073-465f-9949-7e2ecb090d3b")
 		(effects
-			(font (size 1.5 1.5) (thickness 0.25))
+			(font
+				(size 1.5 1.5)
+				(thickness 0.25)
+			)
 		)
 	)
 	(gr_text "B3"
-		(at 116.0 89.0 0)
+		(at 116 89 0)
 		(layer "F.SilkS")
-		(uuid "20000000-f542-4991-bbb1-bd4be31d71ca")
+		(uuid "20000000-a1b0-426d-bea4-baa90a935638")
 		(effects
-			(font (size 1.5 1.5) (thickness 0.25))
+			(font
+				(size 1.5 1.5)
+				(thickness 0.25)
+			)
 		)
 	)
-	(gr_text "C1"
-		(at 148.0 153.0 0)
+	(gr_text "B2"
+		(at 116 121 0)
 		(layer "F.SilkS")
-		(uuid "20000000-dd78-49ae-96f7-1a9e9c8cbc8e")
+		(uuid "20000000-f80d-4482-bd12-24137e1ec3b7")
 		(effects
-			(font (size 1.5 1.5) (thickness 0.25))
+			(font
+				(size 1.5 1.5)
+				(thickness 0.25)
+			)
 		)
 	)
-	(gr_text "C2"
-		(at 148.0 121.0 0)
+	(gr_text "B1"
+		(at 116 153 0)
 		(layer "F.SilkS")
-		(uuid "20000000-7e6e-49a8-8923-c1b90802284f")
+		(uuid "20000000-2006-42be-80f5-4fe344836a22")
 		(effects
-			(font (size 1.5 1.5) (thickness 0.25))
+			(font
+				(size 1.5 1.5)
+				(thickness 0.25)
+			)
 		)
 	)
 	(gr_text "C3"
-		(at 148.0 89.0 0)
+		(at 148 89 0)
 		(layer "F.SilkS")
-		(uuid "20000000-a7d9-439b-8380-02d410511b4c")
+		(uuid "20000000-ef99-4e1e-bacd-90e3995f0422")
 		(effects
-			(font (size 1.5 1.5) (thickness 0.25))
+			(font
+				(size 1.5 1.5)
+				(thickness 0.25)
+			)
 		)
 	)
-	(gr_line
-		(start 68.0 68.0)
-		(end 164.0 68.0)
-		(stroke (width 0.15) (type solid))
+	(gr_text "C2"
+		(at 148 121 0)
 		(layer "F.SilkS")
-		(uuid "30000000-c317-46af-bccd-967509c44e34")
-	)
-	(gr_line
-		(start 68.0 100.0)
-		(end 164.0 100.0)
-		(stroke (width 0.15) (type solid))
-		(layer "F.SilkS")
-		(uuid "30000000-06b0-476d-9fe8-418d0d8c88a7")
-	)
-	(gr_line
-		(start 68.0 132.0)
-		(end 164.0 132.0)
-		(stroke (width 0.15) (type solid))
-		(layer "F.SilkS")
-		(uuid "30000000-7085-457d-a5d5-84a0ac7ad5c6")
-	)
-	(gr_line
-		(start 68.0 164.0)
-		(end 164.0 164.0)
-		(stroke (width 0.15) (type solid))
-		(layer "F.SilkS")
-		(uuid "30000000-a1de-47f2-887a-c2209e0823a2")
-	)
-	(gr_line
-		(start 68.0 68.0)
-		(end 68.0 164.0)
-		(stroke (width 0.15) (type solid))
-		(layer "F.SilkS")
-		(uuid "30000000-220d-43d3-9960-740b56b85a31")
-	)
-	(gr_line
-		(start 100.0 68.0)
-		(end 100.0 164.0)
-		(stroke (width 0.15) (type solid))
-		(layer "F.SilkS")
-		(uuid "30000000-9a74-4725-9c3b-5fbff00655bf")
-	)
-	(gr_line
-		(start 132.0 68.0)
-		(end 132.0 164.0)
-		(stroke (width 0.15) (type solid))
-		(layer "F.SilkS")
-		(uuid "30000000-d1b4-4de0-825e-9bb8f3ec0938")
-	)
-	(gr_line
-		(start 164.0 68.0)
-		(end 164.0 164.0)
-		(stroke (width 0.15) (type solid))
-		(layer "F.SilkS")
-		(uuid "30000000-af00-4339-97f5-345a7f2395fa")
-	)
-	(gr_text "A"
-		(at 84.0 173.0 0)
-		(layer "F.SilkS")
-		(uuid "20000000-ec2a-4169-8337-4c3de3b2b4cd")
+		(uuid "20000000-0e04-4077-83f8-32a7977794d8")
 		(effects
-			(font (size 2.5 2.5) (thickness 0.3))
+			(font
+				(size 1.5 1.5)
+				(thickness 0.25)
+			)
 		)
 	)
-	(gr_text "B"
-		(at 116.0 173.0 0)
+	(gr_text "C1"
+		(at 148 153 0)
 		(layer "F.SilkS")
-		(uuid "20000000-a067-49e7-9fbe-b33cec9a87ca")
+		(uuid "20000000-11ac-4fd5-b01f-0e0de762844f")
 		(effects
-			(font (size 2.5 2.5) (thickness 0.3))
-		)
-	)
-	(gr_text "C"
-		(at 148.0 173.0 0)
-		(layer "F.SilkS")
-		(uuid "20000000-6dac-450f-b930-984b8f5d6d65")
-		(effects
-			(font (size 2.5 2.5) (thickness 0.3))
-		)
-	)
-	(gr_text "1"
-		(at 59.0 148.0 0)
-		(layer "F.SilkS")
-		(uuid "20000000-ba10-4890-b06d-d52af5245fed")
-		(effects
-			(font (size 2.5 2.5) (thickness 0.3))
-		)
-	)
-	(gr_text "2"
-		(at 59.0 116.0 0)
-		(layer "F.SilkS")
-		(uuid "20000000-0069-4db8-a56c-0f22b113da75")
-		(effects
-			(font (size 2.5 2.5) (thickness 0.3))
-		)
-	)
-	(gr_text "3"
-		(at 59.0 84.0 0)
-		(layer "F.SilkS")
-		(uuid "20000000-8e22-403a-9057-adcaafa8c521")
-		(effects
-			(font (size 2.5 2.5) (thickness 0.3))
+			(font
+				(size 1.5 1.5)
+				(thickness 0.25)
+			)
 		)
 	)
 	(gr_text "OpenChess — 3×3 Test Matrix"
-		(at 116.0 57.2 0)
+		(at 116 57.2 0)
 		(layer "F.SilkS")
-		(uuid "20000000-e330-4cb1-b52f-e04dde3a770a")
+		(uuid "20000000-4f9b-42b7-bfdc-aa75898247e0")
 		(effects
-			(font (size 2.0 2.0) (thickness 0.35))
+			(font
+				(size 2 2)
+				(thickness 0.35)
+			)
 		)
 	)
-	(gr_text "Paolo Nessim  Rev 0.1"
-		(at 116.0 60.2 0)
+	(gr_text "3"
+		(at 59 84 0)
 		(layer "F.SilkS")
-		(uuid "20000000-a670-412d-914b-521db5f59a5e")
+		(uuid "20000000-0b09-4df0-af71-c58a9b125e3f")
 		(effects
-			(font (size 1.0 1.0) (thickness 0.15))
+			(font
+				(size 2.5 2.5)
+				(thickness 0.3)
+			)
 		)
 	)
-	(gr_text "BLACK"
-		(at 171.2 84.0 90)
+	(gr_text "2"
+		(at 59 116 0)
 		(layer "F.SilkS")
-		(uuid "20000000-bb66-49dc-99a1-2ad93200d7f0")
+		(uuid "20000000-b894-4997-87ce-159b109863c6")
 		(effects
-			(font (size 3.0 3.0) (thickness 0.4))
+			(font
+				(size 2.5 2.5)
+				(thickness 0.3)
+			)
+		)
+	)
+	(gr_text "1"
+		(at 59 148 0)
+		(layer "F.SilkS")
+		(uuid "20000000-7bac-470f-8d2f-a7a9d7ab7363")
+		(effects
+			(font
+				(size 2.5 2.5)
+				(thickness 0.3)
+			)
+		)
+	)
+	(gr_text "A"
+		(at 84 173 0)
+		(layer "F.SilkS")
+		(uuid "20000000-88c5-4107-8556-bcd719e683e2")
+		(effects
+			(font
+				(size 2.5 2.5)
+				(thickness 0.3)
+			)
+		)
+	)
+	(gr_text "B"
+		(at 116 173 0)
+		(layer "F.SilkS")
+		(uuid "20000000-8e36-492b-872d-039a38d8a223")
+		(effects
+			(font
+				(size 2.5 2.5)
+				(thickness 0.3)
+			)
+		)
+	)
+	(gr_text "C"
+		(at 148 173 0)
+		(layer "F.SilkS")
+		(uuid "20000000-e61b-4685-9c18-6f283f36586b")
+		(effects
+			(font
+				(size 2.5 2.5)
+				(thickness 0.3)
+			)
 		)
 	)
 	(gr_text "WHITE"
-		(at 60.8 148.0 90)
+		(at 60.8 148 90)
 		(layer "F.SilkS")
-		(uuid "20000000-da7f-4fae-9d49-fe1dd55f31b6")
+		(uuid "20000000-8a43-46e9-9bc7-72eb2c4d915c")
 		(effects
-			(font (size 3.0 3.0) (thickness 0.4))
+			(font
+				(size 3 3)
+				(thickness 0.4)
+			)
 		)
 	)
-	(gr_circle
-		(center 56.0 56.0)
-		(end 57.6 56.0)
-		(stroke (width 0.15) (type solid))
-		(fill no)
+	(gr_text "BLACK"
+		(at 171.2 84 90)
 		(layer "F.SilkS")
-		(uuid "40000000-f1d9-4dc5-902c-4df1cc45ca9a")
+		(uuid "20000000-fc68-40cf-aaae-a17113851e9f")
+		(effects
+			(font
+				(size 3 3)
+				(thickness 0.4)
+			)
+		)
 	)
-	(gr_circle
-		(center 176.0 56.0)
-		(end 177.6 56.0)
-		(stroke (width 0.15) (type solid))
-		(fill no)
-		(layer "F.SilkS")
-		(uuid "40000000-b229-45a5-af9b-2e74efe5399f")
-	)
-	(gr_circle
-		(center 56.0 176.0)
-		(end 57.6 176.0)
-		(stroke (width 0.15) (type solid))
-		(fill no)
-		(layer "F.SilkS")
-		(uuid "40000000-b7bc-49e6-bb66-f97f85cfa382")
-	)
-	(gr_circle
-		(center 176.0 176.0)
-		(end 177.6 176.0)
-		(stroke (width 0.15) (type solid))
-		(fill no)
-		(layer "F.SilkS")
-		(uuid "40000000-16ce-4424-a7b8-7d9bbc0e021c")
-	)
+	(embedded_fonts no)
 )
