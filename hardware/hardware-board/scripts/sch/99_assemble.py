@@ -38,6 +38,7 @@ from _lib import BUILD_DIR, OUT_PATH, REPO_ROOT
 CHUNK_OWNED_PREFIXES = {
     "02_halls": ("ba11",),                  # hall sensors + their stubs/labels
     "03_leds":  ("1ed0", "1ed5"),           # WS2812 LEDs + 100 nF decoupling caps
+    "07_mech":  ("7e57",),                  # M3 mounting holes + fiducials
 }
 
 # Top-level S-expression keywords the merger inspects for UUID prefixes.

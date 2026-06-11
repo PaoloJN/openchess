@@ -432,3 +432,76 @@ def assemble() -> None:
     r = subprocess.run([sys.executable, str(ASSEMBLE_SCRIPT)])
     if r.returncode != 0:
         sys.exit(f"assemble failed with exit code {r.returncode}")
+
+
+def ensure_lib_symbols(lib_ids: list[str]) -> int:
+    """Idempotently splice missing symbol definitions into the schematic's
+    (lib_symbols ...) block.
+
+    The chunk system only knows how to add/remove top-level instances
+    (symbols, wires, labels…). But every instance has to reference a
+    symbol definition under (lib_symbols ...). The 01_skeleton step
+    (archived) used to seed that block; for chunks added afterwards we
+    splice missing definitions in via this helper.
+
+    Returns the number of symbols actually added (already-present ones
+    are skipped). Backs the schematic up before writing.
+    """
+    if not OUT_PATH.exists():
+        sys.exit(
+            f"ERROR: {OUT_PATH} doesn't exist. Create it in KiCad first "
+            "(File → New Schematic) and save."
+        )
+    text = OUT_PATH.read_text()
+
+    marker = "\n\t(lib_symbols"
+    i = text.find(marker)
+    if i == -1:
+        raise ValueError("schematic has no (lib_symbols ...) block")
+    open_idx = i + 1                                # skip the leading "\n"
+
+    # walk to matching close
+    depth = 0
+    in_str = False
+    escape = False
+    close_idx = -1
+    for j in range(open_idx, len(text)):
+        c = text[j]
+        if escape:
+            escape = False
+            continue
+        if c == "\\":
+            escape = True
+            continue
+        if c == '"':
+            in_str = not in_str
+            continue
+        if in_str:
+            continue
+        if c == "(":
+            depth += 1
+        elif c == ")":
+            depth -= 1
+            if depth == 0:
+                close_idx = j
+                break
+    if close_idx == -1:
+        raise ValueError("unbalanced parens in lib_symbols block")
+
+    block = text[open_idx : close_idx + 1]
+    missing = [lid for lid in lib_ids if f'(symbol "{lid}"' not in block]
+    if not missing:
+        return 0
+
+    additions = ""
+    for lid in missing:
+        frag = load_symbol_def(lid).rstrip("\n")
+        additions += "\n" + frag
+
+    new_text = text[:close_idx] + additions + "\n\t" + text[close_idx:]
+
+    backup = OUT_PATH.with_suffix(OUT_PATH.suffix + ".backup_before_ensure_lib_symbols")
+    shutil.copy2(OUT_PATH, backup)
+    OUT_PATH.write_text(new_text)
+    print(f"  ensured {len(missing)} new lib_symbol(s): {', '.join(missing)}")
+    return len(missing)

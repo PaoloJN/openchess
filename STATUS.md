@@ -27,7 +27,7 @@ Last updated: 2026-06-08
 | Subsystem | Schematic | PCB layout | Notes |
 |---|---|---|---|
 | `hardware-board-3x3` (3×3 test) | Script-generated halls + LEDs + caps; J1/MH/FID/TP manual | **132×132 mm**, layout script run | DRV5032FC SOT-23, fully JLC-assemblable. Built to validate before ordering 8×8. |
-| `hardware-board` (8×8 full matrix) | Script-generated halls + LEDs + caps; J1/MH/FID/TP manual | **292×292 mm**, layout script ready | DRV5032FC SOT-23, fully JLC-assemblable. Order AFTER 3×3 validates. |
+| `hardware-board` (8×8 full matrix) | Script-generated halls + LEDs + caps; J1/MH/FID/TP manual | **282×282 mm**, layout script ready | DRV5032FC SOT-23, fully JLC-assemblable. Order AFTER 3×3 validates. |
 | `hardware-controller` | Hand-drawn, complete | Hand-routed power; autoroute + GND pour done | DRC clean (only cosmetic silk warnings). PCBA BOM (`assembly/openchess-controller-jlc-*.csv`) ready for JLC. |
 | Panel components (no PCB) | N/A — discrete OLED + 3 panel-mount buttons on flying leads | N/A | Plugged into controller `J3` via JST XH 10-pin harness. See DESIGN_NOTES §6. |
 
@@ -36,7 +36,7 @@ Last updated: 2026-06-08
 - **`SQUARE_SIZE = 32 mm`** (matches model's wood squares)
 - **`BOARD_MARGIN = 18 mm`** (model has 20 mm inner-frame cavity; 18 mm leaves ~2 mm wiggle per side)
 - **3×3 = 132×132 mm** (≤150 mm tier at JLC, ~$10 fab)
-- **8×8 = 292×292 mm** (≤300 mm tier at JLC, ~$30 fab)
+- **8×8 = 282×282 mm** (≤300 mm tier at JLC, ~$30 fab)
 - The folding board's 10 mm outer fold/decorative edge is NOT part of the PCB
 
 ## Next actions
