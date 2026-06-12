@@ -1,12 +1,12 @@
 %TF.GenerationSoftware,KiCad,Pcbnew,10.0.3*%
-%TF.CreationDate,2026-06-07T21:11:24-04:00*%
+%TF.CreationDate,2026-06-11T19:44:31-04:00*%
 %TF.ProjectId,openchess-board,6f70656e-6368-4657-9373-2d626f617264,rev?*%
-%TF.SameCoordinates,Original*%
+%TF.SameCoordinates,PX2faf080PY13c9eb00*%
 %TF.FileFunction,Legend,Bot*%
 %TF.FilePolarity,Positive*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 10.0.3) date 2026-06-07 21:11:24*
+G04 Created by KiCad (PCBNEW 10.0.3) date 2026-06-11 19:44:31*
 %MOMM*%
 %LPD*%
 G01*
