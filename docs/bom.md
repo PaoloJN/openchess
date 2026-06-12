@@ -1,62 +1,78 @@
 # Prototype BOM
 
-This is a human-readable planning BOM for the current split-board prototype.
-The schematic remains the source of truth for exact refs and machine exports.
+Human-readable planning BOM for the current OpenChess prototype. KiCad
+schematic, PCB, and assembly exports remain the source of truth for exact refs,
+footprints, and machine-readable ordering data.
 
-Last refreshed: 2026-06-05.
+Last refreshed: 2026-06-12.
 
-## Matrix Board (`hardware-board`)
-
-| Part | Qty | Refs / Notes |
-|---|---:|---|
-| A3144 Hall sensor, TO-92 | 64 | `U1..U64`; cheap prototype choice |
-| WS2812B 5050 LED | 81 | `D1..D81`; PCBA strongly preferred |
-| 100nF capacitor, 0805 | 81 | `C10..C90`; one per WS2812B |
-| 47uF capacitor, 1206 | 9 | `C1..C9`; one per LED row |
-| 470uF electrolytic, 10V | 1 | `C91`; `+5V_LED` entry cap |
-| 2x13 connector | 1 | `J_CTRL`; mates to controller `J_MAIN` |
-| Test pads, fiducials, M3 holes | as scripted | For bring-up, assembly, mounting |
-
-## Controller Board (`hardware-controller`)
-
-Already scripted:
+## 8x8 Matrix Board (`hardware/hardware-board`)
 
 | Part | Qty | Refs / Notes |
 |---|---:|---|
-| 2x13 connector | 1 | `J_MAIN`; matrix connector |
-| 10k resistor, 0805 | 8 | `R1..R8`; row pullups to `+3V3` |
-| Test pads, fiducials, M3 holes | as scripted | Current schematic chunk |
+| DRV5032FC Hall sensor, SOT-23 | 64 | `U1..U64`; matrix sensing |
+| WS2812B 5050 LED | 81 | `D1..D81`; 9x9 corner LED grid |
+| 100 nF capacitor, 0805 | 81 | `C10..C90`; one per WS2812B |
+| 47 uF capacitor, 1206 | 9 | `C1..C9`; row bulk caps |
+| 2x13 connector | 1 | `J1`; intended active footprint family is `PinSocket_2x13` |
+| M3 mounting hole | 4 | board mounting |
+| Fiducial | 3 | assembly alignment |
 
-Still to decide/script:
+Board outline: 282 mm by 282 mm.
 
-| Block | Likely Parts |
-|---|---|
-| ESP32 | Devkit/socket for prototype, or bare ESP32-WROOM module |
-| Power | USB/5V input first, or LiPo charger/boost immediately |
-| Column drivers | Direct GPIOs if possible, or 74HC595 + transistor switches |
-| LED data level shifter | Single-channel 3.3V -> 5V shifter preferred |
-| Control-panel connector | Matching `J_PANEL` connector |
-
-## Control Panel (`hardware-control-panel`)
+## 3x3 Validation Board (`hardware/hardware-board-3x3`)
 
 | Part | Qty | Refs / Notes |
 |---|---:|---|
-| 1x10 connector | 1 | `J_PANEL`; cable to controller |
-| Normal LED, 0805 | 3 | `D1..D3`: PWR, CONN, BATT |
-| 1k resistor, 0805 | 3 | `R1..R3`; LED current limit |
-| Momentary pushbutton | 3 | `SW1..SW3`: POWER, MODE, RESET |
-| Test pads, fiducials, M3 holes | as scripted | Bring-up and mounting |
+| DRV5032FC Hall sensor, SOT-23 | 9 | `U1..U9`; validation matrix |
+| WS2812B 5050 LED | 16 | `D1..D16`; corner LED grid around 3x3 squares |
+| 100 nF capacitor, 0805 | 16 | `C10..C25`; one per WS2812B |
+| 47 uF capacitor, 1206 | 4 | `C1..C4`; row bulk caps |
+| 2x13 connector | 1 | `J1`; intended active footprint family is `PinSocket_2x13` |
+
+Board outline: 132 mm by 132 mm.
+
+## Controller Board (`hardware/hardware-controller`)
+
+| Part | Qty | Refs / Notes |
+|---|---:|---|
+| ESP32-DevKitC | 1 | `U2` |
+| Seeed Lipo Rider Plus | 1 | `M1`; LiPo charging, 5 V rail, 3.3 V rail |
+| 74AHCT125 | 1 | `U3`; WS2812B data level shifter |
+| TBD62783A DIP-18 | 1 | `U6`; 8-channel high-side column driver |
+| SS14 or BAT60A diode | 1 | `D2`; power path into DevKit pin |
+| 10 k resistor, 0805 | 8 | `R1..R8`; row pullups |
+| 10 k resistor, 0603 | 2 | `R36`, `R37`; button pullups |
+| 33 ohm resistor, 0603 | 1 | `R11`; LED data series resistor |
+| 220 k resistor, 0603 | 1 | `R14`; battery divider top |
+| 100 k resistor, 0603 | 1 | `R15`; battery divider bottom |
+| 10 uF capacitor, 0805 | 2 | `C1`, `C2`; +5V_LED bulk |
+| 100 nF capacitor | 3 | `C5`, `C11`, `C12`; IC decoupling and ADC filter |
+| 2x13 connector | 1 | `J1`; matrix connector, intended active footprint family is `PinSocket_2x13` |
+| 1x10 connector | 1 | `J3`; panel harness connector |
+| Fiducial | 3 | assembly alignment |
+
+Board outline: 58 mm by 71 mm.
+
+## Panel Harness
+
+| Part | Qty | Notes |
+|---|---:|---|
+| SSD1306 0.96 inch 128x64 I2C OLED module | 1 | Wired to controller `J3` |
+| Panel-mount momentary pushbutton | 3 | POWER, MODE, SELECT |
+| 10-conductor harness | 1 | Controller `J3` to panel components |
+| 4.7 k I2C pullups | 0-2 | Add only if the OLED module lacks usable pullups |
 
 ## Buying Notes
 
-- Buy 100 A3144 sensors if using AliExpress; test a sample before soldering all 64.
-- Buy WS2812B from LCSC/Worldsemi or another reputable source for the real board.
-- Use JLCPCB/LCSC basic passives where possible for PCBA.
-- Keep through-hole A3144 hand-soldered for the first prototype.
-- Use PCBA for WS2812B LEDs, LED caps, and small passives where practical.
+- Order and validate the 3x3 board and controller before ordering the full 8x8
+  matrix.
+- Prefer JLC/LCSC assembly for SMD matrix parts where practical.
+- Verify OLED module pin order before wiring the panel harness.
+- Confirm magnet strength and orientation during 3x3 validation.
 
 ## Not Current
 
-Old BOM lines for `BATT_LED1`, `D2..D82`, `led_chain.kicad_sch`, TP4056/MT3608
-module headers, and one integrated PCB belong to the archived rev0.1 design and
-should not be used as current ordering guidance.
+Active ordering guidance no longer uses the older through-hole Hall sensor
+choice, a separate panel PCB, a large matrix entry capacitor, older boost-module
+hardware, or matrix-side indicator LEDs.

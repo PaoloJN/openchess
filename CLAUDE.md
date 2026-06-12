@@ -1,119 +1,87 @@
 # CLAUDE.md
 
-Durable project context. For current status see `STATUS.md`; for the
-authoritative hardware design see `hardware/DESIGN_NOTES.md`.
+Durable project context for agent sessions. For status, read `STATUS.md`.
+For current hardware facts, inspect the active KiCad schematic and PCB files
+directly; older design notes and planning files may be stale.
 
 ## What This Project Is
 
-OpenChess is a **one-off personal hobby project**. The goal is to learn
-through hands-on PCB design and build **one** physical chess board that
-works cleanly the first time. It is **not** a product, not commercial,
-not intended for sale or distribution. Design decisions optimize for:
+OpenChess is a one-off personal hobby project. The goal is to learn through
+hands-on PCB design and build one physical chess board that works cleanly. It
+is not commercial, not intended for sale, and not designed as a supported
+platform.
 
-1. **First-build reliability** — every part should work first try
-2. **Learning value** — understand each subsystem, even if a module
-   would be slightly simpler
-3. **Solo assembly** — one person hand-soldering modules + getting JLC
-   to assemble the SMD components
-4. **Done, not shipped** — when it works on Paolo's desk, the project
-   is finished; no v2, no scaling, no support burden
+Design decisions optimize for:
 
-This shapes choices like: preferring well-tested daughterboard modules
-(Seeed Lipo Rider Plus for power) over discrete switching regulators
-we'd have to debug; preferring panel-mount components on flying leads
-over a separate panel PCB; accepting slightly higher unit cost in
-exchange for lower risk.
+1. First-build reliability
+2. Learning value
+3. Solo assembly with selective JLC SMT assembly
+4. Finishing one working board rather than preparing for scale
 
-## What it does
+## Current Hardware Sources
 
-A physical chess board that plays online via Lichess and offline via
-Stockfish. Magnetic piece detection via Hall sensors, corner LEDs for
-move indication, ESP32 firmware, OLED display + buttons for local UI,
-LiPo battery powered with USB-C charging.
+Use these files as the immediate hardware truth:
 
-## Current Hardware Architecture
+- `hardware/hardware-board/openchess-board.kicad_sch`
+- `hardware/hardware-board/openchess-board.kicad_pcb`
+- `hardware/hardware-board-3x3/openchess-board-3x3.kicad_sch`
+- `hardware/hardware-board-3x3/openchess-board-3x3.kicad_pcb`
+- `hardware/hardware-controller/openchess-controller.kicad_sch`
+- `hardware/hardware-controller/openchess-controller.kicad_pcb`
 
-Two KiCad PCBs and one cable-mounted component group:
+`hardware/DESIGN_NOTES.md`, `planning/`, and archived docs can be useful
+history, but do not treat them as authoritative when they conflict with the
+KiCad files.
 
-- **`hardware-board/`** — passive matrix board: 64× DRV5032FC Hall sensors
-  (SOT-23, omnipolar), 81× WS2812B corner LEDs. Big PCB, all passive.
-- **`hardware-controller/`** — ESP32 socket, level shifter, column
-  driver IC, Lipo Rider Plus power daughterboard, connectors. Brain
-  of the board.
-- **Panel components (no PCB)** — SSD1306 OLED module + 3 panel-mount
-  pushbuttons, mounted in the enclosure on flying leads. Connected to
-  the controller via the `J_PANEL` connector (JST XH 10-pin).
+## Current Architecture
 
-The old `hardware-control-panel/` PCB design was dropped on 2026-06-05
-and archived to `delete/hardware-control-panel-2026-06-05/`.
+Two KiCad PCBs plus one cable-mounted panel harness:
 
-The older monolithic single-PCB design was archived to
-`delete/old-hardware-2026-06-04/`. Do not use old `openchess.kicad_sch`,
-`led_chain.kicad_sch`, or old rev0.1 walkthrough docs as active design
-guidance.
+- `hardware-board/`: full 8x8 matrix PCB, 282 mm by 282 mm.
+- `hardware-board-3x3/`: 3x3 validation PCB, 132 mm by 132 mm.
+- `hardware-controller/`: ESP32 controller PCB, 58 mm by 71 mm.
+- Panel harness: SSD1306 OLED and 3 panel-mount buttons wired to controller
+  `J3`.
 
-## Current Connector Contracts
+There is no active panel PCB.
 
-**Matrix connector** (board-to-board stacking, no ribbon):
-- Matrix side: `J_CTRL` (2×13 female socket on the matrix B.Cu / back face)
-- Controller side: `J_MAIN` (2×13 male pin header on the controller B.Cu / back face)
-- Assembly: controller PCB mounts **inverted** directly under matrix PCB
-  (components face the enclosure floor; bare B.Cu faces up toward the
-  matrix's B.Cu). J_MAIN/J_CTRL mate back-to-back. **No standoffs and
-  no mounting holes on the controller** — the matrix's enclosure-frame
-  mount carries the assembled weight.
-- Contract: `docs/inter-board-connector.md`
-- Nets: `+5V_LED`, `GND`, `LED_DATA_5V`, `S0..S7`, `CA_PWR..CH_PWR`
+## Current Hardware Facts
 
-**Panel connector** (flying leads from controller to discrete panel
-components):
-- Controller side: `J3` on the controller (JST XH 10-pin recommended)
-- Panel side: bare wires to OLED module + panel-mount buttons
-- Contract: `docs/inter-board-connector.md`
-- Nets: `+3V3`, `GND`, `I2C_SDA`, `I2C_SCL`, `BTN_SELECT`,
-  `BTN_POWER`, `BTN_MODE`, `PANEL_SPARE`, `PANEL_SPARE2`
+- Matrix sensors are DRV5032FC SOT-23 parts.
+- The 8x8 matrix has 64 Hall sensors and 81 WS2812B corner LEDs.
+- The 3x3 validation board has 9 Hall sensors and 16 WS2812B corner LEDs.
+- The controller has an ESP32-DevKitC, Seeed Lipo Rider Plus, 74AHCT125,
+  TBD62783A DIP-18, SS14/BAT60A diode, row pullups, button pullups, battery
+  divider, matrix connector `J1`, and panel connector `J3`.
+- All active 2x13 matrix/controller `J` connectors are intended to use
+  `PinSocket_2x13` footprints.
+- The panel harness carries OLED I2C, POWER, MODE, SELECT, spare nets, 3.3 V,
+  and GND.
 
-## Maintenance Approach
+## Firmware And Web
 
-- **Matrix board**: schematic is script-generated under
-  `hardware-board/scripts/sch/`. 236 components are too many to
-  hand-draw practically. Keep using the scripts.
-- **Controller board**: hand-drawn in KiCad GUI. Scripts archived.
-  Single source of truth for the build is
-  `hardware-controller/SCHEMATIC_GUIDE.md`.
+`firmware/` is populated with PlatformIO ESP32 firmware and adapted OpenChess
+engine code. `web/` is populated with a React/Vite UI shell and shared
+WebSocket protocol types.
 
-## Reference Mapping
+Both are active but still need validation against real hardware. Before
+claiming firmware is ready, re-check GPIO assignments, LED indexing, Hall scan
+timing, OLED/button behavior, battery monitoring, and web protocol behavior
+against the current 3x3/controller hardware.
 
-**Matrix board**:
-- Hall sensors: `U1..U64`, file-major order, `U1 = A1`, `U64 = H8`
-- Matrix LEDs: `D1..D81`, row-major, `D1 = top-left`, `D81 = bottom-right`
-- Per-LED caps: `C10..C90`
-- Row bulk caps: `C1..C9`
-- LED entry cap: `C91`
+## Gotchas
 
-**Controller board** (see `DESIGN_NOTES.md` §5.1 for the full table):
-- `M1` = Seeed Lipo Rider Plus power module
-- `U2` = ESP32-DevKitC, `U3` = 74AHCT125, `U6` = TBD62783A
-- `D2` = SS14 Schottky (between +5V_LED and DevKit pin 19)
-- `J1` = J_MAIN (to matrix), `J3` = J_PANEL (to panel wiring)
-- `R1..R8` = row pullups, `R11` = LED series, `R36, R37` = button pullups
-- `C1, C2, C5, C11` = various decoupling
-- _No LDO_ — Lipo Rider Plus's 3V3 output drives +3V3 directly
-
-## Hardware Gotchas
-
-- DRV5032FC outputs are push-pull (1.65–5.5 V VCC). The controller's row pullups R1–R8 (10 k to `+3.3V`) are kept as belt-and-suspenders but are electrically redundant.
-- WS2812B data is level-shifted to 5V via 74AHCT125 before entering the matrix board cable.
-- Matrix `+5V_LED` is the only 5V rail; comes from the PowerBoost module.
-- Panel buttons short signal nets to GND; pullups on the controller for input-only ESP32 pins (BTN_POWER, BTN_MODE).
-- DevKitC's onboard EN button is the only reset (no panel reset).
-- UART0 (GPIO1/3) is repurposed as the I²C bus to the OLED — no serial debug.
+- DRV5032FC outputs are push-pull. Controller row pullups are still present.
+- WS2812B data is level-shifted to 5 V through 74AHCT125 before reaching the
+  matrix connector.
+- The panel uses OLED plus buttons, not discrete indicator LEDs.
+- DevKitC UART0 pins GPIO1/GPIO3 are used for OLED I2C in the current GPIO
+  plan, so serial debug assumptions must be checked.
+- `planning/` and `docs/archive/` are not active implementation guidance.
 
 ## When In Doubt
 
-- `STATUS.md` — current progress + next actions
-- `hardware/DESIGN_NOTES.md` — **source of truth for the design**
-- `hardware/hardware-controller/SCHEMATIC_GUIDE.md` — controller build sheet
-- `hardware/hardware-board/SCHEMATIC_GUIDE.md` — matrix board reference
-- `docs/inter-board-connector.md` — cable contracts
-- `docs/gpio-map.md` — ESP32 pin assignments
+- Read `STATUS.md` for current phase and next actions.
+- Read `docs/inter-board-connector.md` for human-readable connector contracts.
+- Read `docs/gpio-map.md` for ESP32 pin assignments.
+- Inspect the active KiCad files for current hardware truth.

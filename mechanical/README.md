@@ -1,12 +1,14 @@
 # Mechanical
 
-Mechanical work for the enclosure and magnetic chess pieces.
+Mechanical work for the enclosure, panel mounting, battery placement, and
+magnetic chess pieces.
 
-Current hardware is split into three boards:
+Current hardware is two PCBs plus a panel harness:
 
-- matrix board under the playing surface
+- 8x8 matrix board under the playing surface
 - controller board in a serviceable enclosure area
-- control panel mounted on the side by cable
+- SSD1306 OLED plus 3 panel buttons on a flying-lead harness
 
-Detailed CAD has not started. Use `hardware/DESIGN_NOTES.md` and the final PCB
-layouts once available as the mechanical source of truth.
+Detailed CAD has not started. Use the current KiCad PCB files under
+`hardware/` as the mechanical source of truth for board outlines, connector
+placement, and mounting constraints.

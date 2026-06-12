@@ -1,85 +1,64 @@
 # Workspace Guide
 
-How to work on OpenChess without mixing old and new hardware assumptions.
+How to work on OpenChess without mixing current hardware with stale planning
+assumptions.
 
-## Active Sessions
+## Active Work Areas
 
-| Session | cwd | Purpose |
+| Area | Path | Purpose |
 |---|---|---|
-| Hardware | `hardware/` | KiCad projects, schematic scripts, PCB layout planning |
-| Planning | repo root | Design decisions, docs, task planning |
-| Firmware | `firmware/` | ESP32 firmware and web UI |
-| Mechanical | `mechanical/` | Case, panel mounting, pieces |
+| Hardware | `hardware/` | KiCad schematics, PCB layouts, Gerbers, assembly exports |
+| Firmware | `firmware/` | ESP32 PlatformIO firmware and hardware bring-up code |
+| Web | `web/` | React/Vite web UI shell and shared protocol types |
+| Mechanical | `mechanical/` | Enclosure, panel mounting, battery placement, chess pieces |
+| Docs | `docs/` plus root docs | Current status, connector contracts, BOM, assembly notes |
+| Planning | `planning/` | Historical/planning context, not current hardware truth |
+| References | `references/` | Read-only upstream snapshots |
 
-## Hardware Projects
+## Active KiCad Projects
 
 Open these KiCad projects directly:
 
 - `hardware/hardware-board/openchess-board.kicad_pro`
+- `hardware/hardware-board-3x3/openchess-board-3x3.kicad_pro`
 - `hardware/hardware-controller/openchess-controller.kicad_pro`
-- `hardware/hardware-control-panel/openchess-control-panel.kicad_pro`
 
-Close KiCad before running schematic scripts. KiCad lock files are real; stale
-locks may remain after crashes, but check with `lsof` before removing them.
+For this cleanup pass, hardware files are read-only. Inspect `.kicad_sch` and
+`.kicad_pcb` files for current facts, but do not edit anything under
+`hardware/`.
 
-## Scripted Schematic Workflow
+## Current Hardware Assumptions
 
-From `hardware/`:
+- 8x8 matrix board: 282 mm by 282 mm.
+- 3x3 validation board: 132 mm by 132 mm.
+- Controller board: 58 mm by 71 mm.
+- Matrix sensors: DRV5032FC SOT-23.
+- Matrix LEDs: WS2812B corner LEDs.
+- Panel: SSD1306 OLED plus 3 buttons on a flying-lead harness to controller
+  `J3`.
+- Active 2x13 matrix/controller `J` connectors are intended to use
+  `PinSocket_2x13` footprints.
 
-```bash
-for s in hardware-board/scripts/sch/[0-9][0-9]_*.py; do python3 "$s"; done
-for s in hardware-controller/scripts/sch/[0-9][0-9]_*.py; do python3 "$s"; done
-for s in hardware-control-panel/scripts/sch/[0-9][0-9]_*.py; do python3 "$s"; done
-```
+## Hardware Workflow Notes
 
-Run ERC after generation:
+Close KiCad before running any hardware scripts or exports. KiCad lock files
+are real; stale locks can remain after crashes, but check with `lsof` before
+removing them.
 
-```bash
-/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli sch erc --severity-all hardware-board/openchess-board.kicad_sch
-/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli sch erc --severity-all hardware-controller/openchess-controller.kicad_sch
-/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli sch erc --severity-all hardware-control-panel/openchess-control-panel.kicad_sch
-```
-
-## Current Hardware Priorities
-
-1. Keep pinout contracts in `docs/inter-board-connector.md` and `hardware/DESIGN_NOTES.md` aligned with script `config.py` files.
-2. Finish controller schematic chunks before PCB layout.
-3. Build a 4x4 matrix prototype before ordering a full 8x8 matrix board.
-4. Treat archived rev0.1 docs as historical only.
-
-## KiCad Shortcuts
-
-### Schematic
-
-| Key | Action |
-|---|---|
-| `A` | Add symbol |
-| `P` | Add power port |
-| `L` | Add label |
-| `W` | Draw wire |
-| `Q` | Add no-connect flag |
-| `M` | Move |
-| `G` | Drag while preserving connections |
-| `R` | Rotate |
-| `E` | Edit properties |
-| `Cmd+F` | Find reference |
-
-### PCB
-
-| Key | Action |
-|---|---|
-| `M` | Move |
-| `G` | Drag |
-| `R` | Rotate |
-| `F` | Flip side |
-| `X` | Route track |
-| `B` | Refill zones |
-| `Home` | Zoom to fit |
+The matrix board schematic has scripted sections. The controller schematic is
+hand-maintained. Do not run archived controller schematic scripts unless the
+hardware workflow is deliberately being rebuilt.
 
 ## Do Not Use As Active Guidance
 
 These are historical or stale unless explicitly re-reviewed:
 
-- `docs/archive/rev0.1/`
-- old integrated-board files in `delete/old-hardware-2026-06-04/`
-- old references to `hardware/openchess.kicad_sch` or `led_chain.kicad_sch`
+- `docs/archive/`
+- `planning/`
+- old references to a separate control-panel PCB
+- old references to through-hole Hall sensors
+- old references to a 470 uF matrix entry capacitor
+- old references to a larger validation board
+- old boost-module power architecture notes
+
+When in doubt, inspect the current KiCad schematic and PCB files directly.
