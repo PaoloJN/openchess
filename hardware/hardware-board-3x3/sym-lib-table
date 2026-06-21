@@ -1,4 +1,0 @@
-(sym_lib_table
-	(version 7)
-	(lib (name "openchess")(type "KiCad")(uri "${KIPRJMOD}/lib/openchess.kicad_sym")(options "")(descr "OpenChess custom symbols (A3144 hall sensor)"))
-)
