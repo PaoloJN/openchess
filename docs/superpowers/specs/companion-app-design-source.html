@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @keyframes ocpulse { 0%,100% { transform: scale(1); opacity: 1 } 50% { transform: scale(1.5); opacity: 0.35 } }
+  @keyframes ocring { 0% { transform: scale(0.7); opacity: 0.6 } 100% { transform: scale(2.2); opacity: 0 } }
+</style>
+</helmet>
+
+<div style="min-height:100%;background:#EDEAE3;background-image:radial-gradient(circle at 1px 1px, rgba(0,0,0,0.04) 1px, transparent 0);background-size:26px 26px;font-family:'Hanken Grotesk',system-ui,sans-serif;color:#23211D;padding:76px 72px 110px;box-sizing:border-box">
+
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:3px;color:#8A857B;text-transform:uppercase">OpenChess · Companion App</div>
+    <div style="font-size:42px;font-weight:800;letter-spacing:-1px;margin-top:12px;line-height:1.02">Smart board companion</div>
+    <div style="font-size:17px;color:#6B6862;max-width:600px;margin-top:12px;line-height:1.55">A React Native concept for the OpenChess physical board — pair it, get it online, and play Lichess or Stockfish. Move hints on screen mirror the board's real corner LEDs.</div>
+  </div>
+
+  <div style="display:flex;gap:60px;flex-wrap:wrap;justify-content:center;align-items:flex-start;margin-top:56px">
+
+    <!-- ══════════════ 0 · WELCOME ══════════════ -->
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8A857B">00 · WELCOME</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="padding:78px 26px 32px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;background:#F3F1EC">
+          <div style="display:flex;align-items:center;gap:11px">
+            <div style="width:42px;height:42px;border-radius:12px;background:#22201C;display:flex;align-items:center;justify-content:center;font-size:23px;color:#5EC489">♞</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:2.5px;font-weight:600">OPENCHESS</div>
+          </div>
+
+          <div style="font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1.06;margin-top:44px">Welcome to<br>OpenChess.</div>
+          <div style="font-size:15.5px;color:#6B6862;margin-top:13px;line-height:1.5">The companion app for your smart board. Let's get you set up — it takes about two minutes.</div>
+
+          <div style="display:flex;flex-direction:column;gap:15px;margin-top:38px">
+            <div style="display:flex;align-items:center;gap:13px">
+              <div style="width:36px;height:36px;border-radius:10px;background:#E9F1EC;display:flex;align-items:center;justify-content:center;font-size:19px;color:#2E6B4A;flex-shrink:0">♞</div>
+              <div style="font-size:14.5px;color:#4A463F;line-height:1.35"><span style="font-weight:600;color:#23211D">Play anyone.</span> Lichess online or Stockfish offline.</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:13px">
+              <div style="width:36px;height:36px;border-radius:10px;background:#E9F1EC;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:11px;height:11px;border-radius:50%;background:#3F8F63;box-shadow:0 0 8px #3F8F63"></div></div>
+              <div style="font-size:14.5px;color:#4A463F;line-height:1.35"><span style="font-weight:600;color:#23211D">Move hints on the board.</span> The LEDs light your options.</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:13px">
+              <div style="width:36px;height:36px;border-radius:10px;background:#E9F1EC;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="17" height="17" viewBox="0 0 17 17"><rect x="1" y="10" width="3.5" height="6" rx="1" fill="#2E6B4A"/><rect x="6.7" y="6" width="3.5" height="10" rx="1" fill="#2E6B4A"/><rect x="12.4" y="2" width="3.5" height="14" rx="1" fill="#2E6B4A"/></svg></div>
+              <div style="font-size:14.5px;color:#4A463F;line-height:1.35"><span style="font-weight:600;color:#23211D">Review every game.</span> Engine analysis, replayed on the board.</div>
+            </div>
+          </div>
+
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:13px">
+            <div style="background:#3F8F63;color:#fff;border-radius:17px;padding:17px;text-align:center;font-weight:700;font-size:16.5px;box-shadow:0 8px 20px rgba(63,143,99,0.3)">Get started</div>
+            <div style="text-align:center;font-size:14.5px;color:#6B6862;font-weight:500">My board is already set up</div>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ══════════════ 1 · PAIR ══════════════ -->
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8A857B">01 · PAIR BOARD</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="padding:62px 22px 32px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;background:#F3F1EC">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:#9A9488;text-transform:uppercase">Setup · Step 1 of 2</div>
+          <div style="font-size:29px;font-weight:700;letter-spacing:-0.5px;margin-top:12px;line-height:1.12">Pair your board</div>
+          <div style="font-size:15px;color:#6B6862;margin-top:10px;line-height:1.5">Power on the board and hold <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;background:#E4DFD4;padding:1px 6px;border-radius:5px;color:#4A463F">MODE</span> for 3 seconds until the corner LEDs pulse green.</div>
+
+          <div style="margin-top:26px;border-radius:24px;background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);padding:18px;box-shadow:0 10px 30px rgba(0,0,0,0.05)">
+            <div style="display:flex;align-items:center;gap:13px">
+              <div style="position:relative;width:12px;height:12px;flex-shrink:0">
+                <div style="position:absolute;inset:0;border-radius:50%;background:#3F8F63"></div>
+                <div style="position:absolute;inset:0;border-radius:50%;border:2px solid #3F8F63;animation:ocring 1.8s ease-out infinite"></div>
+              </div>
+              <div style="flex:1;min-width:0">
+                <div style="font-size:16px;font-weight:600;font-family:'IBM Plex Mono',monospace;letter-spacing:-0.2px">OpenChess-4A2F</div>
+                <div style="font-size:12.5px;color:#8A857B;margin-top:2px">Found nearby · strong signal</div>
+              </div>
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#E9F1EC"/><path d="M6.5 11.2l3 3 6-6.4" stroke="#3F8F63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:14px">
+            <div style="background:#3F8F63;color:#fff;border-radius:17px;padding:17px;text-align:center;font-weight:600;font-size:16.5px;box-shadow:0 8px 20px rgba(63,143,99,0.3)">Connect board</div>
+            <div style="text-align:center;font-size:14.5px;color:#6B6862;font-weight:500">Enter board ID manually</div>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ══════════════ 2 · WIFI ══════════════ -->
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8A857B">02 · WI-FI SETUP</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" keyboard="{{ true }}" hint-size="402px,874px">
+        <div style="padding:62px 22px 14px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;background:#F3F1EC">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:#9A9488;text-transform:uppercase">Setup · Step 2 of 2</div>
+          <div style="font-size:29px;font-weight:700;letter-spacing:-0.5px;margin-top:12px;line-height:1.12">Connect to Wi-Fi</div>
+          <div style="font-size:14.5px;color:#6B6862;margin-top:9px;line-height:1.45">The board joins your network to reach Lichess and pull firmware updates.</div>
+
+          <div style="margin-top:20px;background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);border-radius:20px;padding:15px 16px;box-shadow:0 6px 18px rgba(0,0,0,0.03)">
+            <div style="font-size:12px;color:#9A9488;font-weight:600">NETWORK</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:5px">
+              <div style="font-size:16.5px;font-weight:600">Paolo-Studio</div>
+            </div>
+            <div style="height:1px;background:rgba(0,0,0,0.07);margin:13px 0"></div>
+            <div style="font-size:12px;color:#9A9488;font-weight:600">PASSWORD</div>
+            <div style="display:flex;align-items:center;gap:2px;margin-top:7px;height:22px">
+              <div style="display:flex;gap:5px;align-items:center">
+                <div style="width:7px;height:7px;border-radius:50%;background:#3B3833"></div>
+                <div style="width:7px;height:7px;border-radius:50%;background:#3B3833"></div>
+                <div style="width:7px;height:7px;border-radius:50%;background:#3B3833"></div>
+                <div style="width:7px;height:7px;border-radius:50%;background:#3B3833"></div>
+                <div style="width:7px;height:7px;border-radius:50%;background:#3B3833"></div>
+                <div style="width:7px;height:7px;border-radius:50%;background:#3B3833"></div>
+                <div style="width:7px;height:7px;border-radius:50%;background:#3B3833"></div>
+              </div>
+              <div style="width:2px;height:20px;background:#3F8F63;margin-left:3px;animation:ocpulse 1.1s steps(1) infinite"></div>
+            </div>
+          </div>
+
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#9A9488;margin:20px 4px 8px">OTHER NETWORKS</div>
+          <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.03)">
+            <sc-for list="{{ networks }}" as="net" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:12px;padding:13px 15px;border-bottom:1px solid rgba(0,0,0,0.05)">
+                <div style="flex:1;font-size:15.5px;font-weight:500">{{ net.name }}</div>
+                <sc-if value="{{ net.lock }}" hint-placeholder-val="{{ true }}">
+                  <svg width="13" height="15" viewBox="0 0 13 15" fill="none"><rect x="1" y="6" width="11" height="8" rx="2" fill="#B8B2A6"/><path d="M3.2 6V4.2a3.3 3.3 0 016.6 0V6" stroke="#B8B2A6" stroke-width="1.6"/></svg>
+                </sc-if>
+                <svg width="19" height="14" viewBox="0 0 19 14" fill="none"><path d="M1 4.5C3.3 2.3 6.2 1 9.5 1S15.7 2.3 18 4.5" stroke="#8A857B" stroke-width="1.6" stroke-linecap="round" opacity="{{ net.o1 }}"/><path d="M4 7.5C5.5 6 7.4 5.2 9.5 5.2s4 0.8 5.5 2.3" stroke="#8A857B" stroke-width="1.6" stroke-linecap="round" opacity="{{ net.o2 }}"/><circle cx="9.5" cy="11" r="1.6" fill="#8A857B" opacity="{{ net.o3 }}"/></svg>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="margin-top:18px;background:#3F8F63;color:#fff;border-radius:17px;padding:16px;text-align:center;font-weight:600;font-size:16px;box-shadow:0 8px 20px rgba(63,143,99,0.3)">Join network</div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ══════════════ 3 · HOME ══════════════ -->
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8A857B">03 · HOME</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="padding:60px 20px 34px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px;background:#F3F1EC">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:#9A9488">OPENCHESS-4A2F</div>
+              <div style="font-size:28px;font-weight:800;letter-spacing:-0.6px;margin-top:3px">Your board</div>
+            </div>
+            <div style="width:42px;height:42px;border-radius:50%;background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.04)">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 13a3 3 0 100-6 3 3 0 000 6z" stroke="#4A463F" stroke-width="1.6"/><path d="M10 1.5v2M10 16.5v2M16.5 10h2M1.5 10h2M14.6 5.4l1.4-1.4M4 16l1.4-1.4M14.6 14.6l1.4 1.4M4 4l1.4 1.4" stroke="#4A463F" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+
+          <div style="background:#22201C;border-radius:24px;padding:20px;color:#F3F1EC;box-shadow:0 12px 30px rgba(0,0,0,0.14)">
+            <div style="display:flex;align-items:center;gap:9px">
+              <div style="width:9px;height:9px;border-radius:50%;background:#5EC489;box-shadow:0 0 8px #5EC489"></div>
+              <div style="font-size:14px;font-weight:600;color:#5EC489">Connected</div>
+              <div style="font-size:13px;color:rgba(243,241,236,0.5);margin-left:auto;font-family:'IBM Plex Mono',monospace">idle</div>
+            </div>
+            <div style="display:flex;gap:14px;margin-top:20px">
+              <div style="flex:1">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600">82<span style="font-size:15px;opacity:0.6">%</span></div>
+                <div style="font-size:12px;color:rgba(243,241,236,0.5);margin-top:2px">Battery</div>
+                <div style="height:5px;border-radius:3px;background:rgba(255,255,255,0.14);margin-top:8px;overflow:hidden"><div style="width:82%;height:100%;background:#5EC489"></div></div>
+              </div>
+              <div style="width:1px;background:rgba(255,255,255,0.1)"></div>
+              <div style="flex:1">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:26px;font-weight:600">Home-5G</div>
+                <div style="font-size:12px;color:rgba(243,241,236,0.5);margin-top:2px">Wi-Fi · Lichess ready</div>
+                <div style="display:flex;gap:4px;margin-top:9px;align-items:flex-end;height:5px">
+                  <div style="width:20%;height:100%;background:#5EC489;border-radius:2px"></div>
+                  <div style="width:20%;height:100%;background:#5EC489;border-radius:2px"></div>
+                  <div style="width:20%;height:100%;background:#5EC489;border-radius:2px"></div>
+                  <div style="width:20%;height:100%;background:rgba(255,255,255,0.2);border-radius:2px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:#3F8F63;color:#fff;border-radius:20px;padding:18px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 8px 20px rgba(63,143,99,0.28)">
+            <div style="font-size:26px;line-height:1">♞</div>
+            <div style="flex:1">
+              <div style="font-size:17px;font-weight:700">New game</div>
+              <div style="font-size:13px;color:rgba(255,255,255,0.8)">Lichess or Stockfish</div>
+            </div>
+            <svg width="9" height="16" viewBox="0 0 9 16"><path d="M1 1l7 7-7 7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);border-radius:20px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,0.03)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+              <div style="font-size:15px;font-weight:700">Recent games</div>
+              <div style="font-size:13px;color:#3F8F63;font-weight:600">All</div>
+            </div>
+            <sc-for list="{{ recents }}" as="g" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:12px;padding:9px 0">
+                <div style="width:30px;height:30px;border-radius:9px;background:{{ g.tagbg }};color:{{ g.tagfg }};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">{{ g.tag }}</div>
+                <div style="flex:1;min-width:0">
+                  <div style="font-size:14.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ g.opp }}</div>
+                  <div style="font-size:12px;color:#8A857B">{{ g.by }}</div>
+                </div>
+                <div style="font-size:12px;color:#A9A396;font-family:'IBM Plex Mono',monospace">{{ g.when }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ══════════════ 4 · NEW GAME ══════════════ -->
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8A857B">04 · NEW GAME</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="padding:60px 20px 30px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:20px;background:#F3F1EC">
+          <div style="font-size:28px;font-weight:800;letter-spacing:-0.6px">New game</div>
+
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#9A9488;margin:0 2px 9px">OPPONENT</div>
+            <div style="display:flex;gap:9px">
+              <div onClick="{{ oppLich }}" style="flex:1;border-radius:15px;padding:14px 10px;text-align:center;cursor:pointer;background:{{ lichBg }};color:{{ lichFg }};border:1.5px solid {{ lichBd }};transition:all .15s">
+                <div style="font-size:22px;line-height:1">♛</div>
+                <div style="font-size:14.5px;font-weight:600;margin-top:6px">Lichess</div>
+                <div style="font-size:11px;opacity:0.7;margin-top:1px">Online</div>
+              </div>
+              <div onClick="{{ oppStock }}" style="flex:1;border-radius:15px;padding:14px 10px;text-align:center;cursor:pointer;background:{{ stockBg }};color:{{ stockFg }};border:1.5px solid {{ stockBd }};transition:all .15s">
+                <div style="font-size:22px;line-height:1">♞</div>
+                <div style="font-size:14.5px;font-weight:600;margin-top:6px">Stockfish</div>
+                <div style="font-size:11px;opacity:0.7;margin-top:1px">Offline bot</div>
+              </div>
+            </div>
+          </div>
+
+          <sc-if value="{{ isStockfish }}" hint-placeholder-val="{{ true }}">
+            <div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;margin:0 2px 9px">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#9A9488">DIFFICULTY</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#3F8F63;font-weight:600">{{ eloLabel }}</div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:6px">
+                <sc-for list="{{ levels }}" as="lv" hint-placeholder-count="8">
+                  <div onClick="{{ lv.pick }}" style="aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;cursor:pointer;background:{{ lv.bg }};color:{{ lv.fg }};border:1.5px solid {{ lv.bd }}">{{ lv.label }}</div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isLichess }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px">
+              <div style="width:34px;height:34px;border-radius:50%;background:#E9F1EC;display:flex;align-items:center;justify-content:center;font-weight:700;color:#3F8F63">P</div>
+              <div style="flex:1"><div style="font-size:14.5px;font-weight:600">@paolo</div><div style="font-size:12px;color:#8A857B">Signed in · Rapid 1624</div></div>
+              <div style="width:9px;height:9px;border-radius:50%;background:#5EC489"></div>
+            </div>
+          </sc-if>
+
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#9A9488;margin:0 2px 9px">YOU PLAY</div>
+            <div style="display:flex;gap:9px">
+              <sc-for list="{{ colors }}" as="col" hint-placeholder-count="3">
+                <div onClick="{{ col.pick }}" style="flex:1;border-radius:13px;padding:13px 6px;text-align:center;cursor:pointer;background:{{ col.bg }};color:{{ col.fg }};border:1.5px solid {{ col.bd }}">
+                  <div style="font-size:22px;line-height:1">{{ col.glyph }}</div>
+                  <div style="font-size:12.5px;font-weight:600;margin-top:5px">{{ col.label }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#9A9488;margin:0 2px 9px">TIME CONTROL</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <sc-for list="{{ times }}" as="tm" hint-placeholder-count="4">
+                <div onClick="{{ tm.pick }}" style="border-radius:11px;padding:10px 15px;cursor:pointer;font-size:14px;font-weight:600;background:{{ tm.bg }};color:{{ tm.fg }};border:1.5px solid {{ tm.bd }}">{{ tm.t }}</div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="margin-top:auto;padding-top:8px">
+            <div style="background:#3F8F63;color:#fff;border-radius:17px;padding:17px;text-align:center;font-weight:700;font-size:16.5px;box-shadow:0 8px 20px rgba(63,143,99,0.3)">Start game</div>
+            <div style="text-align:center;font-size:12.5px;color:#8A857B;margin-top:9px;font-family:'IBM Plex Mono',monospace">{{ startSummary }}</div>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ══════════════ 5 · LIVE GAME ══════════════ -->
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8A857B">05 · LIVE GAME</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="padding:60px 18px 30px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:12px;background:#F3F1EC">
+          <div style="display:flex;align-items:center;gap:11px">
+            <div style="width:38px;height:38px;border-radius:11px;background:#2A2723;color:#F3F1EC;display:flex;align-items:center;justify-content:center;font-size:20px">♚</div>
+            <div style="flex:1"><div style="font-size:15px;font-weight:700">Stockfish</div><div style="font-size:12px;color:#8A857B">Level 5 · ≈2050</div></div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:600;background:#FFFFFF;border:1px solid rgba(0,0,0,0.07);padding:6px 13px;border-radius:11px;color:#6B6862">9:41</div>
+          </div>
+
+          <div style="border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,0.1)">
+            <div style="display:grid;grid-template-columns:repeat(8,1fr);width:100%;aspect-ratio:1">
+              <sc-for list="{{ boardCells }}" as="c" hint-placeholder-count="64">
+                <div style="position:relative;display:flex;align-items:center;justify-content:center;background:{{ c.bg }}">
+                  <sc-if value="{{ c.sel }}" hint-placeholder-val="{{ false }}">
+                    <div style="position:absolute;inset:0;box-shadow:inset 0 0 0 3px rgba(63,143,99,0.95)"></div>
+                  </sc-if>
+                  <sc-if value="{{ c.led }}" hint-placeholder-val="{{ false }}">
+                    <div style="position:absolute;width:32%;height:32%;border-radius:50%;background:rgba(63,143,99,0.9);box-shadow:0 0 12px 3px rgba(63,143,99,0.7)"></div>
+                  </sc-if>
+                  <span style="position:relative;font-size:27px;line-height:1;color:{{ c.pcolor }};text-shadow:0 1px 1px rgba(0,0,0,0.18),0 0 0.6px rgba(0,0,0,0.45)">{{ c.glyph }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;background:#E9F1EC;border-radius:12px;padding:9px 13px">
+            <div style="width:8px;height:8px;border-radius:50%;background:#3F8F63;box-shadow:0 0 8px #3F8F63;flex-shrink:0"></div>
+            <div style="font-size:13px;color:#2E6B4A;font-weight:600">Board LEDs are lighting your move</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3F8F63;margin-left:auto;font-weight:600">Nf3</div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:11px">
+            <div style="width:38px;height:38px;border-radius:11px;background:#F7F4ED;border:1px solid rgba(0,0,0,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;color:#2A2723;text-shadow:0 0 0.6px rgba(0,0,0,0.45)">♔</div>
+            <div style="flex:1"><div style="font-size:15px;font-weight:700">You</div><div style="font-size:12px;color:#3F8F63;font-weight:600">Your move</div></div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:600;background:#22201C;color:#fff;padding:6px 13px;border-radius:11px;box-shadow:0 0 0 2px rgba(63,143,99,0.5)">9:58</div>
+          </div>
+
+          <div style="display:flex;gap:8px;overflow:hidden;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+            <sc-for list="{{ moves }}" as="m" hint-placeholder-count="4">
+              <div style="display:flex;gap:5px;flex-shrink:0;color:#6B6862"><span style="color:#B0AA9E">{{ m.n }}</span><span style="color:#23211D">{{ m.w }}</span><span>{{ m.b }}</span></div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;gap:8px;margin-top:auto">
+            <div style="flex:1;background:#FFFFFF;border:1px solid rgba(0,0,0,0.07);border-radius:13px;padding:12px;text-align:center;font-size:13px;font-weight:600;color:#6B6862">Flip</div>
+            <div style="flex:1;background:#E9F1EC;border-radius:13px;padding:12px;text-align:center;font-size:13px;font-weight:700;color:#3F8F63">Hint</div>
+            <div style="flex:1;background:#FFFFFF;border:1px solid rgba(0,0,0,0.07);border-radius:13px;padding:12px;text-align:center;font-size:13px;font-weight:600;color:#6B6862">Draw</div>
+            <div style="flex:1;background:#FBEDE9;border-radius:13px;padding:12px;text-align:center;font-size:13px;font-weight:700;color:#C4553D">Resign</div>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ══════════════ 6 · SETTINGS ══════════════ -->
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8A857B">06 · SETTINGS</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="padding:60px 20px 34px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:22px;background:#F3F1EC">
+          <div style="font-size:28px;font-weight:800;letter-spacing:-0.6px">Settings</div>
+
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#9A9488;margin:0 4px 8px">BOARD</div>
+            <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.03)">
+              <div style="display:flex;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(0,0,0,0.05)"><div style="flex:1;font-size:15px;font-weight:500">Board name</div><div style="font-size:14px;color:#8A857B;font-family:'IBM Plex Mono',monospace">4A2F</div></div>
+              <div style="display:flex;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(0,0,0,0.05)"><div style="flex:1;font-size:15px;font-weight:500">Firmware</div><div style="font-size:14px;color:#8A857B;font-family:'IBM Plex Mono',monospace">v1.4.2</div></div>
+              <div style="display:flex;align-items:center;padding:14px 16px"><div style="flex:1;font-size:15px;font-weight:500;color:#C4553D">Disconnect board</div></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#9A9488;margin:0 4px 8px">LED FEEDBACK</div>
+            <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.03)">
+              <div style="padding:14px 16px;border-bottom:1px solid rgba(0,0,0,0.05)">
+                <div style="display:flex;align-items:center;margin-bottom:11px"><div style="flex:1;font-size:15px;font-weight:500">Brightness</div><div style="font-size:13px;color:#8A857B;font-family:'IBM Plex Mono',monospace">70%</div></div>
+                <div style="height:6px;border-radius:4px;background:#E7E3DA;position:relative"><div style="width:70%;height:100%;background:#3F8F63;border-radius:4px"></div><div style="position:absolute;top:50%;left:70%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.25)"></div></div>
+              </div>
+              <div style="display:flex;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(0,0,0,0.05)"><div style="flex:1;font-size:15px;font-weight:500">Show move hints</div><div style="width:46px;height:28px;border-radius:999px;background:#3F8F63;position:relative"><div style="position:absolute;top:3px;left:21px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25)"></div></div></div>
+              <div style="display:flex;align-items:center;padding:14px 16px"><div style="flex:1;font-size:15px;font-weight:500">Hint color</div><div style="display:flex;gap:8px"><div style="width:22px;height:22px;border-radius:50%;background:#3F8F63;box-shadow:0 0 0 2px #fff,0 0 0 3.5px #3F8F63"></div><div style="width:22px;height:22px;border-radius:50%;background:#4C7DD6"></div><div style="width:22px;height:22px;border-radius:50%;background:#D69E3F"></div></div></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#9A9488;margin:0 4px 8px">SOUND</div>
+            <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.03)">
+              <div style="display:flex;align-items:center;padding:14px 16px"><div style="flex:1;font-size:15px;font-weight:500">Move sounds</div><div style="width:46px;height:28px;border-radius:999px;background:#3F8F63;position:relative"><div style="position:absolute;top:3px;left:21px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25)"></div></div></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1.5px;color:#9A9488;margin:0 4px 8px">MAINTENANCE</div>
+            <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.03)">
+              <div style="display:flex;align-items:center;padding:14px 16px;border-bottom:1px solid rgba(0,0,0,0.05)"><div style="flex:1;font-size:15px;font-weight:500">Calibrate sensors</div><svg width="7" height="13" viewBox="0 0 7 13"><path d="M1 1l5 5.5-5 5.5" stroke="#C3BDB1" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></div>
+              <div style="display:flex;align-items:center;padding:14px 16px"><div style="flex:1;font-size:15px;font-weight:500">Test all LEDs</div><svg width="7" height="13" viewBox="0 0 7 13"><path d="M1 1l5 5.5-5 5.5" stroke="#C3BDB1" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></div>
+            </div>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ══════════════ 7 · SET UP BOARD ══════════════ -->
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8A857B">07 · SET UP BOARD</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="padding:60px 20px 32px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:16px;background:#F3F1EC">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:#9A9488;text-transform:uppercase">Before we start</div>
+            <div style="font-size:27px;font-weight:800;letter-spacing:-0.5px;margin-top:6px;line-height:1.12">Set up the board</div>
+            <div style="font-size:14.5px;color:#6B6862;margin-top:8px;line-height:1.45">Two squares are lit <span style="color:#C4553D;font-weight:600">red</span> on the board. Match the diagram, then play.</div>
+          </div>
+
+          <div style="border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,0.09)">
+            <div style="display:grid;grid-template-columns:repeat(8,1fr);width:100%;aspect-ratio:1">
+              <sc-for list="{{ startBoard }}" as="c" hint-placeholder-count="64">
+                <div style="position:relative;display:flex;align-items:center;justify-content:center;background:{{ c.bg }}">
+                  <sc-if value="{{ c.err }}" hint-placeholder-val="{{ false }}">
+                    <div style="position:absolute;inset:0;box-shadow:inset 0 0 0 3px #C4553D;background:rgba(196,85,61,0.18);animation:ocpulse 1.4s ease-in-out infinite"></div>
+                  </sc-if>
+                  <span style="position:relative;font-size:26px;line-height:1;color:{{ c.pcolor }};text-shadow:0 1px 1px rgba(0,0,0,0.18),0 0 0.6px rgba(0,0,0,0.45)">{{ c.glyph }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);border-radius:16px;padding:14px 16px;box-shadow:0 6px 18px rgba(0,0,0,0.03)">
+            <div style="display:flex;align-items:center;margin-bottom:10px"><div style="flex:1;font-size:14px;font-weight:600">Pieces detected</div><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A857B">{{ readyCount }}</div></div>
+            <div style="height:6px;border-radius:4px;background:#E7E3DA;overflow:hidden"><div style="width:{{ progressPct }};height:100%;background:#3F8F63"></div></div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:9px">
+            <sc-for list="{{ fixItems }}" as="fx" hint-placeholder-count="2">
+              <div style="display:flex;align-items:center;gap:11px">
+                <div style="width:22px;height:22px;border-radius:7px;background:#FBEDE9;display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:8px;height:8px;border-radius:50%;background:#C4553D"></div></div>
+                <div style="flex:1;font-size:14px;color:#4A463F">{{ fx.text }} <span style="font-family:'IBM Plex Mono',monospace;font-weight:600;color:#23211D">{{ fx.sq }}</span></div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="margin-top:auto;background:#EFEBE3;color:#A9A396;border-radius:17px;padding:17px;text-align:center;font-weight:600;font-size:16px;border:1px solid rgba(0,0,0,0.05)">Waiting for the board…</div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ══════════════ 8 · GAME OVER ══════════════ -->
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8A857B">08 · GAME OVER</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="padding:60px 20px 32px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:18px;background:#22201C;color:#F3F1EC">
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;margin-top:14px">
+            <div style="width:78px;height:78px;border-radius:50%;background:#F7F4ED;display:flex;align-items:center;justify-content:center;font-size:42px;color:#2A2723;box-shadow:0 0 0 6px rgba(94,196,137,0.25),0 8px 24px rgba(0,0,0,0.3)">♔</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:#5EC489;margin-top:16px">CHECKMATE</div>
+            <div style="font-size:34px;font-weight:800;letter-spacing:-0.8px;margin-top:6px">You won</div>
+            <div style="font-size:14.5px;color:rgba(243,241,236,0.55);margin-top:4px">vs Stockfish · Level 5</div>
+          </div>
+
+          <div style="display:flex;align-items:center;justify-content:center;gap:16px;font-family:'IBM Plex Mono',monospace">
+            <div style="font-size:15px;color:#F3F1EC">You</div>
+            <div style="font-size:24px;font-weight:600;color:#5EC489">1 <span style="color:rgba(243,241,236,0.35)">–</span> 0</div>
+            <div style="font-size:15px;color:rgba(243,241,236,0.55)">Stockfish</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <sc-for list="{{ gameStats }}" as="st" hint-placeholder-count="4">
+              <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:15px;padding:15px">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600">{{ st.v }}</div>
+                <div style="font-size:12.5px;color:rgba(243,241,236,0.5);margin-top:3px">{{ st.k }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:9px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:13px;padding:12px 15px">
+            <div style="font-size:18px">♟</div>
+            <div style="font-size:14px;color:rgba(243,241,236,0.75)">Opening</div>
+            <div style="margin-left:auto;font-size:14px;font-weight:600">Italian Game <span style="font-family:'IBM Plex Mono',monospace;color:rgba(243,241,236,0.5);font-weight:400">C50</span></div>
+          </div>
+
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:11px">
+            <div style="background:#3F8F63;color:#fff;border-radius:16px;padding:16px;text-align:center;font-weight:700;font-size:16px;box-shadow:0 8px 20px rgba(63,143,99,0.35)">Rematch</div>
+            <div style="background:transparent;color:#5EC489;border:1.5px solid rgba(94,196,137,0.5);border-radius:16px;padding:15px;text-align:center;font-weight:700;font-size:15.5px">Analyze game</div>
+            <div style="text-align:center;font-size:14px;color:rgba(243,241,236,0.5);font-weight:500;padding-top:2px">Back to home</div>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <!-- ══════════════ 9 · ANALYSIS ══════════════ -->
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8A857B">09 · ANALYSIS</div>
+      <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" hint-size="402px,874px">
+        <div style="padding:60px 18px 30px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;background:#F3F1EC">
+          <div style="display:flex;align-items:center"><div style="flex:1;font-size:26px;font-weight:800;letter-spacing:-0.6px">Analysis</div><div style="font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:#3F8F63;background:#E9F1EC;padding:5px 11px;border-radius:9px">+1.2</div></div>
+
+          <div style="display:flex;gap:9px;align-items:stretch">
+            <div style="width:12px;border-radius:6px;overflow:hidden;background:#2A2723;position:relative;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,0.12)">
+              <div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:#F3F1EC"></div>
+              <div style="position:absolute;top:40%;left:0;right:0;height:2px;background:#3F8F63"></div>
+            </div>
+            <div style="flex:1;border-radius:12px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,0.09)">
+              <div style="display:grid;grid-template-columns:repeat(8,1fr);width:100%;aspect-ratio:1">
+                <sc-for list="{{ analysisCells }}" as="c" hint-placeholder-count="64">
+                  <div style="position:relative;display:flex;align-items:center;justify-content:center;background:{{ c.bg }}">
+                    <span style="font-size:22px;line-height:1;color:{{ c.pcolor }};text-shadow:0 1px 1px rgba(0,0,0,0.18),0 0 0.6px rgba(0,0,0,0.45)">{{ c.glyph }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;background:#22201C;color:#F3F1EC;border-radius:12px;padding:10px 14px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;color:#5EC489">BEST</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600">14. dxe5</div>
+            <div style="font-size:13px;color:rgba(243,241,236,0.5);margin-left:auto">wins a pawn</div>
+          </div>
+
+          <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,0.06);border-radius:14px;padding:8px;box-shadow:0 6px 18px rgba(0,0,0,0.03)">
+            <sc-for list="{{ analysisMoves }}" as="m" hint-placeholder-count="5">
+              <div style="display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:8px;background:{{ m.bg }};font-family:'IBM Plex Mono',monospace;font-size:13.5px">
+                <span style="color:#B0AA9E;width:22px">{{ m.n }}</span>
+                <span style="color:#23211D;font-weight:500">{{ m.w }}</span><span style="color:#C4553D;font-weight:700">{{ m.wnag }}</span>
+                <span style="color:#6B6862;margin-left:6px">{{ m.b }}</span><span style="color:#C4553D;font-weight:700">{{ m.bnag }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:11px">
+            <div style="display:flex;align-items:center;gap:14px;justify-content:center;background:#FFFFFF;border:1px solid rgba(0,0,0,0.07);border-radius:14px;padding:12px">
+              <svg width="16" height="14" viewBox="0 0 16 14"><path d="M15 1L6 7l9 6V1zM2 1v12" stroke="#6B6862" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div style="width:44px;height:44px;border-radius:50%;background:#22201C;display:flex;align-items:center;justify-content:center"><svg width="14" height="16" viewBox="0 0 14 16"><rect x="1" y="1" width="4" height="14" rx="1" fill="#fff"/><rect x="9" y="1" width="4" height="14" rx="1" fill="#fff"/></svg></div>
+              <svg width="16" height="14" viewBox="0 0 16 14"><path d="M1 1l9 6-9 6V1zM14 1v12" stroke="#6B6862" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#8A857B;margin-left:6px">24 / 41</div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:center;gap:9px;background:#E9F1EC;border-radius:14px;padding:13px;color:#2E6B4A;font-weight:700;font-size:15px">
+              <div style="width:8px;height:8px;border-radius:50%;background:#3F8F63;box-shadow:0 0 8px #3F8F63"></div>
+              Replay this game on the board
+            </div>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;boardTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;graphite&quot;,&quot;wood&quot;,&quot;green&quot;],&quot;default&quot;:&quot;graphite&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Board&quot;}}">
+class Component extends DCLogic {
+  state = { opp: 'stockfish', level: 5, color: 'white', time: '10 min' };
+
+  buildBoard(theme) {
+    const rows = ["r.bqk..r","pppp.ppp","..n..n..","..b.p...","..B.P...","..P..N..","PP.P.PPP","RNBQK..R"];
+    const glyphMap = { k:'\u265A', q:'\u265B', r:'\u265C', b:'\u265D', n:'\u265E', p:'\u265F' };
+    const led = new Set(['g5','e5','h4']);
+    const sel = new Set(['f3']);
+    const last = new Set(['g8','f6']);
+    const cells = [];
+    for (let r = 0; r < 8; r++) {
+      for (let f = 0; f < 8; f++) {
+        const ch = rows[r][f];
+        const name = 'abcdefgh'[f] + (8 - r);
+        const darkSq = (r + f) % 2 === 1;
+        let bg = darkSq ? theme.dark : theme.light;
+        if (last.has(name)) bg = darkSq ? theme.lastD : theme.lastL;
+        const isW = ch !== '.' && ch === ch.toUpperCase();
+        cells.push({
+          name,
+          bg,
+          glyph: ch === '.' ? '' : glyphMap[ch.toLowerCase()],
+          pcolor: ch === '.' ? 'transparent' : (isW ? '#F7F4ED' : '#2A2723'),
+          led: led.has(name),
+          sel: sel.has(name),
+        });
+      }
+    }
+    return cells;
+  }
+
+  buildStartBoard(theme) {
+    const rows = ["rnbqkbnr","pppppppp","........","........","....P...","........","PPP.PPPP","RNBQKBNR"];
+    const glyphMap = { k:'\u265A', q:'\u265B', r:'\u265C', b:'\u265D', n:'\u265E', p:'\u265F' };
+    const err = new Set(['e4','d2']);
+    const cells = [];
+    for (let r = 0; r < 8; r++) {
+      for (let f = 0; f < 8; f++) {
+        const ch = rows[r][f];
+        const name = 'abcdefgh'[f] + (8 - r);
+        const darkSq = (r + f) % 2 === 1;
+        const isW = ch !== '.' && ch === ch.toUpperCase();
+        cells.push({
+          name,
+          bg: darkSq ? theme.dark : theme.light,
+          glyph: ch === '.' ? '' : glyphMap[ch.toLowerCase()],
+          pcolor: ch === '.' ? 'transparent' : (isW ? '#F7F4ED' : '#2A2723'),
+          err: err.has(name),
+        });
+      }
+    }
+    return cells;
+  }
+
+  renderVals() {
+    const themes = {
+      graphite: { light:'#E9E5DB', dark:'#B4AC9C', lastL:'#D8E2CB', lastD:'#B4C29F' },
+      wood:     { light:'#EAD9BB', dark:'#B58863', lastL:'#DCE0A4', lastD:'#C9B36A' },
+      green:    { light:'#EEEED2', dark:'#7A9A5B', lastL:'#F3F182', lastD:'#BBCB4E' },
+    };
+    const theme = themes[this.props.boardTheme] || themes.graphite;
+
+    const onC = '#3F8F63', onT = '#FFFFFF';
+    const off = { bg:'#FFFFFF', fg:'#4A463F', bd:'rgba(0,0,0,0.10)' };
+    const onS = { bg:onC, fg:onT, bd:onC };
+    const pick = (on) => on ? onS : off;
+
+    const isStock = this.state.opp === 'stockfish';
+
+    const levels = [1,2,3,4,5,6,7,8].map(v => {
+      const p = pick(v === this.state.level);
+      return { v, label: String(v), pick: () => this.setState({ level: v }), bg:p.bg, fg:p.fg, bd:p.bd };
+    });
+
+    const colorDefs = [
+      { key:'white', label:'White', glyph:'\u2654' },
+      { key:'random', label:'Random', glyph:'\u265F\u2659' },
+      { key:'black', label:'Black', glyph:'\u265A' },
+    ];
+    const colors = colorDefs.map(c => {
+      const p = pick(c.key === this.state.color);
+      return { label:c.label, glyph:c.glyph, pick: () => this.setState({ color: c.key }), bg:p.bg, fg:p.fg, bd:p.bd };
+    });
+
+    const times = ['5 min','10 min','15 | 10','30 min'].map(t => {
+      const p = pick(t === this.state.time);
+      return { t, pick: () => this.setState({ time: t }), bg:p.bg, fg:p.fg, bd:p.bd };
+    });
+
+    const oppP = (on) => on ? { bg:'#E9F1EC', fg:'#2E6B4A', bd:'#3F8F63' } : { bg:'#FFFFFF', fg:'#4A463F', bd:'rgba(0,0,0,0.08)' };
+    const lich = oppP(!isStock), stock = oppP(isStock);
+
+    const startSummary = (this.state.color === 'random' ? 'Random side' : (this.state.color === 'white' ? 'White' : 'Black'))
+      + ' · ' + (isStock ? 'Stockfish L' + this.state.level : 'Lichess') + ' · ' + this.state.time;
+
+    return {
+      boardCells: this.buildBoard(theme),
+      startBoard: this.buildStartBoard(theme),
+      analysisCells: this.buildBoard(theme).map(c => ({ ...c, led: false, sel: false })),
+      readyCount: '30 / 32',
+      progressPct: '94%',
+      fixItems: [
+        { ok: false, text: 'Remove the extra pawn on', sq: 'e4' },
+        { ok: false, text: 'Place a white pawn on', sq: 'd2' },
+      ],
+      gameStats: [
+        { v: '86%', k: 'Accuracy' },
+        { v: '1', k: 'Blunders' },
+        { v: '41', k: 'Moves' },
+        { v: '18:24', k: 'Duration' },
+      ],
+      analysisMoves: [
+        { n: '11', w: 'Re1', wnag: '', b: 'd6', bnag: '', bg: 'transparent' },
+        { n: '12', w: 'd4', wnag: '', b: 'exd4', bnag: '', bg: 'transparent' },
+        { n: '13', w: 'cxd4', wnag: '', b: 'Bb6', bnag: '', bg: '#E9F1EC' },
+        { n: '14', w: 'd5', wnag: '?!', b: 'Ne7', bnag: '', bg: 'transparent' },
+        { n: '15', w: 'Bg5', wnag: '', b: 'h6', bnag: '??', bg: 'transparent' },
+      ],
+      isStockfish: isStock,
+      isLichess: !isStock,
+      oppStock: () => this.setState({ opp: 'stockfish' }),
+      oppLich: () => this.setState({ opp: 'lichess' }),
+      lichBg:lich.bg, lichFg:lich.fg, lichBd:lich.bd,
+      stockBg:stock.bg, stockFg:stock.fg, stockBd:stock.bd,
+      levels, colors, times,
+      eloLabel: '\u2248 ' + (800 + this.state.level * 250) + ' Elo',
+      startSummary,
+      moves: [
+        { n:'1.', w:'e4', b:'e5' },
+        { n:'2.', w:'Nf3', b:'Nc6' },
+        { n:'3.', w:'Bc4', b:'Bc5' },
+        { n:'4.', w:'c3', b:'Nf6' },
+      ],
+      networks: [
+        { name:'Home-5G', lock:true, o1:1, o2:1, o3:1 },
+        { name:'workshop_2g', lock:true, o1:1, o2:1, o3:0.3 },
+        { name:'ChessClub-Guest', lock:false, o1:1, o2:0.3, o3:0.3 },
+      ],
+      recents: [
+        { tag:'W', tagbg:'#E9F1EC', tagfg:'#2E6B4A', opp:'Stockfish · Level 5', by:'Checkmate · 41 moves', when:'Yesterday' },
+        { tag:'L', tagbg:'#FBEDE9', tagfg:'#C4553D', opp:'@maia1 · Lichess', by:'Resigned · 28 moves', when:'Jul 2' },
+        { tag:'D', tagbg:'#F0EEE8', tagfg:'#6B6862', opp:'Stockfish · Level 3', by:'Stalemate · 63 moves', when:'Jun 30' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
