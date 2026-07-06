@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
-import { MockBoard } from './MockBoard';
+import { createBoard } from './createBoard';
 import type { BoardStatus, BoardTransport } from './types';
 
 type BoardContextValue = {
@@ -16,7 +16,7 @@ const BoardContext = createContext<BoardContextValue | null>(null);
  */
 export function BoardProvider({ children }: { children: React.ReactNode }) {
   const boardRef = useRef<BoardTransport>(null as unknown as BoardTransport);
-  if (!boardRef.current) boardRef.current = new MockBoard();
+  if (!boardRef.current) boardRef.current = createBoard();
   const board = boardRef.current;
 
   const [status, setStatus] = useState<BoardStatus>(board.getStatus());

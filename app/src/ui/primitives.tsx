@@ -1,11 +1,11 @@
-import { Pressable, StyleSheet, View, ViewStyle } from 'react-native';
+import { Pressable, StyleSheet, TextStyle, View } from 'react-native';
 
 import { colors, radius } from '@/theme/tokens';
 import { Chevron } from './Icons';
 import { Text } from './Text';
 
 /** Mono uppercase section label, e.g. "OPPONENT". */
-export function SectionLabel({ children, style }: { children: React.ReactNode; style?: ViewStyle }) {
+export function SectionLabel({ children, style }: { children: React.ReactNode; style?: TextStyle }) {
   return (
     <Text mono size={11} color={colors.muted3} spacing={1.5} style={[styles.section, style]}>
       {typeof children === 'string' ? children.toUpperCase() : children}
