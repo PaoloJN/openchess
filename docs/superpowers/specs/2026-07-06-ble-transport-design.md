@@ -97,3 +97,23 @@ values are base64 (ble-plx convention) — encode/decode UTF-8 at the boundary.
 
 Gameplay logic over the live link (real clocks, Lichess/Stockfish move flow),
 OTA, BLE bonding/encryption. The transport is the deliverable.
+
+## Deferred: Wi-Fi provisioning (2026-07-06)
+
+Real Wi-Fi provisioning is deferred — it only serves online play (Lichess /
+Chess.com) and OTA, none of which exists yet, and the BLE link the app runs on
+already works. The `wifi.tsx` screen is now an honest, skippable step (no fake
+password field; shows the board's live scan best-effort; "Skip for now" → Home).
+
+Verified on hardware: BLE scan + connect + status work. Two things to fix when
+this is picked back up, one on each side:
+
+- **Firmware — chunk `wifiList`.** iOS delivers a BLE notification of at most
+  ~(negotiated MTU − 3) bytes, and iOS commonly negotiates ~185 regardless of
+  the board's `setMTU(517)`. A multi-network `wifiList` JSON exceeds that, so the
+  notification is truncated and the app can't parse it (the app's 8s wait then
+  times out and the list stays empty). Fix: send one network per notification
+  (e.g. `{"t":"wifiNet","index","count",...}`) or split the JSON into framed
+  chunks the app reassembles. Small `status`/`move` messages are unaffected.
+- **App — real network select + password entry + `provisionWifi(ssid, pw)`**
+  wired to the chunked list, plus a "Set up Wi-Fi" entry point in Settings.
