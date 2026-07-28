@@ -5,6 +5,7 @@
 *.lck
 ~*.lck
 *.kicad_prl
+.history/
 fp-info-cache
 sym-lib-table.bak
 fp-lib-table.bak
