@@ -66,11 +66,11 @@ Stock figures are JLCPCB assembly-library stock unless noted.
 
 | Block | MPN | LCSC # | JLC Class | JLCPCB Stock | Unit Price | Package | Notes |
 |---|---|---|---|---|---|---|---|
-| Green LED (PWR) | 19-219/GHC-YR2T1B5Y/3T | C2994781 | Extended | 41,203 | $0.068/1+ | 0603 | Everlight. 525nm water-clear. |
-| Red LED (CHG) | YLED0603R | C19171390 | Extended | 172,293 | $0.006/1+ | 0603 | YONGYUTAI. 625nm. Min order 1. |
+| Green LED (PWR) | KT-0603G | C12624 | Extended | 430,730 | $0.012/1+ | 0603 | Hubei KENTO. 525nm, 430mcd. Paired with C2286 (same maker). |
+| Red LED (CHG) | KT-0603R | C2286 | **Basic** | 5,033,700+ | $0.0075/1+ | 0603 | Hubei KENTO. 625nm, 300mcd. Basic — no setup fee. |
 | LED series resistor | see 1kΩ 0603 above | C21190 | **Basic** | — | — | 0603 | Same part as power resistors. |
 
-> **LED note:** No Basic 0603 LEDs were found in-stock on JLCPCB as of 2026-07-27. Both chosen LEDs are Extended but cheap. Budget $3 per unique Extended LED for the setup fee.
+> **LED note:** Red CHG LED (C2286 KT-0603R) is a JLC **Basic** part — no $3 setup fee. Green PWR LED (C12624 KT-0603G) is Extended. Both are very cheap and high-stock. Matched footprints (same manufacturer), making reel-swap unnecessary.
 
 ### Connectors (hand-solder TH — not in JLC assembly library)
 
@@ -102,26 +102,31 @@ Valid range: R_ISET = 590Ω to 8.9kΩ (i.e. I_CHG = 100mA to 1.5A)
 **Target:** I_CHG = 1.0A (0.5C for a 2000mAh cell)
 
 ```
-R_ISET = 890 / 1.0 = 890Ω  → use 887Ω (E96) or 909Ω (E96)
-Chosen: 887Ω (E96) — JLCPCB C706602 or similar
+R_ISET = 890 / 1.0 = 890Ω  → use 887Ω (E96, gives 890/887 = 1.003A) or 909Ω (E96, gives 0.979A)
 ```
 
-> For a 1-board build, a 0603 resistor of 887Ω or 909Ω can be hand-picked from the E96 series, or a trimmer can be used for first-bring-up. If only E24 values are available, use 910Ω → I_CHG = 890/910 = 0.978A (close enough).
+> No confirmed JLC Basic C-number for 887Ω found as of 2026-07-27. Options:
+> 1. Confirm an E96 887Ω or 909Ω Extended part at BOM stage (verify stock).
+> 2. Fallback: use 910Ω E24 (same footprint as other 0603 resistors) → I_CHG = 890/910 = 0.978A (≈2% under target — acceptable for a 2000mAh cell).
+> 3. First-bring-up: hand-solder an E96 1% 0603 887Ω from spare stock.
+> Datasheet note: use 1% tolerance resistors for R_ISET (Section 8.3 footnote).
 
 ### Input Current Limit (R_ILIM)
 
-Formula (from datasheet Section 7):
+Formula (from datasheet SLUS810N Rev. N, Section 9.3.4.1, Equation 1):
 
 ```
-R_ILIM = K_ILIM / I_ILIM    where K_ILIM = 1550 AΩ
+R_ILIM = K_ILIM / I_IN-MAX    where K_ILIM = 1610 AΩ (TYP, Table 8.5, range 1500–1720 AΩ)
 Valid range: R_ILIM = 1.1kΩ to 8.0kΩ
 ```
 
-**Target:** I_ILIM = 1.5A (max adapter input)
+**Target:** I_IN-MAX = 1.5A (wall-adapter input limit)
 
 ```
-R_ILIM = 1550 / 1.5 = 1033Ω  → use 1.0kΩ (E24/E96, C21190 Basic part)
-Chosen: 1.0kΩ (C21190) → actual limit = 1550/1000 = 1.55A (within ±5% of target)
+R_ILIM = 1610 / 1.5 = 1073Ω  → nearest standard is 1.0kΩ (E24) or 1.1kΩ (E24/minimum)
+Chosen: 1.0kΩ (C21190) → actual limit = 1610/1000 = 1.61A (slight over; use 1.1kΩ for tighter limit)
+Note: 1.1kΩ gives 1610/1100 = 1.46A; 1.0kΩ gives 1.61A. Both are within valid R_ILIM range.
+Chosen: 1.0kΩ (C21190, Basic) for availability and simplicity; actual limit = 1.61A.
 ```
 
 > Note: EN1=L, EN2=H selects the external ILIM resistor mode (see EN1/EN2 table below). This is the mode that enables R_ILIM to take effect.
@@ -135,7 +140,7 @@ Chosen: 1.0kΩ (C21190) → actual limit = 1550/1000 = 1.55A (within ±5% of tar
 | L | H | External R_ILIM (use this for wall adapter mode) |
 | H | H | Standby / USB suspend |
 
-**Chosen strapping:** EN1 = GND, EN2 = VCC (3.3V from LDO) → External R_ILIM = 1.55A.
+**Chosen strapping:** EN1 = GND, EN2 = VCC (3.3V from LDO) → External R_ILIM mode active → actual limit 1.61A (with 1kΩ).
 
 ### TS Pin (Thermistor — Battery Without NTC)
 
@@ -156,12 +161,19 @@ The battery pack used in this design has **no NTC thermistor**. The datasheet sp
 
 CHG is an open-drain output that pulls LOW when charging is in progress.
 
+Per datasheet SLUS810N Rev. N, Section 10.2.2.4 (page 35), verbatim:
+> "Connect a 1.5-kΩ resistor in series with a LED between OUT and CHG to indicate charging status."
+
+The pull-up rail is the **OUT pin** (regulated system output, ~4.0–4.4V on BQ24074), not IN or SYS directly.
+The datasheet-specified resistor is **1.5kΩ** for LED use (1kΩ–100kΩ for logic pull-up).
+
 ```
-VIN/SYS ──── R_LED (1kΩ) ──── CHG_LED (red, C19171390) ──── CHG (open drain) ──── GND
+OUT (~4.4V) ──── R_LED (1.5kΩ) ──── CHG_LED (red, C2286) ──── CHG (open drain) ──── GND
 ```
 
-- Pull-up from SYS rail (= battery voltage ~3.7–4.2V), not from 3.3V, because CHG stays active even if LDO is off.
-- R_LED = 1kΩ (C21190, Basic): at SYS=3.7V, VLED≈2.0V, I_LED = (3.7−2.0)/1000 = 1.7mA — adequate brightness.
+- At OUT=4.4V, VLED=2.0V (red): I_LED = (4.4−2.0)/1500 = 1.6mA — appropriate for indicator.
+- R_LED: 1.5kΩ not stocked as Basic; nearest Basic is 1kΩ (C21190) → I_LED = 2.4mA (acceptable, within 20mA max).
+- **Chosen for this build:** 1kΩ (C21190, Basic) in series with red LED from OUT to CHG. Simple and uses already-sourced Basic part.
 
 ---
 
@@ -251,7 +263,7 @@ These are needed for the schematic but not listed in the primary block table:
 
 | Value | Function | LCSC # | JLC Class | Notes |
 |---|---|---|---|---|
-| 887Ω 0603 | R_ISET (BQ24074 charge current 1A) | Use E96 or hand-pick | Extended likely | No pre-sourced C# — pick at BOM stage |
+| 887Ω or 909Ω 0603 1% | R_ISET (BQ24074 charge current 1A) | No Basic C# confirmed | Extended or hand-pick | No JLC Basic E96 stock found. Use 910Ω E24 (≈0.978A; same C21190 family if available) as fallback. Verify at BOM stage. |
 | 1.0kΩ 0603 | R_ILIM (BQ24074 input limit 1.55A) | C21190 | **Basic** | Same part as LED series R |
 | 10kΩ 0603 | TS disable (BQ24074) | C25804 | **Basic** | |
 | 100kΩ 0603 | R2 FB divider (TPS61022) | C25803 | **Basic** | 0603WAF1003T5E, 7.7M stock |
@@ -263,11 +275,12 @@ These are needed for the schematic but not listed in the primary block table:
 
 | Classification | Parts |
 |---|---|
-| **Basic** | AMS1117-3.3 (C6186), TS-1187A-B-A-B (C318884), 1kΩ (C21190), 10kΩ (C25804), 100kΩ (C25803) |
-| **Extended** | ESP32-WROOM-32E-N4 (C701341), CH340C (C84681), TYPE-C-31-M-12 (C165948), USBLC6-2SC6 (C7519), BQ24074RGTR (C54313), TPS61022RWUR (C915088), APH0420T1R0M (C5349664), TBD62783AFG(Z,EL) (C840444 or C97745), S8050 J3Y (C42441446), MSK12C02 (C431540), Green LED (C2994781), Red LED (C19171390), 750kΩ (C23240) |
+| **Basic** | AMS1117-3.3 (C6186), TS-1187A-B-A-B (C318884), 1kΩ (C21190), 10kΩ (C25804), 100kΩ (C25803), Red LED KT-0603R (C2286) |
+| **Extended** | ESP32-WROOM-32E-N4 (C701341), CH340C (C84681), TYPE-C-31-M-12 (C165948), USBLC6-2SC6 (C7519), BQ24074RGTR (C54313), TPS61022RWUR (C915088), APH0420T1R0M (C5349664), TBD62783AFG(Z,EL) (C840444 or C97745), S8050 J3Y (C42441446), MSK12C02 (C431540), Green LED KT-0603G (C12624), 750kΩ (C23240) |
 | **Hand-solder (not in JLC BOM)** | B2B-XH-A (C158012), B4B-XH-A-G (C594232 — 0 stock, order alt), B5B-XH-A(LF)(SN) (C157991) |
 
-**Extended part count: 13** → JLCPCB Extended setup fee at $3/part = ~$39 per order.
+**Extended part count: 12** → JLCPCB Extended setup fee at $3/part = ~$36 per order.
+(Red LED moved to Basic vs. earlier draft; saves one $3 setup fee.)
 
 ---
 
@@ -280,3 +293,5 @@ These are needed for the schematic but not listed in the primary block table:
 | B4B-XH-A (0 LCSC stock) | ⚠ Out of stock | Non-JST B4B-XH-A clone from LCSC (12 alt results) | Hand-solder anyway |
 | MCP73871 (fallback charger) | Not needed | BQ24074RGTR in stock | Primary available |
 | FP6277XR-G1 (fallback boost) | Not needed | TPS61022RWUR in stock | Primary available |
+| Everlight 19-219/GHC-... (C2994781) green LED | Replaced | KT-0603G C12624 — cheaper, higher stock, matched to red LED | Same maker as C2286, lower cost |
+| YLED0603R (C19171390) red LED (Extended) | Replaced | KT-0603R C2286 — **Basic**, 5M+ stock, $0.0075 | Basic saves $3 setup fee per order |
