@@ -50,8 +50,9 @@ Stock figures are JLCPCB assembly-library stock unless noted.
 
 | Block | MPN | LCSC # | JLC Class | JLCPCB Stock | Unit Price | Package | Notes |
 |---|---|---|---|---|---|---|---|
-| 1kΩ 0603 resistor | 0603WAF1001T5E | C21190 | **Basic** | ~3.9M (pre-order) | $0.0087/ea | 0603 | UNI-ROYAL. Used for R_ISET, LED series R. |
-| 10kΩ 0603 resistor | 0603WAF1002T5E | C25804 | **Basic** | ~4.8M (pre-order) | $0.0065/ea | 0603 | UNI-ROYAL. Used for R_ILIM (std), TS disable, pull-ups. |
+| 1kΩ 0603 resistor | 0603WAF1001T5E | C21190 | **Basic** | ~3.9M (pre-order) | $0.0087/ea | 0603 | UNI-ROYAL. Used for LED series R. |
+| 1.1kΩ 0603 resistor | 0603WAF1101T5E | C22764 | **Basic** | Large (warehouse Basic passive) | ~$0.001/ea | 0603 | UNI-ROYAL. Used for R_ILIM (1.46A input limit). |
+| 10kΩ 0603 resistor | 0603WAF1002T5E | C25804 | **Basic** | ~4.8M (pre-order) | $0.0065/ea | 0603 | UNI-ROYAL. Used for TS disable, pull-ups. |
 
 > **Resistor note:** Both are Basic and show as "Pre-order" / "Idle parts available" on JLCPCB as of 2026-07-27, but estimated stock is very large. This is JLCPCB's normal state for Basic passives kept in warehouse. They will be pulled without issue for assembly orders.
 
@@ -88,7 +89,7 @@ Stock figures are JLCPCB assembly-library stock unless noted.
 
 ## Design Values — BQ24074RGTR
 
-**Source:** TI BQ24074 datasheet (SLUS934, Rev. N); supplementary: Adafruit BQ24074 breakout design notes.
+**Source:** TI BQ24074 datasheet (SLUS810N, Rev. N); supplementary: Adafruit BQ24074 breakout design notes.
 
 ### Charge Current (R_ISET)
 
@@ -123,10 +124,10 @@ Valid range: R_ILIM = 1.1kΩ to 8.0kΩ
 **Target:** I_IN-MAX = 1.5A (wall-adapter input limit)
 
 ```
-R_ILIM = 1610 / 1.5 = 1073Ω  → nearest standard is 1.0kΩ (E24) or 1.1kΩ (E24/minimum)
-Chosen: 1.0kΩ (C21190) → actual limit = 1610/1000 = 1.61A (slight over; use 1.1kΩ for tighter limit)
-Note: 1.1kΩ gives 1610/1100 = 1.46A; 1.0kΩ gives 1.61A. Both are within valid R_ILIM range.
-Chosen: 1.0kΩ (C21190, Basic) for availability and simplicity; actual limit = 1.61A.
+R_ILIM = 1610 / 1.5 = 1073Ω  → BELOW the valid range minimum of 1.1kΩ,
+so the nearest IN-SPEC standard value is 1.1kΩ (the range minimum itself).
+Chosen: 1.1kΩ (C22764, 0603WAF1101T5E, Basic) → actual limit = 1610/1100 = 1.46A.
+Note: 1.0kΩ would give 1.61A but violates the datasheet's 1.1kΩ minimum — do not use.
 ```
 
 > Note: EN1=L, EN2=H selects the external ILIM resistor mode (see EN1/EN2 table below). This is the mode that enables R_ILIM to take effect.
@@ -140,7 +141,7 @@ Chosen: 1.0kΩ (C21190, Basic) for availability and simplicity; actual limit = 1
 | L | H | External R_ILIM (use this for wall adapter mode) |
 | H | H | Standby / USB suspend |
 
-**Chosen strapping:** EN1 = GND, EN2 = VCC (3.3V from LDO) → External R_ILIM mode active → actual limit 1.61A (with 1kΩ).
+**Chosen strapping:** EN1 = GND, EN2 = VCC (3.3V from LDO) → External R_ILIM mode active → actual limit 1.46A (with 1.1kΩ).
 
 ### TS Pin (Thermistor — Battery Without NTC)
 
@@ -264,7 +265,7 @@ These are needed for the schematic but not listed in the primary block table:
 | Value | Function | LCSC # | JLC Class | Notes |
 |---|---|---|---|---|
 | 887Ω or 909Ω 0603 1% | R_ISET (BQ24074 charge current 1A) | No Basic C# confirmed | Extended or hand-pick | No JLC Basic E96 stock found. Use 910Ω E24 (≈0.978A; same C21190 family if available) as fallback. Verify at BOM stage. |
-| 1.0kΩ 0603 | R_ILIM (BQ24074 input limit 1.55A) | C21190 | **Basic** | Same part as LED series R |
+| 1.1kΩ 0603 | R_ILIM (BQ24074 input limit 1.46A) | C22764 | **Basic** | 0603WAF1101T5E. Range minimum; 1.0kΩ is out-of-spec (below 1.1kΩ datasheet minimum). |
 | 10kΩ 0603 | TS disable (BQ24074) | C25804 | **Basic** | |
 | 100kΩ 0603 | R2 FB divider (TPS61022) | C25803 | **Basic** | 0603WAF1003T5E, 7.7M stock |
 | 750kΩ 0603 | R1 FB divider (TPS61022) | C23240 | Extended | 0603WAF7503T5E, 6 stock — ⚠ order ahead or use 732kΩ E96 |
@@ -275,7 +276,7 @@ These are needed for the schematic but not listed in the primary block table:
 
 | Classification | Parts |
 |---|---|
-| **Basic** | AMS1117-3.3 (C6186), TS-1187A-B-A-B (C318884), 1kΩ (C21190), 10kΩ (C25804), 100kΩ (C25803), Red LED KT-0603R (C2286) |
+| **Basic** | AMS1117-3.3 (C6186), TS-1187A-B-A-B (C318884), 1kΩ (C21190), 1.1kΩ (C22764), 10kΩ (C25804), 100kΩ (C25803), Red LED KT-0603R (C2286) |
 | **Extended** | ESP32-WROOM-32E-N4 (C701341), CH340C (C84681), TYPE-C-31-M-12 (C165948), USBLC6-2SC6 (C7519), BQ24074RGTR (C54313), TPS61022RWUR (C915088), APH0420T1R0M (C5349664), TBD62783AFG(Z,EL) (C840444 or C97745), S8050 J3Y (C42441446), MSK12C02 (C431540), Green LED KT-0603G (C12624), 750kΩ (C23240) |
 | **Hand-solder (not in JLC BOM)** | B2B-XH-A (C158012), B4B-XH-A-G (C594232 — 0 stock, order alt), B5B-XH-A(LF)(SN) (C157991) |
 
