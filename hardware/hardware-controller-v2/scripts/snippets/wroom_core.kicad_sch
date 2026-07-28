@@ -2004,7 +2004,7 @@
 
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 68 88 0)
+		(at 68.08 88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2012,23 +2012,23 @@
 		(dnp no)
 		(uuid "wr320009-0000-4000-8000-000000000001")
 		(property "Reference" "SW_EN"
-			(at 68 85.46 0)
+			(at 68.08 85.46 0)
 			(effects (font (size 1.27 1.27)))
 		)
 		(property "Value" "SW_Push"
-			(at 68 90.46 0)
+			(at 68.08 90.46 0)
 			(effects (font (size 1.27 1.27)))
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_SPST_SKQG_WithoutStem"
-			(at 68 88 0)
+			(at 68.08 88 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
 		(property "Datasheet" ""
-			(at 68 88 0)
+			(at 68.08 88 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
 		(property "Description" ""
-			(at 68 88 0)
+			(at 68.08 88 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
 		(pin "1" (uuid "wr320009-0000-4000-8000-000000000002"))
@@ -2050,13 +2050,13 @@
 		(uuid "wr320009-0000-4000-8000-000000000005")
 	)
 	(wire
-		(pts (xy 73 88) (xy 73 92))
+		(pts (xy 73.16 88) (xy 73.16 92))
 		(stroke (width 0) (type default))
 		(uuid "wr320009-0000-4000-8000-000000000006")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 73 92 0)
+		(at 73.16 92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2064,15 +2064,15 @@
 		(dnp no)
 		(uuid "wr320009-0000-4000-8000-000000000007")
 		(property "Reference" "#PWR?"
-			(at 73 94 0)
+			(at 73.16 94 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 73 90.73 0)
+			(at 73.16 90.73 0)
 			(effects (font (size 1.27 1.27)))
 		)
 		(property "Footprint" ""
-			(at 73 92 0)
+			(at 73.16 92 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
 		(pin "1" (uuid "wr320009-0000-4000-8000-000000000008"))
@@ -2145,7 +2145,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 133 84 0)
+		(at 133.08 84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2153,23 +2153,23 @@
 		(dnp no)
 		(uuid "wr32000c-0000-4000-8000-000000000005")
 		(property "Reference" "SW_BOOT"
-			(at 133 81.46 0)
+			(at 133.08 81.46 0)
 			(effects (font (size 1.27 1.27)))
 		)
 		(property "Value" "SW_Push"
-			(at 133 86.46 0)
+			(at 133.08 86.46 0)
 			(effects (font (size 1.27 1.27)))
 		)
 		(property "Footprint" "Button_Switch_SMD:SW_SPST_SKQG_WithoutStem"
-			(at 133 84 0)
+			(at 133.08 84 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
 		(property "Datasheet" ""
-			(at 133 84 0)
+			(at 133.08 84 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
 		(property "Description" ""
-			(at 133 84 0)
+			(at 133.08 84 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
 		(pin "1" (uuid "wr32000c-0000-4000-8000-000000000006"))
@@ -2181,13 +2181,13 @@
 		)
 	)
 	(wire
-		(pts (xy 138 84) (xy 138 90))
+		(pts (xy 138.16 84) (xy 138.16 90))
 		(stroke (width 0) (type default))
 		(uuid "wr32000c-0000-4000-8000-000000000008")
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 138 90 0)
+		(at 138.16 90 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -2195,15 +2195,15 @@
 		(dnp no)
 		(uuid "wr32000c-0000-4000-8000-000000000009")
 		(property "Reference" "#PWR?"
-			(at 138 92 0)
+			(at 138.16 92 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
 		(property "Value" "GND"
-			(at 138 88.73 0)
+			(at 138.16 88.73 0)
 			(effects (font (size 1.27 1.27)))
 		)
 		(property "Footprint" ""
-			(at 138 90 0)
+			(at 138.16 90 0)
 			(effects (font (size 1.27 1.27)) (hide yes))
 		)
 		(pin "1" (uuid "wr32000c-0000-4000-8000-00000000000a"))
