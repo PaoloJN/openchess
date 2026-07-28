@@ -28,8 +28,9 @@ void pwmGripperCtrl(int angle) {
       return;
     }
   }
-  // 1000-2000us over 0-180 deg; 20000us frame at 16-bit resolution
-  uint32_t us = 1000 + ((uint32_t)angle * 1000) / 180;
+  // 500-2500us over 0-180 deg (MS18 full-travel band); 20000us frame at
+  // 16-bit resolution
+  uint32_t us = 500 + ((uint32_t)angle * 2000) / 180;
   ledcWrite(PWM_GRIPPER_PIN, (uint32_t)((uint64_t)us * 65535 / 20000));
 }
 // --- end DIY gripper patch ---
