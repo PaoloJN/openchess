@@ -10,12 +10,19 @@ Servo pwmGripper;
 
 void pwmGripperInit() {
   pwmGripper.setPeriodHertz(50);
-  pwmGripper.attach(PWM_GRIPPER_PIN, 500, 2500);
+  // Deliberately NOT attached here: attach() immediately drives the servo
+  // to a default position, which stalls the gripper linkage at boot.
+  // The servo stays limp until the first {"T":117} command.
 }
 
 void pwmGripperCtrl(int angle) {
   if (angle < 0) angle = 0;
   if (angle > 180) angle = 180;
+  if (!pwmGripper.attached()) {
+    // conservative 1000-2500us range; cheap micro servos grind against
+    // their end stops at the wider 500us end
+    pwmGripper.attach(PWM_GRIPPER_PIN, 1000, 2500);
+  }
   pwmGripper.write(angle);
 }
 // --- end DIY gripper patch ---
