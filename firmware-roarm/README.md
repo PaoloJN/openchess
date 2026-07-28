@@ -36,6 +36,11 @@ arduino-cli upload  --fqbn esp32:esp32:esp32 -p /dev/cu.usbserial-210 RoArm-M2_e
 1. `esp_now_ctrl.h` — `OnDataSent` signature updated for arduino-esp32 3.3.x
    (IDF 5.5): first callback arg is now `wifi_tx_info_t*`; destination MAC is
    `tx_info->des_addr`. Build-compat only, no behavior change.
+2. DIY gripper servo: `{"T":117,"angle":0..180}` drives a hobby PWM servo on
+   GPIO4 (ESP32Servo 3.2.1, 50 Hz, 500–2500 µs). Touches `switch_module.h`
+   (servo object + init + ctrl), `json_cmd.h` (`CMD_PWM_SERVO 117`),
+   `uart_ctrl.h` (dispatch case), `RoArm-M2_example.ino` (`pwmGripperInit()`).
+   Works over serial/HTTP/ESP-NOW like every other JSON command.
 
 Stock re-flash = revert local patches beyond #1 (that one is required to
 build on this toolchain) and run the two commands above. Verified: this

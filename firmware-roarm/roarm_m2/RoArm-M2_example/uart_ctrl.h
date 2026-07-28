@@ -111,6 +111,9 @@ void jsonCmdReceiveHandler(){
 												jsonCmdReceive["led"]
 												);break;
 	case CMD_SWITCH_OFF:  switchEmergencyStop();break;
+	case CMD_PWM_SERVO:   pwmGripperCtrl(
+													jsonCmdReceive["angle"]
+													);break;
 	case CMD_SINGLE_JOINT_ANGLE:
 												RoArmM2_singleJointAngleCtrl(
 												jsonCmdReceive["joint"],

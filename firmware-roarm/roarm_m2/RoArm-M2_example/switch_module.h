@@ -1,6 +1,25 @@
 int switch_pwm_A = 0;
 int switch_pwm_B = 0;
 
+// --- DIY PWM gripper servo (local patch, not upstream) ---
+// Hobby servo signal on GPIO4 (the board's spare IO4 breakout).
+// Controlled by {"T":117,"angle":0..180} — see CMD_PWM_SERVO.
+#include <ESP32Servo.h>
+Servo pwmGripper;
+#define PWM_GRIPPER_PIN 4
+
+void pwmGripperInit() {
+  pwmGripper.setPeriodHertz(50);
+  pwmGripper.attach(PWM_GRIPPER_PIN, 500, 2500);
+}
+
+void pwmGripperCtrl(int angle) {
+  if (angle < 0) angle = 0;
+  if (angle > 180) angle = 180;
+  pwmGripper.write(angle);
+}
+// --- end DIY gripper patch ---
+
 void switchPinInit(){
   pinMode(AIN1, OUTPUT);
   pinMode(AIN2, OUTPUT);

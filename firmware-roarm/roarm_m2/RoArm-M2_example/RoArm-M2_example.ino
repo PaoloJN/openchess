@@ -72,6 +72,7 @@ void setup() {
   oled_update();
   if(InfoPrint == 1){Serial.println("Initialize the pins used for 12V-switch ctrl.");}
   switchPinInit();
+  pwmGripperInit();  // DIY gripper servo on GPIO4 (local patch)
 
   // servos power up
   screenLine_2 = screenLine_3;

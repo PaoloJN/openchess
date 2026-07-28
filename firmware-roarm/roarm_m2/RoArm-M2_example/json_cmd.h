@@ -145,6 +145,9 @@
 // {"T":115}
 #define CMD_SWITCH_OFF 115
 
+// {"T":117,"angle":90} - DIY PWM gripper servo on GPIO4, 0-180 deg (local patch)
+#define CMD_PWM_SERVO 117
+
 // ctrl a single joint abs angle in deg.
 // joint: 1-BASE_JOINT + ->left
 //        2-SHOULDER_JOINT + ->down
