@@ -81,37 +81,30 @@ Power switch drives the boost **EN pin** (signal-level, no load current through 
 **Interfaces:**
 - Produces: a v2 project that opens in KiCad, passes baseline ERC at v1 parity, named `openchess-controller-v2`. All later tasks edit only this directory.
 
-- [ ] **Step 1: Copy the project, drop v1-only build artifacts**
+- [ ] **Step 1: Adopt Paolo's copy, drop v1-only build artifacts**
+
+Paolo already created `hardware/hardware-controller-v2/` as a copy of v1 and
+has it open in KiCad (lock files present). Do NOT rename the KiCad files —
+the directory name distinguishes v2; renaming under an open session breaks
+it. Just remove stale v1 artifacts:
 
 ```bash
-cd /Users/paolonessim/Projects/openchess/hardware
-cp -R hardware-controller hardware-controller-v2
-cd hardware-controller-v2
-rm -rf gerbers gerbers.zip production assembly build images .history \
-       scripts/sch.DO_NOT_RUN.archived scripts/sch openchess-board-3x3.step \
-       openchess-controller.step
-for f in openchess-controller.kicad_sch openchess-controller.kicad_pcb \
-         openchess-controller.kicad_pro openchess-controller.kicad_prl; do
-  mv "$f" "${f/openchess-controller/openchess-controller-v2}"
-done
+cd /Users/paolonessim/Projects/openchess/hardware/hardware-controller-v2
+rm -f openchess-board-3x3.step openchess-controller.step .DS_Store
 ```
 
-- [ ] **Step 2: Fix internal project references**
+Leave `.history/` and `~*.lck` files on disk but do not commit them.
 
-The `.kicad_pro` file and PCB reference the schematic by name. Search and patch:
+- [ ] **Step 2: Confirm the project loads standalone**
 
-```bash
-grep -rl "openchess-controller\.kicad" openchess-controller-v2.kicad_pro openchess-controller-v2.kicad_pcb \
-  | xargs sed -i '' 's/openchess-controller\.kicad/openchess-controller-v2.kicad/g'
-```
-
-Then open `openchess-controller-v2.kicad_pro` in KiCad once to confirm the schematic and PCB both load and are linked (Tools → Update PCB from Schematic should report no missing-file errors).
+Paolo confirms in his open KiCad session: schematic and PCB both open, and
+Tools → Update PCB from Schematic reports no missing-file errors.
 
 - [ ] **Step 3: Baseline ERC — record v1 parity**
 
 ```bash
 kc=/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli
-$kc sch erc openchess-controller-v2.kicad_sch --output /tmp/erc-baseline.rpt --exit-code-violations; echo "exit=$?"
+$kc sch erc openchess-controller.kicad_sch --output /tmp/erc-baseline.rpt --exit-code-violations; echo "exit=$?"
 cat /tmp/erc-baseline.rpt
 ```
 
@@ -170,7 +163,8 @@ For each row: confirm the LCSC number, Basic vs Extended, in-stock quantity, and
 | Buttons EN/BOOT | TS-1187A or similar SMD tactile ×2 | SMD | any Basic 2-pin/4-pin tactile |
 | Charge LED + R | 0603 LED + 1k | 0603 | any Basic |
 | Slide switch | MSK-12C02 | SMD/TH | hand-solder acceptable |
-| Battery conn | S2B-PH-K-S (JST PH, right angle) | TH | vertical B2B-PH-K-S |
+| PWR LED + R | 0603 LED + 1k | 0603 | any Basic |
+| Battery conn | B2B-XH-A (JST XH 2-pin) | TH | right-angle S2B-XH-A |
 | Panel conns | B4B-XH-A + B5B-XH-A (JST XH) | TH | hand-solder acceptable |
 | Column driver (SMD upgrade) | TBD62783AFG,EL (SOP-18) | SOP-18 | keep v1 DIP-18 TBD62783APG hand-soldered |
 
@@ -332,7 +326,7 @@ git commit -m "feat(fw): v2 pin map behind OPENCHESS_HW_V2 build flag"
 ### Task 5: Schematic — remove daughterboards, place the WROOM-32E core
 
 **Files:**
-- Modify: `hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch` (KiCad GUI)
+- Modify: `hardware/hardware-controller-v2/openchess-controller.kicad_sch` (KiCad GUI)
 
 **Interfaces:**
 - Consumes: v2 GPIO reference table.
@@ -352,7 +346,7 @@ git commit -m "feat(fw): v2 pin map behind OPENCHESS_HW_V2 build flag"
 ```bash
 kc=/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli
 cd /Users/paolonessim/Projects/openchess/hardware/hardware-controller-v2
-$kc sch export netlist openchess-controller-v2.kicad_sch --output /tmp/v2.net
+$kc sch export netlist openchess-controller.kicad_sch --output /tmp/v2.net
 grep -c "ESP32-WROOM-32E" /tmp/v2.net      # expected: >= 1
 grep -c "DevKitC\|Lipo Rider" /tmp/v2.net  # expected: 0
 python3 - <<'EOF'
@@ -370,7 +364,7 @@ Expected: both `OK`.
 - [ ] **Step 4: Commit**
 
 ```bash
-git add hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch
+git add hardware/hardware-controller-v2/openchess-controller.kicad_sch
 git commit -m "feat(hw): v2 sch — WROOM-32E core replaces DevKitC/Lipo Rider"
 ```
 
@@ -379,7 +373,7 @@ git commit -m "feat(hw): v2 sch — WROOM-32E core replaces DevKitC/Lipo Rider"
 ### Task 6: Schematic — USB-C + CH340C + auto-program
 
 **Files:**
-- Modify: `hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch` (KiCad GUI)
+- Modify: `hardware/hardware-controller-v2/openchess-controller.kicad_sch` (KiCad GUI)
 
 **Interfaces:**
 - Consumes: nets `EN`, `IO0`, `GND`, `+3.3V` (Task 5); part values from `SOURCING.md`.
@@ -396,7 +390,7 @@ git commit -m "feat(hw): v2 sch — WROOM-32E core replaces DevKitC/Lipo Rider"
 - [ ] **Step 4: Verify by netlist**
 
 ```bash
-$kc sch export netlist openchess-controller-v2.kicad_sch --output /tmp/v2.net
+$kc sch export netlist openchess-controller.kicad_sch --output /tmp/v2.net
 python3 - <<'EOF'
 import re
 net = open('/tmp/v2.net').read()
@@ -421,7 +415,7 @@ Expected: all `OK` (net-name prefixes may differ by sheet — adjust the lstrip 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch
+git add hardware/hardware-controller-v2/openchess-controller.kicad_sch
 git commit -m "feat(hw): v2 sch — USB-C, CH340C, DevKitC-style auto-program"
 ```
 
@@ -430,19 +424,19 @@ git commit -m "feat(hw): v2 sch — USB-C, CH340C, DevKitC-style auto-program"
 ### Task 7: Schematic — charger, boost, LDO, switch, battery
 
 **Files:**
-- Modify: `hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch` (KiCad GUI)
+- Modify: `hardware/hardware-controller-v2/openchess-controller.kicad_sch` (KiCad GUI)
 
 **Interfaces:**
 - Consumes: `VBUS` (Task 6), design values from `SOURCING.md` §Design values.
 - Produces: nets `VSYS`, `+5V_LED`, `+3.3V`, `VBAT`; charge LED; power switch on boost EN.
 
-- [ ] **Step 1 (GUI): BQ24074 `U8`** per its datasheet typical application, using the exact R values recorded in SOURCING.md: IN ← `VBUS` (+ input cap); OUT → `VSYS` (+ output cap); BAT ↔ `VBAT` ↔ JST-PH `J5` pin 1 (pin 2 → GND); ISET/ILIM/TS/TMR/EN1/EN2 per SOURCING.md; CHG̅ → charge LED `D3` + 1k `R25` from `VBUS`.
+- [ ] **Step 1 (GUI): BQ24074 `U8`** per its datasheet typical application, using the exact R values recorded in SOURCING.md: IN ← `VBUS` (+ input cap); OUT → `VSYS` (+ output cap); BAT ↔ `VBAT` ↔ JST-XH 2-pin `J5` pin 1 (pin 2 → GND); ISET/ILIM/TS/TMR/EN1/EN2 per SOURCING.md; CHG̅ → charge LED `D3` + 1k `R25` from `VBUS`.
 
 - [ ] **Step 2 (GUI): Battery divider stays** — confirm R14 (220k) from `VBAT` to `VBAT_MON` node, R15 (100k) to GND (carried over from v1; only the source net name may need updating to `VBAT`).
 
 - [ ] **Step 3 (GUI): TPS61022 boost `U9`** per datasheet typical application with SOURCING.md values: VIN ← `VSYS`; SW ↔ inductor `L1`; VOUT → `+5V_LED`; FB divider per SOURCING.md; input/output caps per SOURCING.md; EN ← slide switch `SW1`: switch common → `VSYS`, switch ON position → U9 EN (+ 100k pulldown R26 from EN to GND so OFF = defined low).
 
-- [ ] **Step 4 (GUI): LDO `U10` AMS1117-3.3**: IN ← `+5V_LED` (+ 10µF C17), OUT → `+3.3V` (+ 10µF C18), GND → GND. Confirm the v1 rail consumers (74AHCT125 VCC is `+5V_LED`; row pullups and button pullups on `+3.3V`) still reference the same net names.
+- [ ] **Step 4 (GUI): LDO `U10` AMS1117-3.3**: IN ← `+5V_LED` (+ 10µF C17), OUT → `+3.3V` (+ 10µF C18), GND → GND. Add PWR LED `D4` + 1k `R27` from `+3.3V` to GND (lit = board on). Confirm the v1 rail consumers (74AHCT125 VCC is `+5V_LED`; row pullups and button pullups on `+3.3V`) still reference the same net names.
 
 - [ ] **Step 5: Verify by netlist** — same pattern as Task 6:
 
@@ -451,7 +445,7 @@ Checks: `VBUS`→{U8}, `VSYS`→{U8, U9, SW1}, `VBAT`→{U8, J5, R14}, `+5V_LED`
 - [ ] **Step 6: Commit**
 
 ```bash
-git add hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch
+git add hardware/hardware-controller-v2/openchess-controller.kicad_sch
 git commit -m "feat(hw): v2 sch — BQ24074 power path, TPS61022 boost, LDO, switch"
 ```
 
@@ -460,7 +454,7 @@ git commit -m "feat(hw): v2 sch — BQ24074 power path, TPS61022 boost, LDO, swi
 ### Task 8: Schematic — split panel connectors J_OLED / J_BTN
 
 **Files:**
-- Modify: `hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch` (KiCad GUI)
+- Modify: `hardware/hardware-controller-v2/openchess-controller.kicad_sch` (KiCad GUI)
 
 **Interfaces:**
 - Consumes: connector contract from `docs/inter-board-connector.md` (Task 3).
@@ -473,7 +467,7 @@ git commit -m "feat(hw): v2 sch — BQ24074 power path, TPS61022 boost, LDO, swi
 - [ ] **Step 3: Commit**
 
 ```bash
-git add hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch
+git add hardware/hardware-controller-v2/openchess-controller.kicad_sch
 git commit -m "feat(hw): v2 sch — split panel into J_OLED (XH-4) and J_BTN (XH-5)"
 ```
 
@@ -482,7 +476,7 @@ git commit -m "feat(hw): v2 sch — split panel into J_OLED (XH-4) and J_BTN (XH
 ### Task 9: Schematic — GPIO rewire to the v2 map + ERC to zero
 
 **Files:**
-- Modify: `hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch` (KiCad GUI)
+- Modify: `hardware/hardware-controller-v2/openchess-controller.kicad_sch` (KiCad GUI)
 - Create: `hardware/hardware-controller-v2/scripts/check_v2_nets.py`
 
 **Interfaces:**
@@ -498,7 +492,7 @@ git commit -m "feat(hw): v2 sch — split panel into J_OLED (XH-4) and J_BTN (XH
 """Verify openchess-controller-v2 netlist against the v2 GPIO/connector contract."""
 import re, subprocess, sys, pathlib
 KC = "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
-SCH = pathlib.Path(__file__).resolve().parents[1] / "openchess-controller-v2.kicad_sch"
+SCH = pathlib.Path(__file__).resolve().parents[1] / "openchess-controller.kicad_sch"
 NET = "/tmp/v2-contract.net"
 subprocess.run([KC, "sch", "export", "netlist", str(SCH), "--output", NET], check=True)
 net = open(NET).read()
@@ -546,7 +540,7 @@ Expected: `ALL OK`.
 - [ ] **Step 4: ERC to zero**
 
 ```bash
-$kc sch erc openchess-controller-v2.kicad_sch --output /tmp/erc-v2.rpt --exit-code-violations; echo "exit=$?"
+$kc sch erc openchess-controller.kicad_sch --output /tmp/erc-v2.rpt --exit-code-violations; echo "exit=$?"
 ```
 
 Expected: `exit=0`. Fix every violation in the GUI (typical: missing PWR_FLAG on `VBUS`/`VBAT`, unconnected NC pins needing flags), rerun until clean, and rerun Step 3 after any fix.
@@ -554,7 +548,7 @@ Expected: `exit=0`. Fix every violation in the GUI (typical: missing PWR_FLAG on
 - [ ] **Step 5: Commit**
 
 ```bash
-git add hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch \
+git add hardware/hardware-controller-v2/openchess-controller.kicad_sch \
         hardware/hardware-controller-v2/scripts/check_v2_nets.py
 git commit -m "feat(hw): v2 sch — full GPIO rewire, net contract checker, ERC clean"
 ```
@@ -564,20 +558,20 @@ git commit -m "feat(hw): v2 sch — full GPIO rewire, net contract checker, ERC 
 ### Task 10: Footprints and JLC fields
 
 **Files:**
-- Modify: `hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch` (GUI: symbol fields)
+- Modify: `hardware/hardware-controller-v2/openchess-controller.kicad_sch` (GUI: symbol fields)
 
 **Interfaces:**
 - Consumes: `SOURCING.md` (Task 2).
 - Produces: every symbol has a footprint and an `LCSC` field; BOM export is machine-usable by the fabrication toolkit (same field convention as v1 — check one carried-over v1 symbol, e.g. U3, and match it).
 
-- [ ] **Step 1 (GUI):** Assign footprints for all new symbols (module, CH340C SOP-16, USB-C, VQFN parts, SOT-223, SOT-23, inductor, connectors: J6 `JST_XH_B4B-XH-A`, J7 `JST_XH_B5B-XH-A`, J5 `JST_PH_S2B-PH-K`). If SOURCING.md selected the SOP-18 TBD62783AFG, change U6's footprint to SOIC/SOP-18 and add its LCSC field; otherwise leave DIP-18.
+- [ ] **Step 1 (GUI):** Assign footprints for all new symbols (module, CH340C SOP-16, USB-C, VQFN parts, SOT-223, SOT-23, inductor, connectors: J6 `JST_XH_B4B-XH-A`, J7 `JST_XH_B5B-XH-A`, J5 `JST_XH_B2B-XH-A`). If SOURCING.md selected the SOP-18 TBD62783AFG, change U6's footprint to SOIC/SOP-18 and add its LCSC field; otherwise leave DIP-18.
 
 - [ ] **Step 2 (GUI):** Fill `LCSC` field on every assembled part from SOURCING.md. Hand-solder parts (switch, XH/PH connectors if through-hole, J1) get no LCSC field but keep footprints.
 
 - [ ] **Step 3: Verify** — export BOM and check no assembled part is missing an LCSC number:
 
 ```bash
-$kc sch export bom openchess-controller-v2.kicad_sch --output /tmp/v2-bom.csv \
+$kc sch export bom openchess-controller.kicad_sch --output /tmp/v2-bom.csv \
   --fields "Reference,Value,Footprint,LCSC"
 grep -v "LCSC" /tmp/v2-bom.csv | head -30   # eyeball: only hand-solder refs may have empty last column
 ```
@@ -585,7 +579,7 @@ grep -v "LCSC" /tmp/v2-bom.csv | head -30   # eyeball: only hand-solder refs may
 - [ ] **Step 4: Commit**
 
 ```bash
-git add hardware/hardware-controller-v2/openchess-controller-v2.kicad_sch
+git add hardware/hardware-controller-v2/openchess-controller.kicad_sch
 git commit -m "feat(hw): v2 footprints and LCSC assembly fields"
 ```
 
@@ -594,7 +588,7 @@ git commit -m "feat(hw): v2 footprints and LCSC assembly fields"
 ### Task 11: PCB — outline, placement, keepouts
 
 **Files:**
-- Modify: `hardware/hardware-controller-v2/openchess-controller-v2.kicad_pcb` (KiCad GUI)
+- Modify: `hardware/hardware-controller-v2/openchess-controller.kicad_pcb` (KiCad GUI)
 
 **Interfaces:**
 - Consumes: complete schematic (Task 9), footprints (Task 10).
@@ -615,7 +609,7 @@ git commit -m "feat(hw): v2 footprints and LCSC assembly fields"
 - [ ] **Step 4: DRC (pre-routing sanity)**
 
 ```bash
-$kc pcb drc openchess-controller-v2.kicad_pcb --output /tmp/drc-place.rpt
+$kc pcb drc openchess-controller.kicad_pcb --output /tmp/drc-place.rpt
 grep -i "courtyard\|edge" /tmp/drc-place.rpt
 ```
 
@@ -624,7 +618,7 @@ Expected: no courtyard overlaps, no edge-clearance violations (unrouted-net erro
 - [ ] **Step 5: Commit**
 
 ```bash
-git add hardware/hardware-controller-v2/openchess-controller-v2.kicad_pcb
+git add hardware/hardware-controller-v2/openchess-controller.kicad_pcb
 git commit -m "feat(hw): v2 pcb — outline, placement, antenna keepout"
 ```
 
@@ -633,7 +627,7 @@ git commit -m "feat(hw): v2 pcb — outline, placement, antenna keepout"
 ### Task 12: PCB — routing + DRC to zero
 
 **Files:**
-- Modify: `hardware/hardware-controller-v2/openchess-controller-v2.kicad_pcb` (KiCad GUI)
+- Modify: `hardware/hardware-controller-v2/openchess-controller.kicad_pcb` (KiCad GUI)
 
 **Interfaces:**
 - Consumes: placed board (Task 11).
@@ -650,7 +644,7 @@ git commit -m "feat(hw): v2 pcb — outline, placement, antenna keepout"
 - [ ] **Step 2: DRC to zero**
 
 ```bash
-$kc pcb drc openchess-controller-v2.kicad_pcb --output /tmp/drc-final.rpt --exit-code-violations; echo "exit=$?"
+$kc pcb drc openchess-controller.kicad_pcb --output /tmp/drc-final.rpt --exit-code-violations; echo "exit=$?"
 ```
 
 Expected: `exit=0`. Fix and rerun until clean.
@@ -666,7 +660,7 @@ Expected: `ALL OK`.
 - [ ] **Step 4: Commit**
 
 ```bash
-git add hardware/hardware-controller-v2/openchess-controller-v2.kicad_pcb
+git add hardware/hardware-controller-v2/openchess-controller.kicad_pcb
 git commit -m "feat(hw): v2 pcb — routed, DRC clean"
 ```
 

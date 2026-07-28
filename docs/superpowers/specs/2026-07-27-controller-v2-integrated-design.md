@@ -75,7 +75,9 @@ Changed: single J3 XH-10 panel connector splits into J_OLED (XH-4)
 
 - **Charger with power path** (BQ24074 class): when USB is present the
   system runs from USB while the battery charges independently; on unplug
-  it switches to battery seamlessly. Charge-status LED on board.
+  it switches to battery seamlessly. Charge-status LED on board, plus a
+  small PWR LED on the 3.3V rail (lit = board on). No GPIO status LED —
+  no safe pins remain free and the OLED covers rich status.
 - **5V boost converter**, ~3A class (e.g. TPS61022), always on when the
   board is on, feeding `+5V_LED` to J1. Sized so full-board bright LED
   animations do not sag the rail. No load-detection auto-off.
@@ -83,8 +85,9 @@ Changed: single J3 XH-10 panel connector splits into J_OLED (XH-4)
   (signal-level, no load current through the switch). Off = both rails dead,
   µA-level charger quiescent only — and the battery still charges while
   "off", phone-style.
-- **Battery**: protected 1S LiPo on a JST-PH connector (PH, not XH,
-  because protected packs ship with PH plugs).
+- **Battery**: protected 1S LiPo on a dedicated JST-XH 2-pin connector
+  (Paolo's preference for XH everywhere; battery lead gets re-crimped from
+  the pack's stock PH plug once).
 - **Battery monitor**: existing 220k/100k divider into an ADC1 pin,
   unchanged.
 
