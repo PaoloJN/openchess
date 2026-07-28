@@ -64,9 +64,10 @@ Changed: single J3 XH-10 panel connector splits into J_OLED (XH-4)
   important placement constraint on the board.
 - **USB-C receptacle** with 5.1k pulldowns on both CC pins so USB-C
   chargers enumerate and deliver 5V.
-- **CP2102N** USB-to-serial bridge plus the standard two-transistor
-  auto-program circuit, and manual EN/BOOT pushbuttons as fallback.
-  Flashing workflow is identical to the DevKitC.
+- **USB-to-serial bridge** (CH340C preferred as a JLC Basic part; CP2102N
+  as alternate) plus the standard two-transistor auto-program circuit, and
+  manual EN/BOOT pushbuttons as fallback. Flashing workflow is identical
+  to the DevKitC.
 - **3.3V LDO**, 500mA class, powering the ESP32, DRV5032 sensors (via J1),
   and the OLED.
 
@@ -78,7 +79,10 @@ Changed: single J3 XH-10 panel connector splits into J_OLED (XH-4)
 - **5V boost converter**, ~3A class (e.g. TPS61022), always on when the
   board is on, feeding `+5V_LED` to J1. Sized so full-board bright LED
   animations do not sag the rail. No load-detection auto-off.
-- **Power switch**: slide switch in the battery path. Off = zero drain.
+- **Power switch**: slide switch driving the boost converter's EN pin
+  (signal-level, no load current through the switch). Off = both rails dead,
+  µA-level charger quiescent only — and the battery still charges while
+  "off", phone-style.
 - **Battery**: protected 1S LiPo on a JST-PH connector (PH, not XH,
   because protected packs ship with PH plugs).
 - **Battery monitor**: existing 220k/100k divider into an ADC1 pin,
