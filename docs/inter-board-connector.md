@@ -1,18 +1,18 @@
 # Board Connector Contracts
 
-Current hardware has two PCBs and one panel harness:
+Current hardware (v2) has two PCBs and one panel harness:
 
 - `hardware-board` or `hardware-board-3x3`: matrix board
-- `hardware-controller`: controller, power, and driver board
-- Panel harness: SSD1306 OLED and 3 buttons wired to controller `J3`
+- `hardware-controller-v2`: controller, power, and driver board
+- Panel harness: SSD1306 OLED and 3 buttons wired to controller `J_OLED` and `J_BTN`
 
-All active 2x13 matrix/controller `J` connectors are intended to use
+All active 2x13 matrix/controller `J1` connectors are intended to use
 `PinSocket_2x13` footprints.
 
-## Matrix Connector: `J1` / `J1`
+## Matrix Connector: `J1` (matrix board ⇄ controller)
 
 The matrix board connector and controller-side mate share the same 2x13 net
-contract. The matrix board carries Hall row-sense nets, column power rails, LED
+contract, **identical v1 ⇄ v2**. The matrix board carries Hall row-sense nets, column power rails, LED
 data, LED power, and ground. The controller drives or receives those nets.
 
 | Pin | Net | Direction |
@@ -50,33 +50,27 @@ Counts: 4x `+5V_LED`, 5x `GND`, 1x `LED_DATA_5V`, 8x row-sense nets,
 The matrix board does not consume the 3.3 V rail. Row pullups live on the
 controller.
 
-## Panel Connector: Controller `J3`
+## J_OLED — JST-XH 4-pin (controller ⇄ panel OLED)
 
-`J3` is the 10-pin connector on the controller that terminates in a
-flying-lead harness. The harness lands at:
+| Pin | Net | Matches SSD1306 module order |
+|---|---|---|
+| 1 | GND | GND |
+| 2 | +3.3V | VCC |
+| 3 | I2C_SCL | SCL |
+| 4 | I2C_SDA | SDA |
 
-- SSD1306 0.96 inch I2C OLED module
-- POWER panel button
-- MODE panel button
-- SELECT panel button
+Straight-through cable; I2C pullups live on the OLED module (as in v1 — the
+controller adds none).
 
-There is no active panel PCB.
+## J_BTN — JST-XH 5-pin (controller ⇄ panel buttons)
 
-| Pin | Net | Direction |
-|----:|-----|-----------|
-| 1 | `+3.3V` | controller -> panel |
-| 2 | `GND` | both |
-| 3 | `I2C_SDA` | bidirectional |
-| 4 | `I2C_SCL` | controller -> panel |
-| 5 | `BTN_SELECT` | panel -> controller |
-| 6 | `BTN_POWER` | panel -> controller |
-| 7 | `BTN_MODE` | panel -> controller |
-| 8 | `PANEL_SPARE` | reserved |
-| 9 | `PANEL_SPARE2` | reserved |
-| 10 | `GND` | both |
+| Pin | Net | Note |
+|---|---|---|
+| 1 | GND | common for all buttons |
+| 2 | BTN_POWER | GPIO36, ext pullup R36 |
+| 3 | BTN_MODE | GPIO39, ext pullup R37 |
+| 4 | BTN_SELECT | GPIO2, internal pullup only |
+| 5 | (spare) | not connected, reserved |
 
-Buttons short their signal net to `GND`. `BTN_POWER` and `BTN_MODE` use
-external controller-side pullups because their ESP32 pins are input-only.
-`BTN_SELECT` uses the ESP32 internal pullup in firmware.
-
-Check the OLED module before wiring; many modules already include I2C pullups.
+Buttons short their signal to GND. The v1 J3 XH-10 harness is retired;
+re-crimp the panel harness into these two cables.
