@@ -1713,7 +1713,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector_Generic:Conn_01x10"
+		(symbol "Connector_Generic:Conn_01x04"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -1724,7 +1724,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "J"
-				(at 0 12.7 0)
+				(at 0 5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -1733,8 +1733,8 @@
 					)
 				)
 			)
-			(property "Value" "Conn_01x10"
-				(at 0 -15.24 0)
+			(property "Value" "Conn_01x04"
+				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -1765,7 +1765,7 @@
 					)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1798,49 +1798,16 @@
 					)
 				)
 			)
-			(symbol "Conn_01x10_1_1"
+			(symbol "Conn_01x04_1_1"
 				(rectangle
-					(start -1.27 11.43)
-					(end 1.27 -13.97)
+					(start -1.27 3.81)
+					(end 1.27 -6.35)
 					(stroke
 						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 10.287)
-					(end 0 10.033)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 7.747)
-					(end 0 7.493)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 5.207)
-					(end 0 4.953)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
 					)
 				)
 				(rectangle
@@ -1887,41 +1854,8 @@
 						(type none)
 					)
 				)
-				(rectangle
-					(start -1.27 -7.493)
-					(end 0 -7.747)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -10.033)
-					(end 0 -10.287)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -12.573)
-					(end 0 -12.827)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(pin passive line
-					(at -5.08 10.16 0)
+					(at -5.08 2.54 0)
 					(length 3.81)
 					(name "Pin_1"
 						(effects
@@ -1939,7 +1873,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 7.62 0)
+					(at -5.08 0 0)
 					(length 3.81)
 					(name "Pin_2"
 						(effects
@@ -1957,7 +1891,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 5.08 0)
+					(at -5.08 -2.54 0)
 					(length 3.81)
 					(name "Pin_3"
 						(effects
@@ -1975,7 +1909,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 2.54 0)
+					(at -5.08 -5.08 0)
 					(length 3.81)
 					(name "Pin_4"
 						(effects
@@ -1985,114 +1919,6 @@
 						)
 					)
 					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "Pin_7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -7.62 0)
-					(length 3.81)
-					(name "Pin_8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -10.16 0)
-					(length 3.81)
-					(name "Pin_9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -12.7 0)
-					(length 3.81)
-					(name "Pin_10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -8011,6 +7837,16 @@
 	)
 	(wire
 		(pts
+			(xy 306.07 200.66) (xy 314.96 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f2b0306-1337-4250-bbd1-ce7a88c34afa")
+	)
+	(wire
+		(pts
 			(xy 354.33 270.51) (xy 354.33 273.0032)
 		)
 		(stroke
@@ -8098,6 +7934,16 @@
 			(type default)
 		)
 		(uuid "15f1d57e-25b8-4523-aaf1-6c67933c88b1")
+	)
+	(wire
+		(pts
+			(xy 313.69 224.79) (xy 314.96 224.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "177548f3-c3f7-472c-ac9a-3a2888edf8ff")
 	)
 	(wire
 		(pts
@@ -8301,16 +8147,6 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 215.9) (xy 316.23 215.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2e35ad26-17fa-420d-ae2e-908c9cbf3dd4")
-	)
-	(wire
-		(pts
 			(xy 316.23 111.76) (xy 327.66 111.76)
 		)
 		(stroke
@@ -8491,6 +8327,16 @@
 	)
 	(wire
 		(pts
+			(xy 313.69 233.68) (xy 314.96 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "426f07b5-d626-4b4c-a6a7-788cbeb7e178")
+	)
+	(wire
+		(pts
 			(xy 443.23 351.79) (xy 443.23 349.25)
 		)
 		(stroke
@@ -8538,6 +8384,16 @@
 			(type default)
 		)
 		(uuid "4451463b-f078-4355-8abd-01b416fda622")
+	)
+	(wire
+		(pts
+			(xy 306.07 231.14) (xy 314.96 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44a7bc46-a919-4ccb-8767-ca95cb49c3d5")
 	)
 	(wire
 		(pts
@@ -8761,6 +8617,16 @@
 	)
 	(wire
 		(pts
+			(xy 312.42 195.58) (xy 314.96 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a72cc7d-e984-4b37-8672-a478b96ee4c4")
+	)
+	(wire
+		(pts
 			(xy 307.34 96.52) (xy 307.34 99.06)
 		)
 		(stroke
@@ -8841,13 +8707,13 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 226.06) (xy 316.23 226.06)
+			(xy 306.07 203.2) (xy 314.96 203.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "66af5de9-b33f-4b80-8fb7-1582f8d176f6")
+		(uuid "68f93810-2528-4596-9bb3-3ae27496c02d")
 	)
 	(wire
 		(pts
@@ -8928,26 +8794,6 @@
 			(type default)
 		)
 		(uuid "70794fe8-c8de-4c7f-88d2-a025aad3322b")
-	)
-	(wire
-		(pts
-			(xy 312.42 203.2) (xy 316.23 203.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "713dcd36-92a3-4a78-b73e-d131985e5008")
-	)
-	(wire
-		(pts
-			(xy 300.99 213.36) (xy 316.23 213.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "716a4775-df1a-420c-b896-0fcec4987766")
 	)
 	(wire
 		(pts
@@ -9131,13 +8977,13 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 210.82) (xy 316.23 210.82)
+			(xy 302.26 198.12) (xy 314.96 198.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7efed202-3ab6-4f44-b874-52de669e6398")
+		(uuid "7e2e0c87-f01b-49a7-9120-a2ef9f6cb4ba")
 	)
 	(wire
 		(pts
@@ -9151,16 +8997,6 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 223.52) (xy 316.23 223.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "80128588-a70a-4467-a5e2-ca946b1038f1")
-	)
-	(wire
-		(pts
 			(xy 167.64 327.66) (xy 175.26 327.66)
 		)
 		(stroke
@@ -9168,6 +9004,16 @@
 			(type default)
 		)
 		(uuid "80289526-7cf1-4b72-91e5-1c58d4ef9eea")
+	)
+	(wire
+		(pts
+			(xy 307.34 213.36) (xy 314.96 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "803ed8af-5b6c-4172-a40f-24f878b3df5f")
 	)
 	(wire
 		(pts
@@ -9231,16 +9077,6 @@
 	)
 	(wire
 		(pts
-			(xy 299.72 205.74) (xy 316.23 205.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8a19836d-4487-4b4d-bd2a-a5fc9642ff30")
-	)
-	(wire
-		(pts
 			(xy 363.22 152.4) (xy 363.22 144.78)
 		)
 		(stroke
@@ -9298,16 +9134,6 @@
 			(type default)
 		)
 		(uuid "8d3701d5-68e7-483f-bb15-36a587bacf22")
-	)
-	(wire
-		(pts
-			(xy 300.99 218.44) (xy 316.23 218.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8de25831-780f-4a5b-a77f-29986d78bbe4")
 	)
 	(wire
 		(pts
@@ -9538,6 +9364,16 @@
 			(type default)
 		)
 		(uuid "a762d016-b4aa-4b5d-8f3d-307b5d65f2bf")
+	)
+	(wire
+		(pts
+			(xy 313.69 215.9) (xy 314.96 215.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7d593b2-0aa5-4784-b474-afe0b7892b18")
 	)
 	(wire
 		(pts
@@ -9861,16 +9697,6 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 208.28) (xy 316.23 208.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cf0e000d-d733-4ddf-92e8-495a9e281607")
-	)
-	(wire
-		(pts
 			(xy 387.35 280.67) (xy 383.54 280.67)
 		)
 		(stroke
@@ -9948,6 +9774,16 @@
 			(type default)
 		)
 		(uuid "d3271079-30dd-46a7-8cda-eb207951de37")
+	)
+	(wire
+		(pts
+			(xy 304.8 222.25) (xy 314.96 222.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6781b83-24fa-409d-91ab-59b3d77ce1c7")
 	)
 	(wire
 		(pts
@@ -10078,16 +9914,6 @@
 			(type default)
 		)
 		(uuid "e6ecc57a-f6d0-423e-95a5-36add70e406f")
-	)
-	(wire
-		(pts
-			(xy 300.99 220.98) (xy 316.23 220.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e78793a1-9029-466b-b328-b1f2e270fb89")
 	)
 	(wire
 		(pts
@@ -10439,7 +10265,7 @@
 		)
 		(uuid "1497fc33-e03e-4ab9-8af0-3e8442350eba")
 	)
-	(label "BTN_POWER"
+	(label "BTN_UP"
 		(at 316.23 129.54 0)
 		(effects
 			(font
@@ -10458,16 +10284,6 @@
 			(justify left bottom)
 		)
 		(uuid "181c82c4-7b6d-4792-b6f8-79cea6211fdd")
-	)
-	(label "PANEL_SPARE2"
-		(at 300.99 223.52 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "19db131a-d054-4ff9-b428-869143dd1641")
 	)
 	(label "USB_DM"
 		(at 166.37 302.26 0)
@@ -10559,16 +10375,6 @@
 		)
 		(uuid "28fed36c-e651-4132-99c5-62fa4ad8c260")
 	)
-	(label "BTN_POWER"
-		(at 300.99 215.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2ce4d4cb-3c79-4f74-8f77-de923b61638f")
-	)
 	(label "S2"
 		(at 396.24 121.92 0)
 		(effects
@@ -10598,6 +10404,16 @@
 			(justify left bottom)
 		)
 		(uuid "2ed0f1b6-2d0f-438b-9b54-5b87e8eaacef")
+	)
+	(label "BTN_OK"
+		(at 306.07 231.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3334acd0-83f8-463b-97d2-dcb399f150d9")
 	)
 	(label "VBUS"
 		(at 168.91 288.29 0)
@@ -10639,15 +10455,15 @@
 		)
 		(uuid "365d0390-6cc4-4417-8a24-ea33ce84e978")
 	)
-	(label "BTN_MODE"
-		(at 300.99 218.44 0)
+	(label "BTN_DOWN"
+		(at 304.8 222.25 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "38616ab7-e82c-48ff-b714-cfd18941e750")
+		(uuid "377d5ca4-91bf-4e27-beab-0d786133f065")
 	)
 	(label "COL_DRV_H"
 		(at 316.23 111.76 0)
@@ -10768,6 +10584,16 @@
 			(justify left bottom)
 		)
 		(uuid "500c86d7-2e3e-4631-8c27-b68431284f4d")
+	)
+	(label "BTN_UP"
+		(at 307.34 213.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "50180c38-9507-4bed-9bf0-4d0bdf2febfc")
 	)
 	(label "CE_PWR"
 		(at 78.74 217.17 0)
@@ -10949,7 +10775,7 @@
 		)
 		(uuid "785eaf77-e085-46e4-8fc9-29ce2b8f718f")
 	)
-	(label "BTN_MODE"
+	(label "BTN_DOWN"
 		(at 365.76 220.98 0)
 		(effects
 			(font
@@ -11059,16 +10885,6 @@
 		)
 		(uuid "94ce9b93-582d-45f2-8eb2-b11f5df56bdf")
 	)
-	(label "I2C_SDA"
-		(at 300.99 208.28 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9500bfd8-378d-4b7c-b3a5-2d764bdeb986")
-	)
 	(label "VSYS"
 		(at 457.2 308.61 0)
 		(effects
@@ -11079,7 +10895,7 @@
 		)
 		(uuid "97e6903b-37e8-49c8-adc0-4e556d91b3a4")
 	)
-	(label "BTN_SELECT"
+	(label "BTN_OK"
 		(at 396.24 109.22 0)
 		(effects
 			(font
@@ -11129,6 +10945,16 @@
 		)
 		(uuid "a55fd0d4-55b8-4876-a675-1536c9260157")
 	)
+	(label "I2C_SDA"
+		(at 306.07 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a588f523-9074-4578-a5e5-c37ed5b36a76")
+	)
 	(label "LED_DATA_5V"
 		(at 45.72 87.63 180)
 		(effects
@@ -11138,16 +10964,6 @@
 			(justify right bottom)
 		)
 		(uuid "abca4679-17e9-434e-920e-e6ebb3ad53cf")
-	)
-	(label "BTN_SELECT"
-		(at 300.99 213.36 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "acf16c7d-a86f-40af-8f1a-b6f74338139a")
 	)
 	(label "COL_DRV_E"
 		(at 38.1 217.17 0)
@@ -11159,7 +10975,7 @@
 		)
 		(uuid "ad2f432b-e36f-4406-b6bb-a7157840e106")
 	)
-	(label "BTN_POWER"
+	(label "BTN_UP"
 		(at 347.98 220.98 0)
 		(effects
 			(font
@@ -11329,25 +11145,15 @@
 		)
 		(uuid "d6065fe4-5344-4bee-a730-228953d4d9ab")
 	)
-	(label "PANEL_SPARE"
-		(at 300.99 220.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d796323a-5c49-48bf-b454-d05d1f32befc")
-	)
 	(label "I2C_SCL"
-		(at 300.99 210.82 0)
+		(at 306.07 200.66 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "d7dec79f-6354-48e4-b884-3dbe0747c254")
+		(uuid "d8ab85fe-4659-495d-80c3-9df97e7442ed")
 	)
 	(label "DTR"
 		(at 247.65 298.45 0)
@@ -11479,7 +11285,7 @@
 		)
 		(uuid "fc5dbc92-c8d1-4d5a-93c5-ad2b8dbd29da")
 	)
-	(label "BTN_MODE"
+	(label "BTN_DOWN"
 		(at 316.23 132.08 0)
 		(effects
 			(font
@@ -12067,6 +11873,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 320.04 213.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "08890ae0-2300-4059-974c-21602b92b9b0")
+		(property "Reference" "J7"
+			(at 322.58 213.3599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "J_BTN_UP XH-2"
+			(at 322.58 215.8999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 320.04 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 320.04 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 320.04 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b4c501ac-4814-4470-b1c3-588f68b78e27")
+		)
+		(pin "2"
+			(uuid "0e53976d-cf97-4daf-8e3e-7ccd1fef929a")
+		)
+		(instances
+			(project "openchess-controller"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 248.92 208.28 0)
 		(unit 1)
@@ -12296,112 +12184,6 @@
 			(project "openchess-controller"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
 					(reference "#PWR073")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x10")
-		(at 321.31 213.36 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0e58c529-ac1b-46ba-a973-42253f620e33")
-		(property "Reference" "J3"
-			(at 323.85 213.3599 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "J_PANEL XH-10"
-			(at 323.85 215.8999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical"
-			(at 321.31 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 321.31 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 321.31 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "7310d77c-122e-45c7-ad5e-a942b5cd8514")
-		)
-		(pin "6"
-			(uuid "b5075e86-8c6c-4bae-b109-4b4ee6786cbb")
-		)
-		(pin "5"
-			(uuid "7f38b780-8772-4ae4-b991-10871f9dcadc")
-		)
-		(pin "10"
-			(uuid "47b42453-fce2-46e3-a661-738d2c0563f7")
-		)
-		(pin "8"
-			(uuid "b8249ba0-02ed-4820-b6fe-c9db145d26c6")
-		)
-		(pin "1"
-			(uuid "9312df32-2579-49e0-9cb2-1440b34771c6")
-		)
-		(pin "2"
-			(uuid "f70b71ca-ac7d-4486-809c-c1a4577e8b3b")
-		)
-		(pin "9"
-			(uuid "439a0cab-a694-445b-a824-a51f5accddf3")
-		)
-		(pin "7"
-			(uuid "3e8d362c-bd47-4d05-aa71-5c052c5eb314")
-		)
-		(pin "3"
-			(uuid "1737a61e-290c-401a-8159-5dcee4dd372a")
-		)
-		(instances
-			(project "openchess-controller"
-				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -14215,6 +13997,85 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 313.69 215.9 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2cd78232-4f5b-4d96-89de-d75dcaa4bc7d")
+		(property "Reference" "#PWR034"
+			(at 307.34 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 309.88 215.8999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 313.69 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 313.69 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 313.69 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8ca47bdc-ad9f-4479-a5d2-07b12439dd67")
+		)
+		(instances
+			(project "openchess-controller"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 435.61 303.53 270)
 		(unit 1)
@@ -14810,6 +14671,246 @@
 			(project "openchess-controller"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
 					(reference "#PWR083")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 320.04 222.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3be70715-9221-4338-9f65-35b6541d6c91")
+		(property "Reference" "J8"
+			(at 322.58 222.2499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "J_BTN_DOWN XH-2"
+			(at 322.58 224.7899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 320.04 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 320.04 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 320.04 222.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4a380ece-4389-49e1-a85e-7f0cb514c401")
+		)
+		(pin "2"
+			(uuid "caa227cf-b2e7-4014-8fea-2534c7334f2a")
+		)
+		(instances
+			(project "openchess-controller"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 302.26 198.12 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3c30edf3-5639-4f2a-8f7d-ac36ffd44a0f")
+		(property "Reference" "#PWR033"
+			(at 306.07 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 298.45 198.1199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 302.26 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 302.26 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 302.26 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dabe4a4c-5f6a-4465-bb41-2ddddd0922dc")
+		)
+		(instances
+			(project "openchess-controller"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 313.69 233.68 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3cbc7b36-5d5d-4aef-9030-562697d2a702")
+		(property "Reference" "#PWR087"
+			(at 307.34 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 309.88 233.6799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 313.69 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 313.69 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 313.69 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "89f34d1a-c20b-41a2-b76c-457884c3d882")
+		)
+		(instances
+			(project "openchess-controller"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "#PWR087")
 					(unit 1)
 				)
 			)
@@ -16260,6 +16361,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 320.04 231.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5607c7b5-a623-462c-b00e-c53b9d90c2c5")
+		(property "Reference" "J9"
+			(at 322.58 231.1399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "J_BTN_OK XH-2"
+			(at 322.58 233.6799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 320.04 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 320.04 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 320.04 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "161c17cc-f260-40cf-8393-ed00ecd9a3c0")
+		)
+		(pin "2"
+			(uuid "37f7eb44-6bee-4785-abf6-44ccbb16c44d")
+		)
+		(instances
+			(project "openchess-controller"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 45.72 110.49 90)
 		(unit 1)
@@ -17330,6 +17513,85 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 312.42 195.58 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "66147f26-4c14-4862-ad18-f20d222d910d")
+		(property "Reference" "#PWR032"
+			(at 306.07 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 308.61 195.5799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 312.42 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 312.42 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 312.42 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f86ece6f-fe73-4637-b576-2ffa97093a02")
+		)
+		(instances
+			(project "openchess-controller"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "#PWR032")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 369.57 288.29 0)
 		(unit 1)
@@ -18388,6 +18650,94 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x04")
+		(at 320.04 198.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "79d7d319-5e7a-4209-a094-bd91a6515a89")
+		(property "Reference" "J6"
+			(at 322.58 198.1199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "J_OLED XH-4"
+			(at 322.58 200.6599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 320.04 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 320.04 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 320.04 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "4c40c74e-444c-414b-a1d1-318ea0a29c08")
+		)
+		(pin "2"
+			(uuid "a9b2277f-21ba-4967-8efd-5b5246d4192b")
+		)
+		(pin "3"
+			(uuid "a35ea76c-543c-4916-b0d7-79ae5f4479ef")
+		)
+		(pin "1"
+			(uuid "4c2f9585-42c8-4a71-8c91-f5ed3ecb7070")
+		)
+		(instances
+			(project "openchess-controller"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 198.12 91.44 0)
 		(unit 1)
@@ -18931,85 +19281,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 300.99 226.06 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "83f38c1e-34b7-42a9-bdf2-f78153c50d93")
-		(property "Reference" "#PWR032"
-			(at 294.64 226.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 297.18 226.0599 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 300.99 226.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 300.99 226.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 300.99 226.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f6efdb5e-11ba-4535-aa99-97f58df6fa0f")
-		)
-		(instances
-			(project "openchess-controller"
-				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR032")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 99.06 203.2 0)
 		(unit 1)
@@ -19526,6 +19797,85 @@
 			(project "openchess-controller"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
 					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 313.69 224.79 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8db69792-b907-4ee1-b9f9-ec47c77a6107")
+		(property "Reference" "#PWR086"
+			(at 307.34 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 309.88 224.7899 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 313.69 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 313.69 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 313.69 224.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "92974c3e-320d-442a-882a-c4f4f5a52492")
+		)
+		(instances
+			(project "openchess-controller"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "#PWR086")
 					(unit 1)
 				)
 			)
@@ -20100,85 +20450,6 @@
 			(project "openchess-controller"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
 					(reference "U8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 299.72 205.74 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9e8e61ff-19b5-4043-9862-8d558f98d86c")
-		(property "Reference" "#PWR033"
-			(at 293.37 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 295.91 205.7399 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 299.72 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 299.72 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 299.72 205.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4a2218b8-5231-4a48-9ad8-99574a05f265")
-		)
-		(instances
-			(project "openchess-controller"
-				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -21846,85 +22117,6 @@
 			(project "openchess-controller"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
 					(reference "#PWR024")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 312.42 203.2 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b8c2c4c2-f95a-4de6-a86e-82f24d155b58")
-		(property "Reference" "#PWR034"
-			(at 316.23 203.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 308.61 203.1999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 312.42 203.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 312.42 203.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 312.42 203.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b0e08964-0155-4229-b791-9a48bdca73e7")
-		)
-		(instances
-			(project "openchess-controller"
-				(path "/ab0a4d00-0000-4000-8000-000000000001"
-					(reference "#PWR034")
 					(unit 1)
 				)
 			)
