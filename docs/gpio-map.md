@@ -10,7 +10,7 @@ Last updated: 2026-07-28.
 
 ## v2 (hardware-controller-v2 — current)
 
-Design rules that produced this map: GPIO1/3 reserved for UART0↔USB-serial (debug + flashing); GPIO0 reserved for BOOT button; strapping pins carry only boot-safe signals (GPIO5/15 may idle HIGH → row sense; GPIO12 must NOT idle high and GPIO2 must not be pulled high externally → column drives, which idle low; GPIO2 keeps BTN_SELECT with internal-only pullup exactly as proven in v1); I2C lands on GPIO21/22, the ESP32 Arduino `Wire` defaults.
+Design rules that produced this map: GPIO1/3 reserved for UART0↔USB-serial (debug + flashing); GPIO0 reserved for BOOT button; strapping pins carry only boot-safe signals (GPIO5/15 may idle HIGH → row sense; GPIO12 must NOT idle high and GPIO2 must not be pulled high externally → column drives, which idle low; GPIO2 keeps BTN_OK with internal-only pullup exactly as proven in v1); I2C lands on GPIO21/22, the ESP32 Arduino `Wire` defaults.
 
 | Signal | GPIO | WROOM-32E pin | Type | Notes |
 |---|---:|---|---|---|
@@ -33,7 +33,7 @@ Design rules that produced this map: GPIO1/3 reserved for UART0↔USB-serial (de
 | `COL_DRV_H` | 12 | 14 (IO12) | Output | strapping but idles LOW (driver input) = boot-safe |
 | `I2C_SDA` | 21 | 33 (IO21) | Bidirectional | Arduino Wire default |
 | `I2C_SCL` | 22 | 36 (IO22) | Output | Arduino Wire default |
-| `BTN_SELECT` | 2 | 24 (IO2) | Input | internal pullup only (NO external pullup — would break USB download mode) |
+| `BTN_OK` | 2 | 24 (IO2) | Input | internal pullup only (NO external pullup — would break USB download mode); connector J9 |
 | `BTN_DOWN` | 36 | 4 (SENSOR_VP) | Input-only | ext pullup R36; connector J8 |
 | `BTN_UP` | 39 | 5 (SENSOR_VN) | Input-only | ext pullup R37; connector J7 |
 | `VBAT_MON` | 34 | 6 (IO34) | ADC input | ADC1_CH6, divider R14/R15 |
