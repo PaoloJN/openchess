@@ -7608,16 +7608,16 @@
 		(uuid "b0f17387-0f8e-43f5-93b4-f5541ad72f08")
 	)
 	(junction
-		(at 354.33 273.0032)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b1bb0e71-f5b5-4988-b1bd-fbd1be3171b3")
-	)
-	(junction
 		(at 469.9 289.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b2c1f7e7-8cac-4a63-9d47-a2f026d1fdd8")
+	)
+	(junction
+		(at 354.33 273.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b377bbc3-901c-4b22-9bff-1d76166f20b9")
 	)
 	(junction
 		(at 365.76 332.74)
@@ -7630,6 +7630,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ddaaf653-8972-4d44-8c17-fda388329e9a")
+	)
+	(junction
+		(at 360.68 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e1f04348-f154-4ad7-a898-c61c19c8f9e4")
 	)
 	(junction
 		(at 457.2 303.53)
@@ -7847,16 +7853,6 @@
 	)
 	(wire
 		(pts
-			(xy 354.33 270.51) (xy 354.33 273.0032)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0fba5a57-56c7-4bdd-b083-7c48a07652f9")
-	)
-	(wire
-		(pts
 			(xy 443.23 337.82) (xy 443.23 341.63)
 		)
 		(stroke
@@ -7934,6 +7930,16 @@
 			(type default)
 		)
 		(uuid "15f1d57e-25b8-4523-aaf1-6c67933c88b1")
+	)
+	(wire
+		(pts
+			(xy 354.33 270.51) (xy 354.33 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1716437f-2492-4ce7-a218-97490f038adc")
 	)
 	(wire
 		(pts
@@ -8154,16 +8160,6 @@
 			(type default)
 		)
 		(uuid "3210feb2-902b-454a-aee8-e28390f70619")
-	)
-	(wire
-		(pts
-			(xy 353.06 273.05) (xy 354.33 273.0032)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "326feb76-c2af-42b8-a6dd-29788919dc85")
 	)
 	(wire
 		(pts
@@ -8607,7 +8603,7 @@
 	)
 	(wire
 		(pts
-			(xy 360.68 146.05) (xy 360.68 144.78)
+			(xy 360.68 148.59) (xy 360.68 147.32)
 		)
 		(stroke
 			(width 0)
@@ -8887,6 +8883,16 @@
 	)
 	(wire
 		(pts
+			(xy 353.06 273.05) (xy 354.33 273.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "788195a4-783b-48e6-b846-f2826bb9affa")
+	)
+	(wire
+		(pts
 			(xy 72.39 217.17) (xy 78.74 217.17)
 		)
 		(stroke
@@ -9017,16 +9023,6 @@
 	)
 	(wire
 		(pts
-			(xy 354.33 273.0032) (xy 354.33 275.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82bbca7b-0f13-4374-b81e-6d1cd30dcad2")
-	)
-	(wire
-		(pts
 			(xy 165.1 300.99) (xy 165.1 302.26)
 		)
 		(stroke
@@ -9077,7 +9073,7 @@
 	)
 	(wire
 		(pts
-			(xy 363.22 152.4) (xy 363.22 144.78)
+			(xy 363.22 156.21) (xy 363.22 144.78)
 		)
 		(stroke
 			(width 0)
@@ -9354,6 +9350,16 @@
 			(type default)
 		)
 		(uuid "a642a26f-3a8b-4192-ac19-1810c1f14fe8")
+	)
+	(wire
+		(pts
+			(xy 354.33 273.05) (xy 354.33 275.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a735ae80-6f7f-4ff7-94d3-bcff1915c541")
 	)
 	(wire
 		(pts
@@ -9694,6 +9700,16 @@
 			(type default)
 		)
 		(uuid "ced6dd31-70db-4f8d-8e86-2e1bc9566252")
+	)
+	(wire
+		(pts
+			(xy 360.68 147.32) (xy 360.68 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ceed72c3-aab7-42b2-90b2-06410397c92b")
 	)
 	(wire
 		(pts
@@ -12567,6 +12583,85 @@
 			(project "openchess-controller"
 				(path "/ab0a4d00-0000-4000-8000-000000000001"
 					(reference "R27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 360.68 147.32 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "16809f0b-3c5e-40cf-9c3d-2bbf19303e60")
+		(property "Reference" "#FLG04"
+			(at 358.775 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 356.87 147.3199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 360.68 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 360.68 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 360.68 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f3c9a30b-bd9e-4c7a-882b-dc2fba452135")
+		)
+		(instances
+			(project "openchess-controller"
+				(path "/ab0a4d00-0000-4000-8000-000000000001"
+					(reference "#FLG04")
 					(unit 1)
 				)
 			)
@@ -15890,7 +15985,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 360.68 146.05 0)
+		(at 360.68 148.59 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15901,7 +15996,7 @@
 		(fields_autoplaced yes)
 		(uuid "4e3f7748-3c2f-4d21-93b4-7ae06fa020ed")
 		(property "Reference" "#PWR03"
-			(at 360.68 152.4 0)
+			(at 360.68 154.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15912,7 +16007,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 360.68 151.13 0)
+			(at 360.68 153.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15922,7 +16017,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 360.68 146.05 0)
+			(at 360.68 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15933,7 +16028,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 360.68 146.05 0)
+			(at 360.68 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15944,7 +16039,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 360.68 146.05 0)
+			(at 360.68 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16046,7 +16141,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 363.22 152.4 0)
+		(at 363.22 156.21 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16057,7 +16152,7 @@
 		(fields_autoplaced yes)
 		(uuid "525fa3fd-9bdb-47e6-86c1-2511c22013ef")
 		(property "Reference" "#PWR037"
-			(at 363.22 158.75 0)
+			(at 363.22 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16068,7 +16163,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 363.22 157.48 0)
+			(at 363.22 161.29 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16078,7 +16173,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 363.22 152.4 0)
+			(at 363.22 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16089,7 +16184,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 363.22 152.4 0)
+			(at 363.22 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16100,7 +16195,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 363.22 152.4 0)
+			(at 363.22 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
