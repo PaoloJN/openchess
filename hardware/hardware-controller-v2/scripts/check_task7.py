@@ -457,42 +457,42 @@ def run_checks(nets, all_refs):
           "R26 other pin must be on GND — this is the pulldown that holds EN low when switch is OFF")
 
     # =========================================================================
-    # ISET — R28 (910Ω)
+    # ISET — R29 (910Ω)
     # =========================================================================
 
     iset_net_name = find_net_for_pin(nets, "U9", "16")
     check("U9 pin 16 (ISET) is wired",
           iset_net_name is not None,
-          "U9 pin 16 (ISET) must be wired (R28 910Ω to GND)")
+          "U9 pin 16 (ISET) must be wired (R29 910Ω to GND)")
 
     if iset_net_name:
         iset_net = nets[iset_net_name]
-        check("R28 (ISET 910Ω) on same net as U9 pin 16",
-              ref_in(iset_net, "R28"),
-              f"R28 must share ISET net with U9 pin 16 (net: {iset_net_name!r})")
+        check("R29 (ISET 910Ω) on same net as U9 pin 16",
+              ref_in(iset_net, "R29"),
+              f"R29 must share ISET net with U9 pin 16 (net: {iset_net_name!r})")
 
-    check("R28 other end on GND",
-          pin_in(gnd, "R28", "1") or pin_in(gnd, "R28", "2"),
-          "R28 other pin must be on GND — sets charge current ~0.978A")
+    check("R29 other end on GND",
+          pin_in(gnd, "R29", "1") or pin_in(gnd, "R29", "2"),
+          "R29 other pin must be on GND — sets charge current ~0.978A")
 
     # =========================================================================
-    # ILIM — R29 (1.1kΩ)
+    # ILIM — R28 (1.1kΩ)
     # =========================================================================
 
     ilim_net_name = find_net_for_pin(nets, "U9", "12")
     check("U9 pin 12 (ILIM) is wired",
           ilim_net_name is not None,
-          "U9 pin 12 (ILIM) must be wired (R29 1.1kΩ to GND)")
+          "U9 pin 12 (ILIM) must be wired (R28 1.1kΩ to GND)")
 
     if ilim_net_name:
         ilim_net = nets[ilim_net_name]
-        check("R29 (ILIM 1.1kΩ) on same net as U9 pin 12",
-              ref_in(ilim_net, "R29"),
-              f"R29 must share ILIM net with U9 pin 12 (net: {ilim_net_name!r})")
+        check("R28 (ILIM 1.1kΩ) on same net as U9 pin 12",
+              ref_in(ilim_net, "R28"),
+              f"R28 must share ILIM net with U9 pin 12 (net: {ilim_net_name!r})")
 
-    check("R29 other end on GND",
-          pin_in(gnd, "R29", "1") or pin_in(gnd, "R29", "2"),
-          "R29 other pin must be on GND — sets input current limit 1.46A")
+    check("R28 other end on GND",
+          pin_in(gnd, "R28", "1") or pin_in(gnd, "R28", "2"),
+          "R28 other pin must be on GND — sets input current limit 1.46A")
 
     # =========================================================================
     # TS — R30 (10kΩ)
@@ -573,28 +573,28 @@ def run_checks(nets, all_refs):
           "D5 pin 1 (K cathode) must be on GND")
 
     # =========================================================================
-    # U11 input decoupling — C17 on +5V_LED and GND
+    # U11 input decoupling — C18 on +5V_LED and GND
     # =========================================================================
 
-    check("C17 on +5V_LED (LDO input bypass)",
-          pin_in(v5, "C17", "1") or pin_in(v5, "C17", "2"),
-          "C17 must be on +5V_LED — input bypass cap for AMS1117")
-
-    check("C17 on GND",
-          pin_in(gnd, "C17", "1") or pin_in(gnd, "C17", "2"),
-          "C17 other pin must be on GND")
-
-    # =========================================================================
-    # U11 output decoupling — C18 on +3.3V and GND
-    # =========================================================================
-
-    check("C18 on +3.3V (LDO output bypass)",
-          pin_in(v33, "C18", "1") or pin_in(v33, "C18", "2"),
-          "C18 must be on +3.3V — output bypass cap for AMS1117")
+    check("C18 on +5V_LED (LDO input bypass)",
+          pin_in(v5, "C18", "1") or pin_in(v5, "C18", "2"),
+          "C18 must be on +5V_LED — input bypass cap for AMS1117")
 
     check("C18 on GND",
           pin_in(gnd, "C18", "1") or pin_in(gnd, "C18", "2"),
           "C18 other pin must be on GND")
+
+    # =========================================================================
+    # U11 output decoupling — C17 on +3.3V and GND
+    # =========================================================================
+
+    check("C17 on +3.3V (LDO output bypass)",
+          pin_in(v33, "C17", "1") or pin_in(v33, "C17", "2"),
+          "C17 must be on +3.3V — output bypass cap for AMS1117")
+
+    check("C17 on GND",
+          pin_in(gnd, "C17", "1") or pin_in(gnd, "C17", "2"),
+          "C17 other pin must be on GND")
 
     # =========================================================================
     # U9 IN decoupling — C20 on VBUS and GND
