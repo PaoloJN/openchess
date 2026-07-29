@@ -110,12 +110,12 @@ to wire the **visible** pins (A1/A4/A5/A6/A7/B5/B6/B7/SH).
 | 7 | NC | — | no-connect flag |
 | 8 | NC | — | no-connect flag |
 | 9 | ~{CTS} | input | no-connect flag |
-| 10 | ~{DSR} | output | no-connect flag |
-| 11 | ~{RI} | output | no-connect flag |
-| 12 | ~{DCD} | output | no-connect flag |
+| 10 | ~{DSR} | input | no-connect flag |
+| 11 | ~{RI} | input | no-connect flag |
+| 12 | ~{DCD} | input | no-connect flag |
 | 13 | ~{DTR} | output | → auto-program circuit (Q1 base via R23) |
 | 14 | ~{RTS} | output | → auto-program circuit (Q2 base via R24) |
-| 15 | R232 | — | no-connect flag |
+| 15 | R232 | input | no-connect flag |
 | 16 | VCC | PWR in | VBUS (5V), with C16 100 nF to GND |
 
 > **CRITICAL — TXD/RXD crossover:**
@@ -191,39 +191,27 @@ The USB driver wiggles DTR and RTS in a specific sequence. Two cross-coupled NPN
 convert those signals into the EN pulse and IO0 low that the ESP32 needs to enter boot mode.
 You wire them as described by Espressif's DevKitC v4 schematic.
 
-### Symbol: SS8050 pin map (from `Transistor_BJT.kicad_sym`, inherits `Q_NPN_EBC`)
+### Symbol: SS8050 pin map (from `Transistor_BJT.kicad_sym`, inherits `Q_NPN_BEC`)
 
-Wait — S8050 in KiCad (Q_NPN_EBC) has: pin 1=E, pin 2=B, pin 3=C.
-But SS8050 (Q_NPN_BEC) has: pin 1=B, pin 2=E, pin 3=C.
-
-Since we're using the **SS8050 symbol** (SOT-23 footprint), the pin numbering is:
+The SS8050 symbol (SOT-23 footprint) uses this pin numbering:
 - Pin 1 = **B** (Base)
 - Pin 2 = **E** (Emitter)
 - Pin 3 = **C** (Collector)
 
+> Careful: this differs from the TO-92 `S8050` symbol (which is E/B/C). You are using
+> **SS8050**, so pin 1 is always the Base in the steps below.
+
+### The wiring contract (memorize this before drawing)
+
+- Q1: base ← R23 10k ← CH340C ~{DTR}; collector → `EN`; emitter → CH340C ~{RTS}
+- Q2: base ← R24 10k ← CH340C ~{RTS}; collector → `IO0`; emitter → CH340C ~{DTR}
+
+Each transistor's emitter goes to the **other** signal's line — that cross-coupling is
+what makes the DevKitC auto-reset trick work.
+
 ### Steps
 
-**Place Q1 (SS8050, ref Q1, value "S8050 J3Y"):**
-- Pin 3 (C, Collector) → net `EN` (global label — reuse the one from the WROOM core)
-- Pin 2 (E, Emitter) → this node becomes an intermediate net; call it `DTR_N`
-  (you will wire from here to CH340C ~{RTS} pin 14 and to Q2 emitter)
-- Pin 1 (B, Base) → connects to one end of R23
-
-```
-                         [Q1 SS8050]
-EN <--- Collector (pin3) |
-                         | --- Emitter (pin2) ---> DTR_N
-         R23 10k         |
-CH340 ~{DTR}(pin13) ---[R23]--- Base (pin1)
-```
-
-Wait — re-read the task brief:
-- Q1: base ← R23 ← CH340C DTR; collector → EN; emitter → CH340C RTS
-- Q2: base ← R24 ← CH340C RTS; collector → IO0; emitter → CH340C DTR
-
-The emitter of Q1 connects directly to the ~{RTS} line of CH340C (pin 14).
-The emitter of Q2 connects directly to the ~{DTR} line of CH340C (pin 13).
-This creates the cross-coupling.
+**Place Q1 (SS8050, ref Q1, value "S8050 J3Y").**
 
 **Place R23 (10 kΩ):**
 - One end → CH340C pin 13 (~{DTR})
@@ -234,7 +222,7 @@ This creates the cross-coupling.
 - Q1 pin 2 (E, Emitter) → CH340C pin 14 (~{RTS})
 - Q1 pin 3 (C, Collector) → net label `EN`
 
-**Place Q2 (SS8050, ref Q2, value "S8050 J3Y"):**
+**Place Q2 (SS8050, ref Q2, value "S8050 J3Y").**
 
 **Place R24 (10 kΩ):**
 - One end → CH340C pin 14 (~{RTS})
@@ -245,25 +233,7 @@ This creates the cross-coupling.
 - Q2 pin 2 (E, Emitter) → CH340C pin 13 (~{DTR})
 - Q2 pin 3 (C, Collector) → net label `IO0`
 
-### ASCII sketch of the full auto-program circuit
-
-```
-CH340C                         Q1 (SS8050)
-~{DTR} pin 13 ---+---[R23 10k]--- B(1)
-                 |                  |C(3)---> EN
-                 |            E(2)--+
-                 |                  |
-                 +<-----------------+  (Q1 emitter = Q2 base side, ties back to ~{RTS} line)
-                 |
-CH340C           |              Q2 (SS8050)
-~{RTS} pin 14 --++---[R24 10k]--- B(1)
-                 |                  |C(3)---> IO0
-                 |            E(2)--+
-                 |                  |
-                 +<-----------------+  (Q2 emitter ties back to ~{DTR} line)
-```
-
-More precisely (exact wire connections):
+### ASCII sketch of the full auto-program circuit (exact wire connections)
 
 ```
 DTR(pin13) ---+---[R23]--- Q1.B
