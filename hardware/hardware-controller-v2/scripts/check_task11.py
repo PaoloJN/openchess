@@ -12,11 +12,15 @@ If no path is given, uses the project default PCB.
 Exits 0 when all assertions pass; exits 1 when any FAIL.
 
 Checks performed:
+  (-) Board outline matches v1 exactly: (50,50)→(108,121), 58×71 mm, ±0.5 mm.
   (a) All schematic component refs present on board (via kicad-cli netlist export).
   (b) U2 antenna courtyard crosses Edge.Cuts (overhang confirmed geometrically).
   (c) Proximity rules for power-cluster parts (boost, charger, LDO).
   (d) Connectors within specified distance of a board edge.
-  (e) All SMD footprints on F.Cu (front/top layer).
+  (d2) J1 at exact v1 position (103.6125, 85.418666) ±1 mm, rot 180°, on B.Cu
+       (the matrix cable plugs from the BACK — deliberate, per the built v1 board).
+  (e) All SMD footprints on F.Cu (front/top). THT parts may be on either side;
+      J1 is expected on B.Cu.
   (f) No footprint centroid outside board outline (antenna area excepted).
   (g) kicad-cli DRC run; courtyard-overlap and edge errors reported.
 
@@ -291,8 +295,24 @@ def run_checks(pcb_path, sch_path):
     if outline:
         x1, y1, x2, y2 = outline
         print(f"Board outline: ({x1},{y1}) → ({x2},{y2}) = {x2-x1:.1f}×{y2-y1:.1f} mm\n")
+        # V1 outline is the case-mandated reference: (50,50)→(108,121), r=3mm.
+        V1_OUTLINE = (50.0, 50.0, 108.0, 121.0)
+        TOL = 0.5
+        matches = all(abs(outline[i] - V1_OUTLINE[i]) <= TOL for i in range(4))
+        check(
+            "Board outline matches v1: (50,50)→(108,121) ±0.5 mm",
+            matches,
+            f"Parsed bounds ({x1},{y1})→({x2},{y2}); required (50,50)→(108,121). "
+            f"The case depends on this exact 58×71 mm outline.",
+        )
     else:
         print("WARNING: Could not parse board outline from Edge.Cuts.\n")
+        check(
+            "Board outline present on Edge.Cuts",
+            False,
+            "No Edge.Cuts graphics found — draw the rectangle (50,50)→(108,121), "
+            "corner radius 3 mm (guide Step 0).",
+        )
 
     # -----------------------------------------------------------------------
     # (a) All schematic refs present on board
@@ -435,13 +455,43 @@ def run_checks(pcb_path, sch_path):
     near_edge("J7",  5.0,  "J7 button connector within 5 mm of an edge")
     near_edge("J8",  5.0,  "J8 button connector within 5 mm of an edge")
     near_edge("J9",  5.0,  "J9 button connector within 5 mm of an edge")
-    near_edge("J1",  6.0,  "J1 matrix 2×13 within 6 mm of right edge")
     near_edge("SW1", 5.0,  "SW1 slide switch within 5 mm of an edge")
+
+    # J1 is special: the matrix cable and case assume the exact v1 position,
+    # rotation 180°, on the BACK copper (cable plugs from the back). Verified
+    # against hardware-controller/openchess-controller.kicad_pcb (v1, as built).
+    print("\n--- (d2) J1 exact v1 position (case/cable contract) ---")
+    J1_V1_X, J1_V1_Y, J1_V1_ROT = 103.6125, 85.418666, 180.0
+    j1 = fp("J1")
+    if j1 is None:
+        warn("J1 missing from PCB — position check skipped")
+    else:
+        d = math.hypot(j1["x"] - J1_V1_X, j1["y"] - J1_V1_Y)
+        check(
+            f"J1 at v1 position ({J1_V1_X}, {J1_V1_Y}) ±1 mm",
+            d <= 1.0,
+            f"J1 is at ({j1['x']}, {j1['y']}) — {d:.1f} mm away. Move it back "
+            f"(footprint Properties: X={J1_V1_X}, Y={J1_V1_Y}).",
+        )
+        check(
+            "J1 rotation = 180°",
+            abs(((j1["rot"] - J1_V1_ROT) + 180) % 360 - 180) <= 0.1,
+            f"J1 rotation is {j1['rot']}° — set Orientation to 180° in Properties.",
+        )
+        check(
+            "J1 on B.Cu (back — matrix cable plugs from the back, per v1)",
+            j1["layer"].startswith("B."),
+            f"J1 is on {j1['layer']!r}. Do NOT place J1 on the front — "
+            f"press F to flip it to the back.",
+        )
 
     # -----------------------------------------------------------------------
     # (e) All SMD footprints on F.Cu
     # -----------------------------------------------------------------------
     print("\n--- (e) All SMD parts on F.Cu (front/top) ---")
+    # This rule applies to SMD footprints only (single-side JLC assembly).
+    # Through-hole parts (J1, J5–J9) may legitimately sit on either side;
+    # J1 in particular is EXPECTED on B.Cu (checked in section d2).
     back_smd = [
         fp_["ref"] for fp_ in footprints
         if fp_["smd"] and fp_["layer"].startswith("B.")
@@ -449,18 +499,20 @@ def run_checks(pcb_path, sch_path):
     check(
         "All SMD footprints on F.Cu (front layer)",
         len(back_smd) == 0,
-        f"Parts on back copper: {', '.join(sorted(back_smd))}" if back_smd else "",
+        f"SMD parts on back copper: {', '.join(sorted(back_smd))} — "
+        f"press F on each to flip back to the front." if back_smd else "",
     )
 
-    # Also check non-SMD that have F.Cu layer (through-hole is fine on either)
-    back_fp = [
+    # Informational: list THT parts on the back other than J1 (J1's back-side
+    # placement is deliberate and asserted in section d2).
+    back_tht_unexpected = [
         fp_["ref"] for fp_ in footprints
-        if fp_["layer"].startswith("B.") and not fp_["smd"]
+        if fp_["layer"].startswith("B.") and not fp_["smd"] and fp_["ref"] != "J1"
     ]
-    if back_fp:
+    if back_tht_unexpected:
         warn(
-            f"{len(back_fp)} through-hole footprint(s) on back copper",
-            f"Refs: {', '.join(sorted(back_fp))} — confirm intentional (TH parts can go on B.Cu)"
+            f"{len(back_tht_unexpected)} through-hole footprint(s) on back copper (besides J1)",
+            f"Refs: {', '.join(sorted(back_tht_unexpected))} — confirm intentional"
         )
 
     # -----------------------------------------------------------------------

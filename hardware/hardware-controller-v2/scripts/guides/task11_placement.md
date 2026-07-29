@@ -61,13 +61,36 @@ x=50                                                   x=108
 | Edge | Parts | Reasoning |
 |---|---|---|
 | **Top (y=50)** | U2 antenna overhang | Antenna must clear copper on all sides; overhanging the board edge keeps it off the board without needing a cutout |
-| **Right (x=108)** | J1 matrix connector | V1 J1 is at x≈103.6 — the matrix ribbon cable exits the right side of the case |
+| **Right (x=108)** | J1 matrix connector (on **B.Cu** — back side) | V1 J1 is at (103.6125, 85.4187) rot 180° on B.Cu — the matrix ribbon cable plugs from the back and exits the right side of the case |
 | **Bottom (y=121)** | J4 USB-C | Case has a USB-C slot in the bottom panel; USB is the heaviest-use external port |
 | **Left (x=50)** | J5 battery, J6–J9 panel connectors, SW1 slide switch | Battery leads and panel harness exit via the left case panel; SW1 is the power switch and must be fingertip-reachable |
 
 ---
 
 ## 2. Placement Steps (in Priority Order)
+
+> **Coordinate frame:** every coordinate in this guide is an absolute KiCad
+> canvas position inside the board rectangle **(50, 50) → (108, 121)**
+> (x increases right, y increases down). You can type these directly into a
+> footprint's Properties dialog (`E` key) — no conversion needed.
+
+### Step 0 — Draw the Board Outline (Currently Missing)
+
+The v2 PCB has **no Edge.Cuts outline yet** — the schematic import only placed
+footprints. Draw it first so every later edge-distance rule has meaning:
+
+1. Select the **Edge.Cuts** layer in the right-hand layer panel.
+2. `Place → Draw Rectangle`, click twice anywhere to create a rectangle.
+3. Double-click the rectangle (or select it and press `E`) to open its
+   Properties dialog. Set exactly:
+   - **Start point:** X = `50` mm, Y = `50` mm
+   - **End point:** X = `108` mm, Y = `121` mm
+   - **Corner radius:** `3` mm
+4. Confirm the board reads **58 × 71 mm** — identical to v1 (the case depends
+   on this exact outline).
+
+The check script asserts the outline bounds match (50,50)→(108,121) within
+±0.5 mm.
 
 ### Step 1 — U2 ESP32-WROOM-32E (Antenna Overhang)
 
@@ -244,7 +267,31 @@ The check script requires each within **5 mm of any board edge**.
 
 ---
 
-### Step 7 — U3 (74AHCT125) and U6 (TBD62783A SOP-18) Near J1
+### Step 7 — J1 Matrix Connector, then U3 (74AHCT125) and U6 (TBD62783A SOP-18) Near It
+
+**J1 (2×13 matrix header) — restore the exact v1 position:**
+
+The v1 board (the physical proven one) has J1 at **(103.6125, 85.418666),
+rotation 180°, on layer B.Cu** — the matrix ribbon cable plugs in **from the
+back of the board**, and both the cable and the case assume this. This is
+deliberate: **do NOT flip J1 to the front.**
+
+The schematic update moved J1 into the dump clump (it is currently at
+~(122.1, 103.8) rot 90°). To restore it:
+
+1. Find J1 (`Ctrl+F` → `J1`), select it.
+2. Press `E` to open Properties. Set:
+   - **Position X:** `103.6125` mm
+   - **Position Y:** `85.418666` mm
+   - **Orientation:** `180`°
+   - **Side/Layer:** Back (B.Cu) — it should already be there; if it somehow
+     ended up on Front, press `F` once to flip it to the back.
+3. Lock it (right-click → Properties → Locked) so it cannot drift.
+
+The check script asserts J1 is at this exact position (±1 mm), rotation 180°,
+on B.Cu.
+
+**U3 and U6 near J1:**
 
 V1 had U6 (then DIP-18) at approximately (71, 116) and U3 at (59, 112).
 Now U6 is **SMD SOP-18** (~11.6 × 7.5 mm courtyard) instead of DIP.
@@ -330,9 +377,12 @@ When you "Update PCB from Schematic", KiCad dumps new footprints in a clump
 4. **Rotate:** Press `R` while the part is selected (or being moved) to rotate
    90° counter-clockwise. Press `R` again for another 90°.
 
-5. **Flip to back copper (B.Cu):** Press `F`. **Do not do this** — all SMD parts
-   must stay on **F.Cu (front/top)** for single-side JLC assembly. If you
-   accidentally flip a part, press `F` again to flip it back.
+5. **Flip to back copper (B.Cu):** Press `F`. **All SMD parts must stay on
+   F.Cu (front/top)** for single-side JLC assembly — if you accidentally flip
+   an SMD part, press `F` again to flip it back. **Exception: J1 lives on
+   B.Cu deliberately** (the matrix cable plugs from the back — see Step 7).
+   Through-hole parts (J1, J5–J9) may sit on either side; only J1 is expected
+   on the back.
 
 6. **Lock in place:** After placing a critical anchor (U2, J1, J4), right-click
    → Properties → check "Locked". This prevents accidental moves.
@@ -354,8 +404,8 @@ Work through these in order. Tick each before moving to the next.
 - [ ] **PCB from Schematic updated** — `Tools → Update PCB from Schematic`,
       deleted v1 stale footprints flagged as removed (DevKitC headers, DIP U6,
       Lipo Rider socket J2, SS14 diode, v1 J3).
-- [ ] **Board outline unchanged** — `(50,50)` to `(108,121)`, 58×71 mm,
-      3 mm corner radius.
+- [ ] **Board outline drawn** — Edge.Cuts rectangle from `(50,50)` to
+      `(108,121)`, 58×71 mm, 3 mm corner radius (Step 0).
 - [ ] **U2 placed** at ~(67, 59.25), rot 0°, antenna overhangs top edge.
 - [ ] **Antenna keepout rule-area added** covering ~(58,46)→(76,54).
 - [ ] **J4 USB-C placed** at ~(68, 117), mouth flush with bottom edge (y=121),
@@ -373,11 +423,13 @@ Work through these in order. Tick each before moving to the next.
 - [ ] **D4 CHG LED** at ~(58, 83), D5 PWR LED at ~(58, 79) — near left/visible.
 - [ ] **U6 TBD62783A SOP-18 placed** at ~(72, 112), near J1.
 - [ ] **U3 74AHCT125 SOIC-14 placed** at ~(87, 112), near J1.
-- [ ] **J1 matrix 2×13 header kept** at v1 position ~(103.6, 85.4) rot 180°,
-      within 5 mm of right edge.
+- [ ] **J1 matrix 2×13 header restored** to exact v1 position
+      (103.6125, 85.418666), rot 180°, **on B.Cu** (cable plugs from the back
+      — do not flip to front).
 - [ ] **All decoupling caps placed** per table in Step 8.
 - [ ] **FID1–FID3 kept** at v1 positions; **FID4 added** at ~(60, 111).
-- [ ] **All SMD footprints on F.Cu** — no flipped parts.
+- [ ] **All SMD footprints on F.Cu** — no flipped SMD parts (J1 on B.Cu is
+      the only expected back-side part).
 - [ ] **No footprint (except U2 antenna tip) outside board outline.**
 - [ ] **No courtyard overlaps** — DRC courtyard check clean.
 - [ ] **DRC run:** `kicad-cli pcb drc openchess-controller.kicad_pcb` — no
