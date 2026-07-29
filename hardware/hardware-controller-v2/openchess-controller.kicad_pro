@@ -542,8 +542,27 @@
         "pcb_color": "rgb(255, 220, 60)",
         "priority": 0,
         "schematic_color": "rgb(255, 220, 60)",
-        "track_width": 0.4,
+        "track_width": 0.8,
         "tuning_profile": ""
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "POWER_FAT",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.5,
+        "tuning_profile": "",
+        "via_diameter": 1.0,
+        "via_drill": 0.5,
+        "wire_width": 6
       }
     ],
     "meta": {
@@ -553,20 +572,24 @@
     "netclass_assignments": null,
     "netclass_patterns": [
       {
-        "netclass": "Power",
+        "netclass": "POWER_FAT",
         "pattern": "+5V_LED"
       },
       {
-        "netclass": "Power",
-        "pattern": "+5V"
+        "netclass": "POWER_FAT",
+        "pattern": "VSYS"
+      },
+      {
+        "netclass": "POWER_FAT",
+        "pattern": "VBAT"
       },
       {
         "netclass": "Power",
         "pattern": "GND"
       },
       {
-        "netclass": "Power_3V3",
-        "pattern": "+3V3"
+        "netclass": "Power",
+        "pattern": "VBUS"
       },
       {
         "netclass": "Power",
@@ -599,6 +622,10 @@
       {
         "netclass": "Power",
         "pattern": "CH_PWR"
+      },
+      {
+        "netclass": "Power_3V3",
+        "pattern": "+3.3V"
       }
     ]
   },
@@ -759,7 +786,7 @@
         "uuid": "ab0a4d00-0000-4000-8000-000000000001"
       }
     ],
-    "used_designators": "FID3-4",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
