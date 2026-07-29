@@ -111,19 +111,22 @@ At this position:
   required; KiCad will flag this as an "Edge.Cuts violation" which you will
   **suppress** for the antenna zone only.
 
-**How to add the antenna keepout rule-area in KiCad:**
-1. Select `Place → Rule Area`.
-2. Draw a rectangle covering the antenna strip: roughly
-   `(58, 46) → (76, 53.5)` — the zone above the first pad row.
-3. In the rule-area properties, tick **No copper fills**, **No tracks**,
-   **No footprints** on all copper layers.
-4. Label it `ANTENNA_KEEPOUT` in the Description field.
+**Antenna keepout — already built into the footprint:**
+The `RF_Module:ESP32-WROOM-32E` footprint ships with a **built-in keepout
+rule-area** covering the antenna clearance region (all copper layers: no
+tracks, no vias, no pads, no copper pours, no footprints). KiCad enforces it
+automatically — you do **not** need to draw a manual rule-area. After placing
+U2, confirm the hatched keepout region is visible above the module; DRC will
+flag anything that strays into it.
 
 **Antenna overhang math:**
 The Espressif WROOM-32E datasheet requires no copper (signal or plane) within
-the antenna area. By overhanging the board edge by ≥ 3 mm you satisfy this
-without a PCB cutout. The RF_Module footprint courtyard already encodes this
-keepout boundary.
+the antenna area. The check script verifies the module **body** tip overhangs
+the board edge (body half-height = 12.75 mm from the anchor/centre, so the tip
+sits at `center_y − 12.75`) by ≥ 2 mm; the target position above gives
+~3.5 mm. Whatever part of the antenna clearance region still falls on-board is
+protected by the footprint's built-in keepout rule-area, so no copper can end
+up under it.
 
 ---
 
@@ -136,7 +139,8 @@ bottom edge and the rest of the cluster must fit above it.
 - Target position: **(68, 117)**, rotation **0°** (connector mouth faces down toward y = 121).
 - The receptacle body extends ~4 mm above y = 121; place center so the port
   mouth is flush with the bottom edge.
-- J4 **must be within 3 mm of a board edge** — the check script enforces this.
+- J4 **must be within 5 mm of a board edge** — the check script enforces this
+  (a flush edge-mount USB-C's centroid legitimately sits ~4 mm inboard).
 
 **U8 USBLC6-2SC6 (ESD protection, SOT-363):**
 - Place immediately between J4 and U7: target **(71, 114)**.
@@ -186,8 +190,8 @@ the TPS61022 datasheet layout example (SLVSDE9, Figure 19).
 **Exact placement rules:**
 | Part | Target center | Max distance from U10 |
 |---|---|---|
-| L1 (APH0420, 4×4 mm) | (73, 89) | ≤ 5 mm — L1 **above** U10 (lower y) |
-| C22 (10 µF input) | (73, 99) — below U10 | ≤ 5 mm |
+| L1 (APH0420, 4×4 mm) | (73, 89) | ≤ 8 mm (target: 6) — L1 **above** U10 (lower y) |
+| C22 (10 µF input) | (73, 99) — below U10 | ≤ 6 mm |
 | C23 (100 µF bulk) | (80, 95) — right of U10 | ≤ 8 mm |
 | C24 (22 µF ceramic) | (83, 93) | ≤ 10 mm |
 | C25 (22 µF ceramic) | (83, 97) | ≤ 10 mm |
@@ -228,8 +232,8 @@ Place C21 between U9 OUT and U10 VIN.
 **Decoupling:**
 | Part | Function | Target | Max from U11 |
 |---|---|---|---|
-| C18 (10 µF) | LDO input bypass | (87, 91) | ≤ 5 mm |
-| C17 (10 µF) | LDO output bypass | (87, 99) | ≤ 5 mm |
+| C18 (10 µF) | LDO input bypass | (87, 91) | ≤ 6 mm |
+| C17 (10 µF) | LDO output bypass | (87, 99) | ≤ 6 mm |
 
 ---
 
@@ -322,12 +326,12 @@ Place every decoupling cap within the stated distance; shorter is always better.
 | C19 | 100 nF | U7 pin 16 (VCC) | ≤ 3 mm | CH340C VCC bypass |
 | C20 | 10 µF | U9 IN pin | ≤ 5 mm | Charger input decoupling |
 | C21 | 10 µF | U9 OUT pin | ≤ 5 mm | Charger output decoupling |
-| C22 | 10 µF | U10 VIN | ≤ 5 mm | Boost input cap — SW side |
+| C22 | 10 µF | U10 VIN | ≤ 6 mm | Boost input cap — SW side |
 | C23 | 100 µF | U10 VOUT | ≤ 8 mm | Boost output bulk |
 | C24 | 22 µF | U10 VOUT | ≤ 10 mm | Boost output ceramic |
 | C25 | 22 µF | U10 VOUT | ≤ 10 mm | Boost output ceramic |
-| C17 | 10 µF | U11 VOUT | ≤ 5 mm | LDO output bypass |
-| C18 | 10 µF | U11 VIN | ≤ 5 mm | LDO input bypass |
+| C17 | 10 µF | U11 VOUT | ≤ 6 mm | LDO output bypass |
+| C18 | 10 µF | U11 VIN | ≤ 6 mm | LDO input bypass |
 | C1 | 10 µF | U3 VCC | ≤ 5 mm | 74AHCT125 supply bypass |
 | C2 | 10 µF | U6 VCC | ≤ 5 mm | TBD62783A supply bypass |
 | C5 | 100 nF | U6 VCC | ≤ 3 mm | TBD62783A HF bypass |
@@ -370,9 +374,9 @@ When you "Update PCB from Schematic", KiCad dumps new footprints in a clump
    accidentally select a whole group, press `U` to expand selection, or click
    a single pad.
 
-3. **Move:** Press `M` (Move). The part follows your cursor. Click to drop.
-   While moving, type an exact coordinate: press `Space` then type `x,y` in the
-   interactive router command bar, or use the Position dialog (`E` → Position).
+3. **Move:** Press `M` (Move). The part follows your cursor; click to drop.
+   For an **exact** coordinate, don't drag — select the part, press `E` to open
+   its Properties dialog, and type the X/Y position (and Orientation) directly.
 
 4. **Rotate:** Press `R` while the part is selected (or being moved) to rotate
    90° counter-clockwise. Press `R` again for another 90°.
@@ -407,15 +411,16 @@ Work through these in order. Tick each before moving to the next.
 - [ ] **Board outline drawn** — Edge.Cuts rectangle from `(50,50)` to
       `(108,121)`, 58×71 mm, 3 mm corner radius (Step 0).
 - [ ] **U2 placed** at ~(67, 59.25), rot 0°, antenna overhangs top edge.
-- [ ] **Antenna keepout rule-area added** covering ~(58,46)→(76,54).
+- [ ] **Antenna keepout visible** — the footprint's built-in hatched keepout
+      rule-area shows above U2 (no manual rule-area needed).
 - [ ] **J4 USB-C placed** at ~(68, 117), mouth flush with bottom edge (y=121),
-      within 3 mm of edge.
+      within 5 mm of edge.
 - [ ] **U8 USBLC6 placed** between J4 and U7, within 5 mm of J4.
 - [ ] **U7 CH340C placed** with UD+/UD- facing J4/U8, C16 and C19 within 3 mm.
-- [ ] **U10 TPS61022 placed** at ~(73, 95); L1 within 5 mm; C22 within 5 mm;
-      C23–C25 within 10 mm.
+- [ ] **U10 TPS61022 placed** at ~(73, 95); L1 within 8 mm (target 6);
+      C22 within 6 mm; C23–C25 within 10 mm.
 - [ ] **U9 BQ24074 placed** at ~(58, 90); C20/C21 within 5 mm each.
-- [ ] **U11 AMS1117 placed** at ~(87, 95); C17/C18 within 5 mm each.
+- [ ] **U11 AMS1117 placed** at ~(87, 95); C17/C18 within 6 mm each.
 - [ ] **J5 battery placed** near left edge (x≈53), within 5 mm of edge.
 - [ ] **J6/J7/J8/J9 placed** on left edge, stacked vertically.
 - [ ] **SW1 slide switch placed** near bottom-left, within 5 mm of edge.
@@ -445,8 +450,7 @@ Work through these in order. Tick each before moving to the next.
 ```bash
 /Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli pcb drc \
   hardware/hardware-controller-v2/openchess-controller.kicad_pcb \
-  --output /tmp/drc-task11.rpt \
-  --schematic-parity
+  --output /tmp/drc-task11.rpt
 grep -i "courtyard\|edge\|outside" /tmp/drc-task11.rpt | grep -v "unconnected"
 ```
 

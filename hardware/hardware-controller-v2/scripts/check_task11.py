@@ -135,6 +135,41 @@ def _parse_footprints(pcb_text):
     return footprints
 
 
+def _extract_sexpr_blocks(text, tag):
+    """
+    Yield every complete s-expression block that starts with '(<tag>', using a
+    parenthesis-depth counter. (A non-greedy regex like r'\\(gr_rect(.*?)\\)'
+    stops at the FIRST close paren — it would truncate the block at
+    '(start 50 50' and never see the layer, so depth-walking is required.)
+    """
+    needle = '(' + tag
+    idx = 0
+    while True:
+        start = text.find(needle, idx)
+        if start == -1:
+            return
+        # Require a delimiter after the tag (avoid gr_rect matching a longer tag)
+        after = start + len(needle)
+        if after < len(text) and text[after] not in ' \t\r\n(':
+            idx = after
+            continue
+        depth = 0
+        pos = start
+        while pos < len(text):
+            ch = text[pos]
+            if ch == '(':
+                depth += 1
+            elif ch == ')':
+                depth -= 1
+                if depth == 0:
+                    yield text[start:pos + 1]
+                    break
+            pos += 1
+        else:
+            return  # unbalanced input; stop scanning
+        idx = pos + 1
+
+
 def _parse_board_outline(pcb_text):
     """
     Return (x_min, y_min, x_max, y_max) of the Edge.Cuts bounding rect.
@@ -143,31 +178,25 @@ def _parse_board_outline(pcb_text):
       - gr_line segments on Edge.Cuts — accumulates min/max bounds
     Returns None if no Edge.Cuts graphics are found (board outline not yet drawn).
     """
-    # Strategy 1: gr_rect block with Edge.Cuts layer anywhere in the block
-    # In KiCad 10 the layer appears inside the gr_rect block, not inline
-    rect_blocks = re.findall(
-        r'\(gr_rect\b(.*?)\)',
-        pcb_text, re.DOTALL
-    )
-    for blk in rect_blocks:
-        if 'Edge.Cuts' in blk:
-            start_m = re.search(r'\(start\s+([\d\.\-]+)\s+([\d\.\-]+)\)', blk)
-            end_m   = re.search(r'\(end\s+([\d\.\-]+)\s+([\d\.\-]+)\)', blk)
-            if start_m and end_m:
-                x1,y1 = float(start_m.group(1)), float(start_m.group(2))
-                x2,y2 = float(end_m.group(1)),   float(end_m.group(2))
-                return min(x1,x2), min(y1,y2), max(x1,x2), max(y1,y2)
-
-    # Strategy 2: gr_line segments on Edge.Cuts
-    # Find all gr_line blocks that reference Edge.Cuts and accumulate the XY extent
-    line_blocks = re.findall(r'\(gr_line\b(.*?)\)', pcb_text, re.DOTALL)
-    xs, ys = [], []
-    for blk in line_blocks:
+    # Strategy 1: complete gr_rect blocks (depth-walked) carrying Edge.Cuts
+    for blk in _extract_sexpr_blocks(pcb_text, 'gr_rect'):
         if 'Edge.Cuts' not in blk:
             continue
-        for tok in re.findall(r'\((start|end)\s+([\d\.\-]+)\s+([\d\.\-]+)\)', blk):
-            xs.append(float(tok[1]))
-            ys.append(float(tok[2]))
+        start_m = re.search(r'\(start\s+([\d\.\-]+)\s+([\d\.\-]+)\)', blk)
+        end_m   = re.search(r'\(end\s+([\d\.\-]+)\s+([\d\.\-]+)\)', blk)
+        if start_m and end_m:
+            x1, y1 = float(start_m.group(1)), float(start_m.group(2))
+            x2, y2 = float(end_m.group(1)),   float(end_m.group(2))
+            return min(x1, x2), min(y1, y2), max(x1, x2), max(y1, y2)
+
+    # Strategy 2: gr_line segments on Edge.Cuts — accumulate the XY extent
+    xs, ys = [], []
+    for blk in _extract_sexpr_blocks(pcb_text, 'gr_line'):
+        if 'Edge.Cuts' not in blk:
+            continue
+        for tok in re.findall(r'\((?:start|end)\s+([\d\.\-]+)\s+([\d\.\-]+)\)', blk):
+            xs.append(float(tok[0]))
+            ys.append(float(tok[1]))
     if xs and ys:
         return min(xs), min(ys), max(xs), max(ys)
 
@@ -392,18 +421,24 @@ def run_checks(pcb_path, sch_path):
     else:
         if outline:
             y_top = outline[1]  # top edge (min Y)
-            # WROOM-32E courtyard half-height ≈ 13.3 mm (from datasheet keepout figure)
-            # At rotation 0°, the antenna end is at y_center - 13.3
-            WROOM_HALF_H = 13.3
-            antenna_tip_y = u2["y"] - WROOM_HALF_H
-            overhangs = antenna_tip_y < y_top
+            # Module BODY half-height: the RF_Module:ESP32-WROOM-32E footprint's
+            # F.Fab body spans y = -12.75 .. +12.75 relative to the anchor
+            # (anchor = body centre; 25.5 mm tall module). This is NOT the
+            # courtyard — the courtyard/keepout wing extends ~28 mm above the
+            # anchor (antenna clearance region). The check below verifies the
+            # module BODY tip overhangs the board edge; the footprint's
+            # built-in keepout rule-area covers any antenna clearance that
+            # remains on-board.
+            WROOM_BODY_HALF_H = 12.75
+            body_tip_y = u2["y"] - WROOM_BODY_HALF_H
+            overhangs = body_tip_y < y_top
             check(
-                "U2 antenna courtyard crosses top Edge.Cuts (overhang confirmed)",
+                "U2 module body tip crosses top Edge.Cuts (antenna overhang confirmed)",
                 overhangs,
-                f"Antenna tip Y = {antenna_tip_y:.2f} mm, top edge Y = {y_top:.2f} mm. "
+                f"Body tip Y = {body_tip_y:.2f} mm, top edge Y = {y_top:.2f} mm. "
                 f"{'Overhang OK' if overhangs else 'No overhang — move U2 toward top edge or rotate.'}"
             )
-            overhang_mm = y_top - antenna_tip_y
+            overhang_mm = y_top - body_tip_y
             if overhangs:
                 check(
                     f"U2 overhang ≥ 2 mm (actual {overhang_mm:.1f} mm)",
@@ -449,7 +484,8 @@ def run_checks(pcb_path, sch_path):
     # -----------------------------------------------------------------------
     print("\n--- (d) Connector edge proximity ---")
 
-    near_edge("J4",  3.0,  "J4 USB-C within 3 mm of a board edge")
+    # 5 mm: a flush edge-mount USB-C's centroid legitimately sits ~4 mm inboard
+    near_edge("J4",  5.0,  "J4 USB-C within 5 mm of a board edge")
     near_edge("J5",  5.0,  "J5 battery connector within 5 mm of an edge")
     near_edge("J6",  5.0,  "J6 OLED connector within 5 mm of an edge")
     near_edge("J7",  5.0,  "J7 button connector within 5 mm of an edge")
