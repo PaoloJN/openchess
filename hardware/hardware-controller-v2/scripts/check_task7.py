@@ -697,6 +697,25 @@ def main():
     passed = sum(1 for s, _ in results if s == PASS)
     failed = total - passed
 
+    # Component VALUE assertions (added after R31/R32 10k escape)
+    _schtxt = open(SCH).read()
+    def _val(ref):
+        import re as _r
+        m = _r.search(r'\(property\s+"Reference"\s+"' + ref + r'"[\s\S]{0,300}?\(property\s+"Value"\s+"([^"]+)"', _schtxt)
+        return (m.group(1) if m else "").lower().replace("\u03a9", "").replace("\u03c9", "").replace("uf", "\u00b5f").replace("uh", "\u00b5h")
+    for _ref, _want, _why in [("R31", "750k", "FB top - sets 5V out"), ("R32", "100k", "FB bottom"),
+            ("R29", "910", "ISET ~1A charge"), ("R28", "1.1k", "ILIM 1.46A"), ("R26", "100k", "boost EN pulldown"),
+            ("L1", "1\u00b5h", "boost inductor"), ("C23", "100\u00b5f", "VOUT bulk"), ("C24", "22\u00b5f", "VOUT ceramic"), ("C25", "22\u00b5f", "VOUT ceramic")]:
+        ok = _val(_ref) == _want.lower()
+        total += 1
+        if ok:
+            passed += 1
+            print(f"  OK  VALUE {_ref} == {_want}")
+        else:
+            failed += 1
+            any_fail = True
+            print(f"  FAIL  VALUE {_ref} == {_want}  ({_ref} must be {_want} ({_why}), found: {_val(_ref) or 'missing'})")
+
     print(f"\n{'='*60}")
     print(f"RESULT: {passed}/{total} checks passed, {failed} failed")
 
