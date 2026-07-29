@@ -4,7 +4,7 @@ Current hardware (v2) has two PCBs and one panel harness:
 
 - `hardware-board` or `hardware-board-3x3`: matrix board
 - `hardware-controller-v2`: controller, power, and driver board
-- Panel harness: SSD1306 OLED and 3 buttons wired to controller `J_OLED` and `J_BTN`
+- Panel harness: SSD1306 OLED and 3 buttons wired to controller `J6` (OLED) and `J7`/`J8`/`J9` (buttons)
 
 All active 2x13 matrix/controller `J1` connectors are intended to use
 `PinSocket_2x13` footprints.
@@ -50,7 +50,7 @@ Counts: 4x `+5V_LED`, 5x `GND`, 1x `LED_DATA_5V`, 8x row-sense nets,
 The matrix board does not consume the 3.3 V rail. Row pullups live on the
 controller.
 
-## J_OLED — JST-XH 4-pin (controller ⇄ panel OLED)
+## J6 — JST-XH 4-pin B4B-XH-A (controller ⇄ panel OLED)
 
 | Pin | Net | Matches SSD1306 module order |
 |---|---|---|
@@ -62,15 +62,20 @@ controller.
 Straight-through cable; I2C pullups live on the OLED module (as in v1 — the
 controller adds none).
 
-## J_BTN — JST-XH 5-pin (controller ⇄ panel buttons)
+## J7 / J8 / J9 — JST-XH 2-pin B2B-XH-A (controller ⇄ panel buttons)
+
+Three separate identical 2-pin XH plugs, one per button. Silkscreen labels on
+the controller PCB identify which is which. The plugs are physically
+interchangeable — label/polarity decides orientation.
 
 | Pin | Net | Note |
 |---|---|---|
-| 1 | GND | common for all buttons |
-| 2 | BTN_POWER | GPIO36, ext pullup R36 |
-| 3 | BTN_MODE | GPIO39, ext pullup R37 |
-| 4 | BTN_SELECT | GPIO2, internal pullup only |
-| 5 | (spare) | not connected, reserved |
+| 1 | Signal | BTN_UP (J7, GPIO39) / BTN_DOWN (J8, GPIO36) / BTN_OK (J9, GPIO2) |
+| 2 | GND | button return |
 
-Buttons short their signal to GND. The v1 J3 XH-10 harness is retired;
-re-crimp the panel harness into these two cables.
+Buttons short signal pin to GND when pressed. GPIO39/36 have external pullups
+R37/R36 on the controller. GPIO2 uses internal pullup only (no external
+pullup — would break USB download mode).
+
+The v1 J3 XH-10 harness is retired; re-crimp into four separate cables
+(one B4B-XH-A for OLED, three B2B-XH-A for buttons).

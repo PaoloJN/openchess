@@ -34,8 +34,8 @@ Design rules that produced this map: GPIO1/3 reserved for UART0↔USB-serial (de
 | `I2C_SDA` | 21 | 33 (IO21) | Bidirectional | Arduino Wire default |
 | `I2C_SCL` | 22 | 36 (IO22) | Output | Arduino Wire default |
 | `BTN_SELECT` | 2 | 24 (IO2) | Input | internal pullup only (NO external pullup — would break USB download mode) |
-| `BTN_POWER` | 36 | 4 (SENSOR_VP) | Input-only | ext pullup R36 |
-| `BTN_MODE` | 39 | 5 (SENSOR_VN) | Input-only | ext pullup R37 |
+| `BTN_DOWN` | 36 | 4 (SENSOR_VP) | Input-only | ext pullup R36; connector J8 |
+| `BTN_UP` | 39 | 5 (SENSOR_VN) | Input-only | ext pullup R37; connector J7 |
 | `VBAT_MON` | 34 | 6 (IO34) | ADC input | ADC1_CH6, divider R14/R15 |
 | UART0 TX | 1 | 35 (TXD0) | Output | to USB-serial RXD |
 | UART0 RX | 3 | 34 (RXD0) | Input | to USB-serial TXD |
@@ -53,7 +53,7 @@ Design rules that produced this map: GPIO1/3 reserved for UART0↔USB-serial (de
 | Matrix columns | `CA_PWR..CH_PWR` | TBD62783A switched column rails to matrix connector |
 | LEDs | `LED_DATA`, `LED_DATA_5V` | ESP32 data shifted to 5 V through 74AHCT125 |
 | Panel display | `I2C_SDA`, `I2C_SCL` | SSD1306 OLED on panel harness |
-| Panel buttons | `BTN_POWER`, `BTN_MODE`, `BTN_SELECT` | Buttons short signal to GND |
+| Panel buttons | `BTN_UP`, `BTN_DOWN`, `BTN_OK` | Buttons short signal to GND |
 | Battery monitor | `VBAT_MON` | Battery divider into ESP32 ADC |
 | Spare panel GPIO | `PANEL_SPARE`, `PANEL_SPARE2` | Reserved at panel connector |
 
@@ -80,9 +80,9 @@ Design rules that produced this map: GPIO1/3 reserved for UART0↔USB-serial (de
 | `COL_DRV_H` | 15 | 23 | Output | Bootstrap pin; verify behavior at boot |
 | `I2C_SDA` | 1 | 35 | Bidirectional | OLED I2C; conflicts with normal UART0 debug assumptions |
 | `I2C_SCL` | 3 | 34 | Output | OLED I2C; conflicts with normal UART0 debug assumptions |
-| `BTN_SELECT` | 2 | 24 | Input | Internal pullup in firmware |
-| `BTN_POWER` | 36 | 3 | Input-only | External controller-side pullup |
-| `BTN_MODE` | 39 | 4 | Input-only | External controller-side pullup |
+| `BTN_OK` | 2 | 24 | Input | Internal pullup in firmware |
+| `BTN_DOWN` | 36 | 3 | Input-only | External controller-side pullup |
+| `BTN_UP` | 39 | 4 | Input-only | External controller-side pullup |
 | `VBAT_MON` | 34 | 5 | ADC input | Battery voltage divider |
 | `PANEL_SPARE` | 35 | 6 | Input-only | Reserved; no internal pullup |
 

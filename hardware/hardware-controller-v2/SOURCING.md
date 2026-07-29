@@ -52,9 +52,12 @@ Stock figures are JLCPCB assembly-library stock unless noted.
 |---|---|---|---|---|---|---|---|
 | 1kΩ 0603 resistor | 0603WAF1001T5E | C21190 | **Basic** | ~3.9M (pre-order) | $0.0087/ea | 0603 | UNI-ROYAL. Used for LED series R. |
 | 1.1kΩ 0603 resistor | 0603WAF1101T5E | C22764 | **Basic** | Large (warehouse Basic passive) | ~$0.001/ea | 0603 | UNI-ROYAL. Used for R_ILIM (1.46A input limit). |
+| 5.1kΩ 0603 resistor | *(assign at order time)* | — | **Basic** | Very large | — | 0603 | R21/R22. USB-C CC1/CC2 pulldowns (required for USB-C power delivery / wall adapter detection). Verify Basic 5.1k C-number at order time (e.g. C23186 UNI-ROYAL 0603WAF5101T5E or equivalent). |
 | 10kΩ 0603 resistor | 0603WAF1002T5E | C25804 | **Basic** | ~4.8M (pre-order) | $0.0065/ea | 0603 | UNI-ROYAL. Used for TS disable, pull-ups. |
 
-> **Resistor note:** Both are Basic and show as "Pre-order" / "Idle parts available" on JLCPCB as of 2026-07-27, but estimated stock is very large. This is JLCPCB's normal state for Basic passives kept in warehouse. They will be pulled without issue for assembly orders.
+> **Resistor note:** Basic passives show as "Pre-order" / "Idle parts available" on JLCPCB as of 2026-07-27, but estimated stock is very large. This is JLCPCB's normal state for Basic passives kept in warehouse. They will be pulled without issue for assembly orders.
+
+> **5.1kΩ note (R21/R22):** These are USB-C CC pin pulldowns (required by USB-C spec for a Downstream Facing Port device). Without them, many wall adapters will not supply power. Confirm the Basic C-number at BOM/order time — C23186 (0603WAF5101T5E, UNI-ROYAL) is the expected match.
 
 ### Switches and Buttons
 
@@ -75,11 +78,15 @@ Stock figures are JLCPCB assembly-library stock unless noted.
 
 ### Connectors (hand-solder TH — not in JLC assembly library)
 
-| Block | MPN | LCSC # | JLC Class | LCSC Stock | Unit Price | Package | Notes |
-|---|---|---|---|---|---|---|---|
-| Battery conn (2-pin) | B2B-XH-A | C158012 | Extended\* | 214,260 | $0.040/20+ | TH P=2.5mm | JST XH. \*Available on JLCPCB but as pre-order / low stock — hand-solder recommended. |
-| Panel conn (4-pin) | B4B-XH-A-G | C594232 | — | 0 (order from LCSC) | $0.37/5+ | TH P=2.5mm | JST XH, gold contacts. 0 in stock at LCSC — order ahead or substitute B4B-XH-AM or non-JST. |
-| Panel conn (5-pin) | B5B-XH-A(LF)(SN) | C157991 | — | 130,105 | $0.088/5+ | TH P=2.5mm | JST XH, RoHS. |
+**As-built panel layout:** J5 = battery XH-2, J6 = OLED XH-4, J7/J8/J9 = per-button XH-2 (BTN_UP/DOWN/OK — three separate 2-pin connectors). The XH-5 5-pin connector (B5B-XH-A) is NOT used.
+
+| Block | Qty | MPN | LCSC # | JLC Class | LCSC Stock | Unit Price | Package | Notes |
+|---|---|---|---|---|---|---|---|---|
+| Battery conn (J5) | 1× | B2B-XH-A | C158012 | Extended\* | 214,260 | $0.040/20+ | TH P=2.5mm | JST XH. \*Available on JLCPCB but as pre-order / low stock — hand-solder recommended. |
+| Button conn (J7/J8/J9) | 3× | B2B-XH-A | C158012 | Extended\* | 214,260 | $0.040/20+ | TH P=2.5mm | Same part as J5. Order 4× B2B-XH-A total. |
+| OLED conn (J6) | 1× | B4B-XH-A-G | C594232 | — | 0 (order from LCSC) | $0.37/5+ | TH P=2.5mm | JST XH, gold contacts. 0 in stock at LCSC — order ahead or substitute B4B-XH-AM or non-JST. |
+
+**Total XH connectors to order: 4× B2B-XH-A (J5 + J7 + J8 + J9) + 1× B4B-XH-A (J6).**
 
 > **Connector note:** All XH connectors are through-hole and intended for hand-soldering. Do not add to the JLC SMT assembly BOM. Order from LCSC separately.
 
@@ -278,7 +285,7 @@ These are needed for the schematic but not listed in the primary block table:
 |---|---|
 | **Basic** | AMS1117-3.3 (C6186), TS-1187A-B-A-B (C318884), 1kΩ (C21190), 1.1kΩ (C22764), 10kΩ (C25804), 100kΩ (C25803), Red LED KT-0603R (C2286) |
 | **Extended** | ESP32-WROOM-32E-N4 (C701341), CH340C (C84681), TYPE-C-31-M-12 (C165948), USBLC6-2SC6 (C7519), BQ24074RGTR (C54313), TPS61022RWUR (C915088), APH0420T1R0M (C5349664), TBD62783AFG(Z,EL) (C840444 or C97745), S8050 J3Y (C42441446), MSK12C02 (C431540), Green LED KT-0603G (C12624), 750kΩ (C23240) |
-| **Hand-solder (not in JLC BOM)** | B2B-XH-A (C158012), B4B-XH-A-G (C594232 — 0 stock, order alt), B5B-XH-A(LF)(SN) (C157991) |
+| **Hand-solder (not in JLC BOM)** | B2B-XH-A (C158012) — 4× total: J5 battery + J7/J8/J9 buttons; B4B-XH-A-G (C594232 — 0 stock, order alt) — 1× total: J6 OLED. B5B-XH-A 5-pin is NOT used. |
 
 **Extended part count: 12** → JLCPCB Extended setup fee at $3/part = ~$36 per order.
 (Red LED moved to Basic vs. earlier draft; saves one $3 setup fee.)
