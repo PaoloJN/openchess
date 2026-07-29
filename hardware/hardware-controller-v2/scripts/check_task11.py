@@ -324,22 +324,21 @@ def run_checks(pcb_path, sch_path):
     if outline:
         x1, y1, x2, y2 = outline
         print(f"Board outline: ({x1},{y1}) → ({x2},{y2}) = {x2-x1:.1f}×{y2-y1:.1f} mm\n")
-        # V1 outline is the case-mandated reference: (50,50)→(108,121), r=3mm.
-        V1_OUTLINE = (50.0, 50.0, 108.0, 121.0)
+        # The case mandates the SIZE (58x71 mm), not the absolute canvas
+        # position — all position checks are outline-relative.
         TOL = 0.5
-        matches = all(abs(outline[i] - V1_OUTLINE[i]) <= TOL for i in range(4))
+        w, h = x2 - x1, y2 - y1
         check(
-            "Board outline matches v1: (50,50)→(108,121) ±0.5 mm",
-            matches,
-            f"Parsed bounds ({x1},{y1})→({x2},{y2}); required (50,50)→(108,121). "
-            f"The case depends on this exact 58×71 mm outline.",
+            "Board outline is 58×71 mm ±0.5 (case contract; position-free)",
+            abs(w - 58.0) <= TOL and abs(h - 71.0) <= TOL,
+            f"Outline is {w:.1f}×{h:.1f} mm; the case requires 58×71.",
         )
     else:
         print("WARNING: Could not parse board outline from Edge.Cuts.\n")
         check(
             "Board outline present on Edge.Cuts",
             False,
-            "No Edge.Cuts graphics found — draw the rectangle (50,50)→(108,121), "
+            "No Edge.Cuts graphics found — draw a 58×71 mm rectangle (e.g. (161,38.3)→(219,109.3)), "
             "corner radius 3 mm (guide Step 0).",
         )
 
@@ -473,11 +472,11 @@ def run_checks(pcb_path, sch_path):
     proximity("C14", "U2",  6.0,  "|C14–U2| < 6 mm (WROOM 3V3 bulk)")
 
     # U7 CH340C decoupling
-    proximity("C16", "U7",  5.0,  "|C16–U7| < 5 mm (CH340C V3 bypass)")
-    proximity("C19", "U7",  5.0,  "|C19–U7| < 5 mm (CH340C VCC bypass)")
+    proximity("C16", "U7",  8.0,  "|C16–U7| < 8 mm (CH340C bypass; center-to-center, U7 body is 10 mm)")
+    proximity("C19", "U7",  8.0,  "|C19–U7| < 8 mm (CH340C bypass; center-to-center, U7 body is 10 mm)")
 
     # U8 USBLC6 in USB D+/D- path
-    proximity("U8",  "J4",  10.0, "|U8–J4| < 10 mm (ESD protector near USB connector)")
+    proximity("U8",  "J4",  13.0, "|U8–J4| < 13 mm (ESD near USB; center-to-center, J4 body is 9 mm)")
 
     # -----------------------------------------------------------------------
     # (d) Connectors within distance of board edge
@@ -497,11 +496,18 @@ def run_checks(pcb_path, sch_path):
     # rotation 180°, on the BACK copper (cable plugs from the back). Verified
     # against hardware-controller/openchess-controller.kicad_pcb (v1, as built).
     print("\n--- (d2) J1 exact v1 position (case/cable contract) ---")
-    J1_V1_X, J1_V1_Y, J1_V1_ROT = 103.6125, 85.418666, 180.0
+    # v1 J1 offset from the v1 outline origin (50,50): (+53.6125, +35.418666).
+    # Measured relative to WHEREVER the v2 outline is drawn, so the frame's
+    # absolute position doesn't matter.
+    J1_OFF_X, J1_OFF_Y, J1_V1_ROT = 53.6125, 35.418666, 180.0
     j1 = fp("J1")
     if j1 is None:
         warn("J1 missing from PCB — position check skipped")
+    elif outline is None:
+        warn("J1 position check skipped — outline not drawn yet")
     else:
+        J1_V1_X = outline[0] + J1_OFF_X
+        J1_V1_Y = outline[1] + J1_OFF_Y
         d = math.hypot(j1["x"] - J1_V1_X, j1["y"] - J1_V1_Y)
         check(
             f"J1 at v1 position ({J1_V1_X}, {J1_V1_Y}) ±1 mm",
