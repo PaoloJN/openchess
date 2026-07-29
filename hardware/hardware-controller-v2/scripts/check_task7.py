@@ -391,7 +391,10 @@ def run_checks(nets, all_refs):
           "R31 (FB divider top, 750kΩ) must have one pin on +5V_LED")
 
     # =========================================================================
-    # Inductor L1 — SW node to +5V_LED
+    # Inductor L1 — boost topology: VSYS (input) through L1 to SW node.
+    # CORRECTED 2026-07-29: the original contract wired L1 to +5V_LED (output),
+    # which is wrong for a boost converter and would make the 5V rail dead.
+    # Per TPS61022 datasheet typical application: L1 = VSYS <-> SW.
     # =========================================================================
 
     # L1 pin 1 must be on same net as U10 pin 2 (SW)
@@ -406,10 +409,14 @@ def run_checks(nets, all_refs):
               ref_in(sw_net, "L1"),
               f"L1 must share a net with U10 pin 2 (net: {sw_net_name!r}) — SW node to inductor")
 
-    # L1 pin 2 must be on +5V_LED
-    check("L1 pin 2 on +5V_LED",
-          pin_in(v5, "L1", "2"),
-          "L1 pin 2 (inductor output end) must be on +5V_LED")
+    # L1 pin 2 must be on VSYS (boost input side, per datasheet)
+    check("L1 pin 2 on VSYS (boost input — NOT +5V_LED)",
+          pin_in(nets.get("VSYS", {}), "L1", "2") if isinstance(nets.get("VSYS"), dict) else ref_in(nets.get("VSYS", []), "L1"),
+          "L1 pin 2 must be on VSYS — inductor goes between the input supply and SW "
+          "(TPS61022 datasheet). If it reads +5V_LED the schematic still has the old bug.")
+    check("L1 NOT on +5V_LED (old bug check)",
+          not pin_in(v5, "L1", "1") and not pin_in(v5, "L1", "2"),
+          "L1 must not touch +5V_LED at all — that was the incorrect original wiring.")
 
     # =========================================================================
     # FB divider — R31 and R32 share the FB node (U10 pin 4)
