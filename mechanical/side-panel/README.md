@@ -32,13 +32,13 @@ gun is the fallback if the nubs run loose.
 
 | item | position from front end (y=15 edge) | size |
 |---|---|---|
-| USB flange holes | 10 / 28 mm | Ø2.6 |
-| USB port slot | 19 mm (center) | 10 × 5 rounded |
+| USB flange holes | 5 / 23 mm | Ø2.6 |
+| USB port slot | 14 mm (center) | 10 × 5 rounded |
 | buttons | 34 / 48 / 62 mm | Ø8.2 |
 | OLED window | 88 mm (center) | 24 × 7 |
 
 All items on the vertical centerline (z −5 world). USB cluster sits at
-y=34 (was 32 in the plan).
+y=29 (moved frontward for clearance from the buttons).
 
 ## After the fit-check
 
