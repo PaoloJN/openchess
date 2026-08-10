@@ -35,7 +35,12 @@ gun is the fallback if the nubs run loose.
 | USB flange holes | 5 / 23 mm | Ø2.6 |
 | USB port slot | 14 mm (center) | 10 × 5 rounded |
 | buttons | 34 / 48 / 62 mm | Ø8.2 |
-| OLED window | 88 mm (center) | 24 × 7 |
+| OLED window | 84 mm (center) | 24 × 7 |
+
+The window sits offset toward the buttons within the OLED tray — mount the
+module with its **4 pins pointing away from the buttons** (toward the back
+end) so the glass lines up. The tray itself can't move closer to the
+buttons: the last button's rear nut needs that space.
 
 All items on the vertical centerline (z −5 world). USB cluster sits at
 y=29 (moved frontward for clearance from the buttons).
