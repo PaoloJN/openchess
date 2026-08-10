@@ -1,51 +1,44 @@
-# Side Panel — v1 test part
+# Front Panel — v1 test part
 
-`side-panel-v1.stl` — the OLED / 3-button / USB-C panel for the case's left
-wall, printed standalone first to fit-check the real parts before the wall
-gets cut.
+`front-panel-v1.stl` — the OLED + 3-button panel for the case's FRONT wall
+(the vertical face toward the player), printed standalone first to
+fit-check the real parts before the wall gets cut.
+
+Layout change 2026-08-10: controls moved from the left wall to the front
+wall; the **USB-C moved off the panel entirely** — it will mount directly
+into the left wall near the front corner (the AAOTOKK adapter's own flange
++ 2 screws, no panel needed).
 
 ## Print settings
 
-- Orientation: **flat, outer face DOWN** on the bed (the OLED pocket walls
+- Orientation: **flat, outer face DOWN** on the bed (the OLED tray walls
   point up). No supports needed.
-- PLA, 0.2 mm layers, 3 walls, ~100% of a 20-minute print.
-- Part is 120 × 17 × 2.5 mm (pocket walls add 6 mm behind).
+- PLA, 0.2 mm layers, 3 walls, ~15 min.
+- Part is 89 × 17 × 2.5 mm (tray adds 6 mm behind).
 
 ## Fit-check list (do all before we cut the case)
 
-1. **OLED (0.91")** — drops into the rear pocket, snaps under the two nubs,
-   screen centered in the window. If the visible area sits off-center
-   (these modules are offset toward the non-pin end), note which way and by
-   how much.
+1. **OLED (0.91")** — drops into the rear tray, snaps under the two nubs,
+   screen centered in the window. Mount the module with its **4 pins toward
+   the BUTTONS** — the window is offset for that orientation. If the
+   visible area still sits off-center, note which way and by how much.
 2. **8 mm buttons** — barrel passes the Ø8.2 holes, nut clamps snug on the
-   2.5 mm plate, buttons don't touch each other's nuts (14 mm spacing).
-3. **USB-C panel adapter** — port centered in the 10×5 slot, flange screw
-   holes line up (modeled at **18 mm spacing, Ø2.6** — NOMINAL, measure the
-   real flange and report if different).
+   2.5 mm plate, nuts don't hit the OLED tray or each other (14 mm spacing).
 
-No face screws: the panel's own wall mounting is TBD (snap/friction into
-the wall rebate — decided at wall-integration time). The OLED needs no
-glue: it drops into the rear pocket and clicks under two snap nubs; glue
-gun is the fallback if the nubs run loose.
+The OLED needs no glue: pocket + snap nubs hold it; glue gun only as
+fallback. Panel wall mounting is TBD (snap/friction into the wall rebate —
+decided at wall-integration time). The USB-C flange fit gets its own check
+when the left-wall cutout is made.
 
-## Hole map (part local, from the front-corner end)
+## Hole map (part local, from the left end of the part)
 
-| item | position from front end (y=15 edge) | size |
+| item | position from left end (x=6 edge) | size |
 |---|---|---|
-| USB flange holes | 5 / 23 mm | Ø2.6 |
-| USB port slot | 14 mm (center) | 10 × 5 rounded |
-| buttons | 34 / 48 / 62 mm | Ø8.2 |
-| OLED window | 84 mm (center) | 24 × 7 |
+| OLED tray (behind) | 2.1 → 43 mm | 40.9 × 14.9 outside |
+| OLED window | 19 mm (center) | 24 × 7 |
+| buttons | 50 / 64 / 78 mm | Ø8.2 |
 
-The window sits offset toward the buttons within the OLED tray — mount the
-module with its **4 pins pointing away from the buttons** (toward the back
-end) so the glass lines up. The tray itself can't move closer to the
-buttons: the last button's rear nut needs that space.
-
-All items on the vertical centerline (z −5 world). USB cluster sits at
-y=29 (moved frontward for clearance from the buttons).
-
-## After the fit-check
-
-Report results → v2 tweaks if needed → then Task 6 (cut the wall) proceeds
-with the proven dimensions.
+All items on the vertical centerline (z −5 world). World coords: panel
+x 6→96, outer face y = −13, window x 13→37, buttons at world x 56/70/84 —
+clear of the controller which starts at x 90 behind the front wall.
+Spacing balanced v2: ~7 mm margins at both ends.
