@@ -22,22 +22,23 @@ gets cut.
 3. **USB-C panel adapter** — port centered in the 10×5 slot, flange screw
    holes line up (modeled at **18 mm spacing, Ø2.6** — NOMINAL, measure the
    real flange and report if different).
-4. **M3 flat-head** in each end hole — head sits at or below the surface
-   (Ø6.2 recess, flat-bottom in v1).
+
+No face screws: the panel's own wall mounting is TBD (snap/friction into
+the wall rebate — decided at wall-integration time). The OLED needs no
+glue: it drops into the rear pocket and clicks under two snap nubs; glue
+gun is the fallback if the nubs run loose.
 
 ## Hole map (part local, from the front-corner end)
 
 | item | position from front end (y=15 edge) | size |
 |---|---|---|
-| screw A | 6 mm | Ø3.4 + Ø6.2 recess |
 | USB flange holes | 10 / 28 mm | Ø2.6 |
 | USB port slot | 19 mm (center) | 10 × 5 rounded |
 | buttons | 34 / 48 / 62 mm | Ø8.2 |
 | OLED window | 88 mm (center) | 24 × 7 |
-| screw B | 114 mm | Ø3.4 + Ø6.2 recess |
 
-All items on the vertical centerline (z −5 world). USB cluster moved from
-the planned y=32 to **y=34** so its flange hole clears screw A.
+All items on the vertical centerline (z −5 world). USB cluster sits at
+y=34 (was 32 in the plan).
 
 ## After the fit-check
 
