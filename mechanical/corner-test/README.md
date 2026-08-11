@@ -21,9 +21,10 @@ tests every mechanical unknown before the full 308 mm case print.
    nuts thread on inside the groove; check all 3 nuts fit side by side and
    the first one clears the OLED pocket.
 3. **USB-C** — flange slides into the pocket from the inside, metal nose
-   pokes through the slot and lands flush with the outer face.
-   (Flange screw holes NOT drilled yet — spacing still unmeasured. Fit is
-   testable without them; the screws come in v2 or get drilled by hand.)
+   pokes through the slot and lands flush with the outer face. Screw holes
+   are **6 mm slotted ovals** in the skin (spacing-tolerant, fits any
+   flange spacing 13.5–19.5 mm): M3×12 pan head + washer from outside,
+   through the slot and flange hole, hex nut behind the flange.
 4. **Corner fastening** — slide an M3 hex nut into the top slot (from the
    inner corner face), run an M3×8 through the top hole into it. Repeat
    below with the bottom slot. Should thread smoothly and clamp firm.
