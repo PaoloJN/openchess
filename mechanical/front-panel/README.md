@@ -19,26 +19,30 @@ into the left wall near the front corner (the AAOTOKK adapter's own flange
 ## Fit-check list (do all before we cut the case)
 
 1. **OLED (0.91")** — drops into the rear tray, snaps under the two nubs,
-   screen centered in the window. Mount the module with its **4 pins toward
-   the BUTTONS** — the window is offset for that orientation. If the
-   visible area still sits off-center, note which way and by how much.
-2. **8 mm buttons** — barrel passes the Ø8.2 holes, nut clamps snug on the
-   2.5 mm plate, nuts don't hit the OLED tray or each other (14 mm spacing).
+   screen centered in the window. Mount the module with its **4 pins AWAY
+   from the buttons** (toward the corner end) — the window is offset for
+   that orientation. If the visible area still sits off-center, note which
+   way and by how much.
+2. **8 mm buttons** — barrel passes the Ø8.2 holes; in the case the nut
+   goes on behind the WALL (nut groove), clamping panel + wall together —
+   the buttons are what hold the panel on. Nuts don't hit the OLED tray or
+   each other (14 mm spacing).
 
 The OLED needs no glue: pocket + snap nubs hold it; glue gun only as
 fallback. Panel wall mounting is TBD (snap/friction into the wall rebate —
 decided at wall-integration time). The USB-C flange fit gets its own check
 when the left-wall cutout is made.
 
-## Hole map (part local, from the left end of the part)
+## Hole map (part local, from the left end of the plate)
 
-| item | position from left end (x=6 edge) | size |
+| item | position from left end (x=13 edge) | size |
 |---|---|---|
-| OLED tray (behind) | 2.1 → 43 mm | 40.9 × 14.9 outside |
+| OLED tray (behind) | −5 → 35.9 mm (sticks past the plate edge) | 40.9 × 14.9 outside |
 | OLED window | 19 mm (center) | 24 × 7 |
-| buttons | 50 / 64 / 78 mm | Ø8.2 |
+| buttons | 42 / 56 / 70 mm | Ø8.2 |
 
-All items on the vertical centerline (z −5 world). World coords: panel
-x 6→96, outer face y = −13, window x 13→37, buttons at world x 56/70/84 —
-clear of the controller which starts at x 90 behind the front wall.
-Spacing balanced v2: ~7 mm margins at both ends.
+All items on the vertical centerline (z −5 world). World coords: plate
+x 13→94, outer face y = −13, window x 20→44, buttons at world x 55/69/83.
+v3 layout: buttons pulled to ~7 mm from the window (module pin-end flipped
+away); the tray's far end tucks behind the wall skin left of the plate.
+Buttons stay clear of the controller (starts x 90 behind the wall).
