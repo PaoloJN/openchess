@@ -35,14 +35,15 @@ when the left-wall cutout is made.
 
 ## Hole map (part local, from the left end of the plate)
 
-| item | position from left end (x=13 edge) | size |
+| item | position from left end (x=11 edge) | size |
 |---|---|---|
 | OLED tray (behind) | −5 → 35.9 mm (sticks past the plate edge) | 40.9 × 14.9 outside |
 | OLED window | 19 mm (center) | 24 × 7 |
-| buttons | 42 / 56 / 70 mm | Ø8.2 |
+| buttons | 42 / 56 / 70 mm | Ø8.4 |
 
 All items on the vertical centerline (z −5 world). World coords: plate
-x 13→94, outer face y = −13, window x 20→44, buttons at world x 55/69/83.
-v3 layout: buttons pulled to ~7 mm from the window (module pin-end flipped
-away); the tray's far end tucks behind the wall skin left of the plate.
-Buttons stay clear of the controller (starts x 90 behind the wall).
+x 11→92, outer face y = −13, window x 18→42 (**center x=30 = centered
+under square a1**), buttons at world x 53/67/81. v5 layout: whole cluster
+shifted toward the front-left corner; buttons ~7 mm from the window
+(module pin-end flipped away); the tray's far end tucks behind the wall
+skin left of the plate. Buttons clear of the controller (starts x 90).
