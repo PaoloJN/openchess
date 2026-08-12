@@ -7,7 +7,7 @@ clean-rebuild). Send these to print.
 
 | file | what | print notes |
 |---|---|---|
-| `corner-test-v7.stl` | **PRINT FIRST** — front-left corner test (~22 g) | flat on top rim, no supports; validates OLED/buttons/USB/hex-nut corner |
+| `corner-test-v8.stl` | **PRINT FIRST** — front-left corner test (~22 g) | flat on top rim, no supports; validates OLED/buttons/USB/hex-nut corner |
 | `case-walls.stl` | the case ring: front cluster, USB-C mount, robot-arm mount, 4 hex-nut corners | 308 × 308 × 17 mm — flat on the top rim, no supports |
 | `top-plate-black.stl` | printed chessboard top, black base | print together as one 2-color job |
 | `top-plate-white.stl` | white inlays (squares, frame, labels) | load with black as one object / 2 parts, assign filaments |
@@ -22,18 +22,22 @@ print service, or we split them for the bed (not designed yet — ask).
 
 ## Hardware list (all from the black M3 kit + button/USB packages)
 
-| joint | screws | nuts | washers |
+| joint | screws | fastener | washers |
 |---|---|---|---|
-| Printed top → case | 4 × M3×8 **pan head** (sits ~flush in the recesses) | 4 × M3 hex — live in the case's top corner slots | — |
-| Plexi top → case (swap) | 4 × M3×12 **socket cap** | (same 4 nuts, already in the slots) | 4 × M3 flat |
-| Back cover → case | 4 × M3×8 **socket cap** (recessed; case stands on its pads) | 4 × M3 hex — bottom corner slots | — |
-| USB-C extension | 2 × M3×12 **pan head** (through the skin slots + flange) | 2 × M3 hex — behind the flange | 2 × M3 flat |
-| Buttons (×3) | — | their own 10 mm nuts (in the button bag) | — |
+| Printed top → case | 4 × M3×8 **pan head** (~flush in recesses) | top corner **heat-set inserts** | — |
+| Plexi top → case (swap) | 4 × M3×12 **socket cap** | (same top inserts) | 4 × M3 flat |
+| Back cover → case | 4 × M3×8 **socket cap** (fully flush) | bottom corner **heat-set inserts** | — |
+| PCB → cover posts | 4 × M3×6 (head ≤1.9 mm tall — button style) | post **heat-set inserts** | — |
+| USB-C extension | — glued into its pocket | — | — |
+| Buttons (×3) | — | their own 10 mm nuts (button bag) | — |
 | OLED | none — snap-fit pocket | | |
 | Robot arm | none — slide-in slot | | |
 
-**Totals: 14 screws (M3×8: 4 pan + 4 socket; M3×12: 4 socket + 2 pan),
-10 × M3 hex nuts, 6 × M3 flat washers.** No heat-set inserts anywhere.
+**Totals: 16 screws (4×M3×8 pan, 8×M3×8/12 socket, 4×M3×6 low-head),
+12 × M3×5 heat-set inserts (8 corners + 4 posts), 4 washers, glue for USB.**
+Hex nuts no longer used. Insert install: kit's M3 iron tip, slow, stop
+~0.3 mm below flush (relief ring), cool before screwing. Every insert bore
+has spare depth below so melt can't block the screw.
 
 ## Assembly order
 

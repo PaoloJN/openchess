@@ -1,6 +1,6 @@
 # Corner Test Piece — v2
 
-`corner-test-v7.stl` — the front-left corner of the case (115 × 61 mm
+`corner-test-v8.stl` — the front-left corner of the case (115 × 61 mm
 L-section, 17 mm tall, ~22 g), carved from the final clean model (v2: 30×12 glass-flush OLED window). One print
 tests every mechanical unknown before the full 308 mm case print.
 
@@ -23,9 +23,10 @@ tests every mechanical unknown before the full 308 mm case print.
 3. **USB-C** — NO SCREWS: flange slides into the (now 12.5mm-tall) pocket
    from inside, nose pokes through the slot flush with the outer face; glue the flange into the pocket (it is already a snug
    fit). Outside wall is completely clean — no screws, no extra parts.
-4. **Corner fastening** — slide an M3 hex nut into the top slot (from the
-   inner corner face), run an M3×8 through the top hole into it. Repeat
-   below with the bottom slot. Should thread smoothly and clamp firm.
+4. **Corner fastening (HEAT-SET INSERTS now)** — melt an M3×5 insert into
+   the corner's top mouth (and one into the bottom mouth via the cover-pad
+   pocket): kit iron tip, slow, stop ~0.3 mm below flush, cool. Then M3×8
+   should run in smoothly all the way — no plastic in the threads.
 5. **General** — outer faces clean (no seams/blades — this is the rebuilt
    clean body), wall stiffness feel.
 
@@ -43,9 +44,9 @@ down. Tests:
 1. **Heat-set insert** in the PCB post: M3×5 insert with the kit's M3 iron
    tip, press slow, stop ~0.3 mm below the top (the relief ring), let cool.
    Then M3×6 screw all the way in — this is the melt-proof geometry test.
-2. **Flush cover screw**: drop an M3 hex nut into the walls piece's LOWER
-   corner slot, nest the cover corner's pad into the boss pocket, M3×8
-   socket cap through the counterbore — head should land ~0.2 mm below the
-   cover surface, fully flush.
+2. **Flush cover screw**: with an insert melted into the walls piece's
+   lower mouth, nest the cover corner's pad into the boss pocket, M3×8
+   socket cap through the counterbore — head lands ~0.2 mm below the cover
+   surface, fully flush.
 3. **Pad registration**: the cover corner should locate itself in the boss
    pocket with no slop.
