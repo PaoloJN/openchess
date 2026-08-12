@@ -12,7 +12,6 @@ clean-rebuild). Send these to print.
 | `top-plate-black.stl` | printed chessboard top, black base | print together as one 2-color job |
 | `top-plate-white.stl` | white inlays (squares, frame, labels) | load with black as one object / 2 parts, assign filaments |
 | `back-cover.stl` | bottom cover: nested corner pads (flush socket heads) + PCB posts with anti-melt insert bosses | flat, outside face down |
-| `usb-retainer.stl` | 2 tiny blocks that lock the USB-C connector in its pocket (no screws) | any orientation, 2 min |
 
 Plexi top is NOT printed — laser it from `mechanical/plexi-top/plexi-top.dxf`
 (300 mm sheet, LightBurn: Cut + Etch layers).

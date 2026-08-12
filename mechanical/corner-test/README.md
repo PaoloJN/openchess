@@ -21,10 +21,8 @@ tests every mechanical unknown before the full 308 mm case print.
    nuts thread on inside the groove; check all 3 nuts fit side by side and
    the first one clears the OLED pocket.
 3. **USB-C** — NO SCREWS: flange slides into the (now 12.5mm-tall) pocket
-   from inside, nose pokes through the slot flush with the outer face; the
-   two printed **retainer blocks** (usb-retainer.stl) press in behind the
-   flange beside the cable body — glue them if loose. Outside wall is
-   completely clean.
+   from inside, nose pokes through the slot flush with the outer face; glue the flange into the pocket (it is already a snug
+   fit). Outside wall is completely clean — no screws, no extra parts.
 4. **Corner fastening** — slide an M3 hex nut into the top slot (from the
    inner corner face), run an M3×8 through the top hole into it. Repeat
    below with the bottom slot. Should thread smoothly and clamp firm.
