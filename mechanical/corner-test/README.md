@@ -35,3 +35,17 @@ OLED seat, button stack (2.5+3 mm, 4.5 mm thread), USB flush-mount trick,
 hex-nut fastening, and surface quality. The robot-arm mount (back wall) is
 NOT in this piece — say the word for a second back-wall strip if you want
 to test the arm clip too.
+
+## Cover corner piece (corner-test-cover-v1.stl)
+
+The matching back-cover corner for the same cut. Print flat, outside face
+down. Tests:
+1. **Heat-set insert** in the PCB post: M3×5 insert with the kit's M3 iron
+   tip, press slow, stop ~0.3 mm below the top (the relief ring), let cool.
+   Then M3×6 screw all the way in — this is the melt-proof geometry test.
+2. **Flush cover screw**: drop an M3 hex nut into the walls piece's LOWER
+   corner slot, nest the cover corner's pad into the boss pocket, M3×8
+   socket cap through the counterbore — head should land ~0.2 mm below the
+   cover surface, fully flush.
+3. **Pad registration**: the cover corner should locate itself in the boss
+   pocket with no slop.
