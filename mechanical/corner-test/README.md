@@ -1,7 +1,7 @@
-# Corner Test Piece — v1
+# Corner Test Piece — v2
 
 `corner-test-v2.stl` — the front-left corner of the case (115 × 61 mm
-L-section, 17 mm tall, ~22 g), carved from the final clean model. One print
+L-section, 17 mm tall, ~22 g), carved from the final clean model (v2: 30×12 glass-flush OLED window). One print
 tests every mechanical unknown before the full 308 mm case print.
 
 ## Print settings
