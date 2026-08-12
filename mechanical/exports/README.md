@@ -26,15 +26,16 @@ print service, or we split them for the bed (not designed yet — ask).
 |---|---|---|---|
 | Printed top → case | 4 × M3×8 **pan head** (~flush in recesses) | top corner **heat-set inserts** | — |
 | Plexi top → case (swap) | 4 × M3×12 **socket cap** | (same top inserts) | 4 × M3 flat |
-| Back cover → case | 4 × M3×8 **socket cap** (fully flush) | bottom corner **heat-set inserts** | — |
+| Back cover → case | 7 × M3×8 **socket cap** (fully flush) | corner + mid-edge **heat-set inserts** (4 corners + 3 mid: front/left/right) | — |
 | PCB → cover posts | 4 × M3×6 (head ≤1.9 mm tall — button style) | post **heat-set inserts** | — |
 | USB-C extension | — glued into its pocket | — | — |
 | Buttons (×3) | — | their own 10 mm nuts (button bag) | — |
 | OLED | none — snap-fit pocket | | |
 | Robot arm | none — slide-in slot | | |
 
-**Totals: 16 screws (4×M3×8 pan, 8×M3×8/12 socket, 4×M3×6 low-head),
-12 × M3×5 heat-set inserts (8 corners + 4 posts), 4 washers, glue for USB.**
+**Totals: 19 screws (4×M3×8 pan, 11×M3×8/12 socket, 4×M3×6 low-head),
+15 × M3×5 heat-set inserts (8 corners + 3 mid-edge + 4 posts), 4 washers,
+glue for USB.**
 Hex nuts no longer used. Insert install: kit's M3 iron tip, slow, stop
 ~0.3 mm below flush (relief ring), cool before screwing. Every insert bore
 has spare depth below so melt can't block the screw.
