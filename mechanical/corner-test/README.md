@@ -1,6 +1,6 @@
 # Corner Test Piece — v2
 
-`corner-test-v5.stl` — the front-left corner of the case (115 × 61 mm
+`corner-test-v6.stl` — the front-left corner of the case (115 × 61 mm
 L-section, 17 mm tall, ~22 g), carved from the final clean model (v2: 30×12 glass-flush OLED window). One print
 tests every mechanical unknown before the full 308 mm case print.
 
@@ -20,11 +20,11 @@ tests every mechanical unknown before the full 308 mm case print.
 2. **8 mm buttons** — barrels through the Ø8.4 holes from outside, 10 mm
    nuts thread on inside the groove; check all 3 nuts fit side by side and
    the first one clears the OLED pocket.
-3. **USB-C** — flange slides into the pocket from the inside, metal nose
-   pokes through the slot and lands flush with the outer face. Screw holes
-   are **6 mm slotted ovals** in the skin (spacing-tolerant, fits any
-   flange spacing 13.5–19.5 mm): M3×12 pan head + washer from outside,
-   through the slot and flange hole, hex nut behind the flange.
+3. **USB-C** — NO SCREWS: flange slides into the (now 12.5mm-tall) pocket
+   from inside, nose pokes through the slot flush with the outer face; the
+   two printed **retainer blocks** (usb-retainer.stl) press in behind the
+   flange beside the cable body — glue them if loose. Outside wall is
+   completely clean.
 4. **Corner fastening** — slide an M3 hex nut into the top slot (from the
    inner corner face), run an M3×8 through the top hole into it. Repeat
    below with the bottom slot. Should thread smoothly and clamp firm.
