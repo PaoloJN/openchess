@@ -7,7 +7,7 @@ clean-rebuild). Send these to print.
 
 | file | what | print notes |
 |---|---|---|
-| `corner-test-v1.stl` | **PRINT FIRST** — front-left corner test (~22 g) | flat on top rim, no supports; validates OLED/buttons/USB/hex-nut corner |
+| `corner-test-v2.stl` | **PRINT FIRST** — front-left corner test (~22 g) | flat on top rim, no supports; validates OLED/buttons/USB/hex-nut corner |
 | `case-walls.stl` | the case ring: front cluster, USB-C mount, robot-arm mount, 4 hex-nut corners | 308 × 308 × 17 mm — flat on the top rim, no supports |
 | `top-plate-black.stl` | printed chessboard top, black base | print together as one 2-color job |
 | `top-plate-white.stl` | white inlays (squares, frame, labels) | load with black as one object / 2 parts, assign filaments |
