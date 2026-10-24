@@ -38,6 +38,18 @@ The first boards came back from JLCPCB in June 2026 and worked on the first
 power-up. Everything since then has been firmware, the case, the app, and a
 battery-module swap so it runs without a cable.
 
+## See it work
+
+<p align="center">
+  <img src="docs/media/demo-pieces.gif" alt="Lifting a piece off the board lights the corners of its square and of the squares it can move to" width="240">
+  &nbsp;&nbsp;&nbsp;
+  <img src="docs/media/demo-led-walk.gif" alt="First power-up of the bare matrix board: a single white pixel walks the 81-LED chain" width="240">
+</p>
+
+<p align="center">
+  <sub>Left: the board under its wooden top, reacting to pieces. Right: first power-up of the bare matrix, one pixel walking the LED chain. Full-quality clip: <a href="docs/media/demo-pieces.mp4">demo-pieces.mp4</a>.</sub>
+</p>
+
 ## How it works
 
 **Sensing.** Each square has a DRV5032FC Hall-effect sensor under it. The
