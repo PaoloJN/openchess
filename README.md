@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="docs/images/openchess-frame.png" alt="OpenChess rev 0.1: the 8x8 matrix board and the ESP32 controller, framed" width="720">
-</p>
-
 <h1 align="center">OpenChess</h1>
 
 <p align="center">
@@ -18,12 +14,19 @@
   <a href="#licenses">Licenses</a>
 </p>
 
+<p align="center">
+  <img src="docs/images/matrix-board-top.webp" alt="Matrix board rev 0.1, top, black solder mask" width="460">
+  &nbsp;&nbsp;
+  <img src="docs/images/controller-top.webp" alt="Controller board rev 0.1, top" width="208">
+</p>
+
 ---
 
 ## What this is
 
-A one-off, hands-on learning project. I had never designed a PCB before this.
-The goal was never a product. It was to get one physical board that:
+A one-off, hands-on learning project, built during my year-long internship at
+UMD CPSE. I had never designed a PCB before this. The goal was never a
+product. It was to get one physical board that:
 
 - detects every piece on every square with a magnet under each piece,
 - shows legal moves, hints, and errors with LEDs at the square corners,
@@ -33,13 +36,7 @@ The goal was never a product. It was to get one physical board that:
 
 The first boards came back from JLCPCB in June 2026 and worked on the first
 power-up. Everything since then has been firmware, the case, the app, and a
-second-revision controller that bakes the plug-in modules onto the PCB.
-
-<p align="center">
-  <img src="docs/images/matrix-board-top.webp" alt="Matrix board, top, black solder mask" width="420">
-  &nbsp;&nbsp;
-  <img src="docs/images/controller-top.webp" alt="Controller board v0.1, top" width="190">
-</p>
+battery-module swap so it runs without a cable.
 
 ## How it works
 
