@@ -8,7 +8,7 @@ truth, inspect the KiCad files under `hardware/`.
 | File | Purpose |
 |---|---|
 | `../STATUS.md` | Current project state and next actions |
-| `gpio-map.md` | ESP32 GPIO assignments, v2 table plus frozen v1 table |
+| `gpio-map.md` | ESP32 GPIO assignments for the built controller |
 | `inter-board-connector.md` | Matrix and panel connector contracts |
 | `bom.md` | Human-readable BOM for the v0.1 boards |
 | `assembly.md` | Assembly and bring-up order |

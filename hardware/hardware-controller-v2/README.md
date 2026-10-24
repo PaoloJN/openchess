@@ -1,4 +1,8 @@
-# hardware-controller-v2
+# hardware-controller-v2 (shelved)
+
+**Status: shelved 2026-10-24, never fabricated.** The schematic reached
+ERC-clean and layout was started. Dropped because the v0.1 controller with a
+battery-module swap does the job for a one-off board. Kept for reference.
 
 Integrated controller: soldered ESP32-WROOM-32E + USB-C (CH340C) + BQ24074
 power-path charger + TPS61022 5V boost + AMS1117-3.3. Replaces the v1

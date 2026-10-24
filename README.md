@@ -74,7 +74,7 @@ clamps the PCB stack with heat-set inserts.
 |---|---|
 | Matrix board v0.1 | Built, all 64 sensors and 81 LEDs verified on hardware |
 | Controller v0.1 | Built, works on USB. The stock battery module shuts its boost down under light load, so it is being replaced with a bq25185 charger/boost |
-| Controller v2 | Integrated ESP32-WROOM-32E, USB-C with CH340C, BQ24074 charger, TPS61022 boost. Schematic complete, layout in progress |
+| Controller v2 | Shelved. An integrated ESP32-WROOM-32E, USB-C, charger, and boost design got as far as a clean schematic, then the v0.1 board proved good enough |
 | Firmware | Integrated product build: OLED menu, offline AI, coaching lights, BLE. Desktop-tested, hardware verification ongoing |
 | Companion app | Expo app, all screens built, real BLE pairing works end to end on an iPhone |
 | Case | Final print package exported, corner test piece printed and iterated through v9 |
@@ -89,7 +89,7 @@ openchess/
 ├── hardware/
 │   ├── hardware-board/          8x8 matrix PCB, 282 x 282 mm (KiCad, gerbers, JLC BOM/CPL)
 │   ├── hardware-controller/     controller v0.1, DevKitC + Lipo Rider (frozen, boards exist)
-│   ├── hardware-controller-v2/  controller v2, integrated ESP32 + USB-C + charger + boost
+│   ├── hardware-controller-v2/  shelved v2 design, schematic only, kept for reference
 │   └── DESIGN_NOTES.md          design rationale and history for the v0.1 boards
 ├── firmware/                    PlatformIO ESP32 firmware: engine, UI, BLE, bench sketches
 ├── app/                         Expo / React Native companion app (BLE)

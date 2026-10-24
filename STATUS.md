@@ -14,8 +14,7 @@ physical chess board, not a product line or reusable hardware platform.
 |---|---|
 | `hardware/hardware-board/openchess-board.kicad_sch` / `.kicad_pcb` | 8x8 matrix board (v0.1, built) |
 | `hardware/hardware-controller/openchess-controller.kicad_sch` / `.kicad_pcb` | Controller v0.1 (built, frozen) |
-| `hardware/hardware-controller-v2/openchess-controller.kicad_sch` / `.kicad_pcb` | Controller v2 (in design) |
-| `docs/gpio-map.md` | ESP32 GPIO assignments, v2 table plus frozen v1 table |
+| `docs/gpio-map.md` | ESP32 GPIO assignments for the built controller |
 | `docs/inter-board-connector.md` | Matrix and panel connector contracts |
 | `firmware/src/pins.h` | GPIO map the firmware actually uses (v0.1 hardware) |
 | `firmware/BENCH.md` | Bench bring-up sequence and sketches |
@@ -28,8 +27,8 @@ physical chess board, not a product line or reusable hardware platform.
 |---|---|---|
 | Matrix board v0.1 | Built, verified | 64x DRV5032FC, 81x WS2812B. 2 assembled plus 3 bare spares from JLCPCB. All sensors and LEDs read and light correctly. One sensor (U5, square A5) wakes slowly and is handled in firmware with a longer per-column settle. |
 | Controller v0.1 | Built, verified on USB | ESP32-DevKitC, 74AHCT125, TBD62783A, row and button pullups, battery divider. The Seeed Lipo Rider Plus was swapped out: its IP5306 shuts the 5 V boost down under light load, so the board would not start on battery. Replacement is the Adafruit bq25185 charger plus boost module on the same jumper points. |
-| Controller v2 | Schematic complete, layout in progress | Integrated ESP32-WROOM-32E, USB-C with CH340C auto-program, BQ24074 power-path charger, TPS61022 5 V boost, AMS1117-3.3, XH battery connector, split panel connectors J6 (OLED) and J7/J8/J9 (buttons). ERC clean. Net classes and placement guide done. |
-| Panel | Built | 0.91" SSD1306 OLED plus 3 buttons (UP, DOWN, OK) on flying leads. OLED I2C on GPIO1/3 in v0.1, moved to GPIO21/22 in v2. |
+| Controller v2 | Shelved | Integrated ESP32-WROOM-32E, USB-C with CH340C, BQ24074 charger, TPS61022 boost. Schematic reached ERC-clean, layout was started, then dropped: the v0.1 controller with the bq25185 module swap does the job. Files stay in `hardware/hardware-controller-v2/` for reference. |
+| Panel | Built | 0.91" SSD1306 OLED plus 3 buttons (UP, DOWN, OK) on flying leads. OLED I2C on GPIO1/3, so unplug it to flash. |
 
 ## Firmware
 
@@ -82,11 +81,9 @@ hobby-servo gripper. Bench sketch `bench_roarm`, console in
    the August LED and capture-detection fixes on hardware.
 2. Confirm the bq25185 module wiring runs the full board on battery, including
    cold start into the LED bulk capacitance.
-3. Finish controller v2 PCB layout, run DRC, export with the Fabrication
-   Toolkit, and order.
-4. Print the corner test piece v9, then the full case once fit is confirmed.
-5. Decide whether the plexi top or the printed top is the daily driver.
-6. Chunk the Wi-Fi scan notification in firmware so it fits iOS BLE limits,
+3. Print the corner test piece v9, then the full case once fit is confirmed.
+4. Decide whether the plexi top or the printed top is the daily driver.
+5. Chunk the Wi-Fi scan notification in firmware so it fits iOS BLE limits,
    then revisit online play.
 
 ## Constraints

@@ -1,7 +1,7 @@
 # Assembly And Bring-Up Guide
 
 Status: the v0.1 boards went through this sequence in June 2026 and passed.
-Kept as the checklist for assembling a spare matrix or the v2 controller.
+Kept as the checklist for assembling a spare matrix or controller.
 
 ## Build Order
 
@@ -51,7 +51,6 @@ The v0.1 Lipo Rider Plus module would not start the board on battery. Its
 IP5306 shuts the boost down under light load. The replacement is an Adafruit
 bq25185 charger plus boost on the same jumper points: battery to the JST, 5 V
 pad to `+5V_LED`, GND to GND, BAT pad to `VBAT_MON`. Keep LED brightness
-moderate and ramp at boot; the module dislikes big load steps. Controller v2
-removes the module entirely.
+moderate and ramp at boot; the module dislikes big load steps.
 
 A 1S LiPo only, 3.0 to 4.2 V. Anything higher destroys the charger.

@@ -41,13 +41,15 @@ An early plan was a small 3x3 validation board before ordering the full
 matrix. The full 8x8 was ordered directly and worked. The 3x3 project was
 deleted.
 
-## Controller v2 Integrates The Modules
+## Controller v2 Was Shelved
 
 v0.1 used a DevKitC and a Lipo Rider Plus on headers. The Lipo Rider's IP5306
 would not run the board on battery, and the DevKitC's UART pins were spent on
 I2C. v2 puts an ESP32-WROOM-32E, CH340C USB-C, BQ24074 charger, and TPS61022
-boost directly on the PCB, moves I2C to GPIO21/22, and keeps the matrix
-connector contract identical so the same matrix board plugs in.
+boost directly on the PCB and moved I2C to GPIO21/22. It reached a clean
+schematic and was then dropped: swapping the battery module on v0.1 fixed the
+real problem, and a second board spin was not worth it for a one-off. The
+files stay in the repo for reference.
 
 ## Fusion 360 Case With A Swappable Top
 

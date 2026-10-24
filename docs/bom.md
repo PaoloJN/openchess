@@ -4,7 +4,7 @@ Human-readable planning BOM for the current OpenChess prototype. KiCad
 schematic, PCB, and assembly exports remain the source of truth for exact refs,
 footprints, and machine-readable ordering data.
 
-Last refreshed: 2026-10-24. Covers the v0.1 boards as built. Controller v2 parts live in `../hardware/hardware-controller-v2/SOURCING.md`.
+Last refreshed: 2026-10-24. Covers the v0.1 boards as built.
 
 ## 8x8 Matrix Board (`hardware/hardware-board`)
 

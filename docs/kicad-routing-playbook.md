@@ -7,7 +7,7 @@ Use the KiCad files as source of truth.
 
 - `hardware/hardware-board/`: 8x8 matrix board, 282 mm by 282 mm.
 - `hardware/hardware-controller/`: controller v0.1, 58 mm by 71 mm, frozen.
-- `hardware/hardware-controller-v2/`: controller v2, same outline, in design.
+- `hardware/hardware-controller-v2/`: shelved, schematic only.
 
 There is no active panel PCB.
 
