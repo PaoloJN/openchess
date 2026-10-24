@@ -53,7 +53,7 @@
 		(aux_axis_origin 50 332)
 		(grid_origin 50 332)
 		(pcbplotparams
-			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(layerselection 0x00000000_00000000_55555555_575d5550)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
 			(usegerberextensions no)
@@ -82,11 +82,11 @@
 			(sketchdnponfab yes)
 			(crossoutdnponfab yes)
 			(subtractmaskfromsilk no)
-			(outputformat 1)
+			(outputformat 3)
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "gerbers")
+			(outputdirectory "../../mechanical/case/")
 		)
 	)
 	(footprint "Package_TO_SOT_SMD:SOT-23"

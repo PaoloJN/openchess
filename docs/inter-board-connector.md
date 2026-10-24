@@ -2,7 +2,7 @@
 
 Current hardware (v2) has two PCBs and one panel harness:
 
-- `hardware-board` or `hardware-board-3x3`: matrix board
+- `hardware-board`: matrix board
 - `hardware-controller-v2`: controller, power, and driver board
 - Panel harness: SSD1306 OLED and 3 buttons wired to controller `J6` (OLED) and `J7`/`J8`/`J9` (buttons)
 

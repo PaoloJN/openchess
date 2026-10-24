@@ -1,11 +1,12 @@
-Firmware in this repository is a fork of joojoooo/OpenChess and inherits
-its upstream license. See `firmware/LICENSE` (once the fork is added) for
-the actual terms.
+Firmware (`firmware/`) and the companion app (`app/`) are licensed under the
+MIT License. See `firmware/LICENSE` for the full text.
 
-Upstream: https://github.com/joojoooo/OpenChess
+SPDX-License-Identifier: MIT
 
-Any net-new firmware authored in this repository (i.e. code not derived
-from upstream) is also released under the same upstream license to avoid
-mixed-licensing confusion.
+The firmware engine and board driver began as an adaptation of
+joojoooo/OpenChess (https://github.com/joojoooo/OpenChess), MIT License,
+Copyright (c) 2026 Concept-Bytes. That notice is preserved in
+`firmware/LICENSE`.
 
-Copyright (c) 2026 Paolo Nessim and the upstream OpenChess authors.
+`firmware-roarm/` is vendored Waveshare code and keeps its own upstream
+license in `firmware-roarm/roarm_m2/LICENSE`.

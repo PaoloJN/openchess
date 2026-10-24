@@ -528,24 +528,6 @@
         "wire_width": 6
       },
       {
-        "clearance": 0.15,
-        "name": "Power",
-        "pcb_color": "rgb(255, 60, 60)",
-        "priority": 1,
-        "schematic_color": "rgb(255, 60, 60)",
-        "track_width": 0.75,
-        "tuning_profile": ""
-      },
-      {
-        "clearance": 0.15,
-        "name": "Power_3V3",
-        "pcb_color": "rgb(255, 220, 60)",
-        "priority": 0,
-        "schematic_color": "rgb(255, 220, 60)",
-        "track_width": 0.8,
-        "tuning_profile": ""
-      },
-      {
         "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
@@ -563,6 +545,24 @@
         "via_diameter": 1.0,
         "via_drill": 0.5,
         "wire_width": 6
+      },
+      {
+        "clearance": 0.15,
+        "name": "Power",
+        "pcb_color": "rgb(255, 60, 60)",
+        "priority": 1,
+        "schematic_color": "rgb(255, 60, 60)",
+        "track_width": 0.75,
+        "tuning_profile": ""
+      },
+      {
+        "clearance": 0.15,
+        "name": "Power_3V3",
+        "pcb_color": "rgb(255, 220, 60)",
+        "priority": 0,
+        "schematic_color": "rgb(255, 220, 60)",
+        "track_width": 0.8,
+        "tuning_profile": ""
       }
     ],
     "meta": {

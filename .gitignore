@@ -44,6 +44,15 @@ hardware-2.0/*/build/
 
 delete
 web
-firmware
 
 hardware/orders
+# KiCad plugin restore/prefab backups
+_restore_backup*/
+_prefab_backup/
+
+# Personal / agent-only context, kept local
+docs/frame/
+docs/superpowers/plans/
+.claude/
+CLAUDE.md
+AGENTS.md

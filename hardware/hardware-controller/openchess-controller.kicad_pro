@@ -607,7 +607,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "gerbers/",
+      "plot": "../../mechanical/case/import/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",

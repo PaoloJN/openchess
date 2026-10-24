@@ -1,56 +1,46 @@
 # Firmware
 
-PlatformIO ESP32 firmware for OpenChess. This directory is populated with an
-adapted OpenChess engine codebase, shell protocol support, and hooks for an
-embedded web UI.
+PlatformIO ESP32 firmware for OpenChess.
 
-## Status
+## Layout
 
-Active but not yet proven against real hardware. The next validation target is
-the controller plus 3x3 matrix board.
-
-Current firmware work must be checked against:
-
-- `hardware/hardware-controller/openchess-controller.kicad_sch`
-- `hardware/hardware-controller/openchess-controller.kicad_pcb`
-- `hardware/hardware-board-3x3/openchess-board-3x3.kicad_sch`
-- `hardware/hardware-board-3x3/openchess-board-3x3.kicad_pcb`
-- `docs/gpio-map.md`
-- `docs/inter-board-connector.md`
+```text
+src/main.cpp        the integrated product: menu + offline game + lights + BLE
+src/pins.h          GPIO map for the v0.1 controller, extracted from the schematic
+src/engine/         board driver, chess engine, AI, game controller, LED language
+src/ui/             SSD1306 OLED menu
+src/shell/          BLE server (NimBLE) and JSON protocol
+src/bench/          one-file bench sketches, each with its own PlatformIO env
+test/               native unit tests (engine, protocol) and an Arduino stub
+tools/ble_debug.py  talk to the board's BLE service from a laptop
+```
 
 ## Build
 
 ```bash
-cd firmware
-platformio run
+pio run -e esp32dev -t upload       # product build
+pio run -e bench_sensor -t upload   # any bench env, see platformio.ini
+pio test -e native_ai               # engine tests on the desktop
 ```
 
-Upload target depends on the connected ESP32 board and local PlatformIO setup.
+Bench envs: `bench_alive`, `bench_led`, `bench_sensor`, `bench_highlight`,
+`bench_buttons`, `bench_oled`, `bench_demo`, `bench_board`, `bench_map`,
+`bench_coach`, `bench_ui`, `bench_diag`, `bench_roarm`. The bring-up order is
+in `BENCH.md`.
 
-## Web UI Embedding
+## Hardware Facts The Firmware Follows
 
-The web UI lives in `../web`. The firmware includes `data/index.html` for ESP32
-serving. Use `scripts/embed_web.sh` when refreshing the embedded artifact from
-the web build.
+- Row sense nets `S0..S7`, column power `CA_PWR..CH_PWR`, one column powered
+  at a time. Column A gets a 50 ms settle because sensor U5 wakes slowly.
+- 81 WS2812B LEDs in a 9x9 corner grid. A square is its four corners.
+- LED frames go out over the I2S DMA method. Do not switch back to RMT.
+- v0.1 OLED I2C is on GPIO1/3, the UART0 pins. Unplug the OLED to flash.
+- Buttons: UP GPIO36, DOWN GPIO39, OK GPIO2. GPIO2 uses the internal pullup
+  only.
+- Battery voltage through the divider on GPIO34. Low-battery cutoff at
+  3.30 V.
 
-## Hardware Facts Firmware Must Follow
+## License
 
-- Matrix sensors are DRV5032FC SOT-23.
-- Matrix row sense nets are `S0..S7`.
-- Matrix column power nets are `CA_PWR..CH_PWR`.
-- LED data leaves the controller as `LED_DATA_5V` after 74AHCT125 level
-  shifting.
-- The 8x8 matrix has 81 WS2812B LEDs in a 9x9 corner grid.
-- The 3x3 validation board has 16 WS2812B LEDs around its validation squares.
-- Panel UI is an SSD1306 OLED plus POWER, MODE, SELECT buttons on a harness to
-  controller `J3`.
-
-## Work To Recheck During Bring-Up
-
-- GPIO assignments and boot-pin behavior.
-- LED index mapping for the 3x3 and 8x8 corner grids.
-- Hall scan timing and column-drive sequencing.
-- OLED I2C on GPIO1/GPIO3.
-- Button pullup behavior for POWER, MODE, and SELECT.
-- Battery voltage conversion from `VBAT_MON`.
-- WebSocket protocol compatibility with `web/src/protocol.ts`.
+MIT. The engine and board driver started as an adaptation of
+[joojoooo/OpenChess](https://github.com/joojoooo/OpenChess). See `LICENSE`.

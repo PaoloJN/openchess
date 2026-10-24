@@ -11355,17 +11355,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C915088"
-			(at 452.12 289.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps61022.pdf"
 			(at 452.12 264.16 0)
 			(hide yes)
@@ -11378,6 +11367,17 @@
 			)
 		)
 		(property "Description" "8A Boost Converter, 0.5-5.5 V input, 2.2-5.5V output, Texas RWU0007A VQFN-7"
+			(at 452.12 289.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C915088"
 			(at 452.12 289.56 0)
 			(hide yes)
 			(show_name no)
@@ -11539,17 +11539,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C23140"
-			(at 177.8 200.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 177.8 200.66 0)
 			(hide yes)
@@ -11562,6 +11551,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 177.8 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C23140"
 			(at 177.8 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -11710,17 +11710,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C17414"
-			(at 233.68 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 233.68 91.44 0)
 			(hide yes)
@@ -11733,6 +11722,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 233.68 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17414"
 			(at 233.68 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -11800,17 +11800,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C431540"
-			(at 483.87 287.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 483.87 279.4 0)
 			(hide yes)
@@ -11823,6 +11812,17 @@
 			)
 		)
 		(property "Description" "Switch, single pole double throw"
+			(at 483.87 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C431540"
 			(at 483.87 287.02 0)
 			(hide yes)
 			(show_name no)
@@ -12296,17 +12296,6 @@
 				(justify left)
 			)
 		)
-		(property "LCSC" "C42441446"
-			(at 265.43 320.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "http://www.secosgmbh.com/datasheet/products/SSMPTransistor/SOT-23/SS8050.pdf"
 			(at 270.51 324.866 0)
 			(hide yes)
@@ -12321,6 +12310,17 @@
 		)
 		(property "Description" "General Purpose NPN Transistor, 1.5A Ic, 25V Vce, SOT-23"
 			(at 299.466 322.326 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C42441446"
+			(at 265.43 320.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12413,17 +12413,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C2139"
-			(at 195.58 231.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74ahct125.pdf"
 			(at 195.58 231.14 0)
 			(hide yes)
@@ -12436,6 +12425,17 @@
 			)
 		)
 		(property "Description" "Quadruple Bus Buffer Gates With 3-State Outputs"
+			(at 195.58 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2139"
 			(at 195.58 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -12617,17 +12617,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C21190"
-			(at 358.14 358.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 358.14 358.14 0)
 			(hide yes)
@@ -12640,6 +12629,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 358.14 358.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
 			(at 358.14 358.14 0)
 			(hide yes)
 			(show_name no)
@@ -13025,17 +13025,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C17414"
-			(at 212.09 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 212.09 91.44 0)
 			(hide yes)
@@ -13048,6 +13037,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 212.09 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17414"
 			(at 212.09 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -13196,17 +13196,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C17414"
-			(at 186.69 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 186.69 91.44 0)
 			(hide yes)
@@ -13219,6 +13208,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 186.69 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17414"
 			(at 186.69 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -13288,17 +13288,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C25804"
-			(at 255.27 320.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 255.27 320.04 0)
 			(hide yes)
@@ -13311,6 +13300,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 255.27 320.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
 			(at 255.27 320.04 0)
 			(hide yes)
 			(show_name no)
@@ -14086,17 +14086,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C25803"
-			(at 469.9 293.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 469.9 293.37 0)
 			(hide yes)
@@ -14109,6 +14098,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 469.9 293.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
 			(at 469.9 293.37 0)
 			(hide yes)
 			(show_name no)
@@ -14495,17 +14495,6 @@
 				(justify left)
 			)
 		)
-		(property "LCSC" "C54313"
-			(at 354.33 290.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/bq24074.pdf"
 			(at 361.95 285.75 0)
 			(hide yes)
@@ -14518,6 +14507,17 @@
 			)
 		)
 		(property "Description" "USB-Friendly Li-Ion Battery Charger and Power-Path Management, VQFN-16"
+			(at 354.33 290.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C54313"
 			(at 354.33 290.83 0)
 			(hide yes)
 			(show_name no)
@@ -15895,17 +15895,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C12624"
-			(at 349.25 358.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 349.25 358.14 0)
 			(hide yes)
@@ -15918,6 +15907,17 @@
 			)
 		)
 		(property "Description" "Diode"
+			(at 349.25 358.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C12624"
 			(at 349.25 358.14 0)
 			(hide yes)
 			(show_name no)
@@ -16089,17 +16089,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C25803"
-			(at 425.45 345.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 425.45 345.44 0)
 			(hide yes)
@@ -16112,6 +16101,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 425.45 345.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
 			(at 425.45 345.44 0)
 			(hide yes)
 			(show_name no)
@@ -16977,17 +16977,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C5349664"
-			(at 447.04 302.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 447.04 302.26 0)
 			(hide yes)
@@ -17000,6 +16989,17 @@
 			)
 		)
 		(property "Description" "Inductor"
+			(at 447.04 302.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C5349664"
 			(at 447.04 302.26 0)
 			(hide yes)
 			(show_name no)
@@ -17538,17 +17538,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C165948"
-			(at 149.86 303.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
 			(at 153.67 303.53 0)
 			(hide yes)
@@ -17561,6 +17550,17 @@
 			)
 		)
 		(property "Description" "USB 2.0-only 16P Type-C Receptacle connector"
+			(at 149.86 303.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C165948"
 			(at 149.86 303.53 0)
 			(hide yes)
 			(show_name no)
@@ -17982,17 +17982,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C23240"
-			(at 422.91 275.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 422.91 275.59 0)
 			(hide yes)
@@ -18005,6 +17994,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 422.91 275.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C23240"
 			(at 422.91 275.59 0)
 			(hide yes)
 			(show_name no)
@@ -18312,17 +18312,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C2286"
-			(at 370.84 303.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 370.84 303.53 0)
 			(hide yes)
@@ -18335,6 +18324,17 @@
 			)
 		)
 		(property "Description" "Diode"
+			(at 370.84 303.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2286"
 			(at 370.84 303.53 0)
 			(hide yes)
 			(show_name no)
@@ -18427,17 +18427,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C17414"
-			(at 163.83 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 163.83 91.44 0)
 			(hide yes)
@@ -18450,6 +18439,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 163.83 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17414"
 			(at 163.83 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -19086,17 +19086,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C17414"
-			(at 198.12 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 198.12 91.44 0)
 			(hide yes)
@@ -19109,6 +19098,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 198.12 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17414"
 			(at 198.12 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -19333,17 +19333,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C25803"
-			(at 435.61 275.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 435.61 275.59 0)
 			(hide yes)
@@ -19356,6 +19345,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 435.61 275.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
 			(at 435.61 275.59 0)
 			(hide yes)
 			(show_name no)
@@ -19726,17 +19726,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C25804"
-			(at 370.84 293.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 370.84 293.37 0)
 			(hide yes)
@@ -19749,6 +19738,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 370.84 293.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
 			(at 370.84 293.37 0)
 			(hide yes)
 			(show_name no)
@@ -19821,17 +19821,6 @@
 				(justify left)
 			)
 		)
-		(property "LCSC" "C42441446"
-			(at 265.43 298.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "http://www.secosgmbh.com/datasheet/products/SSMPTransistor/SOT-23/SS8050.pdf"
 			(at 270.51 303.276 0)
 			(hide yes)
@@ -19846,6 +19835,17 @@
 		)
 		(property "Description" "General Purpose NPN Transistor, 1.5A Ic, 25V Vce, SOT-23"
 			(at 299.466 300.736 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C42441446"
+			(at 265.43 298.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19938,17 +19938,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C6186"
-			(at 355.6 332.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "http://www.advanced-monolithic.com/pdf/ds1117.pdf"
 			(at 358.14 339.09 0)
 			(hide yes)
@@ -19961,6 +19950,17 @@
 			)
 		)
 		(property "Description" "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223"
+			(at 355.6 332.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C6186"
 			(at 355.6 332.74 0)
 			(hide yes)
 			(show_name no)
@@ -20034,17 +20034,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C701341"
-			(at 360.68 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf"
 			(at 360.68 157.48 0)
 			(hide yes)
@@ -20057,6 +20046,17 @@
 			)
 		)
 		(property "Description" "ESP32-WROOM-32E integrates ESP32-D0WD-V3, with higher stability and safety performance."
+			(at 360.68 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C701341"
 			(at 360.68 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -20775,17 +20775,6 @@
 				(justify left)
 			)
 		)
-		(property "LCSC" "C7519"
-			(at 180.34 325.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "https://www.st.com/resource/en/datasheet/usblc6-2.pdf"
 			(at 181.61 333.375 0)
 			(hide yes)
@@ -20799,6 +20788,17 @@
 			)
 		)
 		(property "Description" "Very low capacitance ESD protection diode, 2 data-line, SOT-23-6"
+			(at 180.34 325.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C7519"
 			(at 180.34 325.12 0)
 			(hide yes)
 			(show_name no)
@@ -20959,17 +20959,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C318884"
-			(at 411.48 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 411.48 101.6 0)
 			(hide yes)
@@ -20982,6 +20971,17 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 411.48 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C318884"
 			(at 411.48 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -21053,17 +21053,6 @@
 				(justify left)
 			)
 		)
-		(property "LCSC" "C84681"
-			(at 219.71 307.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "https://datasheet.lcsc.com/szlcsc/Jiangsu-Qin-Heng-CH340C_C84681.pdf"
 			(at 213.106 274.066 0)
 			(hide yes)
@@ -21077,6 +21066,17 @@
 		)
 		(property "Description" "USB serial converter, crystal-less, UART, SOIC-16"
 			(at 218.186 271.272 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C84681"
+			(at 219.71 307.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21264,17 +21264,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C318884"
-			(at 327.66 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 327.66 86.36 0)
 			(hide yes)
@@ -21287,6 +21276,17 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
+			(at 327.66 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C318884"
 			(at 327.66 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -21357,17 +21357,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C25804"
-			(at 307.34 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 307.34 92.71 0)
 			(hide yes)
@@ -21380,6 +21369,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 307.34 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
 			(at 307.34 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -21922,17 +21922,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C25804"
-			(at 347.98 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 347.98 213.36 0)
 			(hide yes)
@@ -21945,6 +21934,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 347.98 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
 			(at 347.98 213.36 0)
 			(hide yes)
 			(show_name no)
@@ -22917,17 +22917,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C25804"
-			(at 365.76 213.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 365.76 213.36 0)
 			(hide yes)
@@ -22940,6 +22929,17 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 365.76 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
 			(at 365.76 213.36 0)
 			(hide yes)
 			(show_name no)
@@ -23207,17 +23207,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C17414"
-			(at 175.26 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 175.26 91.44 0)
 			(hide yes)
@@ -23230,6 +23219,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 175.26 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17414"
 			(at 175.26 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -23529,17 +23529,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C97745"
-			(at 62.23 214.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" "http://toshiba.semicon-storage.com/info/docget.jsp?did=30523&prodName=TBD62783APG"
 			(at 54.61 204.47 0)
 			(hide yes)
@@ -23552,6 +23541,17 @@
 			)
 		)
 		(property "Description" "8-Channel Source Type Transistor Array, TTL and CMOS compatible, 500mA, 50V, DIP-18/SOP-18/SSOP-18/SOIC-18W"
+			(at 62.23 214.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C97745"
 			(at 62.23 214.63 0)
 			(hide yes)
 			(show_name no)
@@ -23983,17 +23983,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C25804"
-			(at 255.27 298.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 255.27 298.45 0)
 			(hide yes)
@@ -24006,6 +23995,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 255.27 298.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
 			(at 255.27 298.45 0)
 			(hide yes)
 			(show_name no)
@@ -24501,17 +24501,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C22764"
-			(at 328.93 298.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 328.93 298.45 0)
 			(hide yes)
@@ -24524,6 +24513,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 328.93 298.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C22764"
 			(at 328.93 298.45 0)
 			(hide yes)
 			(show_name no)
@@ -24594,17 +24594,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C17414"
-			(at 152.4 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 152.4 91.44 0)
 			(hide yes)
@@ -24617,6 +24606,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 152.4 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17414"
 			(at 152.4 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -24930,17 +24930,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C17414"
-			(at 223.52 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 223.52 91.44 0)
 			(hide yes)
@@ -24953,6 +24942,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 223.52 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C17414"
 			(at 223.52 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -25337,17 +25337,6 @@
 				)
 			)
 		)
-		(property "LCSC" "C21190"
-			(at 381 303.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Datasheet" ""
 			(at 381 303.53 0)
 			(hide yes)
@@ -25360,6 +25349,17 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 381 303.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
 			(at 381 303.53 0)
 			(hide yes)
 			(show_name no)

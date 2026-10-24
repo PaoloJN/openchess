@@ -1,8 +1,7 @@
 # Project Status
 
-Current snapshot as of **2026-06-12**. This file tracks progress and next
-actions. For hardware details, inspect the active KiCad schematic and PCB files
-directly; older design notes may be stale.
+Snapshot as of **2026-10-24**. Dated specs live in `docs/superpowers/specs/`. For hardware facts, inspect the active KiCad
+files directly. Older notes may lag behind the design.
 
 ## Project Intent
 
@@ -13,70 +12,85 @@ physical chess board, not a product line or reusable hardware platform.
 
 | Reference | Role |
 |---|---|
-| `hardware/hardware-board/openchess-board.kicad_sch` / `.kicad_pcb` | Current 8x8 matrix schematic and PCB |
-| `hardware/hardware-board-3x3/openchess-board-3x3.kicad_sch` / `.kicad_pcb` | Current 3x3 validation schematic and PCB |
-| `hardware/hardware-controller/openchess-controller.kicad_sch` / `.kicad_pcb` | Current controller schematic and PCB |
-| `docs/inter-board-connector.md` | Human-readable connector contracts |
-| `docs/gpio-map.md` | ESP32 GPIO assignment plan |
-| `docs/bom.md` | Human-readable planning BOM |
-| `firmware/README.md` | Firmware status and build notes |
-| `web/package.json` | Web UI package and scripts |
+| `hardware/hardware-board/openchess-board.kicad_sch` / `.kicad_pcb` | 8x8 matrix board (v0.1, built) |
+| `hardware/hardware-controller/openchess-controller.kicad_sch` / `.kicad_pcb` | Controller v0.1 (built, frozen) |
+| `hardware/hardware-controller-v2/openchess-controller.kicad_sch` / `.kicad_pcb` | Controller v2 (in design) |
+| `docs/gpio-map.md` | ESP32 GPIO assignments, v2 table plus frozen v1 table |
+| `docs/inter-board-connector.md` | Matrix and panel connector contracts |
+| `firmware/src/pins.h` | GPIO map the firmware actually uses (v0.1 hardware) |
+| `firmware/BENCH.md` | Bench bring-up sequence and sketches |
+| `mechanical/exports/README.md` | Print package, screw list, assembly order |
+| `app/README.md` | Companion app setup |
 
-## Current Hardware State
+## Hardware
 
-| Subsystem | Schematic | PCB layout | Notes |
-|---|---|---|---|
-| `hardware-board-3x3` | Present | 132 mm by 132 mm | Validation board: 9x DRV5032FC SOT-23, 16x WS2812B, 16x 100 nF, 4x 47 uF, 2x13 matrix connector. Order and bring up first. |
-| `hardware-board` | Present | 282 mm by 282 mm | Full matrix: 64x DRV5032FC SOT-23, 81x WS2812B, 81x 100 nF, 9x 47 uF, 4x M3 holes, 3x fiducials, 2x13 matrix connector. Order after 3x3 validation. |
-| `hardware-controller` | Present | 58 mm by 71 mm | ESP32-DevKitC, Lipo Rider Plus, 74AHCT125, TBD62783A DIP-18, SS14/BAT60A diode, row/button pullups, battery divider, J1 matrix connector, J3 panel connector. |
-| Panel harness | N/A | N/A | SSD1306 OLED plus POWER, MODE, SELECT buttons on flying leads to controller `J3`. No active panel PCB. |
+| Subsystem | State | Notes |
+|---|---|---|
+| Matrix board v0.1 | Built, verified | 64x DRV5032FC, 81x WS2812B. 2 assembled plus 3 bare spares from JLCPCB. All sensors and LEDs read and light correctly. One sensor (U5, square A5) wakes slowly and is handled in firmware with a longer per-column settle. |
+| Controller v0.1 | Built, verified on USB | ESP32-DevKitC, 74AHCT125, TBD62783A, row and button pullups, battery divider. The Seeed Lipo Rider Plus was swapped out: its IP5306 shuts the 5 V boost down under light load, so the board would not start on battery. Replacement is the Adafruit bq25185 charger plus boost module on the same jumper points. |
+| Controller v2 | Schematic complete, layout in progress | Integrated ESP32-WROOM-32E, USB-C with CH340C auto-program, BQ24074 power-path charger, TPS61022 5 V boost, AMS1117-3.3, XH battery connector, split panel connectors J6 (OLED) and J7/J8/J9 (buttons). ERC clean. Net classes and placement guide done. |
+| Panel | Built | 0.91" SSD1306 OLED plus 3 buttons (UP, DOWN, OK) on flying leads. OLED I2C on GPIO1/3 in v0.1, moved to GPIO21/22 in v2. |
 
-All active 2x13 matrix/controller `J` connectors are intended to use
-`PinSocket_2x13` footprints.
+## Firmware
 
-## Firmware And Web State
+Default PlatformIO env `esp32dev` builds the integrated product:
 
-`firmware/` is populated with a PlatformIO ESP32 codebase and adapted OpenChess
-engine code. `web/` is populated with a React/Vite UI shell and shared WebSocket
-protocol definitions.
+- OLED menu with UP/DOWN/OK buttons, in-game banners and results.
+- Offline game controller with settle-detection, capture gating, castling
+  and en-passant tracking, draw detection.
+- Offline AI: alpha-beta with quiescence, iterative deepening, piece-square
+  tables, MVV-LVA ordering, per-level time budgets. Native tests under
+  `firmware/test/test_ai/`.
+- Coaching light language over the corner LEDs.
+- BLE server (NimBLE) matching the app's `board/types.ts` contract.
+- Auto-sleep and low-battery deep sleep.
 
-Both are active but still need real-hardware validation against the current
-3x3/controller bring-up path:
+Verified on hardware: sensor scan, LED chain, OLED, buttons, battery monitor,
+BLE scan and connect from the phone.
 
-- GPIO map and boot-pin behavior
-- 9x9 LED corner indexing and brightness limits
-- Hall scan timing with DRV5032FC sensors
-- OLED I2C behavior on GPIO1/GPIO3
-- POWER/MODE/SELECT button handling
-- battery voltage reading via `VBAT_MON`
-- web UI connection and board-state protocol
+Not yet verified on hardware: the 2026-08-27 LED fixes (I2S DMA driver,
+periodic refresh, scan waits for frame end), dip-gated capture detection in a
+real game, GUIDE phase banner, LED corner map orientation after the OLED flip.
+
+Bench sketches live in `firmware/src/bench/`, one PlatformIO env each. See
+`firmware/BENCH.md`.
+
+## Companion App
+
+Expo SDK 57 app in `app/`. All ten screens built. Real BLE transport
+(`BleBoard`) pairs and connects to the board from an iPhone dev build. Wi-Fi
+provisioning is an optional, skippable step because nothing online exists yet.
+
+## Mechanical
+
+Fusion 360 case driven through the Fusion MCP. Final print package exported
+2026-08-11 under `mechanical/exports/`: case walls with the integrated front
+panel, two-color top plate, back cover, corner test piece (v9). Fastening is
+M3 heat-set inserts throughout. The 308 mm parts need a large-format printer
+or a split. Plexi top is laser-cut from `mechanical/plexi-top/`.
+
+## Robot Arm Side Quest
+
+The board can command a Waveshare RoArm-M2-S over ESP-NOW with no wires. The
+arm firmware is vendored in `firmware-roarm/` with a small patch for a DIY
+hobby-servo gripper. Bench sketch `bench_roarm`, console in
+`scripts/roarm_console.py`. Not integrated into chess play.
 
 ## Next Actions
 
-1. Re-export or inspect the current 3x3 validation board and controller
-   fabrication/assembly files.
-2. Order the 3x3 validation board and controller together.
-3. Source plug-in modules and harness parts:
-   - ESP32-DevKitC
-   - Seeed Lipo Rider Plus
-   - protected 1S LiPo
-   - SSD1306 OLED module
-   - 3x panel-mount momentary buttons
-   - magnets for sensing tests
-4. Build the panel harness from controller `J3` to OLED/buttons.
-5. Bench-test controller power rails, OLED/buttons, LED data level shifting,
-   and battery monitor before connecting the matrix board.
-6. Bring up the 3x3 validation board: first power, LED chain, single Hall,
-   then full scan.
-7. If the 3x3/controller validation is clean, order the full 8x8 matrix board.
-8. Continue firmware/web integration against measured hardware behavior.
-9. Start enclosure work around the validated PCB stack, panel harness, USB-C
-   access, and battery placement.
+1. Flash the current `esp32dev` build and play through a full game to verify
+   the August LED and capture-detection fixes on hardware.
+2. Confirm the bq25185 module wiring runs the full board on battery, including
+   cold start into the LED bulk capacitance.
+3. Finish controller v2 PCB layout, run DRC, export with the Fabrication
+   Toolkit, and order.
+4. Print the corner test piece v9, then the full case once fit is confirmed.
+5. Decide whether the plexi top or the printed top is the daily driver.
+6. Chunk the Wi-Fi scan notification in firmware so it fits iOS BLE limits,
+   then revisit online play.
 
-## Current Constraints
+## Constraints
 
-- During this cleanup pass, `hardware/` is read-only.
-- `planning/` and `docs/archive/` are history unless explicitly re-reviewed.
-- Hardware facts in active docs should be checked against the KiCad files, not
-  copied forward from stale design notes.
+- `docs/archive/` holds history only. Do not treat it as hardware truth.
+- Hardware facts in active docs should be checked against the KiCad files.
 - The project is optimized for one successful build, not repeat manufacture.

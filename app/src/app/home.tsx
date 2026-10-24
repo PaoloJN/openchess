@@ -2,7 +2,7 @@ import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { useBoard } from '@/board/BoardProvider';
-import { Card, ChevronRight, DarkCard, Divider, Gear, Screen, StatusDot, Text } from '@/ui';
+import { Button, Card, ChevronRight, DarkCard, Divider, Gear, Screen, StatusDot, Text } from '@/ui';
 import { colors, onInk, radius, shadow } from '@/theme/tokens';
 
 type Recent = { tag: string; tagBg: string; tagFg: string; opp: string; by: string; when: string };
@@ -18,10 +18,20 @@ export default function HomeScreen() {
   const router = useRouter();
   const { status } = useBoard();
 
-  const boardName = (status.name ?? 'OpenChess-4A2F').toUpperCase();
-  const battery = status.battery ?? 82;
-  const ssid = status.wifi?.ssid ?? 'Home-5G';
-  const strength = status.wifi?.strength ?? 3;
+  const connected = status.connection === 'connected';
+  const connecting = status.connection === 'pairing';
+
+  const boardName = (status.name ?? 'OpenChess').toUpperCase();
+  const conn = connected
+    ? { label: 'Connected', color: colors.greenBright }
+    : connecting
+      ? { label: 'Connecting…', color: colors.amber }
+      : { label: 'Disconnected', color: colors.red };
+
+  // Live values only when actually connected — no invented fallbacks.
+  const battery = connected ? status.battery : null;
+  const firmware = connected && status.firmware ? status.firmware : null;
+  const wifi = connected ? status.wifi : undefined;
 
   return (
     <Screen scroll>
@@ -45,51 +55,66 @@ export default function HomeScreen() {
       {/* Status card */}
       <DarkCard padded={false} style={styles.statusCard}>
         <View style={styles.statusRow}>
-          <StatusDot color={colors.greenBright} size={9} />
-          <Text weight="semibold" size={14} color={colors.greenBright}>
-            Connected
+          <StatusDot color={conn.color} size={9} />
+          <Text weight="semibold" size={14} color={conn.color}>
+            {conn.label}
           </Text>
-          <Text mono size={13} color={onInk.muted2} style={styles.idle}>
-            idle
-          </Text>
+          {firmware ? (
+            <Text mono size={13} color={onInk.muted2} style={styles.idle}>
+              {firmware}
+            </Text>
+          ) : null}
         </View>
 
         <View style={styles.stats}>
           <View style={styles.stat}>
             <Text mono weight="semibold" size={26} color={onInk.text}>
-              {battery}
-              <Text mono weight="semibold" size={15} color="rgba(243,241,236,0.6)">
-                %
-              </Text>
+              {battery ?? '—'}
+              {battery != null ? (
+                <Text mono weight="semibold" size={15} color="rgba(243,241,236,0.6)">
+                  %
+                </Text>
+              ) : null}
             </Text>
             <Text size={12} color={onInk.muted2} style={styles.statLabel}>
               Battery
             </Text>
             <View style={styles.track}>
-              <View style={[styles.fill, { width: `${battery}%` }]} />
+              <View style={[styles.fill, { width: `${battery ?? 0}%` }]} />
             </View>
           </View>
 
           <View style={styles.statDivider} />
 
           <View style={styles.stat}>
-            <Text mono weight="semibold" size={26} color={onInk.text}>
-              {ssid}
+            <Text mono weight="semibold" size={wifi ? 26 : 17} color={wifi ? onInk.text : onInk.muted}>
+              {wifi ? wifi.ssid : connected ? 'Not on Wi-Fi' : '—'}
             </Text>
             <Text size={12} color={onInk.muted2} style={styles.statLabel}>
-              Wi-Fi · Lichess ready
+              {wifi ? (wifi.lichessReady ? 'Wi-Fi · Lichess ready' : 'Wi-Fi') : 'Online play unavailable'}
             </Text>
             <View style={styles.bars}>
               {[0, 1, 2, 3].map((i) => (
                 <View
                   key={i}
-                  style={[styles.bar, { backgroundColor: i < strength ? colors.greenBright : 'rgba(255,255,255,0.2)' }]}
+                  style={[styles.bar, { backgroundColor: wifi && i < wifi.strength ? colors.greenBright : 'rgba(255,255,255,0.2)' }]}
                 />
               ))}
             </View>
           </View>
         </View>
       </DarkCard>
+
+      {/* Connect / reconnect when the board isn't linked */}
+      {!connected ? (
+        <View style={styles.connectRow}>
+          <Button
+            label={connecting ? 'Connecting…' : 'Connect board'}
+            variant={connecting ? 'disabled' : 'primary'}
+            onPress={() => router.push('/pair')}
+          />
+        </View>
+      ) : null}
 
       {/* New game action */}
       <Pressable
@@ -167,6 +192,7 @@ const styles = StyleSheet.create({
   },
 
   statusCard: { padding: 20, marginTop: 18 },
+  connectRow: { marginTop: 14 },
   statusRow: { flexDirection: 'row', alignItems: 'center', gap: 9 },
   idle: { marginLeft: 'auto' },
   stats: { flexDirection: 'row', gap: 14, marginTop: 20 },

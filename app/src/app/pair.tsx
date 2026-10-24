@@ -46,7 +46,8 @@ export default function PairScreen() {
     setConnecting(true);
     try {
       await board.connect(found.id);
-      router.push('/wifi');
+      // Land on the live status screen. Wi-Fi provisioning is a later, optional step.
+      router.replace('/home');
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not connect');
     } finally {

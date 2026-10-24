@@ -6,8 +6,8 @@ Use the KiCad files as source of truth.
 ## Active Boards
 
 - `hardware/hardware-board/`: 8x8 matrix board, 282 mm by 282 mm.
-- `hardware/hardware-board-3x3/`: 3x3 validation board, 132 mm by 132 mm.
-- `hardware/hardware-controller/`: controller board, 58 mm by 71 mm.
+- `hardware/hardware-controller/`: controller v0.1, 58 mm by 71 mm, frozen.
+- `hardware/hardware-controller-v2/`: controller v2, same outline, in design.
 
 There is no active panel PCB.
 

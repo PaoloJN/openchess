@@ -1,111 +1,149 @@
-# OpenChess
+<p align="center">
+  <img src="docs/images/openchess-frame.png" alt="OpenChess rev 0.1: the 8x8 matrix board and the ESP32 controller, framed" width="720">
+</p>
 
-A one-off physical chess board with magnetic piece detection, corner-LED move
-feedback, ESP32 firmware, local OLED controls, and a small web UI.
+<h1 align="center">OpenChess</h1>
 
-This is a personal learning project, not a product. The target is one board
-that works on Paolo's desk. Design choices favor first-build reliability and
-clear bring-up over cost optimization or manufacturing scale.
+<p align="center">
+  A chessboard that knows where the pieces are.<br>
+  64 Hall sensors, 81 RGB LEDs, one ESP32, a 3D-printed case, and a phone app.<br>
+  Designed in KiCad, assembled by JLCPCB and by hand, built once, for one desk.
+</p>
 
-Last meaningful docs refresh: **2026-06-12**.
+<p align="center">
+  <a href="STATUS.md">Status</a> ·
+  <a href="#how-it-works">How it works</a> ·
+  <a href="#repository-map">Repo map</a> ·
+  <a href="#build-notes">Build notes</a> ·
+  <a href="#licenses">Licenses</a>
+</p>
 
-## Current Source Of Truth
+---
 
-For hardware details, inspect the active KiCad schematic and PCB files directly.
-`hardware/DESIGN_NOTES.md` and older planning notes may lag behind the design.
+## What this is
 
-Active hardware files:
+A one-off, hands-on learning project. I had never designed a PCB before this.
+The goal was never a product. It was to get one physical board that:
 
-- `hardware/hardware-board/openchess-board.kicad_sch`
-- `hardware/hardware-board/openchess-board.kicad_pcb`
-- `hardware/hardware-board-3x3/openchess-board-3x3.kicad_sch`
-- `hardware/hardware-board-3x3/openchess-board-3x3.kicad_pcb`
-- `hardware/hardware-controller/openchess-controller.kicad_sch`
-- `hardware/hardware-controller/openchess-controller.kicad_pcb`
+- detects every piece on every square with a magnet under each piece,
+- shows legal moves, hints, and errors with LEDs at the square corners,
+- plays offline against its own chess engine with a little OLED menu,
+- talks to a companion phone app over Bluetooth,
+- lives in a clean printed case with a swappable top plate.
 
-Current progress and next actions live in [`STATUS.md`](STATUS.md).
+The first boards came back from JLCPCB in June 2026 and worked on the first
+power-up. Everything since then has been firmware, the case, the app, and a
+second-revision controller that bakes the plug-in modules onto the PCB.
 
-## What It Does
+<p align="center">
+  <img src="docs/images/matrix-board-top.webp" alt="Matrix board, top, black solder mask" width="420">
+  &nbsp;&nbsp;
+  <img src="docs/images/controller-top.webp" alt="Controller board v0.1, top" width="190">
+</p>
 
-| Capability | Current implementation direction |
+## How it works
+
+**Sensing.** Each square has a DRV5032FC Hall-effect sensor under it. The
+matrix is scanned one column at a time: the controller powers a column through
+a TBD62783A high-side driver, then reads eight row lines. A full scan of the
+board takes about 100 ms, fast enough to feel instant.
+
+**Lights.** 81 WS2812B LEDs sit on the 9x9 grid of square corners, so one
+square lights up as its four corners. The ESP32 drives the chain through a
+74AHCT125 level shifter so the data line is a real 5 V signal. Frames go out
+over I2S DMA so flash writes from Bluetooth cannot corrupt them mid-frame.
+
+**Brain.** An ESP32 runs one non-blocking loop: sensor scan, game controller,
+LED language, OLED menu, and a BLE server. The offline engine is a homebrew
+alpha-beta search with quiescence, iterative deepening, piece-square tables,
+and move ordering. It plays at a few selectable strengths and runs its own
+native unit tests on the desktop.
+
+**UI.** A 0.91" SSD1306 OLED and three buttons on the front wall of the case
+for menus, plus a React Native app that pairs over BLE, mirrors the board,
+streams moves, and controls the LEDs.
+
+**Case.** Designed in Fusion 360 around the real PCB STEP exports. The walls
+and front panel print as one part, the top plate is swappable between a
+two-color printed chessboard and a laser-cut plexi top, and the back cover
+clamps the PCB stack with heat-set inserts.
+
+## Where things stand
+
+| Area | State |
 |---|---|
-| Piece detection | DRV5032FC SOT-23 Hall sensors in a scanned matrix |
-| Move feedback | WS2812B RGB LEDs at square corners |
-| Controller | ESP32-DevKitC on the controller PCB |
-| Local UI | SSD1306 OLED plus POWER, MODE, and SELECT panel buttons |
-| Web UI | React/Vite shell in `web/`, embedded into firmware data for ESP32 hosting |
-| Online/offline play | Firmware foundation adapted from joojoooo/OpenChess, still requiring real-hardware validation |
-| Power | Seeed Lipo Rider Plus module for LiPo charging, 5 V LED rail, and 3.3 V logic rail |
+| Matrix board v0.1 | Built, all 64 sensors and 81 LEDs verified on hardware |
+| Controller v0.1 | Built, works on USB. The stock battery module shuts its boost down under light load, so it is being replaced with a bq25185 charger/boost |
+| Controller v2 | Integrated ESP32-WROOM-32E, USB-C with CH340C, BQ24074 charger, TPS61022 boost. Schematic complete, layout in progress |
+| Firmware | Integrated product build: OLED menu, offline AI, coaching lights, BLE. Desktop-tested, hardware verification ongoing |
+| Companion app | Expo app, all screens built, real BLE pairing works end to end on an iPhone |
+| Case | Final print package exported, corner test piece printed and iterated through v9 |
+| Robot arm | Side quest: the board drives a Waveshare RoArm-M2-S over ESP-NOW, with a DIY servo gripper |
 
-## Hardware Architecture
+The detailed, dated list of next actions lives in [`STATUS.md`](STATUS.md).
 
-The active build is two PCBs plus one cable-mounted panel harness:
-
-- `hardware/hardware-board/`: full 8x8 matrix board, 282 mm by 282 mm
-- `hardware/hardware-board-3x3/`: 3x3 validation board, 132 mm by 132 mm
-- `hardware/hardware-controller/`: controller board, 58 mm by 71 mm
-- Panel harness: SSD1306 OLED module and 3 panel-mount buttons wired to controller `J3`
-
-The 3x3 board is the first validation target. It exists to test the Hall
-sensors, WS2812B chain, controller connector contract, power path, and firmware
-bring-up before ordering the full 8x8 matrix.
-
-All active 2x13 matrix/controller `J` connectors are intended to use
-`PinSocket_2x13` footprints.
-
-## Current Board Summary
-
-| Board | Current contents |
-|---|---|
-| 8x8 matrix | 64x DRV5032FC SOT-23 Hall sensors, 81x WS2812B LEDs, 81x 100 nF LED caps, 9x 47 uF row bulk caps, 4x M3 holes, 3x fiducials, 2x13 matrix connector |
-| 3x3 validation | 9x DRV5032FC SOT-23 Hall sensors, 16x WS2812B LEDs, 16x 100 nF LED caps, 4x 47 uF row bulk caps, 2x13 matrix connector |
-| Controller | ESP32-DevKitC, Seeed Lipo Rider Plus, 74AHCT125 LED level shifter, TBD62783A column driver, SS14/BAT60A diode, row pullups, button pullups, battery divider, matrix connector `J1`, panel connector `J3` |
-| Panel harness | SSD1306 OLED, POWER button, MODE button, SELECT button, wiring harness to controller `J3` |
-
-## Firmware And Web
-
-`firmware/` is populated with a PlatformIO ESP32 firmware shell and adapted
-OpenChess engine code. `web/` contains a React/Vite interface and shared
-WebSocket protocol types.
-
-Firmware and web are active but not yet proven against the physical boards. Pin
-assignments, LED indexing, Hall scan timing, OLED behavior, button semantics,
-and power/battery reporting must be checked during 3x3/controller bring-up.
-
-## Repository Layout
+## Repository map
 
 ```text
 openchess/
-├── README.md                  Project entry point
-├── STATUS.md                  Current status and next actions
-├── CLAUDE.md                  Durable agent context
-├── WORKSPACE.md               Workspace conventions
-├── hardware/                  KiCad projects and hardware exports
-│   ├── hardware-board/        8x8 matrix PCB
-│   ├── hardware-board-3x3/    3x3 validation PCB
-│   └── hardware-controller/   ESP32 controller PCB
-├── firmware/                  PlatformIO ESP32 firmware
-├── web/                       React/Vite web UI shell
-├── mechanical/                Enclosure and piece planning
-├── docs/                      Active documentation and archive
-├── planning/                  Historical/planning context, not hardware truth
-├── scripts/                   General utility scripts
-└── references/                Read-only upstream project snapshots
+├── hardware/
+│   ├── hardware-board/          8x8 matrix PCB, 282 x 282 mm (KiCad, gerbers, JLC BOM/CPL)
+│   ├── hardware-controller/     controller v0.1, DevKitC + Lipo Rider (frozen, boards exist)
+│   ├── hardware-controller-v2/  controller v2, integrated ESP32 + USB-C + charger + boost
+│   └── DESIGN_NOTES.md          design rationale and history for the v0.1 boards
+├── firmware/                    PlatformIO ESP32 firmware: engine, UI, BLE, bench sketches
+├── app/                         Expo / React Native companion app (BLE)
+├── mechanical/                  Fusion 360 case, print package, plexi top, test pieces
+├── firmware-roarm/              vendored RoArm-M2-S firmware with the gripper patch
+├── docs/                        GPIO map, connector contracts, BOM, design specs
+├── scripts/                     PDF tiling helpers, robot-arm console
+└── references/                  upstream projects this builds on (git-ignored clones)
 ```
 
-## Where To Look
+## Build notes
 
-| Need | Read |
+**Hardware.** Open the KiCad projects under `hardware/`. The v0.1 boards were
+fabricated and SMD-assembled by JLCPCB using the Fabrication Toolkit plugin
+exports in each board's `production/` folder. The DevKitC, Lipo Rider, column
+driver, and connectors were hand-soldered.
+
+**Firmware.**
+
+```bash
+cd firmware
+pio run -e esp32dev -t upload      # the integrated product build
+pio run -e bench_sensor -t upload  # or any bench sketch from src/bench/
+pio test -e native_ai              # engine unit tests on the desktop
+```
+
+The GPIO map lives in `firmware/src/pins.h` and `docs/gpio-map.md`. On the
+v0.1 controller the OLED shares the UART0 pins, so unplug the OLED to flash.
+
+**App.**
+
+```bash
+cd app
+npm install
+npx expo run:ios        # BLE needs a native dev build, not Expo Go
+```
+
+**Case.** Print files and the screw list are in `mechanical/exports/README.md`.
+Print the corner test piece first.
+
+## Built on
+
+- [joojoooo/OpenChess](https://github.com/joojoooo/OpenChess): the firmware
+  started as an adaptation of this engine and board driver.
+- [omercier01/Chessboard](https://github.com/omercier01/Chessboard): the v1
+  board this rebuild started from.
+- [waveshareteam/roarm_m2](https://github.com/waveshareteam/roarm_m2): the
+  robot arm firmware, vendored with a small gripper patch.
+
+## Licenses
+
+| Part | License |
 |---|---|
-| Current phase and bring-up order | [`STATUS.md`](STATUS.md) |
-| Active documentation index | [`docs/README.md`](docs/README.md) |
-| Matrix/controller connector contract | [`docs/inter-board-connector.md`](docs/inter-board-connector.md) |
-| ESP32 GPIO assignments | [`docs/gpio-map.md`](docs/gpio-map.md) |
-| Human-readable BOM | [`docs/bom.md`](docs/bom.md) |
-| Assembly and bring-up order | [`docs/assembly.md`](docs/assembly.md) |
-| Hardware design rationale | [`docs/design-decisions.md`](docs/design-decisions.md) |
-| Firmware notes | [`firmware/README.md`](firmware/README.md) |
-| Web UI package | [`web/package.json`](web/package.json) |
-
-Archived docs and old planning files are useful history, but the active KiCad
-files are the authority for current schematic and PCB state.
+| Hardware (`hardware/`, `mechanical/`) | [CERN-OHL-S v2](LICENSE-hardware) |
+| Firmware and app (`firmware/`, `app/`) | [MIT](LICENSE-firmware) |
+| Documentation | [CC-BY-4.0](LICENSE-docs) |
+| `firmware-roarm/` | Upstream Waveshare license, see its `LICENSE` |
